@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from '@/lib/utils/prisma';
+import { getIdFromRequest } from '@/lib/utils/getId';
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
-    const id = params.id;
+export async function GET(request: NextRequest) {
+    const id = getIdFromRequest(request);
 
     try {
         const paciente = await prisma.paciente.findUnique({
-            where: { id: id },
+            where: { id },
         });
 
         return !paciente
@@ -17,12 +18,14 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
     }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest) {
+    const id = getIdFromRequest(request);
+
     try {
-        const data = await req.json();
+        const data = await request.json();
 
         const pacienteAtualizado = await prisma.paciente.update({
-            where: { id: params.id },
+            where: { id },
             data,
         });
 
@@ -33,16 +36,17 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest) {
+    const id = getIdFromRequest(request);
+
     try {
         await prisma.paciente.delete({
-            where: { id: params.id },
-        })
+            where: { id },
+        });
 
         return NextResponse.json({ message: "Paciente deletado com sucesso" }, { status: 200 });
-    } catch(error) {
+    } catch (error) {
         console.error("Não foi possível deletar o paciente -> ", error);
-        return NextResponse.json({ error: "Não foi possível deletar o paciente" }, { status: 500 });    
+        return NextResponse.json({ error: "Não foi possível deletar o paciente" }, { status: 500 });
     }
-
 }

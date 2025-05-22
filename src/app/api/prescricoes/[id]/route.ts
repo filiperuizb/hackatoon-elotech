@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from '@/lib/utils/prisma';
+import { getIdFromRequest } from '@/lib/utils/getId'
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest) {
     try {
+        const id = getIdFromRequest(request);
         const prescricao = await prisma.prescricao.findUnique({
-            where: { id: params.id },
-        })
+            where: { id },
+        });
 
         return !prescricao
             ? NextResponse.json({ error: "Prescrição não foi encontrada" }, { status: 404 })
@@ -16,11 +18,12 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
     }
 }
 
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest) {
     try {
+        const id = getIdFromRequest(request);
         const data = await request.json();
         const prescricao = await prisma.prescricao.update({
-            where: { id: params.id },
+            where: { id },
             data,
         });
         return NextResponse.json(prescricao, { status: 200 });
@@ -30,9 +33,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     }
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest) {
     try {
-        await prisma.prescricao.delete({where: { id: params.id}})
+        const id = getIdFromRequest(request);
+        await prisma.prescricao.delete({ where: { id } });
         return NextResponse.json({ message: "Prescrição deletada com sucesso" }, { status: 200 });
     } catch (error) {
         console.error("Erro ao deletar a prescrição", error);

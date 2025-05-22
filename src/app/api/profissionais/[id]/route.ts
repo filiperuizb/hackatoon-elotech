@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from '@/lib/utils/prisma';
+import { getIdFromRequest } from '@/lib/utils/getId';
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-    const id = params.id;
+export async function GET(req: NextRequest) {
+    const id = getIdFromRequest(req);
 
     try {
         const profissional = await prisma.profissional_saude.findUnique({
-            where: { id: id },
+            where: { id },
         });
 
         return !profissional
@@ -14,15 +15,17 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
             : NextResponse.json(profissional, { status: 200 });
     } catch (error) {
         return NextResponse.json({ error: `Não foi possível listar o profissional ${id}` }, { status: 500 });
-    }   
+    }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest) {
+    const id = getIdFromRequest(req);
+
     try {
         const data = await req.json();
 
         const profissionalAtualizado = await prisma.profissional_saude.update({
-            where: { id: params.id },
+            where: { id },
             data,
         });
 
@@ -33,15 +36,17 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest) {
+    const id = getIdFromRequest(req);
+
     try {
         await prisma.profissional_saude.delete({
-            where: { id: params.id },
-        })
+            where: { id },
+        });
 
         return NextResponse.json({ message: "Profissional deletado com sucesso" }, { status: 200 });
-    } catch(error) {
+    } catch (error) {
         console.error("Não foi possível deletar o profissional -> ", error);
-        return NextResponse.json({ error: "Não foi possível deletar o profissional" }, { status: 500 });    
+        return NextResponse.json({ error: "Não foi possível deletar o profissional" }, { status: 500 });
     }
 }
