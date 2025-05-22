@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
 
-        const filters: any = {};
+        const filters: Record<string, unknown> = {};
         const nome = searchParams.get("nome");
         const email = searchParams.get("email");
         const especialidade = searchParams.get("especialidade");

@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
-    const filters: any = {};
+    const filters: Record<string, unknown> = {};
     const medicamento = searchParams.get("medicamento");
     const consulta_id = searchParams.get("consulta_id");
 

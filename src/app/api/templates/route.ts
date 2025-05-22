@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
-    const filters: any = {};
+    const filters: Record<string, unknown> = {};
     const titulo = searchParams.get("titulo");
     const sintomas_padrao = searchParams.get("sintomas_padrao");
     const sazonalidade = searchParams.get("sazonalidade");
