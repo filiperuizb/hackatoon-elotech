@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model consulta {
+  id                 String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  paciente_id        String?             @db.Uuid
+  profissional_id    String?             @db.Uuid
+  unidade_id         String?             @db.Uuid
+  data               DateTime            @default(now()) @db.Timestamp(6)
+  sintomas           String?
+  diagnostico        String?
+  conduta            String?
+  paciente           paciente?           @relation(fields: [paciente_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profissional_saude profissional_saude? @relation(fields: [profissional_id], references: [id], onUpdate: NoAction)
+  unidade_saude      unidade_saude?      @relation(fields: [unidade_id], references: [id], onUpdate: NoAction)
+  prescricao         prescricao[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model paciente {
+  id              String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome            String
+  data_nascimento DateTime   @db.Date
+  sexo            String?    @db.Char(1)
+  cpf             String?    @unique @db.VarChar(14)
+  telefone        String?    @db.VarChar(20)
+  email           String?
+  consulta        consulta[]
+}
+
+model prescricao {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  consulta_id String?   @db.Uuid
+  medicamento String
+  posologia   String?
+  duracao     String?
+  consulta    consulta? @relation(fields: [consulta_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model profissional_saude {
+  id              String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome            String
+  conselho_tipo   String?    @db.VarChar(10)
+  conselho_numero String?    @db.VarChar(20)
+  especialidade   String?
+  email           String?
+  consulta        consulta[]
+}
+
+model template {
+  id                 String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  titulo             String
+  sintomas_padrao    String?
+  condutas_sugeridas String?
+  sazonalidade       String?
+}
+
+model unidade_saude {
+  id       String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome     String
+  cnes     String?    @unique @db.VarChar(20)
+  endereco String?
+  cidade   String?
+  estado   String?    @db.Char(2)
+  consulta consulta[]
+}
