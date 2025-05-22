@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url);
 
-        const filters: any = {};
+        const filters: Record<string, unknown> = {};
         const pacienteId = searchParams.get("pacienteId");
         const profissionalId = searchParams.get("profissionalId");
         const unidadeId = searchParams.get("unidadeId");
