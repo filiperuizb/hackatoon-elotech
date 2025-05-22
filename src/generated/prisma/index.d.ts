@@ -4837,6 +4837,7 @@ export namespace Prisma {
     conselho_numero: string | null
     especialidade: string | null
     email: string | null
+    senha: string | null
   }
 
   export type Profissional_saudeMaxAggregateOutputType = {
@@ -4846,6 +4847,7 @@ export namespace Prisma {
     conselho_numero: string | null
     especialidade: string | null
     email: string | null
+    senha: string | null
   }
 
   export type Profissional_saudeCountAggregateOutputType = {
@@ -4855,6 +4857,7 @@ export namespace Prisma {
     conselho_numero: number
     especialidade: number
     email: number
+    senha: number
     _all: number
   }
 
@@ -4866,6 +4869,7 @@ export namespace Prisma {
     conselho_numero?: true
     especialidade?: true
     email?: true
+    senha?: true
   }
 
   export type Profissional_saudeMaxAggregateInputType = {
@@ -4875,6 +4879,7 @@ export namespace Prisma {
     conselho_numero?: true
     especialidade?: true
     email?: true
+    senha?: true
   }
 
   export type Profissional_saudeCountAggregateInputType = {
@@ -4884,6 +4889,7 @@ export namespace Prisma {
     conselho_numero?: true
     especialidade?: true
     email?: true
+    senha?: true
     _all?: true
   }
 
@@ -4966,6 +4972,7 @@ export namespace Prisma {
     conselho_numero: string | null
     especialidade: string | null
     email: string | null
+    senha: string
     _count: Profissional_saudeCountAggregateOutputType | null
     _min: Profissional_saudeMinAggregateOutputType | null
     _max: Profissional_saudeMaxAggregateOutputType | null
@@ -4992,6 +4999,7 @@ export namespace Prisma {
     conselho_numero?: boolean
     especialidade?: boolean
     email?: boolean
+    senha?: boolean
     consulta?: boolean | profissional_saude$consultaArgs<ExtArgs>
     _count?: boolean | Profissional_saudeCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profissional_saude"]>
@@ -5003,6 +5011,7 @@ export namespace Prisma {
     conselho_numero?: boolean
     especialidade?: boolean
     email?: boolean
+    senha?: boolean
   }, ExtArgs["result"]["profissional_saude"]>
 
   export type profissional_saudeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -5012,6 +5021,7 @@ export namespace Prisma {
     conselho_numero?: boolean
     especialidade?: boolean
     email?: boolean
+    senha?: boolean
   }, ExtArgs["result"]["profissional_saude"]>
 
   export type profissional_saudeSelectScalar = {
@@ -5021,9 +5031,10 @@ export namespace Prisma {
     conselho_numero?: boolean
     especialidade?: boolean
     email?: boolean
+    senha?: boolean
   }
 
-  export type profissional_saudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "conselho_tipo" | "conselho_numero" | "especialidade" | "email", ExtArgs["result"]["profissional_saude"]>
+  export type profissional_saudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "conselho_tipo" | "conselho_numero" | "especialidade" | "email" | "senha", ExtArgs["result"]["profissional_saude"]>
   export type profissional_saudeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     consulta?: boolean | profissional_saude$consultaArgs<ExtArgs>
     _count?: boolean | Profissional_saudeCountOutputTypeDefaultArgs<ExtArgs>
@@ -5043,6 +5054,7 @@ export namespace Prisma {
       conselho_numero: string | null
       especialidade: string | null
       email: string | null
+      senha: string
     }, ExtArgs["result"]["profissional_saude"]>
     composites: {}
   }
@@ -5473,6 +5485,7 @@ export namespace Prisma {
     readonly conselho_numero: FieldRef<"profissional_saude", 'String'>
     readonly especialidade: FieldRef<"profissional_saude", 'String'>
     readonly email: FieldRef<"profissional_saude", 'String'>
+    readonly senha: FieldRef<"profissional_saude", 'String'>
   }
     
 
@@ -8039,7 +8052,8 @@ export namespace Prisma {
     conselho_tipo: 'conselho_tipo',
     conselho_numero: 'conselho_numero',
     especialidade: 'especialidade',
-    email: 'email'
+    email: 'email',
+    senha: 'senha'
   };
 
   export type Profissional_saudeScalarFieldEnum = (typeof Profissional_saudeScalarFieldEnum)[keyof typeof Profissional_saudeScalarFieldEnum]
@@ -8351,6 +8365,7 @@ export namespace Prisma {
     conselho_numero?: StringNullableFilter<"profissional_saude"> | string | null
     especialidade?: StringNullableFilter<"profissional_saude"> | string | null
     email?: StringNullableFilter<"profissional_saude"> | string | null
+    senha?: StringFilter<"profissional_saude"> | string
     consulta?: ConsultaListRelationFilter
   }
 
@@ -8361,6 +8376,7 @@ export namespace Prisma {
     conselho_numero?: SortOrderInput | SortOrder
     especialidade?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
+    senha?: SortOrder
     consulta?: consultaOrderByRelationAggregateInput
   }
 
@@ -8374,6 +8390,7 @@ export namespace Prisma {
     conselho_numero?: StringNullableFilter<"profissional_saude"> | string | null
     especialidade?: StringNullableFilter<"profissional_saude"> | string | null
     email?: StringNullableFilter<"profissional_saude"> | string | null
+    senha?: StringFilter<"profissional_saude"> | string
     consulta?: ConsultaListRelationFilter
   }, "id">
 
@@ -8384,6 +8401,7 @@ export namespace Prisma {
     conselho_numero?: SortOrderInput | SortOrder
     especialidade?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
+    senha?: SortOrder
     _count?: profissional_saudeCountOrderByAggregateInput
     _max?: profissional_saudeMaxOrderByAggregateInput
     _min?: profissional_saudeMinOrderByAggregateInput
@@ -8399,6 +8417,7 @@ export namespace Prisma {
     conselho_numero?: StringNullableWithAggregatesFilter<"profissional_saude"> | string | null
     especialidade?: StringNullableWithAggregatesFilter<"profissional_saude"> | string | null
     email?: StringNullableWithAggregatesFilter<"profissional_saude"> | string | null
+    senha?: StringWithAggregatesFilter<"profissional_saude"> | string
   }
 
   export type templateWhereInput = {
@@ -8727,6 +8746,7 @@ export namespace Prisma {
     conselho_numero?: string | null
     especialidade?: string | null
     email?: string | null
+    senha: string
     consulta?: consultaCreateNestedManyWithoutProfissional_saudeInput
   }
 
@@ -8737,6 +8757,7 @@ export namespace Prisma {
     conselho_numero?: string | null
     especialidade?: string | null
     email?: string | null
+    senha: string
     consulta?: consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput
   }
 
@@ -8747,6 +8768,7 @@ export namespace Prisma {
     conselho_numero?: NullableStringFieldUpdateOperationsInput | string | null
     especialidade?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
     consulta?: consultaUpdateManyWithoutProfissional_saudeNestedInput
   }
 
@@ -8757,6 +8779,7 @@ export namespace Prisma {
     conselho_numero?: NullableStringFieldUpdateOperationsInput | string | null
     especialidade?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
     consulta?: consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput
   }
 
@@ -8767,6 +8790,7 @@ export namespace Prisma {
     conselho_numero?: string | null
     especialidade?: string | null
     email?: string | null
+    senha: string
   }
 
   export type profissional_saudeUpdateManyMutationInput = {
@@ -8776,6 +8800,7 @@ export namespace Prisma {
     conselho_numero?: NullableStringFieldUpdateOperationsInput | string | null
     especialidade?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
   }
 
   export type profissional_saudeUncheckedUpdateManyInput = {
@@ -8785,6 +8810,7 @@ export namespace Prisma {
     conselho_numero?: NullableStringFieldUpdateOperationsInput | string | null
     especialidade?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
   }
 
   export type templateCreateInput = {
@@ -9194,6 +9220,7 @@ export namespace Prisma {
     conselho_numero?: SortOrder
     especialidade?: SortOrder
     email?: SortOrder
+    senha?: SortOrder
   }
 
   export type profissional_saudeMaxOrderByAggregateInput = {
@@ -9203,6 +9230,7 @@ export namespace Prisma {
     conselho_numero?: SortOrder
     especialidade?: SortOrder
     email?: SortOrder
+    senha?: SortOrder
   }
 
   export type profissional_saudeMinOrderByAggregateInput = {
@@ -9212,6 +9240,7 @@ export namespace Prisma {
     conselho_numero?: SortOrder
     especialidade?: SortOrder
     email?: SortOrder
+    senha?: SortOrder
   }
 
   export type templateCountOrderByAggregateInput = {
@@ -9700,6 +9729,7 @@ export namespace Prisma {
     conselho_numero?: string | null
     especialidade?: string | null
     email?: string | null
+    senha: string
   }
 
   export type profissional_saudeUncheckedCreateWithoutConsultaInput = {
@@ -9709,6 +9739,7 @@ export namespace Prisma {
     conselho_numero?: string | null
     especialidade?: string | null
     email?: string | null
+    senha: string
   }
 
   export type profissional_saudeCreateOrConnectWithoutConsultaInput = {
@@ -9812,6 +9843,7 @@ export namespace Prisma {
     conselho_numero?: NullableStringFieldUpdateOperationsInput | string | null
     especialidade?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
   }
 
   export type profissional_saudeUncheckedUpdateWithoutConsultaInput = {
@@ -9821,6 +9853,7 @@ export namespace Prisma {
     conselho_numero?: NullableStringFieldUpdateOperationsInput | string | null
     especialidade?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
   }
 
   export type unidade_saudeUpsertWithoutConsultaInput = {

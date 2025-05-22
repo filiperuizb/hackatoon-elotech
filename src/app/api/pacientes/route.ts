@@ -14,9 +14,21 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
     try {
-        const pacientes = await prisma.paciente.findMany();
-        return NextResponse.json(pacientes, {status: 200});
+        const { searchParams } = new URL(request.url);
+
+        const filters: any = {};
+        const nome = searchParams.get("nome");
+        const cpf = searchParams.get("cpf");
+        const telefone = searchParams.get("telefone");
+
+        if (nome) filters.nome = { contains: nome, mode: "insensitive" };
+        if (cpf) filters.cpf = cpf;
+        if (telefone) filters.telefone = { contains: telefone, mode: "insensitive" };
+
+        const pacientes = await prisma.paciente.findMany({ where: filters });
+        return NextResponse.json(pacientes, { status: 200 });
     } catch (error) {
-        return NextResponse.json({error: "Não foi possível listar os pacientes"}, {status: 500});
+        console.error("Error: ", error);
+        return NextResponse.json({ error: "Não foi possível listar os pacientes" }, { status: 500 });
     }
 }

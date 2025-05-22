@@ -155,7 +155,8 @@ exports.Prisma.Profissional_saudeScalarFieldEnum = {
   conselho_tipo: 'conselho_tipo',
   conselho_numero: 'conselho_numero',
   especialidade: 'especialidade',
-  email: 'email'
+  email: 'email',
+  senha: 'senha'
 };
 
 exports.Prisma.TemplateScalarFieldEnum = {

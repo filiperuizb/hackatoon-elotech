@@ -52,6 +52,7 @@ model profissional_saude {
   especialidade   String?
   email           String?
   consulta        consulta[]
+  senha           String
 }
 
 model template {
