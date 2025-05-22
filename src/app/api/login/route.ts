@@ -6,27 +6,41 @@ import jwt from "jsonwebtoken";
 const SECRET = process.env.JWT_SECRET || "mvp";
 
 export async function POST(req: NextRequest) {
-    const { email, senha } = await req.json();
+    const { login, senha } = await req.json();
 
+    const isEmail = login.includes('@');
+    
     const profissional = await prisma.profissional_saude.findFirst({
-        where: { email },
-        select: { id: true, nome: true, email: true, senha: true }
+        where: isEmail 
+            ? { email: login }
+            : { documento_numero: login },
+        include: {
+            tipo_documento: true
+        }
     });
 
     if (!profissional || !profissional.senha) {
-        return NextResponse.json({ error: "Email ou senha inválidos" }, { status: 401 });
+        return NextResponse.json({ error: "Credenciais inválidas" }, { status: 401 });
     }
 
     const senhaOk = await bcrypt.compare(senha, profissional.senha);
     if (!senhaOk) {
-        return NextResponse.json({ error: "Email ou senha inválidos" }, { status: 401 });
+        return NextResponse.json({ error: "Credenciais inválidas" }, { status: 401 });
     }
 
+    const { senha: _, ...userInfo } = profissional;
+
     const token = jwt.sign(
-        { id: profissional.id, email: profissional.email, nome: profissional.nome },
+        {
+            id: profissional.id,
+            nome: profissional.nome,
+            email: profissional.email,
+            documento: profissional.documento_numero,
+            tipoDocumento: profissional.tipo_documento?.nome
+        },
         SECRET,
         { expiresIn: "8h" }
     );
 
-    return NextResponse.json({ token });
+    return NextResponse.json({ token, user: userInfo });
 }

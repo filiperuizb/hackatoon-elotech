@@ -120,6 +120,18 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.Tipo_documentoScalarFieldEnum = {
+  id: 'id',
+  nome: 'nome',
+  descricao: 'descricao'
+};
+
+exports.Prisma.EspecialidadeScalarFieldEnum = {
+  id: 'id',
+  nome: 'nome',
+  descricao: 'descricao'
+};
+
 exports.Prisma.ConsultaScalarFieldEnum = {
   id: 'id',
   paciente_id: 'paciente_id',
@@ -152,11 +164,12 @@ exports.Prisma.PrescricaoScalarFieldEnum = {
 exports.Prisma.Profissional_saudeScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
-  conselho_tipo: 'conselho_tipo',
-  conselho_numero: 'conselho_numero',
-  especialidade: 'especialidade',
+  documento_numero: 'documento_numero',
+  tipo_documento_id: 'tipo_documento_id',
+  especialidade_id: 'especialidade_id',
   email: 'email',
-  senha: 'senha'
+  senha: 'senha',
+  data_nascimento: 'data_nascimento'
 };
 
 exports.Prisma.TemplateScalarFieldEnum = {
@@ -193,6 +206,8 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
+  tipo_documento: 'tipo_documento',
+  especialidade: 'especialidade',
   consulta: 'consulta',
   paciente: 'paciente',
   prescricao: 'prescricao',

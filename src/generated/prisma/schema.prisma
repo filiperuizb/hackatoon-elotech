@@ -8,6 +8,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model tipo_documento {
+  id                 String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome               String               @unique // CRM, CRO, COREN, etc.
+  descricao          String?
+  profissional_saude profissional_saude[]
+}
+
+model especialidade {
+  id                 String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome               String               @unique // Cardiologia, Dermatologia, etc.
+  descricao          String?
+  profissional_saude profissional_saude[]
+}
+
 model consulta {
   id                 String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   paciente_id        String?             @db.Uuid
@@ -44,15 +58,19 @@ model prescricao {
   consulta    consulta? @relation(fields: [consulta_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 }
 
+// Modelo atualizado com relações
 model profissional_saude {
-  id              String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  nome            String
-  conselho_tipo   String?    @db.VarChar(10)
-  conselho_numero String?    @db.VarChar(20)
-  especialidade   String?
-  email           String?
-  consulta        consulta[]
-  senha           String
+  id                String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome              String
+  documento_numero  String?         @db.VarChar(20) // Número do documento (ex: número do CRM)
+  tipo_documento_id String?         @db.Uuid
+  especialidade_id  String?         @db.Uuid
+  email             String?         @unique
+  senha             String
+  data_nascimento   DateTime?       @db.Date
+  consulta          consulta[]
+  tipo_documento    tipo_documento? @relation(fields: [tipo_documento_id], references: [id])
+  especialidade     especialidade?  @relation(fields: [especialidade_id], references: [id])
 }
 
 model template {

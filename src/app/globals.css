@@ -2,17 +2,20 @@
 
 @font-face {
   font-family: CodeBold;
-  src: url('/fonts/codebold.otf') format('opentype');
+  src: url("/fonts/codebold.otf") format("opentype");
 }
 
 .code-bold {
   font-family: CodeBold;
 }
 
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #4d9d74;
+  --primary-light: #3a8a64;
+  --secondary: #0a5173;
+  --secondary-light: #0c6990;
 }
 
 @theme inline {
@@ -22,14 +25,223 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+input:focus {
+  outline: none;
+  border-color: #4d9d74;
+  box-shadow: 0 0 0 1px #4d9d74;
+}
+
+::placeholder {
+  color: #9ca3af;
+}
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.dashboard-content {
+  flex: 1;
+  margin-left: 0;
+  padding-top: 64px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .dashboard-content {
+    margin-left: 256px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+.notification {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  max-width: 320px;
+}
+
+.notification-success {
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  color: #065f46;
+}
+
+.notification-error {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+}
+
+.notification-info {
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  color: #1e40af;
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animated::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-animated:hover::after {
+  width: 300%;
+  height: 300%;
+}
+
+.table-row-animated {
+  transition: background-color 0.2s ease;
+}
+
+.table-row-animated:hover {
+  background-color: rgba(77, 157, 116, 0.05);
+}
+
+.input-animated {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-animated:focus {
+  border-color: #4d9d74;
+  box-shadow: 0 0 0 2px rgba(77, 157, 116, 0.2);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.menu-item-hover {
+  transition: transform 0.2s ease;
+}
+
+.menu-item-hover:hover {
+  transform: translateX(5px);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.bounce-animation {
+  animation: bounce 2s infinite;
+}
+
+.scale-on-hover {
+  transition: transform 0.2s ease;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
 }
