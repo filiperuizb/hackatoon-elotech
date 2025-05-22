@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🗺️ Roadmap do MVP – SPA
 
-## Getting Started
+## ✅ Fase 1 – Planejamento e Estruturação
 
-First, run the development server:
+**Tecnologias principais:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js (Fullstack – API + Frontend)
+- PostgreSQL (Neon Free)
+- Prisma ORM
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Subir o commit com o prisma configurado
+- Documentar roadmap e divisão de tarefas no README.md
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧱 Fase 2 – Banco de Dados e ORM
 
-## Learn More
+- Modelar entidades principais:
+  - Paciente
+  - ProfissionalSaude
+  - Consulta
+  - Template
+  - Prescricao
+  - UnidadeSaude
+- Criar arquivo `schema.prisma` com os modelos
+- Rodar `npx prisma migrate dev` para gerar o banco no Neon
+- Preencher o banco com dados fake (Seed opcional)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Fase 3 – Backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Criar API REST em `/api` com Next.js:
+  - `POST /pacientes`
+  - `GET /pacientes/:id`
+  - `POST /consultas`
+  - `GET /consultas/:pacienteId`
+  - `GET /templates?sintoma=...`
+- Conectar API ao banco via Prisma
+- Tratar erros e retornos padronizados (status, JSON)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Fase 4 – Frontend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Login do profissional (mockado com localStorage)
+- Tela de busca/cadastro de paciente
+- Tela de nova consulta com:
+  - Formulário inteligente (templates adaptativos)
+  - Campos essenciais
+  - Reconhecimento de voz (Web Speech API)
+- Tela de histórico por paciente
+- Tela de dashboard simples com gráficos (produtividade, sintomas)
+
+---
+
+## 🚀 Fase 5 – Funcionalidades Inteligentes
+
+- Sugestões automáticas de conduta (baseadas em sintomas)
+- Templates sazonais (gripe, dengue)
+- Reconhecimento de voz (dictation e transcrição)
+- Offline first com sincronização simulada (localStorage ou IndexedDB)
