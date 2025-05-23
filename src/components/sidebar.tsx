@@ -8,14 +8,12 @@ import {
   Users,
   Calendar,
   FileText,
-  FileSpreadsheet,
   LogOut,
   Menu,
   X,
   User,
   ChevronDown,
   Pill,
-  Stethoscope,
   ClipboardList,
   LayoutDashboard,
   Building2,
@@ -37,16 +35,12 @@ const menuStructure = [
   },
   {
     category: "Documentos",
-    items: [
-      { id: "prescriptions", name: "Prescrições", href: "/prescricoes", icon: FileText },
-      { id: "templates", name: "Templates", href: "/templates", icon: FileSpreadsheet },
-    ],
+    items: [{ id: "prescriptions", name: "Prescrições", href: "/prescricoes", icon: FileText }],
   },
   {
     category: "Recursos",
     items: [
       { id: "medications", name: "Medicamentos", href: "/medicamentos", icon: Pill },
-      { id: "procedures", name: "Procedimentos", href: "/procedimentos", icon: Stethoscope },
       { id: "health-units", name: "Unidades", href: "/unidades", icon: Building2 },
     ],
   },

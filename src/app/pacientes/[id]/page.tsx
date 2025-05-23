@@ -7,12 +7,14 @@ import { useRouter, useParams } from "next/navigation"
 import Header from "@/components/header"
 import { Save, ArrowLeft, Trash2, AlertCircle, CheckCircle } from "lucide-react"
 import { motion } from "framer-motion"
+import { formatCPF, formatTelefone } from "@/lib/utils/formatters"
 
 interface Paciente {
   id: string
   nome: string
   cpf: string
   data_nascimento: string
+  idade: number
   telefone: string
   email: string
 }
@@ -23,6 +25,7 @@ export default function EditarPaciente() {
     nome: "",
     cpf: "",
     data_nascimento: "",
+    idade: 0,
     telefone: "",
     email: "",
   })
@@ -37,13 +40,24 @@ export default function EditarPaciente() {
   useEffect(() => {
     const fetchPaciente = async () => {
       try {
+        setLoading(true)
         const res = await fetch(`/api/pacientes/${id}`)
-        if (!res.ok) throw new Error("Falha ao buscar dados do paciente")
+
+        if (!res.ok) {
+          const errorData = await res.json()
+          throw new Error(errorData.error || "Falha ao buscar dados do paciente")
+        }
+
         const data = await res.json()
-        setPaciente(data)
-      } catch (error) {
+
+        setPaciente({
+          ...data,
+          cpf: formatCPF(data.cpf || ""),
+          telefone: formatTelefone(data.telefone || ""),
+        })
+      } catch (error: any) {
         console.error("Erro:", error)
-        setError("Não foi possível carregar os dados do paciente")
+        setError(error.message || "Não foi possível carregar os dados do paciente")
       } finally {
         setLoading(false)
       }
@@ -56,6 +70,43 @@ export default function EditarPaciente() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
+
+    if (name === "cpf") {
+      const cpfClean = value.replace(/\D/g, "")
+
+      const cpfLimited = cpfClean.slice(0, 11)
+
+      const cpfFormatted =
+        cpfLimited.length <= 3
+          ? cpfLimited
+          : cpfLimited.length <= 6
+            ? `${cpfLimited.slice(0, 3)}.${cpfLimited.slice(3)}`
+            : cpfLimited.length <= 9
+              ? `${cpfLimited.slice(0, 3)}.${cpfLimited.slice(3, 6)}.${cpfLimited.slice(6)}`
+              : `${cpfLimited.slice(0, 3)}.${cpfLimited.slice(3, 6)}.${cpfLimited.slice(6, 9)}-${cpfLimited.slice(9)}`
+
+      setPaciente((prev) => ({ ...prev, cpf: cpfFormatted }))
+      return
+    }
+
+    if (name === "telefone") {
+      const telClean = value.replace(/\D/g, "")
+
+      const telLimited = telClean.slice(0, 11)
+
+      const telFormatted =
+        telLimited.length <= 2
+          ? telLimited
+          : telLimited.length <= 6
+            ? `(${telLimited.slice(0, 2)}) ${telLimited.slice(2)}`
+            : telLimited.length <= 10
+              ? `(${telLimited.slice(0, 2)}) ${telLimited.slice(2, 6)}-${telLimited.slice(6)}`
+              : `(${telLimited.slice(0, 2)}) ${telLimited.slice(2, 3)}${telLimited.slice(3, 7)}-${telLimited.slice(7)}`
+
+      setPaciente((prev) => ({ ...prev, telefone: telFormatted }))
+      return
+    }
+
     setPaciente((prev) => ({
       ...prev,
       [name]: value,
@@ -68,24 +119,33 @@ export default function EditarPaciente() {
     setError("")
     setSuccess("")
 
+    const pacienteToSubmit = {
+      ...paciente,
+      cpf: paciente.cpf.replace(/\D/g, ""),
+      telefone: paciente.telefone.replace(/\D/g, ""),
+    }
+
     try {
       const res = await fetch(`/api/pacientes/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(paciente),
+        body: JSON.stringify(pacienteToSubmit),
       })
 
-      if (!res.ok) throw new Error("Falha ao atualizar paciente")
+      if (!res.ok) {
+        const errorData = await res.json()
+        throw new Error(errorData.error || "Falha ao atualizar paciente")
+      }
 
       setSuccess("Paciente atualizado com sucesso!")
       setTimeout(() => {
         router.push("/pacientes")
       }, 2000)
-    } catch (error) {
+    } catch (error: any) {
       console.error("Erro ao salvar:", error)
-      setError("Ocorreu um erro ao salvar as alterações")
+      setError(error.message || "Ocorreu um erro ao salvar as alterações")
     } finally {
       setSaving(false)
     }
@@ -99,24 +159,32 @@ export default function EditarPaciente() {
         method: "DELETE",
       })
 
-      if (!res.ok) throw new Error("Falha ao excluir paciente")
+      if (!res.ok) {
+        const errorData = await res.json()
+        throw new Error(errorData.error || "Falha ao excluir paciente")
+      }
 
       router.push("/pacientes")
-    } catch (error) {
+    } catch (error: any) {
       console.error("Erro ao excluir:", error)
-      setError("Ocorreu um erro ao excluir o paciente")
+      setError(error.message || "Ocorreu um erro ao excluir o paciente")
     }
   }
 
   const formatDateForInput = (dateString: string) => {
     if (!dateString) return ""
-    const date = new Date(dateString)
-    return date.toISOString().split("T")[0]
+    try {
+      const date = new Date(dateString)
+      return date.toISOString().split("T")[0]
+    } catch (error) {
+      console.error("Erro ao formatar data:", error)
+      return ""
+    }
   }
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
         <Header title="Carregando..." />
         <div className="p-6">
           <div className="bg-white rounded-xl shadow-sm p-6">
@@ -137,7 +205,7 @@ export default function EditarPaciente() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Header title="Editar Paciente" />
 
       <main className="p-6">
@@ -190,6 +258,7 @@ export default function EditarPaciente() {
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
                   required
+                  placeholder="000.000.000-00"
                 />
               </div>
 
@@ -220,6 +289,7 @@ export default function EditarPaciente() {
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
                   required
+                  placeholder="(00) 00000-0000"
                 />
               </div>
 

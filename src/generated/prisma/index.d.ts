@@ -4367,11 +4367,13 @@ export namespace Prisma {
   }
 
   export type PacienteAvgAggregateOutputType = {
+    idade: number | null
     altura: Decimal | null
     peso: Decimal | null
   }
 
   export type PacienteSumAggregateOutputType = {
+    idade: number | null
     altura: Decimal | null
     peso: Decimal | null
   }
@@ -4379,6 +4381,7 @@ export namespace Prisma {
   export type PacienteMinAggregateOutputType = {
     id: string | null
     nome: string | null
+    idade: number | null
     data_nascimento: Date | null
     sexo: string | null
     cpf: string | null
@@ -4408,6 +4411,7 @@ export namespace Prisma {
   export type PacienteMaxAggregateOutputType = {
     id: string | null
     nome: string | null
+    idade: number | null
     data_nascimento: Date | null
     sexo: string | null
     cpf: string | null
@@ -4437,6 +4441,7 @@ export namespace Prisma {
   export type PacienteCountAggregateOutputType = {
     id: number
     nome: number
+    idade: number
     data_nascimento: number
     sexo: number
     cpf: number
@@ -4466,11 +4471,13 @@ export namespace Prisma {
 
 
   export type PacienteAvgAggregateInputType = {
+    idade?: true
     altura?: true
     peso?: true
   }
 
   export type PacienteSumAggregateInputType = {
+    idade?: true
     altura?: true
     peso?: true
   }
@@ -4478,6 +4485,7 @@ export namespace Prisma {
   export type PacienteMinAggregateInputType = {
     id?: true
     nome?: true
+    idade?: true
     data_nascimento?: true
     sexo?: true
     cpf?: true
@@ -4507,6 +4515,7 @@ export namespace Prisma {
   export type PacienteMaxAggregateInputType = {
     id?: true
     nome?: true
+    idade?: true
     data_nascimento?: true
     sexo?: true
     cpf?: true
@@ -4536,6 +4545,7 @@ export namespace Prisma {
   export type PacienteCountAggregateInputType = {
     id?: true
     nome?: true
+    idade?: true
     data_nascimento?: true
     sexo?: true
     cpf?: true
@@ -4652,6 +4662,7 @@ export namespace Prisma {
   export type PacienteGroupByOutputType = {
     id: string
     nome: string
+    idade: number
     data_nascimento: Date
     sexo: string | null
     cpf: string | null
@@ -4700,6 +4711,7 @@ export namespace Prisma {
   export type pacienteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
+    idade?: boolean
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
@@ -4732,6 +4744,7 @@ export namespace Prisma {
   export type pacienteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
+    idade?: boolean
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
@@ -4761,6 +4774,7 @@ export namespace Prisma {
   export type pacienteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
+    idade?: boolean
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
@@ -4790,6 +4804,7 @@ export namespace Prisma {
   export type pacienteSelectScalar = {
     id?: boolean
     nome?: boolean
+    idade?: boolean
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
@@ -4816,7 +4831,7 @@ export namespace Prisma {
     updated_at?: boolean
   }
 
-  export type pacienteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "data_nascimento" | "sexo" | "cpf" | "telefone" | "email" | "alergias" | "altura" | "bairro" | "cep" | "cidade" | "complemento" | "created_at" | "endereco" | "estado" | "medicamentos_uso" | "nome_responsavel" | "numero" | "observacoes" | "peso" | "rg" | "telefone_contato" | "telefone_responsavel" | "tipo_sanguineo" | "updated_at", ExtArgs["result"]["paciente"]>
+  export type pacienteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "idade" | "data_nascimento" | "sexo" | "cpf" | "telefone" | "email" | "alergias" | "altura" | "bairro" | "cep" | "cidade" | "complemento" | "created_at" | "endereco" | "estado" | "medicamentos_uso" | "nome_responsavel" | "numero" | "observacoes" | "peso" | "rg" | "telefone_contato" | "telefone_responsavel" | "tipo_sanguineo" | "updated_at", ExtArgs["result"]["paciente"]>
   export type pacienteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     consulta?: boolean | paciente$consultaArgs<ExtArgs>
     prontuario?: boolean | paciente$prontuarioArgs<ExtArgs>
@@ -4834,6 +4849,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       nome: string
+      idade: number
       data_nascimento: Date
       sexo: string | null
       cpf: string | null
@@ -5285,6 +5301,7 @@ export namespace Prisma {
   interface pacienteFieldRefs {
     readonly id: FieldRef<"paciente", 'String'>
     readonly nome: FieldRef<"paciente", 'String'>
+    readonly idade: FieldRef<"paciente", 'Int'>
     readonly data_nascimento: FieldRef<"paciente", 'DateTime'>
     readonly sexo: FieldRef<"paciente", 'String'>
     readonly cpf: FieldRef<"paciente", 'String'>
@@ -12947,17 +12964,17 @@ export namespace Prisma {
     id: string | null
     duracao: string | null
     created_at: Date | null
-    data_fim: Date | null
-    data_inicio: Date | null
     dosagem: string | null
     frequencia: string | null
-    medicamento_id: string | null
-    medicamento_nome: string | null
     observacoes: string | null
     prontuario_id: string | null
+    updated_at: Date | null
+    data_fim: Date | null
+    data_inicio: Date | null
+    medicamento_id: string | null
+    medicamento_nome: string | null
     quantidade: string | null
     status: string | null
-    updated_at: Date | null
     via_administracao: string | null
   }
 
@@ -12965,17 +12982,17 @@ export namespace Prisma {
     id: string | null
     duracao: string | null
     created_at: Date | null
-    data_fim: Date | null
-    data_inicio: Date | null
     dosagem: string | null
     frequencia: string | null
-    medicamento_id: string | null
-    medicamento_nome: string | null
     observacoes: string | null
     prontuario_id: string | null
+    updated_at: Date | null
+    data_fim: Date | null
+    data_inicio: Date | null
+    medicamento_id: string | null
+    medicamento_nome: string | null
     quantidade: string | null
     status: string | null
-    updated_at: Date | null
     via_administracao: string | null
   }
 
@@ -12983,17 +13000,17 @@ export namespace Prisma {
     id: number
     duracao: number
     created_at: number
-    data_fim: number
-    data_inicio: number
     dosagem: number
     frequencia: number
-    medicamento_id: number
-    medicamento_nome: number
     observacoes: number
     prontuario_id: number
+    updated_at: number
+    data_fim: number
+    data_inicio: number
+    medicamento_id: number
+    medicamento_nome: number
     quantidade: number
     status: number
-    updated_at: number
     via_administracao: number
     _all: number
   }
@@ -13003,17 +13020,17 @@ export namespace Prisma {
     id?: true
     duracao?: true
     created_at?: true
-    data_fim?: true
-    data_inicio?: true
     dosagem?: true
     frequencia?: true
-    medicamento_id?: true
-    medicamento_nome?: true
     observacoes?: true
     prontuario_id?: true
+    updated_at?: true
+    data_fim?: true
+    data_inicio?: true
+    medicamento_id?: true
+    medicamento_nome?: true
     quantidade?: true
     status?: true
-    updated_at?: true
     via_administracao?: true
   }
 
@@ -13021,17 +13038,17 @@ export namespace Prisma {
     id?: true
     duracao?: true
     created_at?: true
-    data_fim?: true
-    data_inicio?: true
     dosagem?: true
     frequencia?: true
-    medicamento_id?: true
-    medicamento_nome?: true
     observacoes?: true
     prontuario_id?: true
+    updated_at?: true
+    data_fim?: true
+    data_inicio?: true
+    medicamento_id?: true
+    medicamento_nome?: true
     quantidade?: true
     status?: true
-    updated_at?: true
     via_administracao?: true
   }
 
@@ -13039,17 +13056,17 @@ export namespace Prisma {
     id?: true
     duracao?: true
     created_at?: true
-    data_fim?: true
-    data_inicio?: true
     dosagem?: true
     frequencia?: true
-    medicamento_id?: true
-    medicamento_nome?: true
     observacoes?: true
     prontuario_id?: true
+    updated_at?: true
+    data_fim?: true
+    data_inicio?: true
+    medicamento_id?: true
+    medicamento_nome?: true
     quantidade?: true
     status?: true
-    updated_at?: true
     via_administracao?: true
     _all?: true
   }
@@ -13130,17 +13147,17 @@ export namespace Prisma {
     id: string
     duracao: string | null
     created_at: Date
-    data_fim: Date | null
-    data_inicio: Date
     dosagem: string | null
     frequencia: string | null
-    medicamento_id: string | null
-    medicamento_nome: string | null
     observacoes: string | null
     prontuario_id: string
+    updated_at: Date
+    data_fim: Date | null
+    data_inicio: Date
+    medicamento_id: string | null
+    medicamento_nome: string | null
     quantidade: string | null
     status: string
-    updated_at: Date
     via_administracao: string | null
     _count: PrescricaoCountAggregateOutputType | null
     _min: PrescricaoMinAggregateOutputType | null
@@ -13165,17 +13182,17 @@ export namespace Prisma {
     id?: boolean
     duracao?: boolean
     created_at?: boolean
-    data_fim?: boolean
-    data_inicio?: boolean
     dosagem?: boolean
     frequencia?: boolean
-    medicamento_id?: boolean
-    medicamento_nome?: boolean
     observacoes?: boolean
     prontuario_id?: boolean
+    updated_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    medicamento_id?: boolean
+    medicamento_nome?: boolean
     quantidade?: boolean
     status?: boolean
-    updated_at?: boolean
     via_administracao?: boolean
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
     prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
@@ -13185,17 +13202,17 @@ export namespace Prisma {
     id?: boolean
     duracao?: boolean
     created_at?: boolean
-    data_fim?: boolean
-    data_inicio?: boolean
     dosagem?: boolean
     frequencia?: boolean
-    medicamento_id?: boolean
-    medicamento_nome?: boolean
     observacoes?: boolean
     prontuario_id?: boolean
+    updated_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    medicamento_id?: boolean
+    medicamento_nome?: boolean
     quantidade?: boolean
     status?: boolean
-    updated_at?: boolean
     via_administracao?: boolean
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
     prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
@@ -13205,17 +13222,17 @@ export namespace Prisma {
     id?: boolean
     duracao?: boolean
     created_at?: boolean
-    data_fim?: boolean
-    data_inicio?: boolean
     dosagem?: boolean
     frequencia?: boolean
-    medicamento_id?: boolean
-    medicamento_nome?: boolean
     observacoes?: boolean
     prontuario_id?: boolean
+    updated_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    medicamento_id?: boolean
+    medicamento_nome?: boolean
     quantidade?: boolean
     status?: boolean
-    updated_at?: boolean
     via_administracao?: boolean
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
     prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
@@ -13225,21 +13242,21 @@ export namespace Prisma {
     id?: boolean
     duracao?: boolean
     created_at?: boolean
-    data_fim?: boolean
-    data_inicio?: boolean
     dosagem?: boolean
     frequencia?: boolean
-    medicamento_id?: boolean
-    medicamento_nome?: boolean
     observacoes?: boolean
     prontuario_id?: boolean
+    updated_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    medicamento_id?: boolean
+    medicamento_nome?: boolean
     quantidade?: boolean
     status?: boolean
-    updated_at?: boolean
     via_administracao?: boolean
   }
 
-  export type prescricaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "duracao" | "created_at" | "data_fim" | "data_inicio" | "dosagem" | "frequencia" | "medicamento_id" | "medicamento_nome" | "observacoes" | "prontuario_id" | "quantidade" | "status" | "updated_at" | "via_administracao", ExtArgs["result"]["prescricao"]>
+  export type prescricaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "duracao" | "created_at" | "dosagem" | "frequencia" | "observacoes" | "prontuario_id" | "updated_at" | "data_fim" | "data_inicio" | "medicamento_id" | "medicamento_nome" | "quantidade" | "status" | "via_administracao", ExtArgs["result"]["prescricao"]>
   export type prescricaoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
     prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
@@ -13263,17 +13280,17 @@ export namespace Prisma {
       id: string
       duracao: string | null
       created_at: Date
-      data_fim: Date | null
-      data_inicio: Date
       dosagem: string | null
       frequencia: string | null
-      medicamento_id: string | null
-      medicamento_nome: string | null
       observacoes: string | null
       prontuario_id: string
+      updated_at: Date
+      data_fim: Date | null
+      data_inicio: Date
+      medicamento_id: string | null
+      medicamento_nome: string | null
       quantidade: string | null
       status: string
-      updated_at: Date
       via_administracao: string | null
     }, ExtArgs["result"]["prescricao"]>
     composites: {}
@@ -13703,17 +13720,17 @@ export namespace Prisma {
     readonly id: FieldRef<"prescricao", 'String'>
     readonly duracao: FieldRef<"prescricao", 'String'>
     readonly created_at: FieldRef<"prescricao", 'DateTime'>
-    readonly data_fim: FieldRef<"prescricao", 'DateTime'>
-    readonly data_inicio: FieldRef<"prescricao", 'DateTime'>
     readonly dosagem: FieldRef<"prescricao", 'String'>
     readonly frequencia: FieldRef<"prescricao", 'String'>
-    readonly medicamento_id: FieldRef<"prescricao", 'String'>
-    readonly medicamento_nome: FieldRef<"prescricao", 'String'>
     readonly observacoes: FieldRef<"prescricao", 'String'>
     readonly prontuario_id: FieldRef<"prescricao", 'String'>
+    readonly updated_at: FieldRef<"prescricao", 'DateTime'>
+    readonly data_fim: FieldRef<"prescricao", 'DateTime'>
+    readonly data_inicio: FieldRef<"prescricao", 'DateTime'>
+    readonly medicamento_id: FieldRef<"prescricao", 'String'>
+    readonly medicamento_nome: FieldRef<"prescricao", 'String'>
     readonly quantidade: FieldRef<"prescricao", 'String'>
     readonly status: FieldRef<"prescricao", 'String'>
-    readonly updated_at: FieldRef<"prescricao", 'DateTime'>
     readonly via_administracao: FieldRef<"prescricao", 'String'>
   }
     
@@ -17566,6 +17583,7 @@ export namespace Prisma {
   export const PacienteScalarFieldEnum: {
     id: 'id',
     nome: 'nome',
+    idade: 'idade',
     data_nascimento: 'data_nascimento',
     sexo: 'sexo',
     cpf: 'cpf',
@@ -17702,17 +17720,17 @@ export namespace Prisma {
     id: 'id',
     duracao: 'duracao',
     created_at: 'created_at',
-    data_fim: 'data_fim',
-    data_inicio: 'data_inicio',
     dosagem: 'dosagem',
     frequencia: 'frequencia',
-    medicamento_id: 'medicamento_id',
-    medicamento_nome: 'medicamento_nome',
     observacoes: 'observacoes',
     prontuario_id: 'prontuario_id',
+    updated_at: 'updated_at',
+    data_fim: 'data_fim',
+    data_inicio: 'data_inicio',
+    medicamento_id: 'medicamento_id',
+    medicamento_nome: 'medicamento_nome',
     quantidade: 'quantidade',
     status: 'status',
-    updated_at: 'updated_at',
     via_administracao: 'via_administracao'
   };
 
@@ -17808,6 +17826,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -17843,16 +17875,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
+   * Reference to a field of type 'Float'
    */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
 
 
   /**
-   * Reference to a field of type 'Int[]'
+   * Reference to a field of type 'Float[]'
    */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -17955,6 +17987,7 @@ export namespace Prisma {
     NOT?: pacienteWhereInput | pacienteWhereInput[]
     id?: UuidFilter<"paciente"> | string
     nome?: StringFilter<"paciente"> | string
+    idade?: IntFilter<"paciente"> | number
     data_nascimento?: DateTimeFilter<"paciente"> | Date | string
     sexo?: StringNullableFilter<"paciente"> | string | null
     cpf?: StringNullableFilter<"paciente"> | string | null
@@ -17986,6 +18019,7 @@ export namespace Prisma {
   export type pacienteOrderByWithRelationInput = {
     id?: SortOrder
     nome?: SortOrder
+    idade?: SortOrder
     data_nascimento?: SortOrder
     sexo?: SortOrderInput | SortOrder
     cpf?: SortOrderInput | SortOrder
@@ -18021,6 +18055,7 @@ export namespace Prisma {
     OR?: pacienteWhereInput[]
     NOT?: pacienteWhereInput | pacienteWhereInput[]
     nome?: StringFilter<"paciente"> | string
+    idade?: IntFilter<"paciente"> | number
     data_nascimento?: DateTimeFilter<"paciente"> | Date | string
     sexo?: StringNullableFilter<"paciente"> | string | null
     telefone?: StringNullableFilter<"paciente"> | string | null
@@ -18051,6 +18086,7 @@ export namespace Prisma {
   export type pacienteOrderByWithAggregationInput = {
     id?: SortOrder
     nome?: SortOrder
+    idade?: SortOrder
     data_nascimento?: SortOrder
     sexo?: SortOrderInput | SortOrder
     cpf?: SortOrderInput | SortOrder
@@ -18088,6 +18124,7 @@ export namespace Prisma {
     NOT?: pacienteScalarWhereWithAggregatesInput | pacienteScalarWhereWithAggregatesInput[]
     id?: UuidWithAggregatesFilter<"paciente"> | string
     nome?: StringWithAggregatesFilter<"paciente"> | string
+    idade?: IntWithAggregatesFilter<"paciente"> | number
     data_nascimento?: DateTimeWithAggregatesFilter<"paciente"> | Date | string
     sexo?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     cpf?: StringNullableWithAggregatesFilter<"paciente"> | string | null
@@ -18665,17 +18702,17 @@ export namespace Prisma {
     id?: UuidFilter<"prescricao"> | string
     duracao?: StringNullableFilter<"prescricao"> | string | null
     created_at?: DateTimeFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
-    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
     dosagem?: StringNullableFilter<"prescricao"> | string | null
     frequencia?: StringNullableFilter<"prescricao"> | string | null
-    medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
-    medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
     observacoes?: StringNullableFilter<"prescricao"> | string | null
     prontuario_id?: UuidFilter<"prescricao"> | string
+    updated_at?: DateTimeFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
+    medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
+    medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
     quantidade?: StringNullableFilter<"prescricao"> | string | null
     status?: StringFilter<"prescricao"> | string
-    updated_at?: DateTimeFilter<"prescricao"> | Date | string
     via_administracao?: StringNullableFilter<"prescricao"> | string | null
     medicamento?: XOR<MedicamentoNullableScalarRelationFilter, medicamentoWhereInput> | null
     prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
@@ -18685,17 +18722,17 @@ export namespace Prisma {
     id?: SortOrder
     duracao?: SortOrderInput | SortOrder
     created_at?: SortOrder
-    data_fim?: SortOrderInput | SortOrder
-    data_inicio?: SortOrder
     dosagem?: SortOrderInput | SortOrder
     frequencia?: SortOrderInput | SortOrder
-    medicamento_id?: SortOrderInput | SortOrder
-    medicamento_nome?: SortOrderInput | SortOrder
     observacoes?: SortOrderInput | SortOrder
     prontuario_id?: SortOrder
+    updated_at?: SortOrder
+    data_fim?: SortOrderInput | SortOrder
+    data_inicio?: SortOrder
+    medicamento_id?: SortOrderInput | SortOrder
+    medicamento_nome?: SortOrderInput | SortOrder
     quantidade?: SortOrderInput | SortOrder
     status?: SortOrder
-    updated_at?: SortOrder
     via_administracao?: SortOrderInput | SortOrder
     medicamento?: medicamentoOrderByWithRelationInput
     prontuario?: prontuarioOrderByWithRelationInput
@@ -18708,17 +18745,17 @@ export namespace Prisma {
     NOT?: prescricaoWhereInput | prescricaoWhereInput[]
     duracao?: StringNullableFilter<"prescricao"> | string | null
     created_at?: DateTimeFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
-    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
     dosagem?: StringNullableFilter<"prescricao"> | string | null
     frequencia?: StringNullableFilter<"prescricao"> | string | null
-    medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
-    medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
     observacoes?: StringNullableFilter<"prescricao"> | string | null
     prontuario_id?: UuidFilter<"prescricao"> | string
+    updated_at?: DateTimeFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
+    medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
+    medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
     quantidade?: StringNullableFilter<"prescricao"> | string | null
     status?: StringFilter<"prescricao"> | string
-    updated_at?: DateTimeFilter<"prescricao"> | Date | string
     via_administracao?: StringNullableFilter<"prescricao"> | string | null
     medicamento?: XOR<MedicamentoNullableScalarRelationFilter, medicamentoWhereInput> | null
     prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
@@ -18728,17 +18765,17 @@ export namespace Prisma {
     id?: SortOrder
     duracao?: SortOrderInput | SortOrder
     created_at?: SortOrder
-    data_fim?: SortOrderInput | SortOrder
-    data_inicio?: SortOrder
     dosagem?: SortOrderInput | SortOrder
     frequencia?: SortOrderInput | SortOrder
-    medicamento_id?: SortOrderInput | SortOrder
-    medicamento_nome?: SortOrderInput | SortOrder
     observacoes?: SortOrderInput | SortOrder
     prontuario_id?: SortOrder
+    updated_at?: SortOrder
+    data_fim?: SortOrderInput | SortOrder
+    data_inicio?: SortOrder
+    medicamento_id?: SortOrderInput | SortOrder
+    medicamento_nome?: SortOrderInput | SortOrder
     quantidade?: SortOrderInput | SortOrder
     status?: SortOrder
-    updated_at?: SortOrder
     via_administracao?: SortOrderInput | SortOrder
     _count?: prescricaoCountOrderByAggregateInput
     _max?: prescricaoMaxOrderByAggregateInput
@@ -18752,17 +18789,17 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<"prescricao"> | string
     duracao?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableWithAggregatesFilter<"prescricao"> | Date | string | null
-    data_inicio?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
     dosagem?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     frequencia?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
-    medicamento_id?: UuidNullableWithAggregatesFilter<"prescricao"> | string | null
-    medicamento_nome?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     observacoes?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     prontuario_id?: UuidWithAggregatesFilter<"prescricao"> | string
+    updated_at?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableWithAggregatesFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
+    medicamento_id?: UuidNullableWithAggregatesFilter<"prescricao"> | string | null
+    medicamento_nome?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     quantidade?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     status?: StringWithAggregatesFilter<"prescricao"> | string
-    updated_at?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
     via_administracao?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
   }
 
@@ -19092,6 +19129,7 @@ export namespace Prisma {
   export type pacienteCreateInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -19123,6 +19161,7 @@ export namespace Prisma {
   export type pacienteUncheckedCreateInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -19154,6 +19193,7 @@ export namespace Prisma {
   export type pacienteUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19185,6 +19225,7 @@ export namespace Prisma {
   export type pacienteUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19216,6 +19257,7 @@ export namespace Prisma {
   export type pacienteCreateManyInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -19245,6 +19287,7 @@ export namespace Prisma {
   export type pacienteUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19274,6 +19317,7 @@ export namespace Prisma {
   export type pacienteUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19911,15 +19955,15 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
     medicamento?: medicamentoCreateNestedOneWithoutPrescricaoInput
     prontuario: prontuarioCreateNestedOneWithoutPrescricaoInput
@@ -19929,17 +19973,17 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_id?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
     prontuario_id: string
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_id?: string | null
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
   }
 
@@ -19947,15 +19991,15 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento?: medicamentoUpdateOneWithoutPrescricaoNestedInput
     prontuario?: prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput
@@ -19965,17 +20009,17 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     prontuario_id?: StringFieldUpdateOperationsInput | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -19983,17 +20027,17 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_id?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
     prontuario_id: string
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_id?: string | null
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
   }
 
@@ -20001,15 +20045,15 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -20017,17 +20061,17 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     prontuario_id?: StringFieldUpdateOperationsInput | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -20437,6 +20481,17 @@ export namespace Prisma {
     descricao?: SortOrder
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -20482,6 +20537,7 @@ export namespace Prisma {
   export type pacienteCountOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
+    idade?: SortOrder
     data_nascimento?: SortOrder
     sexo?: SortOrder
     cpf?: SortOrder
@@ -20509,6 +20565,7 @@ export namespace Prisma {
   }
 
   export type pacienteAvgOrderByAggregateInput = {
+    idade?: SortOrder
     altura?: SortOrder
     peso?: SortOrder
   }
@@ -20516,6 +20573,7 @@ export namespace Prisma {
   export type pacienteMaxOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
+    idade?: SortOrder
     data_nascimento?: SortOrder
     sexo?: SortOrder
     cpf?: SortOrder
@@ -20545,6 +20603,7 @@ export namespace Prisma {
   export type pacienteMinOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
+    idade?: SortOrder
     data_nascimento?: SortOrder
     sexo?: SortOrder
     cpf?: SortOrder
@@ -20572,8 +20631,25 @@ export namespace Prisma {
   }
 
   export type pacienteSumOrderByAggregateInput = {
+    idade?: SortOrder
     altura?: SortOrder
     peso?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -21025,17 +21101,17 @@ export namespace Prisma {
     id?: SortOrder
     duracao?: SortOrder
     created_at?: SortOrder
-    data_fim?: SortOrder
-    data_inicio?: SortOrder
     dosagem?: SortOrder
     frequencia?: SortOrder
-    medicamento_id?: SortOrder
-    medicamento_nome?: SortOrder
     observacoes?: SortOrder
     prontuario_id?: SortOrder
+    updated_at?: SortOrder
+    data_fim?: SortOrder
+    data_inicio?: SortOrder
+    medicamento_id?: SortOrder
+    medicamento_nome?: SortOrder
     quantidade?: SortOrder
     status?: SortOrder
-    updated_at?: SortOrder
     via_administracao?: SortOrder
   }
 
@@ -21043,17 +21119,17 @@ export namespace Prisma {
     id?: SortOrder
     duracao?: SortOrder
     created_at?: SortOrder
-    data_fim?: SortOrder
-    data_inicio?: SortOrder
     dosagem?: SortOrder
     frequencia?: SortOrder
-    medicamento_id?: SortOrder
-    medicamento_nome?: SortOrder
     observacoes?: SortOrder
     prontuario_id?: SortOrder
+    updated_at?: SortOrder
+    data_fim?: SortOrder
+    data_inicio?: SortOrder
+    medicamento_id?: SortOrder
+    medicamento_nome?: SortOrder
     quantidade?: SortOrder
     status?: SortOrder
-    updated_at?: SortOrder
     via_administracao?: SortOrder
   }
 
@@ -21061,17 +21137,17 @@ export namespace Prisma {
     id?: SortOrder
     duracao?: SortOrder
     created_at?: SortOrder
-    data_fim?: SortOrder
-    data_inicio?: SortOrder
     dosagem?: SortOrder
     frequencia?: SortOrder
-    medicamento_id?: SortOrder
-    medicamento_nome?: SortOrder
     observacoes?: SortOrder
     prontuario_id?: SortOrder
+    updated_at?: SortOrder
+    data_fim?: SortOrder
+    data_inicio?: SortOrder
+    medicamento_id?: SortOrder
+    medicamento_nome?: SortOrder
     quantidade?: SortOrder
     status?: SortOrder
-    updated_at?: SortOrder
     via_administracao?: SortOrder
   }
 
@@ -21325,6 +21401,14 @@ export namespace Prisma {
     connectOrCreate?: prontuarioCreateOrConnectWithoutPacienteInput | prontuarioCreateOrConnectWithoutPacienteInput[]
     createMany?: prontuarioCreateManyPacienteInputEnvelope
     connect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -22050,6 +22134,33 @@ export namespace Prisma {
     not?: NestedDecimalNullableFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string | null
   }
 
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -22442,6 +22553,7 @@ export namespace Prisma {
   export type pacienteCreateWithoutConsultaInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -22472,6 +22584,7 @@ export namespace Prisma {
   export type pacienteUncheckedCreateWithoutConsultaInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -22580,6 +22693,7 @@ export namespace Prisma {
   export type pacienteUpdateWithoutConsultaInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22610,6 +22724,7 @@ export namespace Prisma {
   export type pacienteUncheckedUpdateWithoutConsultaInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22715,15 +22830,15 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
     medicamento?: medicamentoCreateNestedOneWithoutPrescricaoInput
   }
@@ -22732,16 +22847,16 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
+    observacoes?: string | null
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
     medicamento_id?: string | null
     medicamento_nome?: string | null
-    observacoes?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
   }
 
@@ -22790,6 +22905,7 @@ export namespace Prisma {
   export type pacienteCreateWithoutProntuarioInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -22820,6 +22936,7 @@ export namespace Prisma {
   export type pacienteUncheckedCreateWithoutProntuarioInput = {
     id?: string
     nome: string
+    idade: number
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
@@ -22908,17 +23025,17 @@ export namespace Prisma {
     id?: UuidFilter<"prescricao"> | string
     duracao?: StringNullableFilter<"prescricao"> | string | null
     created_at?: DateTimeFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
-    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
     dosagem?: StringNullableFilter<"prescricao"> | string | null
     frequencia?: StringNullableFilter<"prescricao"> | string | null
-    medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
-    medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
     observacoes?: StringNullableFilter<"prescricao"> | string | null
     prontuario_id?: UuidFilter<"prescricao"> | string
+    updated_at?: DateTimeFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
+    medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
+    medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
     quantidade?: StringNullableFilter<"prescricao"> | string | null
     status?: StringFilter<"prescricao"> | string
-    updated_at?: DateTimeFilter<"prescricao"> | Date | string
     via_administracao?: StringNullableFilter<"prescricao"> | string | null
   }
 
@@ -22967,6 +23084,7 @@ export namespace Prisma {
   export type pacienteUpdateWithoutProntuarioInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -22997,6 +23115,7 @@ export namespace Prisma {
   export type pacienteUncheckedUpdateWithoutProntuarioInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
+    idade?: IntFieldUpdateOperationsInput | number
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
@@ -23420,15 +23539,15 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
     prontuario: prontuarioCreateNestedOneWithoutPrescricaoInput
   }
@@ -23437,16 +23556,16 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
     prontuario_id: string
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
   }
 
@@ -24178,16 +24297,16 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
+    observacoes?: string | null
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
     medicamento_id?: string | null
     medicamento_nome?: string | null
-    observacoes?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
   }
 
@@ -24206,15 +24325,15 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento?: medicamentoUpdateOneWithoutPrescricaoNestedInput
   }
@@ -24223,16 +24342,16 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -24240,16 +24359,16 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -24380,16 +24499,16 @@ export namespace Prisma {
     id?: string
     duracao?: string | null
     created_at?: Date | string
-    data_fim?: Date | string | null
-    data_inicio?: Date | string
     dosagem?: string | null
     frequencia?: string | null
-    medicamento_nome?: string | null
     observacoes?: string | null
     prontuario_id: string
+    updated_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    medicamento_nome?: string | null
     quantidade?: string | null
     status?: string
-    updated_at?: Date | string
     via_administracao?: string | null
   }
 
@@ -24397,15 +24516,15 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
     prontuario?: prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput
   }
@@ -24414,16 +24533,16 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     prontuario_id?: StringFieldUpdateOperationsInput | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -24431,16 +24550,16 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dosagem?: NullableStringFieldUpdateOperationsInput | string | null
     frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     prontuario_id?: StringFieldUpdateOperationsInput | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
     quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 

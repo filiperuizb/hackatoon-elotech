@@ -135,6 +135,7 @@ exports.Prisma.EspecialidadeScalarFieldEnum = {
 exports.Prisma.PacienteScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
+  idade: 'idade',
   data_nascimento: 'data_nascimento',
   sexo: 'sexo',
   cpf: 'cpf',
@@ -250,17 +251,17 @@ exports.Prisma.PrescricaoScalarFieldEnum = {
   id: 'id',
   duracao: 'duracao',
   created_at: 'created_at',
-  data_fim: 'data_fim',
-  data_inicio: 'data_inicio',
   dosagem: 'dosagem',
   frequencia: 'frequencia',
-  medicamento_id: 'medicamento_id',
-  medicamento_nome: 'medicamento_nome',
   observacoes: 'observacoes',
   prontuario_id: 'prontuario_id',
+  updated_at: 'updated_at',
+  data_fim: 'data_fim',
+  data_inicio: 'data_inicio',
+  medicamento_id: 'medicamento_id',
+  medicamento_nome: 'medicamento_nome',
   quantidade: 'quantidade',
   status: 'status',
-  updated_at: 'updated_at',
   via_administracao: 'via_administracao'
 };
 

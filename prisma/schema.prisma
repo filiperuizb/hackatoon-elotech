@@ -25,6 +25,7 @@ model especialidade {
 model paciente {
   id                   String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nome                 String
+  idade                Int
   data_nascimento      DateTime     @db.Date
   sexo                 String?      @db.Char(1)
   cpf                  String?      @unique @db.VarChar(14)
@@ -155,17 +156,17 @@ model prescricao {
   id                String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   duracao           String?
   created_at        DateTime     @default(now())
-  data_fim          DateTime?
-  data_inicio       DateTime     @default(now())
   dosagem           String?
   frequencia        String?
-  medicamento_id    String?      @db.Uuid
-  medicamento_nome  String?
   observacoes       String?
   prontuario_id     String       @db.Uuid
+  updated_at        DateTime     @updatedAt
+  data_fim          DateTime?
+  data_inicio       DateTime     @default(now())
+  medicamento_id    String?      @db.Uuid
+  medicamento_nome  String?
   quantidade        String?
   status            String       @default("Ativa")
-  updated_at        DateTime     @updatedAt
   via_administracao String?
   medicamento       medicamento? @relation(fields: [medicamento_id], references: [id])
   prontuario        prontuario   @relation(fields: [prontuario_id], references: [id], onDelete: Cascade)

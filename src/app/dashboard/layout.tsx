@@ -1,6 +1,5 @@
 import type React from "react"
 import Sidebar from "@/components/sidebar"
-import Footer from "@/components/footer"
 
 export default function DashboardLayout({
   children,
@@ -12,7 +11,6 @@ export default function DashboardLayout({
       <Sidebar />
       <div className="dashboard-content flex-1 flex flex-col">
         {children}
-        <Footer />
       </div>
     </div>
   )

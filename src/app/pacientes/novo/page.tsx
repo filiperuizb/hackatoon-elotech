@@ -31,6 +31,42 @@ export default function NovoPaciente() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
+
+    if (name === "cpf") {
+      const cpfClean = value.replace(/\D/g, "")
+
+      const cpfLimited = cpfClean.slice(0, 11)
+
+      const cpfFormatted =
+        cpfLimited.length <= 3
+          ? cpfLimited
+          : cpfLimited.length <= 6
+            ? `${cpfLimited.slice(0, 3)}.${cpfLimited.slice(3)}`
+            : cpfLimited.length <= 9
+              ? `${cpfLimited.slice(0, 3)}.${cpfLimited.slice(3, 6)}.${cpfLimited.slice(6)}`
+              : `${cpfLimited.slice(0, 3)}.${cpfLimited.slice(3, 6)}.${cpfLimited.slice(6, 9)}-${cpfLimited.slice(9)}`
+
+      setPaciente((prev) => ({ ...prev, cpf: cpfFormatted }))
+      return
+    }
+
+    if (name === "telefone") {
+      const telClean = value.replace(/\D/g, "")
+      const telLimited = telClean.slice(0, 11)
+
+      const telFormatted =
+        telLimited.length <= 2
+          ? telLimited
+          : telLimited.length <= 6
+            ? `(${telLimited.slice(0, 2)}) ${telLimited.slice(2)}`
+            : telLimited.length <= 10
+              ? `(${telLimited.slice(0, 2)}) ${telLimited.slice(2, 6)}-${telLimited.slice(6)}`
+              : `(${telLimited.slice(0, 2)}) ${telLimited.slice(2, 3)}${telLimited.slice(3, 7)}-${telLimited.slice(7)}`
+
+      setPaciente((prev) => ({ ...prev, telefone: telFormatted }))
+      return
+    }
+
     setPaciente((prev) => ({
       ...prev,
       [name]: value,
@@ -43,13 +79,19 @@ export default function NovoPaciente() {
     setError("")
     setSuccess("")
 
+    const pacienteToSubmit = {
+      ...paciente,
+      cpf: paciente.cpf.replace(/\D/g, ""),
+      telefone: paciente.telefone.replace(/\D/g, ""),
+    }
+
     try {
       const res = await fetch("/api/pacientes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(paciente),
+        body: JSON.stringify(pacienteToSubmit),
       })
 
       if (!res.ok) throw new Error("Falha ao cadastrar paciente")
@@ -67,7 +109,7 @@ export default function NovoPaciente() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Header title="Novo Paciente" />
 
       <main className="p-6">
@@ -129,6 +171,7 @@ export default function NovoPaciente() {
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
                   required
+                  placeholder="000.000.000-00"
                 />
               </motion.div>
 
@@ -167,6 +210,7 @@ export default function NovoPaciente() {
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
                   required
+                  placeholder="(00) 00000-0000"
                 />
               </motion.div>
 
