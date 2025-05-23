@@ -4,125 +4,146 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useRouter, useParams } from "next/navigation"
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import Header from "@/components/header"
+import { Save, ArrowLeft, Trash2, AlertCircle, CheckCircle } from "lucide-react"
+import { motion } from "framer-motion"
 
-interface TipoProcedimento {
+interface Medicamento {
   id: string
   nome: string
+  principio_ativo: string
+  concentracao: string
+  forma_farmaceutica: string
+  fabricante: string | null
+  ativo: boolean
 }
 
-export default function EditarProcedimentoPage() {
+export default function EditarMedicamento() {
   const router = useRouter()
   const params = useParams()
   const id = params.id as string
 
-  const [tiposProcedimento, setTiposProcedimento] = useState<TipoProcedimento[]>([])
-  const [formData, setFormData] = useState({
+  const [medicamento, setMedicamento] = useState<Medicamento>({
+    id: "",
     nome: "",
-    codigo: "",
-    descricao: "",
-    valor: "",
-    tipo_procedimento_id: "",
+    principio_ativo: "",
+    concentracao: "",
+    forma_farmaceutica: "",
+    fabricante: "",
+    ativo: true,
   })
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchMedicamento = async () => {
       try {
-        const tiposResponse = await fetch("/api/tipos-procedimento")
+        const response = await fetch(`/api/medicamentos/${id}`)
 
-        if (!tiposResponse.ok) {
-          throw new Error("Erro ao buscar tipos de procedimento")
+        if (!response.ok) {
+          throw new Error("Erro ao buscar medicamento")
         }
 
-        const tiposData = await tiposResponse.json()
-        setTiposProcedimento(tiposData)
-
-        const procedimentoResponse = await fetch(`/api/procedimentos/${id}`)
-
-        if (!procedimentoResponse.ok) {
-          throw new Error("Erro ao buscar procedimento")
-        }
-
-        const procedimentoData = await procedimentoResponse.json()
-        setFormData({
-          nome: procedimentoData.nome,
-          codigo: procedimentoData.codigo,
-          descricao: procedimentoData.descricao || "",
-          valor: procedimentoData.valor ? procedimentoData.valor.toString() : "",
-          tipo_procedimento_id: procedimentoData.tipo_procedimento_id,
+        const data = await response.json()
+        setMedicamento({
+          id: data.id,
+          nome: data.nome,
+          principio_ativo: data.principio_ativo || "",
+          concentracao: data.concentracao || "",
+          forma_farmaceutica: data.forma_farmaceutica || "",
+          fabricante: data.fabricante || "",
+          ativo: data.ativo !== false, 
         })
       } catch (error) {
         console.error("Erro:", error)
-        alert("Não foi possível carregar os dados do procedimento")
-        router.push("/procedimentos")
+        setError("Não foi possível carregar os dados do medicamento")
       } finally {
         setLoading(false)
       }
     }
 
-    fetchData()
-  }, [id, router])
+    fetchMedicamento()
+  }, [id])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    setMedicamento((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSaving(true)
+    setError("")
+    setSuccess("")
 
     try {
-      setSaving(true)
-
-      if (!formData.nome || !formData.codigo || !formData.tipo_procedimento_id) {
-        alert("Nome, código e tipo de procedimento são obrigatórios")
+      if (!medicamento.nome || !medicamento.principio_ativo || !medicamento.concentracao || !medicamento.forma_farmaceutica) {
+        setError("Nome, princípio ativo, concentração e forma farmacêutica são obrigatórios")
         setSaving(false)
         return
       }
 
-      const valorNumerico = formData.valor ? Number.parseFloat(formData.valor) : null
-
-      const response = await fetch(`/api/procedimentos/${id}`, {
+      const response = await fetch(`/api/medicamentos/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          valor: valorNumerico,
-        }),
+        body: JSON.stringify(medicamento),
       })
 
       if (!response.ok) {
-        throw new Error("Erro ao atualizar procedimento")
+        throw new Error("Erro ao atualizar medicamento")
       }
 
-      alert("Procedimento atualizado com sucesso!")
-      router.push("/procedimentos")
+      setSuccess("Medicamento atualizado com sucesso!")
+      setTimeout(() => {
+        router.push("/medicamentos")
+      }, 2000)
     } catch (error) {
       console.error("Erro:", error)
-      alert("Não foi possível atualizar o procedimento")
+      setError("Não foi possível atualizar o medicamento")
     } finally {
       setSaving(false)
     }
   }
 
+  const handleDelete = async () => {
+    if (!confirm("Tem certeza que deseja excluir este medicamento? Esta ação não pode ser desfeita.")) return
+
+    try {
+      const response = await fetch(`/api/medicamentos/${id}`, {
+        method: "DELETE",
+      })
+
+      if (!response.ok) throw new Error("Falha ao excluir medicamento")
+
+      router.push("/medicamentos")
+    } catch (error) {
+      console.error("Erro ao excluir:", error)
+      setError("Ocorreu um erro ao excluir o medicamento")
+    }
+  }
+
   if (loading) {
     return (
-      <div className="space-y-4">
-        <div className="flex items-center gap-2">
-          <div className="h-5 w-5 bg-gray-200 rounded animate-pulse"></div>
-          <div className="h-8 w-48 bg-gray-200 rounded animate-pulse"></div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow p-6">
-          <div className="space-y-4">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="h-12 bg-gray-200 rounded animate-pulse"></div>
-            ))}
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        <Header title="Carregando..." />
+        <div className="p-6">
+          <div className="bg-white rounded-xl shadow-sm p-6">
+            <div className="animate-pulse space-y-4">
+              <div className="h-8 bg-gray-200 rounded w-1/4"></div>
+              <div className="h-12 bg-gray-200 rounded"></div>
+              <div className="h-12 bg-gray-200 rounded"></div>
+              <div className="h-12 bg-gray-200 rounded"></div>
+              <div className="h-12 bg-gray-200 rounded"></div>
+              <div className="h-12 bg-gray-200 rounded"></div>
+              <div className="h-12 bg-gray-200 rounded w-1/3"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,102 +151,155 @@ export default function EditarProcedimentoPage() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center gap-2">
-        <Link href="/procedimentos" className="text-gray-500 hover:text-gray-700">
-          <ArrowLeft className="h-5 w-5" />
-        </Link>
-        <h1 className="text-2xl font-bold text-gray-800">Editar Procedimento</h1>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <Header title="Editar Medicamento" />
 
-      <div className="bg-white rounded-lg shadow p-6">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Código *</label>
-              <input
-                type="text"
-                name="codigo"
-                value={formData.codigo}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4d9d74] focus:border-transparent"
-              />
+      <main className="p-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-xl shadow-sm overflow-hidden"
+        >
+          {error && (
+            <div className="p-4 bg-red-50 border-l-4 border-red-500 flex items-start mb-6">
+              <AlertCircle size={20} className="text-red-500 mr-3 mt-0.5 flex-shrink-0" />
+              <p className="text-red-700">{error}</p>
+            </div>
+          )}
+
+          {success && (
+            <div className="p-4 bg-green-50 border-l-4 border-green-500 flex items-start mb-6">
+              <CheckCircle size={20} className="text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+              <p className="text-green-700">{success}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Nome do Medicamento *</label>
+                <input
+                  type="text"
+                  name="nome"
+                  value={medicamento.nome}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Princípio Ativo *</label>
+                <input
+                  type="text"
+                  name="principio_ativo"
+                  value={medicamento.principio_ativo}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Concentração *</label>
+                <input
+                  type="text"
+                  name="concentracao"
+                  value={medicamento.concentracao}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Ex: 500mg"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Forma Farmacêutica *</label>
+                <select
+                  name="forma_farmaceutica"
+                  value={medicamento.forma_farmaceutica}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                >
+                  <option value="">Selecione uma forma</option>
+                  <option value="Comprimido">Comprimido</option>
+                  <option value="Cápsula">Cápsula</option>
+                  <option value="Solução">Solução</option>
+                  <option value="Suspensão">Suspensão</option>
+                  <option value="Injetável">Injetável</option>
+                  <option value="Pomada">Pomada</option>
+                  <option value="Creme">Creme</option>
+                  <option value="Gel">Gel</option>
+                  <option value="Spray">Spray</option>
+                  <option value="Gotas">Gotas</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Fabricante</label>
+                <input
+                  type="text"
+                  name="fabricante"
+                  value={medicamento.fabricante || ""}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <select
+                  name="ativo"
+                  value={medicamento.ativo ? "true" : "false"}
+                  onChange={(e) =>
+                    setMedicamento({
+                      ...medicamento,
+                      ativo: e.target.value === "true",
+                    })
+                  }
+                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                >
+                  <option value="true">Ativo</option>
+                  <option value="false">Inativo</option>
+                </select>
+              </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Tipo de Procedimento *</label>
-              <select
-                name="tipo_procedimento_id"
-                value={formData.tipo_procedimento_id}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4d9d74] focus:border-transparent"
+            <div className="mt-8 flex flex-col sm:flex-row justify-between gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  type="button"
+                  onClick={() => router.push("/medicamentos")}
+                  className="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50"
+                >
+                  <ArrowLeft size={18} className="mr-2" />
+                  Voltar
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleDelete}
+                  className="flex items-center justify-center px-4 py-2 border border-red-300 rounded-lg text-red-700 bg-white hover:bg-red-50"
+                >
+                  <Trash2 size={18} className="mr-2" />
+                  Excluir
+                </button>
+              </div>
+
+              <button
+                type="submit"
+                disabled={saving}
+                className="flex items-center justify-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <option value="">Selecione um tipo</option>
-                {tiposProcedimento.map((tipo) => (
-                  <option key={tipo.id} value={tipo.id}>
-                    {tipo.nome}
-                  </option>
-                ))}
-              </select>
+                <Save size={18} className="mr-2" />
+                {saving ? "Salvando..." : "Salvar alterações"}
+              </button>
             </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Nome do Procedimento *</label>
-            <input
-              type="text"
-              name="nome"
-              value={formData.nome}
-              onChange={handleInputChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4d9d74] focus:border-transparent"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Descrição</label>
-            <textarea
-              name="descricao"
-              value={formData.descricao}
-              onChange={handleInputChange}
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4d9d74] focus:border-transparent"
-            ></textarea>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Valor (R$)</label>
-            <input
-              type="number"
-              name="valor"
-              step="0.01"
-              min="0"
-              value={formData.valor}
-              onChange={handleInputChange}
-              placeholder="0,00"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4d9d74] focus:border-transparent"
-            />
-          </div>
-
-          <div className="flex justify-end gap-2 pt-4">
-            <Link
-              href="/procedimentos"
-              className="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors"
-            >
-              Cancelar
-            </Link>
-            <button
-              type="submit"
-              disabled={saving}
-              className="px-4 py-2 bg-[#4d9d74] text-white rounded-md hover:bg-[#3a7d59] transition-colors disabled:opacity-50"
-            >
-              {saving ? "Salvando..." : "Salvar"}
-            </button>
-          </div>
-        </form>
-      </div>
+          </form>
+        </motion.div>
+      </main>
     </div>
   )
 }

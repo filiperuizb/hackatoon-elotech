@@ -141,15 +141,7 @@ export default function Medicamentos() {
   }
 
   const handleEdit = (medicamento: Medicamento) => {
-    setFormData({
-      nome: medicamento.nome,
-      principio_ativo: medicamento.principio_ativo,
-      concentracao: medicamento.concentracao,
-      forma_farmaceutica: medicamento.forma_farmaceutica,
-      fabricante: medicamento.fabricante || "",
-    })
-    setEditingId(medicamento.id)
-    setIsModalOpen(true)
+    router.push(`/medicamentos/${medicamento.id}`);
   }
 
   const handleDelete = async (id: string) => {

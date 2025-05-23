@@ -28,6 +28,7 @@ interface Unidade {
   observacoes?: string
   cidade?: string
   estado?: string
+  descricao?: string
 }
 
 export default function EditarUnidade() {
@@ -215,247 +216,126 @@ export default function EditarUnidade() {
           <form onSubmit={handleSubmit} className="p-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="lg:col-span-1 space-y-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="code-bold text-lg text-gray-800 mb-4 flex items-center">
-                    <Building2 size={20} className="mr-2 text-[#4d9d74]" />
-                    Dados da Unidade
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
-                        Nome da Unidade *
-                      </label>
-                      <input
-                        type="text"
-                        id="nome"
-                        name="nome"
-                        value={unidade.nome}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="tipo_id" className="block text-sm font-medium text-gray-700 mb-1">
-                        Tipo de Unidade *
-                      </label>
-                      <select
-                        id="tipo_id"
-                        name="tipo_id"
-                        value={unidade.tipo_id || ""}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        required
-                      >
-                        <option value="">Selecione um tipo</option>
-                        {tiposUnidade.map((tipo) => (
-                          <option key={tipo.id} value={tipo.id}>
-                            {tipo.nome}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="cnes" className="block text-sm font-medium text-gray-700 mb-1">
-                        CNES (Cadastro Nacional de Estabelecimentos de Saúde)
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Hash size={16} className="text-gray-400" />
-                        </div>
-                        <input
-                          type="text"
-                          id="cnes"
-                          name="cnes"
-                          value={unidade.cnes || ""}
-                          onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                          placeholder="0000000"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div>
+                  <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
+                    Nome da Unidade *
+                  </label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    value={unidade?.nome || ''}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="tipo_id" className="block text-sm font-medium text-gray-700 mb-1">
+                    Tipo de Unidade *
+                  </label>
+                  <select
+                    id="tipo_id"
+                    name="tipo_id"
+                    value={unidade?.tipo_id || ''}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                    required
+                  >
+                    <option value="">Selecione um tipo</option>
+                    {tiposUnidade.map((tipo) => (
+                      <option key={tipo.id} value={tipo.id}>
+                        {tipo.nome}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
 
               <div className="lg:col-span-1 space-y-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="code-bold text-lg text-gray-800 mb-4 flex items-center">
-                    <MapPin size={20} className="mr-2 text-[#4d9d74]" />
-                    Contato e Localização
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="endereco" className="block text-sm font-medium text-gray-700 mb-1">
-                        Endereço
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <MapPin size={16} className="text-gray-400" />
-                        </div>
-                        <input
-                          type="text"
-                          id="endereco"
-                          name="endereco"
-                          value={unidade.endereco || ""}
-                          onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                          placeholder="Rua, número, bairro"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="cidade" className="block text-sm font-medium text-gray-700 mb-1">
-                          Cidade
-                        </label>
-                        <input
-                          type="text"
-                          id="cidade"
-                          name="cidade"
-                          value={unidade.cidade || ""}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="estado" className="block text-sm font-medium text-gray-700 mb-1">
-                          Estado
-                        </label>
-                        <select
-                          id="estado"
-                          name="estado"
-                          value={unidade.estado || ""}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        >
-                          <option value="">Selecione</option>
-                          {estados.map((estado) => (
-                            <option key={estado.sigla} value={estado.sigla}>
-                              {estado.sigla} - {estado.nome}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="telefone" className="block text-sm font-medium text-gray-700 mb-1">
-                        Telefone
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Phone size={16} className="text-gray-400" />
-                        </div>
-                        <input
-                          type="tel"
-                          id="telefone"
-                          name="telefone"
-                          value={unidade.telefone || ""}
-                          onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                          placeholder="(00) 0000-0000"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Mail size={16} className="text-gray-400" />
-                        </div>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={unidade.email || ""}
-                          onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                          placeholder="exemplo@email.com"
-                        />
-                      </div>
-                    </div>
+                <div>
+                  <label htmlFor="endereco" className="block text-sm font-medium text-gray-700 mb-1">
+                    Endereço
+                  </label>
+                  <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                    value={unidade?.endereco || ''}
+                    onChange={handleChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                  />
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="cidade" className="block text-sm font-medium text-gray-700 mb-1">
+                      Cidade
+                    </label>
+                    <input
+                      type="text"
+                      id="cidade"
+                      name="cidade"
+                      value={unidade?.cidade || ''}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="estado" className="block text-sm font-medium text-gray-700 mb-1">
+                      Estado
+                    </label>
+                    <select
+                      id="estado"
+                      name="estado"
+                      value={unidade?.estado || ''}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                    >
+                      <option value="">Selecione</option>
+                      {estados.map((estado) => (
+                        <option key={estado.sigla} value={estado.sigla}>
+                          {estado.nome}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
               </div>
 
               <div className="lg:col-span-2">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="code-bold text-lg text-gray-800 mb-4 flex items-center">
-                    <Clock size={20} className="mr-2 text-[#4d9d74]" />
-                    Informações Adicionais
-                  </h3>
-
-                  <div className="space-y-4">
-                    <div>
-                      <label htmlFor="horario_funcionamento" className="block text-sm font-medium text-gray-700 mb-1">
-                        Horário de Funcionamento
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Clock size={16} className="text-gray-400" />
-                        </div>
-                        <input
-                          type="text"
-                          id="horario_funcionamento"
-                          name="horario_funcionamento"
-                          value={unidade.horario_funcionamento || ""}
-                          onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                          placeholder="Ex: Segunda a Sexta, 8h às 18h"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700 mb-1">
-                        Observações
-                      </label>
-                      <textarea
-                        id="observacoes"
-                        name="observacoes"
-                        value={unidade.observacoes || ""}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        placeholder="Informações adicionais sobre a unidade..."
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
+                <label htmlFor="descricao" className="block text-sm font-medium text-gray-700 mb-1">
+                  Descrição
+                </label>
+                <textarea
+                  id="descricao"
+                  name="descricao"
+                  value={unidade?.descricao || ''}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                />
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row justify-between gap-4">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+            <div className="mt-8 flex flex-col sm:flex-row justify-end gap-4">
+              <button
                 type="button"
-                onClick={() => router.push("/unidades")}
-                className="flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50"
+                onClick={() => router.push('/unidades')}
+                className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
               >
-                <ArrowLeft size={18} className="mr-2" />
                 Cancelar
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+              </button>
+              
+              <button
                 type="submit"
                 disabled={saving}
-                className="code-bold flex items-center justify-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-8 py-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed btn-animated"
+                className="px-6 py-2 bg-[#4d9d74] hover:bg-[#3a8a64] text-white rounded-lg disabled:opacity-50"
               >
-                <Save size={18} className="mr-2" />
-                {saving ? "Salvando..." : "Salvar Alterações"}
-              </motion.button>
+                {saving ? "Salvando..." : "Salvar alterações"}
+              </button>
             </div>
           </form>
         </motion.div>
