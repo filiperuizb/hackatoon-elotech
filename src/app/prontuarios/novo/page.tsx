@@ -103,7 +103,6 @@ export default function NovoProntuario() {
     observacoes: "",
     retorno: "",
   })
-
   const [pacientes, setPacientes] = useState<Paciente[]>([])
   const [profissionais, setProfissionais] = useState<Profissional[]>([])
   const [consultas, setConsultas] = useState<Consulta[]>([])
@@ -114,6 +113,12 @@ export default function NovoProntuario() {
   const [prescricoes, setPrescricoes] = useState<PrescricaoItem[]>([])
   const [showMedicamentoSearch, setShowMedicamentoSearch] = useState(false)
   const [medicamentoSearch, setMedicamentoSearch] = useState("")
+  
+  // Search filters for dropdowns
+  const [pacienteFilter, setPacienteFilter] = useState("")
+  const [profissionalFilter, setProfissionalFilter] = useState("")
+  const [consultaFilter, setConsultaFilter] = useState("")
+  
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
@@ -456,67 +461,148 @@ export default function NovoProntuario() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">                    <div>
                       <label htmlFor="paciente_id" className="block text-sm font-medium text-gray-700 mb-1">
                         Paciente *
                       </label>
-                      <select
-                        id="paciente_id"
-                        name="paciente_id"
-                        value={prontuario.paciente_id}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
-                        required
-                      >
-                        <option value="">Selecione um paciente</option>
-                        {pacientes.map((paciente) => (
-                          <option key={paciente.id} value={paciente.id}>
-                            {paciente.nome} - {paciente.cpf}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          list="pacientes-list"
+                          placeholder="Digite para buscar paciente..."
+                          value={pacienteFilter}
+                          onChange={(e) => {
+                            setPacienteFilter(e.target.value);
+                            const displayValue = e.target.value;
+                            const selectedPaciente = pacientes.find(p => 
+                              `${p.nome} - ${p.cpf || ''}` === displayValue
+                            );
+                            if (selectedPaciente) {
+                              setProntuario(prev => ({
+                                ...prev,
+                                paciente_id: selectedPaciente.id
+                              }));
+                            }
+                          }}
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                          required
+                        />
+                        <datalist id="pacientes-list">
+                          {pacientes
+                            .filter(paciente => 
+                              pacienteFilter === "" || 
+                              paciente.nome.toLowerCase().includes(pacienteFilter.toLowerCase()) || 
+                              (paciente.cpf && paciente.cpf.includes(pacienteFilter))
+                            )
+                            .map(paciente => (
+                              <option key={paciente.id} value={`${paciente.nome} - ${paciente.cpf || ''}`} />
+                            ))}
+                        </datalist>
+                        <input 
+                          type="hidden" 
+                          id="paciente_id" 
+                          name="paciente_id" 
+                          value={prontuario.paciente_id}
+                        />
+                      </div>
+                    </div>                    <div>
                       <label htmlFor="profissional_id" className="block text-sm font-medium text-gray-700 mb-1">
                         Profissional *
                       </label>
-                      <select
-                        id="profissional_id"
-                        name="profissional_id"
-                        value={prontuario.profissional_id}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
-                        required
-                      >
-                        <option value="">Selecione um profissional</option>
-                        {profissionais.map((profissional) => (
-                          <option key={profissional.id} value={profissional.id}>
-                            {profissional.nome} - {profissional.especialidade?.nome || "Não informado"}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          list="profissionais-list"
+                          placeholder="Digite para buscar profissional..."
+                          value={profissionalFilter}
+                          onChange={(e) => {
+                            setProfissionalFilter(e.target.value);
+                            const displayValue = e.target.value;
+                            const selectedProfissional = profissionais.find(p => 
+                              `${p.nome} - ${p.especialidade?.nome || "Não informado"}` === displayValue
+                            );
+                            if (selectedProfissional) {
+                              setProntuario(prev => ({
+                                ...prev,
+                                profissional_id: selectedProfissional.id
+                              }));
+                            }
+                          }}
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                          required
+                        />
+                        <datalist id="profissionais-list">
+                          {profissionais
+                            .filter(profissional => 
+                              profissionalFilter === "" || 
+                              profissional.nome.toLowerCase().includes(profissionalFilter.toLowerCase()) ||
+                              (profissional.especialidade?.nome && 
+                                profissional.especialidade.nome.toLowerCase().includes(profissionalFilter.toLowerCase()))
+                            )
+                            .map(profissional => (
+                              <option key={profissional.id} value={`${profissional.nome} - ${profissional.especialidade?.nome || "Não informado"}`} />
+                            ))}
+                        </datalist>
+                        <input 
+                          type="hidden" 
+                          id="profissional_id" 
+                          name="profissional_id" 
+                          value={prontuario.profissional_id}
+                        />
+                      </div>
+                    </div>                    <div>
                       <label htmlFor="consulta_id" className="block text-sm font-medium text-gray-700 mb-1">
                         Consulta Relacionada
                       </label>
-                      <select
-                        id="consulta_id"
-                        name="consulta_id"
-                        value={prontuario.consulta_id}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
-                      >
-                        <option value="">Selecione uma consulta</option>
-                        {filteredConsultas.map((consulta) => (
-                          <option key={consulta.id} value={consulta.id}>
-                            {new Date(consulta.data).toLocaleDateString()} - {consulta.hora}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          list="consultas-list"
+                          placeholder="Digite para buscar consulta..."
+                          value={consultaFilter}
+                          onChange={(e) => {
+                            setConsultaFilter(e.target.value);
+                            const displayValue = e.target.value;
+                            const selectedConsulta = filteredConsultas.find(c => {
+                              const consultaDisplay = `${new Date(c.data).toLocaleDateString()} - ${c.hora}${c.paciente ? ` - ${c.paciente.nome}` : ''}`;
+                              return consultaDisplay === displayValue;
+                            });
+                            if (selectedConsulta) {
+                              setProntuario(prev => ({
+                                ...prev,
+                                consulta_id: selectedConsulta.id
+                              }));
+                            }
+                          }}
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
+                        />
+                        <datalist id="consultas-list">
+                          {filteredConsultas
+                            .filter(consulta => {
+                              if (consultaFilter === "") return true;
+                              
+                              const dateStr = new Date(consulta.data).toLocaleDateString();
+                              const timeStr = consulta.hora;
+                              const patientName = consulta.paciente?.nome || "";
+                              
+                              return dateStr.includes(consultaFilter) ||
+                                    timeStr.includes(consultaFilter) ||
+                                    patientName.toLowerCase().includes(consultaFilter.toLowerCase());
+                            })
+                            .map(consulta => {
+                              const consultaDisplay = `${new Date(consulta.data).toLocaleDateString()} - ${consulta.hora}${consulta.paciente ? ` - ${consulta.paciente.nome}` : ''}`;
+                              return (
+                                <option key={consulta.id} value={consultaDisplay} />
+                              );
+                            })}
+                        </datalist>
+                        <input 
+                          type="hidden" 
+                          id="consulta_id" 
+                          name="consulta_id" 
+                          value={prontuario.consulta_id}
+                        />
+                      </div>
                     </div>
 
                     <div>

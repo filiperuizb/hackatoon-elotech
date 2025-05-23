@@ -9,91 +9,130 @@ import { Save, ArrowLeft, AlertCircle, CheckCircle } from "lucide-react"
 import { motion } from "framer-motion"
 
 interface NovaPrescricao {
-  medicamento: string
+  medicamento_id: string
+  medicamento_nome: string
   dosagem: string
   frequencia: string
   duracao: string
   observacoes: string
-  consulta_id: string
+  prontuario_id: string
 }
 
-interface Consulta {
+interface Prontuario {
   id: string
   paciente: {
     nome: string
   }
-  data: string
+  data_atendimento: string
+}
+
+interface Medicamento {
+  id: string
+  nome: string
+  principio_ativo: string | null
 }
 
 export default function NovaPrescricao() {
   const [prescricao, setPrescricao] = useState<NovaPrescricao>({
-    medicamento: "",
+    medicamento_id: "",
+    medicamento_nome: "",
     dosagem: "",
     frequencia: "",
     duracao: "",
     observacoes: "",
-    consulta_id: "",
+    prontuario_id: "",
   })
-  const [consultas, setConsultas] = useState<Consulta[]>([])
+  
+  const [prontuarios, setProntuarios] = useState<Prontuario[]>([])
+  const [medicamentos, setMedicamentos] = useState<Medicamento[]>([])
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const router = useRouter()
+  const [prontuarioFilter, setProntuarioFilter] = useState("")
+  const [medicamentoFilter, setMedicamentoFilter] = useState("")
 
   useEffect(() => {
-    const fetchConsultas = async () => {
+    const fetchData = async () => {
       try {
-        const res = await fetch("/api/consultas")
-        if (res.ok) {
-          const data = await res.json()
-          setConsultas(data)
+        const prontuariosRes = await fetch("/api/prontuarios")
+        if (prontuariosRes.ok) {
+          const prontuariosData = await prontuariosRes.json()
+          setProntuarios(prontuariosData)
+        }
+
+        const medicamentosRes = await fetch("/api/medicamentos")
+        if (medicamentosRes.ok) {
+          const medicamentosData = await medicamentosRes.json()
+          setMedicamentos(medicamentosData)
         }
       } catch (error) {
         console.error("Erro:", error)
-        setError("Não foi possível carregar as consultas")
+        setError("Não foi possível carregar os dados necessários")
       } finally {
         setLoading(false)
       }
     }
 
-    fetchConsultas()
-  }, [])
-
+    fetchData()
+  }, []);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setPrescricao((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
+    
+    if (name === 'medicamento_id' && value) {
+      const selectedMedicamento = medicamentos.find(m => m.id === value)
+      if (selectedMedicamento) {
+        setPrescricao(prev => ({
+          ...prev,
+          medicamento_id: value,
+          medicamento_nome: selectedMedicamento.nome
+        }))
+      } else {
+        setPrescricao(prev => ({ ...prev, [name]: value }))
+      }
+    } else {
+      setPrescricao(prev => ({ ...prev, [name]: value }))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setSaving(true)
-    setError("")
-    setSuccess("")
+    e.preventDefault();
+    setSaving(true);
+    setError("");
+    setSuccess("");
 
     try {
+      const prescricaoData = {
+        medicamento_id: prescricao.medicamento_id,
+        medicamento_nome: prescricao.medicamento_nome,
+        dosagem: prescricao.dosagem,
+        frequencia: prescricao.frequencia,
+        duracao: prescricao.duracao,
+        observacoes: prescricao.observacoes,
+        prontuario_id: prescricao.prontuario_id,
+      };
+
       const res = await fetch("/api/prescricoes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(prescricao),
-      })
+        body: JSON.stringify(prescricaoData),
+      });
 
-      if (!res.ok) throw new Error("Falha ao criar prescrição")
+      if (!res.ok) throw new Error("Falha ao criar prescrição");
 
-      setSuccess("Prescrição criada com sucesso!")
+      setSuccess("Prescrição criada com sucesso!");
       setTimeout(() => {
-        router.push("/prescricoes")
-      }, 2000)
+        router.push("/prescricoes");
+      }, 2000);
     } catch (error) {
-      console.error("Erro ao salvar:", error)
-      setError("Ocorreu um erro ao criar a prescrição")
+      console.error("Erro ao salvar:", error);
+      setError("Ocorreu um erro ao criar a prescrição");
     } finally {
-      setSaving(false)
+      setSaving(false);
     }
   }
 
@@ -146,49 +185,129 @@ export default function NovaPrescricao() {
           )}
 
           <form onSubmit={handleSubmit} className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">              <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <label htmlFor="consulta_id" className="block text-sm font-medium text-gray-700 mb-1">
-                  Consulta
+                <label htmlFor="prontuario_id" className="block text-sm font-medium text-gray-700 mb-1">
+                  Prontuário
                 </label>
-                <select
-                  id="consulta_id"
-                  name="consulta_id"
-                  value={prescricao.consulta_id}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                  required
-                >
-                  <option value="">Selecione uma consulta</option>
-                  {consultas.map((consulta) => (
-                    <option key={consulta.id} value={consulta.id}>
-                      {consulta.paciente?.nome} - {formatDate(consulta.data)}
-                    </option>
-                  ))}
-                </select>
-              </motion.div>
-
-              <motion.div
+                <div className="relative">
+                  <input
+                    type="text"
+                    list="prontuarios-list"
+                    placeholder="Digite para buscar prontuário..."
+                    value={prontuarioFilter}
+                    onChange={(e) => {
+                      setProntuarioFilter(e.target.value);
+                      const displayValue = e.target.value;
+                      const selectedProntuario = prontuarios.find(p => {
+                        const prontuarioDisplay = `${p.paciente?.nome || ''} - ${formatDate(p.data_atendimento)}`;
+                        return prontuarioDisplay === displayValue;
+                      });
+                      if (selectedProntuario) {
+                        setPrescricao(prev => ({
+                          ...prev,
+                          prontuario_id: selectedProntuario.id
+                        }));
+                      } else {
+                        setPrescricao(prev => ({
+                          ...prev,
+                          prontuario_id: ""
+                        }));
+                      }
+                    }}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                    required
+                  />
+                  <datalist id="prontuarios-list">
+                    {prontuarios
+                      .filter((prontuario) => 
+                        prontuarioFilter === "" || 
+                        (prontuario.paciente?.nome && 
+                          prontuario.paciente.nome.toLowerCase().includes(prontuarioFilter.toLowerCase()))
+                      )
+                      .map((prontuario) => {
+                        const prontuarioDisplay = `${prontuario.paciente?.nome || ''} - ${formatDate(prontuario.data_atendimento)}`;
+                        return (
+                          <option key={prontuario.id} value={prontuarioDisplay} />
+                        );
+                      })}
+                  </datalist>
+                  <input 
+                    type="hidden" 
+                    id="prontuario_id" 
+                    name="prontuario_id" 
+                    value={prescricao.prontuario_id || ""}
+                  />
+                </div>
+              </motion.div><motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                <label htmlFor="medicamento" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="medicamento_id" className="block text-sm font-medium text-gray-700 mb-1">
                   Medicamento
                 </label>
-                <input
-                  type="text"
-                  id="medicamento"
-                  name="medicamento"
-                  value={prescricao.medicamento}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    list="medicamentos-list"
+                    placeholder="Digite para buscar medicamento..."
+                    value={medicamentoFilter}
+                    onChange={(e) => {
+                      setMedicamentoFilter(e.target.value);
+                      const displayValue = e.target.value;
+                      const selectedMedicamento = medicamentos.find(m => {
+                        const medDisplay = `${m.nome}${m.principio_ativo ? ` - ${m.principio_ativo}` : ''}`;
+                        return medDisplay === displayValue;
+                      });
+                      if (selectedMedicamento) {
+                        setPrescricao(prev => ({
+                          ...prev,
+                          medicamento_id: selectedMedicamento.id,
+                          medicamento_nome: selectedMedicamento.nome
+                        }));
+                      } else {
+                        setPrescricao(prev => ({
+                          ...prev,
+                          medicamento_id: "",
+                          medicamento_nome: ""
+                        }));
+                      }
+                    }}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                    required
+                  />
+                  <datalist id="medicamentos-list">
+                    {medicamentos
+                      .filter((medicamento) => 
+                        medicamentoFilter === "" || 
+                        medicamento.nome.toLowerCase().includes(medicamentoFilter.toLowerCase()) || 
+                        (medicamento.principio_ativo && 
+                         medicamento.principio_ativo.toLowerCase().includes(medicamentoFilter.toLowerCase()))
+                      )
+                      .map((medicamento) => {
+                        const medDisplay = `${medicamento.nome}${medicamento.principio_ativo ? ` - ${medicamento.principio_ativo}` : ''}`;
+                        return (
+                          <option key={medicamento.id} value={medDisplay} />
+                        );
+                      })}
+                  </datalist>
+                  <input 
+                    type="hidden" 
+                    id="medicamento_id" 
+                    name="medicamento_id" 
+                    value={prescricao.medicamento_id || ""}
+                  />
+                  <input 
+                    type="hidden" 
+                    id="medicamento_nome" 
+                    name="medicamento_nome" 
+                    value={prescricao.medicamento_nome || ""}
+                  />
+                </div>
               </motion.div>
 
               <motion.div

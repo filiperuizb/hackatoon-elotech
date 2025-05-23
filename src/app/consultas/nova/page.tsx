@@ -53,6 +53,11 @@ export default function NovaConsulta() {  const [consulta, setConsulta] = useSta
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const router = useRouter()
+  
+  // Filters for searchable dropdowns
+  const [pacienteFilter, setPacienteFilter] = useState("")
+  const [profissionalFilter, setProfissionalFilter] = useState("")
+  const [unidadeFilter, setUnidadeFilter] = useState("")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -188,8 +193,7 @@ export default function NovaConsulta() {  const [consulta, setConsulta] = useSta
           )}
 
           <form onSubmit={handleSubmit} className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <motion.div
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">              <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3 }}
@@ -197,69 +201,139 @@ export default function NovaConsulta() {  const [consulta, setConsulta] = useSta
                 <label htmlFor="paciente_id" className="block text-sm font-medium text-gray-700 mb-1">
                   Paciente
                 </label>
-                <select
-                  id="paciente_id"
-                  name="paciente_id"
-                  value={consulta.paciente_id}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                  required
-                >
-                  <option value="">Selecione um paciente</option>
-                  {pacientes.map((paciente) => (
-                    <option key={paciente.id} value={paciente.id}>
-                      {paciente.nome}
-                    </option>
-                  ))}
-                </select>
-              </motion.div>
-
-              <motion.div
+                <div className="relative">
+                  <input
+                    type="text"
+                    list="pacientes-list"
+                    placeholder="Digite para buscar paciente..."
+                    value={pacienteFilter}
+                    onChange={(e) => {
+                      setPacienteFilter(e.target.value);
+                      const selectedPaciente = pacientes.find(p => 
+                        p.nome.toLowerCase() === e.target.value.toLowerCase()
+                      );
+                      if (selectedPaciente) {
+                        setConsulta(prev => ({
+                          ...prev,
+                          paciente_id: selectedPaciente.id
+                        }));
+                      }
+                    }}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                    required
+                  />
+                  <datalist id="pacientes-list">
+                    {pacientes
+                      .filter(paciente => 
+                        pacienteFilter === "" || 
+                        paciente.nome.toLowerCase().includes(pacienteFilter.toLowerCase())
+                      )
+                      .map(paciente => (
+                        <option key={paciente.id} value={paciente.nome} />
+                      ))}
+                  </datalist>
+                  <input 
+                    type="hidden" 
+                    id="paciente_id" 
+                    name="paciente_id" 
+                    value={consulta.paciente_id} 
+                  />
+                </div>
+              </motion.div>              <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-              >                <label htmlFor="profissional_id" className="block text-sm font-medium text-gray-700 mb-1">
+              >                
+                <label htmlFor="profissional_id" className="block text-sm font-medium text-gray-700 mb-1">
                   Profissional de Saúde
                 </label>
-                <select
-                  id="profissional_id"
-                  name="profissional_id"
-                  value={consulta.profissional_id}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                  required
-                >
-                  <option value="">Selecione um profissional</option>
-                  {profissionais.map((profissional) => (
-                    <option key={profissional.id} value={profissional.id}>
-                      {profissional.nome} - {profissional.especialidade?.nome || "Não informado"}
-                    </option>
-                  ))}
-                </select>
-              </motion.div>
-
-              <motion.div
+                <div className="relative">
+                  <input
+                    type="text"
+                    list="profissionais-list"
+                    placeholder="Digite para buscar profissional..."
+                    value={profissionalFilter}
+                    onChange={(e) => {
+                      setProfissionalFilter(e.target.value);
+                      const displayValue = e.target.value;
+                      const selectedProfissional = profissionais.find(p => 
+                        `${p.nome} - ${p.especialidade?.nome || "Não informado"}` === displayValue
+                      );
+                      if (selectedProfissional) {
+                        setConsulta(prev => ({
+                          ...prev,
+                          profissional_id: selectedProfissional.id
+                        }));
+                      }
+                    }}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                    required
+                  />
+                  <datalist id="profissionais-list">
+                    {profissionais
+                      .filter(profissional => 
+                        profissionalFilter === "" || 
+                        profissional.nome.toLowerCase().includes(profissionalFilter.toLowerCase()) ||
+                        (profissional.especialidade?.nome && 
+                          profissional.especialidade.nome.toLowerCase().includes(profissionalFilter.toLowerCase()))
+                      )
+                      .map(profissional => (
+                        <option key={profissional.id} value={`${profissional.nome} - ${profissional.especialidade?.nome || "Não informado"}`} />
+                      ))}
+                  </datalist>
+                  <input 
+                    type="hidden" 
+                    id="profissional_id" 
+                    name="profissional_id" 
+                    value={consulta.profissional_id} 
+                  />
+                </div>
+              </motion.div>              <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
-              >                <label htmlFor="unidade_id" className="block text-sm font-medium text-gray-700 mb-1">
+              >                
+                <label htmlFor="unidade_id" className="block text-sm font-medium text-gray-700 mb-1">
                   Unidade de Saúde
                 </label>
-                <select
-                  id="unidade_id"
-                  name="unidade_id"
-                  value={consulta.unidade_id}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                  required
-                >
-                  <option value="">Selecione uma unidade</option>
-                  {unidades.map((unidade) => (
-                    <option key={unidade.id} value={unidade.id}>
-                      {unidade.nome}
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <input
+                    type="text"
+                    list="unidades-list"
+                    placeholder="Digite para buscar unidade..."
+                    value={unidadeFilter}
+                    onChange={(e) => {
+                      setUnidadeFilter(e.target.value);
+                      const selectedUnidade = unidades.find(u => 
+                        u.nome.toLowerCase() === e.target.value.toLowerCase()
+                      );
+                      if (selectedUnidade) {
+                        setConsulta(prev => ({
+                          ...prev,
+                          unidade_id: selectedUnidade.id
+                        }));
+                      }
+                    }}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                    required
+                  />
+                  <datalist id="unidades-list">
+                    {unidades
+                      .filter(unidade => 
+                        unidadeFilter === "" || 
+                        unidade.nome.toLowerCase().includes(unidadeFilter.toLowerCase())
+                      )
+                      .map(unidade => (
+                        <option key={unidade.id} value={unidade.nome} />
+                      ))}
+                  </datalist>
+                  <input 
+                    type="hidden" 
+                    id="unidade_id" 
+                    name="unidade_id" 
+                    value={consulta.unidade_id} 
+                  />
+                </div>
               </motion.div>
 
               <motion.div
