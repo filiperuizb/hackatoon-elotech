@@ -170,7 +170,7 @@ export default function Prontuarios() {
     const date = new Date(dateString)
     return date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
   }
-  // Funções de formatação de status removidas
+
 
   const especialidades = Array.from(
     new Set(prontuarios.map((p) => p.profissional_saude?.especialidade?.nome).filter(Boolean)),
@@ -192,7 +192,6 @@ export default function Prontuarios() {
   if (filterDate) {
     filteredProntuarios = filteredProntuarios.filter((prontuario) => prontuario.data_atendimento.startsWith(filterDate))
   }
-  // Filtro de status removido
 
   if (especialidadeFilter) {
     filteredProntuarios = filteredProntuarios.filter(
@@ -220,7 +219,7 @@ export default function Prontuarios() {
     return 0
   })
   const totalProntuarios = prontuarios.length
-  // Contadores de status removidos
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -239,7 +238,7 @@ export default function Prontuarios() {
               <h3 className="text-sm font-medium text-gray-500">Total de Prontuários</h3>
               <p className="text-2xl font-bold text-gray-900">{totalProntuarios}</p>
             </div>
-          </motion.div>          {/* Cards de status removidos */}
+          </motion.div>        
         </div>
 
         <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -343,7 +342,7 @@ export default function Prontuarios() {
             >
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <h3 className="font-medium text-gray-700 mb-4">Filtros avançados</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">                  {/* Filtros de status removidos */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">           
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Especialidade</label>
                     <select
@@ -596,7 +595,7 @@ export default function Prontuarios() {
                         <div className="font-medium text-gray-900">{prontuario.paciente?.nome}</div>
                         <div className="text-sm text-gray-500">{prontuario.paciente?.cpf}</div>
                       </div>
-                    </div>                    {/* Status removido */}
+                    </div>                  
                   </div>
                   <div className="p-4">
                     <div className="mb-3">
