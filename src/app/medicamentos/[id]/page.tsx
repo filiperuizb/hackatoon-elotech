@@ -12,14 +12,7 @@ interface TipoProcedimento {
   nome: string
 }
 
-type ProcedimentoParams = {
-  params: {
-    id: string
-  }
-  searchParams?: { [key: string]: string | string[] | undefined }
-}
-
-export default function EditarProcedimentoPage({ params }: ProcedimentoParams) {
+export default function EditarProcedimentoPage({ params }: { params: { id: string } }) {
   const router = useRouter()
   const { id } = params
 
