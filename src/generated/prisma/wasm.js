@@ -138,26 +138,26 @@ exports.Prisma.PacienteScalarFieldEnum = {
   data_nascimento: 'data_nascimento',
   sexo: 'sexo',
   cpf: 'cpf',
-  rg: 'rg',
   telefone: 'telefone',
-  telefone_contato: 'telefone_contato',
   email: 'email',
-  endereco: 'endereco',
-  numero: 'numero',
-  complemento: 'complemento',
-  bairro: 'bairro',
-  cidade: 'cidade',
-  estado: 'estado',
-  cep: 'cep',
-  peso: 'peso',
-  altura: 'altura',
-  tipo_sanguineo: 'tipo_sanguineo',
   alergias: 'alergias',
-  medicamentos_uso: 'medicamentos_uso',
-  observacoes: 'observacoes',
-  nome_responsavel: 'nome_responsavel',
-  telefone_responsavel: 'telefone_responsavel',
+  altura: 'altura',
+  bairro: 'bairro',
+  cep: 'cep',
+  cidade: 'cidade',
+  complemento: 'complemento',
   created_at: 'created_at',
+  endereco: 'endereco',
+  estado: 'estado',
+  medicamentos_uso: 'medicamentos_uso',
+  nome_responsavel: 'nome_responsavel',
+  numero: 'numero',
+  observacoes: 'observacoes',
+  peso: 'peso',
+  rg: 'rg',
+  telefone_contato: 'telefone_contato',
+  telefone_responsavel: 'telefone_responsavel',
+  tipo_sanguineo: 'tipo_sanguineo',
   updated_at: 'updated_at'
 };
 
@@ -167,10 +167,10 @@ exports.Prisma.ConsultaScalarFieldEnum = {
   profissional_id: 'profissional_id',
   unidade_id: 'unidade_id',
   data: 'data',
-  hora: 'hora',
-  status: 'status',
-  observacoes: 'observacoes',
   created_at: 'created_at',
+  hora: 'hora',
+  observacoes: 'observacoes',
+  status: 'status',
   updated_at: 'updated_at'
 };
 
@@ -248,31 +248,31 @@ exports.Prisma.MedicamentoScalarFieldEnum = {
 
 exports.Prisma.PrescricaoScalarFieldEnum = {
   id: 'id',
-  prontuario_id: 'prontuario_id',
+  duracao: 'duracao',
+  created_at: 'created_at',
+  data_fim: 'data_fim',
+  data_inicio: 'data_inicio',
+  dosagem: 'dosagem',
+  frequencia: 'frequencia',
   medicamento_id: 'medicamento_id',
   medicamento_nome: 'medicamento_nome',
-  dosagem: 'dosagem',
-  via_administracao: 'via_administracao',
-  frequencia: 'frequencia',
-  duracao: 'duracao',
-  quantidade: 'quantidade',
   observacoes: 'observacoes',
+  prontuario_id: 'prontuario_id',
+  quantidade: 'quantidade',
   status: 'status',
-  data_inicio: 'data_inicio',
-  data_fim: 'data_fim',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  via_administracao: 'via_administracao'
 };
 
 exports.Prisma.Profissional_saudeScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
-  documento_numero: 'documento_numero',
-  tipo_documento_id: 'tipo_documento_id',
-  especialidade_id: 'especialidade_id',
   email: 'email',
   senha: 'senha',
   data_nascimento: 'data_nascimento',
+  documento_numero: 'documento_numero',
+  especialidade_id: 'especialidade_id',
+  tipo_documento_id: 'tipo_documento_id',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -282,9 +282,9 @@ exports.Prisma.TemplateScalarFieldEnum = {
   titulo: 'titulo',
   sintomas_padrao: 'sintomas_padrao',
   condutas_sugeridas: 'condutas_sugeridas',
-  medicamentos_recomendados: 'medicamentos_recomendados',
   sazonalidade: 'sazonalidade',
   created_at: 'created_at',
+  medicamentos_recomendados: 'medicamentos_recomendados',
   updated_at: 'updated_at'
 };
 
@@ -295,8 +295,8 @@ exports.Prisma.Unidade_saudeScalarFieldEnum = {
   endereco: 'endereco',
   cidade: 'cidade',
   estado: 'estado',
-  telefone: 'telefone',
   created_at: 'created_at',
+  telefone: 'telefone',
   updated_at: 'updated_at'
 };
 

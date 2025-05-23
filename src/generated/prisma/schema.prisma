@@ -28,26 +28,26 @@ model paciente {
   data_nascimento      DateTime     @db.Date
   sexo                 String?      @db.Char(1)
   cpf                  String?      @unique @db.VarChar(14)
-  rg                   String?      @db.VarChar(20)
   telefone             String?      @db.VarChar(20)
-  telefone_contato     String?      @db.VarChar(20)
   email                String?
-  endereco             String?
-  numero               String?      @db.VarChar(10)
-  complemento          String?
-  bairro               String?
-  cidade               String?
-  estado               String?      @db.Char(2)
-  cep                  String?      @db.VarChar(9)
-  peso                 Decimal?     @db.Decimal(5, 2)
-  altura               Decimal?     @db.Decimal(3, 2)
-  tipo_sanguineo       String?      @db.VarChar(3)
   alergias             String?
-  medicamentos_uso     String?
-  observacoes          String?
-  nome_responsavel     String?
-  telefone_responsavel String?      @db.VarChar(20)
+  altura               Decimal?     @db.Decimal(3, 2)
+  bairro               String?
+  cep                  String?      @db.VarChar(9)
+  cidade               String?
+  complemento          String?
   created_at           DateTime     @default(now())
+  endereco             String?
+  estado               String?      @db.Char(2)
+  medicamentos_uso     String?
+  nome_responsavel     String?
+  numero               String?      @db.VarChar(10)
+  observacoes          String?
+  peso                 Decimal?     @db.Decimal(5, 2)
+  rg                   String?      @db.VarChar(20)
+  telefone_contato     String?      @db.VarChar(20)
+  telefone_responsavel String?      @db.VarChar(20)
+  tipo_sanguineo       String?      @db.VarChar(3)
   updated_at           DateTime     @updatedAt
   consulta             consulta[]
   prontuario           prontuario[]
@@ -59,75 +59,133 @@ model consulta {
   profissional_id    String?             @db.Uuid
   unidade_id         String?             @db.Uuid
   data               DateTime            @default(now()) @db.Timestamp(6)
-  hora               String?             @db.VarChar(5)
-  status             String              @default("Agendada")
-  observacoes        String?
   created_at         DateTime            @default(now())
+  hora               String?             @db.VarChar(5)
+  observacoes        String?
+  status             String              @default("Agendada")
   updated_at         DateTime            @updatedAt
   paciente           paciente?           @relation(fields: [paciente_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
   profissional_saude profissional_saude? @relation(fields: [profissional_id], references: [id], onUpdate: NoAction)
   unidade_saude      unidade_saude?      @relation(fields: [unidade_id], references: [id], onUpdate: NoAction)
-  prontuario         prontuario[]
 }
 
 model prontuario {
-  id                     String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  paciente_id            String             @db.Uuid
-  consulta_id            String?            @db.Uuid
-  profissional_id        String             @db.Uuid
-  data_atendimento       DateTime           @default(now()) @db.Timestamp(6)
+  id                     String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  paciente_id            String                   @db.Uuid
+  profissional_id        String                   @db.Uuid
+  data_atendimento       DateTime                 @default(now()) @db.Timestamp(6)
   queixa_principal       String?
   historia_doenca_atual  String?
   historia_patologica    String?
   historia_familiar      String?
   historia_social        String?
   exame_fisico           String?
-  pressao_arterial       String?            @db.VarChar(10)
-  frequencia_cardiaca    String?            @db.VarChar(10)
-  temperatura            String?            @db.VarChar(10)
-  peso_atual             Decimal?           @db.Decimal(5, 2)
-  altura_atual           Decimal?           @db.Decimal(3, 2)
+  pressao_arterial       String?                  @db.VarChar(10)
+  frequencia_cardiaca    String?                  @db.VarChar(10)
+  temperatura            String?                  @db.VarChar(10)
+  peso_atual             Decimal?                 @db.Decimal(5, 2)
+  altura_atual           Decimal?                 @db.Decimal(3, 2)
   hipotese_diagnostica   String?
   diagnostico_definitivo String?
   conduta                String?
   observacoes            String?
   retorno                String?
-  created_at             DateTime           @default(now())
-  updated_at             DateTime           @updatedAt
-  paciente               paciente           @relation(fields: [paciente_id], references: [id], onDelete: Cascade)
-  consulta               consulta?          @relation(fields: [consulta_id], references: [id], onDelete: SetNull)
-  profissional_saude     profissional_saude @relation(fields: [profissional_id], references: [id])
+  created_at             DateTime                 @default(now())
+  updated_at             DateTime                 @updatedAt
   prescricao             prescricao[]
+  procedimento_realizado procedimento_realizado[]
+  paciente               paciente                 @relation(fields: [paciente_id], references: [id], onDelete: Cascade)
+  profissional_saude     profissional_saude       @relation(fields: [profissional_id], references: [id])
+}
+
+model tipo_procedimento {
+  id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome         String         @unique
+  categoria    String?
+  descricao    String?
+  valor        Decimal?       @db.Decimal(10, 2)
+  created_at   DateTime       @default(now())
+  updated_at   DateTime       @updatedAt
+  procedimento procedimento[]
+}
+
+model procedimento {
+  id                     String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  tipo_procedimento_id   String                   @db.Uuid
+  nome                   String
+  codigo                 String?                  @unique
+  descricao              String?
+  valor_padrao           Decimal?                 @db.Decimal(10, 2)
+  ativo                  Boolean                  @default(true)
+  created_at             DateTime                 @default(now())
+  updated_at             DateTime                 @updatedAt
+  tipo_procedimento      tipo_procedimento        @relation(fields: [tipo_procedimento_id], references: [id])
+  procedimento_realizado procedimento_realizado[]
+}
+
+model procedimento_realizado {
+  id              String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  prontuario_id   String       @db.Uuid
+  procedimento_id String       @db.Uuid
+  data_realizacao DateTime     @default(now())
+  observacoes     String?
+  valor           Decimal?     @db.Decimal(10, 2)
+  status          String       @default("Realizado")
+  created_at      DateTime     @default(now())
+  updated_at      DateTime     @updatedAt
+  procedimento    procedimento @relation(fields: [procedimento_id], references: [id])
+  prontuario      prontuario   @relation(fields: [prontuario_id], references: [id], onDelete: Cascade)
+}
+
+model medicamento {
+  id                 String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome               String       @unique
+  principio_ativo    String?
+  concentracao       String?
+  forma_farmaceutica String?
+  fabricante         String?
+  codigo_barras      String?      @unique
+  ativo              Boolean      @default(true)
+  created_at         DateTime     @default(now())
+  updated_at         DateTime     @updatedAt
+  prescricao         prescricao[]
 }
 
 model prescricao {
-  id            String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  prontuario_id String?     @db.Uuid
-  medicamento   String
-  dosagem       String?
-  frequencia    String?
-  duracao       String?
-  observacoes   String?
-  created_at    DateTime    @default(now())
-  updated_at    DateTime    @updatedAt
-  prontuario    prontuario? @relation(fields: [prontuario_id], references: [id], onDelete: Cascade)
+  id                String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  duracao           String?
+  created_at        DateTime     @default(now())
+  data_fim          DateTime?
+  data_inicio       DateTime     @default(now())
+  dosagem           String?
+  frequencia        String?
+  medicamento_id    String?      @db.Uuid
+  medicamento_nome  String?
+  observacoes       String?
+  prontuario_id     String       @db.Uuid
+  quantidade        String?
+  status            String       @default("Ativa")
+  updated_at        DateTime     @updatedAt
+  via_administracao String?
+  medicamento       medicamento? @relation(fields: [medicamento_id], references: [id])
+  prontuario        prontuario   @relation(fields: [prontuario_id], references: [id], onDelete: Cascade)
 }
 
 model profissional_saude {
   id                String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nome              String
-  documento_numero  String?         @db.VarChar(20)
-  tipo_documento_id String?         @db.Uuid
-  especialidade_id  String?         @db.Uuid
   email             String?         @unique
   senha             String
   data_nascimento   DateTime?       @db.Date
+  documento_numero  String?         @db.VarChar(20)
+  especialidade_id  String?         @db.Uuid
+  tipo_documento_id String?         @db.Uuid
   created_at        DateTime        @default(now())
   updated_at        DateTime        @updatedAt
   consulta          consulta[]
-  prontuario        prontuario[]
-  tipo_documento    tipo_documento? @relation(fields: [tipo_documento_id], references: [id])
   especialidade     especialidade?  @relation(fields: [especialidade_id], references: [id])
+  tipo_documento    tipo_documento? @relation(fields: [tipo_documento_id], references: [id])
+  prontuario        prontuario[]
 }
 
 model template {
@@ -135,9 +193,9 @@ model template {
   titulo                    String
   sintomas_padrao           String?
   condutas_sugeridas        String?
-  medicamentos_recomendados String?
   sazonalidade              String?
   created_at                DateTime @default(now())
+  medicamentos_recomendados String?
   updated_at                DateTime @updatedAt
 }
 
@@ -148,8 +206,8 @@ model unidade_saude {
   endereco   String?
   cidade     String?
   estado     String?    @db.Char(2)
-  telefone   String?    @db.VarChar(20)
   created_at DateTime   @default(now())
+  telefone   String?    @db.VarChar(20)
   updated_at DateTime   @updatedAt
   consulta   consulta[]
 }

@@ -4367,13 +4367,13 @@ export namespace Prisma {
   }
 
   export type PacienteAvgAggregateOutputType = {
-    peso: Decimal | null
     altura: Decimal | null
+    peso: Decimal | null
   }
 
   export type PacienteSumAggregateOutputType = {
-    peso: Decimal | null
     altura: Decimal | null
+    peso: Decimal | null
   }
 
   export type PacienteMinAggregateOutputType = {
@@ -4382,26 +4382,26 @@ export namespace Prisma {
     data_nascimento: Date | null
     sexo: string | null
     cpf: string | null
-    rg: string | null
     telefone: string | null
-    telefone_contato: string | null
     email: string | null
-    endereco: string | null
-    numero: string | null
-    complemento: string | null
-    bairro: string | null
-    cidade: string | null
-    estado: string | null
-    cep: string | null
-    peso: Decimal | null
-    altura: Decimal | null
-    tipo_sanguineo: string | null
     alergias: string | null
-    medicamentos_uso: string | null
-    observacoes: string | null
-    nome_responsavel: string | null
-    telefone_responsavel: string | null
+    altura: Decimal | null
+    bairro: string | null
+    cep: string | null
+    cidade: string | null
+    complemento: string | null
     created_at: Date | null
+    endereco: string | null
+    estado: string | null
+    medicamentos_uso: string | null
+    nome_responsavel: string | null
+    numero: string | null
+    observacoes: string | null
+    peso: Decimal | null
+    rg: string | null
+    telefone_contato: string | null
+    telefone_responsavel: string | null
+    tipo_sanguineo: string | null
     updated_at: Date | null
   }
 
@@ -4411,26 +4411,26 @@ export namespace Prisma {
     data_nascimento: Date | null
     sexo: string | null
     cpf: string | null
-    rg: string | null
     telefone: string | null
-    telefone_contato: string | null
     email: string | null
-    endereco: string | null
-    numero: string | null
-    complemento: string | null
-    bairro: string | null
-    cidade: string | null
-    estado: string | null
-    cep: string | null
-    peso: Decimal | null
-    altura: Decimal | null
-    tipo_sanguineo: string | null
     alergias: string | null
-    medicamentos_uso: string | null
-    observacoes: string | null
-    nome_responsavel: string | null
-    telefone_responsavel: string | null
+    altura: Decimal | null
+    bairro: string | null
+    cep: string | null
+    cidade: string | null
+    complemento: string | null
     created_at: Date | null
+    endereco: string | null
+    estado: string | null
+    medicamentos_uso: string | null
+    nome_responsavel: string | null
+    numero: string | null
+    observacoes: string | null
+    peso: Decimal | null
+    rg: string | null
+    telefone_contato: string | null
+    telefone_responsavel: string | null
+    tipo_sanguineo: string | null
     updated_at: Date | null
   }
 
@@ -4440,39 +4440,39 @@ export namespace Prisma {
     data_nascimento: number
     sexo: number
     cpf: number
-    rg: number
     telefone: number
-    telefone_contato: number
     email: number
-    endereco: number
-    numero: number
-    complemento: number
-    bairro: number
-    cidade: number
-    estado: number
-    cep: number
-    peso: number
-    altura: number
-    tipo_sanguineo: number
     alergias: number
-    medicamentos_uso: number
-    observacoes: number
-    nome_responsavel: number
-    telefone_responsavel: number
+    altura: number
+    bairro: number
+    cep: number
+    cidade: number
+    complemento: number
     created_at: number
+    endereco: number
+    estado: number
+    medicamentos_uso: number
+    nome_responsavel: number
+    numero: number
+    observacoes: number
+    peso: number
+    rg: number
+    telefone_contato: number
+    telefone_responsavel: number
+    tipo_sanguineo: number
     updated_at: number
     _all: number
   }
 
 
   export type PacienteAvgAggregateInputType = {
-    peso?: true
     altura?: true
+    peso?: true
   }
 
   export type PacienteSumAggregateInputType = {
-    peso?: true
     altura?: true
+    peso?: true
   }
 
   export type PacienteMinAggregateInputType = {
@@ -4481,26 +4481,26 @@ export namespace Prisma {
     data_nascimento?: true
     sexo?: true
     cpf?: true
-    rg?: true
     telefone?: true
-    telefone_contato?: true
     email?: true
-    endereco?: true
-    numero?: true
-    complemento?: true
-    bairro?: true
-    cidade?: true
-    estado?: true
-    cep?: true
-    peso?: true
-    altura?: true
-    tipo_sanguineo?: true
     alergias?: true
-    medicamentos_uso?: true
-    observacoes?: true
-    nome_responsavel?: true
-    telefone_responsavel?: true
+    altura?: true
+    bairro?: true
+    cep?: true
+    cidade?: true
+    complemento?: true
     created_at?: true
+    endereco?: true
+    estado?: true
+    medicamentos_uso?: true
+    nome_responsavel?: true
+    numero?: true
+    observacoes?: true
+    peso?: true
+    rg?: true
+    telefone_contato?: true
+    telefone_responsavel?: true
+    tipo_sanguineo?: true
     updated_at?: true
   }
 
@@ -4510,26 +4510,26 @@ export namespace Prisma {
     data_nascimento?: true
     sexo?: true
     cpf?: true
-    rg?: true
     telefone?: true
-    telefone_contato?: true
     email?: true
-    endereco?: true
-    numero?: true
-    complemento?: true
-    bairro?: true
-    cidade?: true
-    estado?: true
-    cep?: true
-    peso?: true
-    altura?: true
-    tipo_sanguineo?: true
     alergias?: true
-    medicamentos_uso?: true
-    observacoes?: true
-    nome_responsavel?: true
-    telefone_responsavel?: true
+    altura?: true
+    bairro?: true
+    cep?: true
+    cidade?: true
+    complemento?: true
     created_at?: true
+    endereco?: true
+    estado?: true
+    medicamentos_uso?: true
+    nome_responsavel?: true
+    numero?: true
+    observacoes?: true
+    peso?: true
+    rg?: true
+    telefone_contato?: true
+    telefone_responsavel?: true
+    tipo_sanguineo?: true
     updated_at?: true
   }
 
@@ -4539,26 +4539,26 @@ export namespace Prisma {
     data_nascimento?: true
     sexo?: true
     cpf?: true
-    rg?: true
     telefone?: true
-    telefone_contato?: true
     email?: true
-    endereco?: true
-    numero?: true
-    complemento?: true
-    bairro?: true
-    cidade?: true
-    estado?: true
-    cep?: true
-    peso?: true
-    altura?: true
-    tipo_sanguineo?: true
     alergias?: true
-    medicamentos_uso?: true
-    observacoes?: true
-    nome_responsavel?: true
-    telefone_responsavel?: true
+    altura?: true
+    bairro?: true
+    cep?: true
+    cidade?: true
+    complemento?: true
     created_at?: true
+    endereco?: true
+    estado?: true
+    medicamentos_uso?: true
+    nome_responsavel?: true
+    numero?: true
+    observacoes?: true
+    peso?: true
+    rg?: true
+    telefone_contato?: true
+    telefone_responsavel?: true
+    tipo_sanguineo?: true
     updated_at?: true
     _all?: true
   }
@@ -4655,26 +4655,26 @@ export namespace Prisma {
     data_nascimento: Date
     sexo: string | null
     cpf: string | null
-    rg: string | null
     telefone: string | null
-    telefone_contato: string | null
     email: string | null
-    endereco: string | null
-    numero: string | null
-    complemento: string | null
-    bairro: string | null
-    cidade: string | null
-    estado: string | null
-    cep: string | null
-    peso: Decimal | null
-    altura: Decimal | null
-    tipo_sanguineo: string | null
     alergias: string | null
-    medicamentos_uso: string | null
-    observacoes: string | null
-    nome_responsavel: string | null
-    telefone_responsavel: string | null
+    altura: Decimal | null
+    bairro: string | null
+    cep: string | null
+    cidade: string | null
+    complemento: string | null
     created_at: Date
+    endereco: string | null
+    estado: string | null
+    medicamentos_uso: string | null
+    nome_responsavel: string | null
+    numero: string | null
+    observacoes: string | null
+    peso: Decimal | null
+    rg: string | null
+    telefone_contato: string | null
+    telefone_responsavel: string | null
+    tipo_sanguineo: string | null
     updated_at: Date
     _count: PacienteCountAggregateOutputType | null
     _avg: PacienteAvgAggregateOutputType | null
@@ -4703,26 +4703,26 @@ export namespace Prisma {
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
-    rg?: boolean
     telefone?: boolean
-    telefone_contato?: boolean
     email?: boolean
-    endereco?: boolean
-    numero?: boolean
-    complemento?: boolean
-    bairro?: boolean
-    cidade?: boolean
-    estado?: boolean
-    cep?: boolean
-    peso?: boolean
-    altura?: boolean
-    tipo_sanguineo?: boolean
     alergias?: boolean
-    medicamentos_uso?: boolean
-    observacoes?: boolean
-    nome_responsavel?: boolean
-    telefone_responsavel?: boolean
+    altura?: boolean
+    bairro?: boolean
+    cep?: boolean
+    cidade?: boolean
+    complemento?: boolean
     created_at?: boolean
+    endereco?: boolean
+    estado?: boolean
+    medicamentos_uso?: boolean
+    nome_responsavel?: boolean
+    numero?: boolean
+    observacoes?: boolean
+    peso?: boolean
+    rg?: boolean
+    telefone_contato?: boolean
+    telefone_responsavel?: boolean
+    tipo_sanguineo?: boolean
     updated_at?: boolean
     consulta?: boolean | paciente$consultaArgs<ExtArgs>
     prontuario?: boolean | paciente$prontuarioArgs<ExtArgs>
@@ -4735,26 +4735,26 @@ export namespace Prisma {
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
-    rg?: boolean
     telefone?: boolean
-    telefone_contato?: boolean
     email?: boolean
-    endereco?: boolean
-    numero?: boolean
-    complemento?: boolean
-    bairro?: boolean
-    cidade?: boolean
-    estado?: boolean
-    cep?: boolean
-    peso?: boolean
-    altura?: boolean
-    tipo_sanguineo?: boolean
     alergias?: boolean
-    medicamentos_uso?: boolean
-    observacoes?: boolean
-    nome_responsavel?: boolean
-    telefone_responsavel?: boolean
+    altura?: boolean
+    bairro?: boolean
+    cep?: boolean
+    cidade?: boolean
+    complemento?: boolean
     created_at?: boolean
+    endereco?: boolean
+    estado?: boolean
+    medicamentos_uso?: boolean
+    nome_responsavel?: boolean
+    numero?: boolean
+    observacoes?: boolean
+    peso?: boolean
+    rg?: boolean
+    telefone_contato?: boolean
+    telefone_responsavel?: boolean
+    tipo_sanguineo?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["paciente"]>
 
@@ -4764,26 +4764,26 @@ export namespace Prisma {
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
-    rg?: boolean
     telefone?: boolean
-    telefone_contato?: boolean
     email?: boolean
-    endereco?: boolean
-    numero?: boolean
-    complemento?: boolean
-    bairro?: boolean
-    cidade?: boolean
-    estado?: boolean
-    cep?: boolean
-    peso?: boolean
-    altura?: boolean
-    tipo_sanguineo?: boolean
     alergias?: boolean
-    medicamentos_uso?: boolean
-    observacoes?: boolean
-    nome_responsavel?: boolean
-    telefone_responsavel?: boolean
+    altura?: boolean
+    bairro?: boolean
+    cep?: boolean
+    cidade?: boolean
+    complemento?: boolean
     created_at?: boolean
+    endereco?: boolean
+    estado?: boolean
+    medicamentos_uso?: boolean
+    nome_responsavel?: boolean
+    numero?: boolean
+    observacoes?: boolean
+    peso?: boolean
+    rg?: boolean
+    telefone_contato?: boolean
+    telefone_responsavel?: boolean
+    tipo_sanguineo?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["paciente"]>
 
@@ -4793,30 +4793,30 @@ export namespace Prisma {
     data_nascimento?: boolean
     sexo?: boolean
     cpf?: boolean
-    rg?: boolean
     telefone?: boolean
-    telefone_contato?: boolean
     email?: boolean
-    endereco?: boolean
-    numero?: boolean
-    complemento?: boolean
-    bairro?: boolean
-    cidade?: boolean
-    estado?: boolean
-    cep?: boolean
-    peso?: boolean
-    altura?: boolean
-    tipo_sanguineo?: boolean
     alergias?: boolean
-    medicamentos_uso?: boolean
-    observacoes?: boolean
-    nome_responsavel?: boolean
-    telefone_responsavel?: boolean
+    altura?: boolean
+    bairro?: boolean
+    cep?: boolean
+    cidade?: boolean
+    complemento?: boolean
     created_at?: boolean
+    endereco?: boolean
+    estado?: boolean
+    medicamentos_uso?: boolean
+    nome_responsavel?: boolean
+    numero?: boolean
+    observacoes?: boolean
+    peso?: boolean
+    rg?: boolean
+    telefone_contato?: boolean
+    telefone_responsavel?: boolean
+    tipo_sanguineo?: boolean
     updated_at?: boolean
   }
 
-  export type pacienteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "data_nascimento" | "sexo" | "cpf" | "rg" | "telefone" | "telefone_contato" | "email" | "endereco" | "numero" | "complemento" | "bairro" | "cidade" | "estado" | "cep" | "peso" | "altura" | "tipo_sanguineo" | "alergias" | "medicamentos_uso" | "observacoes" | "nome_responsavel" | "telefone_responsavel" | "created_at" | "updated_at", ExtArgs["result"]["paciente"]>
+  export type pacienteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "data_nascimento" | "sexo" | "cpf" | "telefone" | "email" | "alergias" | "altura" | "bairro" | "cep" | "cidade" | "complemento" | "created_at" | "endereco" | "estado" | "medicamentos_uso" | "nome_responsavel" | "numero" | "observacoes" | "peso" | "rg" | "telefone_contato" | "telefone_responsavel" | "tipo_sanguineo" | "updated_at", ExtArgs["result"]["paciente"]>
   export type pacienteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     consulta?: boolean | paciente$consultaArgs<ExtArgs>
     prontuario?: boolean | paciente$prontuarioArgs<ExtArgs>
@@ -4837,26 +4837,26 @@ export namespace Prisma {
       data_nascimento: Date
       sexo: string | null
       cpf: string | null
-      rg: string | null
       telefone: string | null
-      telefone_contato: string | null
       email: string | null
-      endereco: string | null
-      numero: string | null
-      complemento: string | null
-      bairro: string | null
-      cidade: string | null
-      estado: string | null
-      cep: string | null
-      peso: Prisma.Decimal | null
-      altura: Prisma.Decimal | null
-      tipo_sanguineo: string | null
       alergias: string | null
-      medicamentos_uso: string | null
-      observacoes: string | null
-      nome_responsavel: string | null
-      telefone_responsavel: string | null
+      altura: Prisma.Decimal | null
+      bairro: string | null
+      cep: string | null
+      cidade: string | null
+      complemento: string | null
       created_at: Date
+      endereco: string | null
+      estado: string | null
+      medicamentos_uso: string | null
+      nome_responsavel: string | null
+      numero: string | null
+      observacoes: string | null
+      peso: Prisma.Decimal | null
+      rg: string | null
+      telefone_contato: string | null
+      telefone_responsavel: string | null
+      tipo_sanguineo: string | null
       updated_at: Date
     }, ExtArgs["result"]["paciente"]>
     composites: {}
@@ -5288,26 +5288,26 @@ export namespace Prisma {
     readonly data_nascimento: FieldRef<"paciente", 'DateTime'>
     readonly sexo: FieldRef<"paciente", 'String'>
     readonly cpf: FieldRef<"paciente", 'String'>
-    readonly rg: FieldRef<"paciente", 'String'>
     readonly telefone: FieldRef<"paciente", 'String'>
-    readonly telefone_contato: FieldRef<"paciente", 'String'>
     readonly email: FieldRef<"paciente", 'String'>
-    readonly endereco: FieldRef<"paciente", 'String'>
-    readonly numero: FieldRef<"paciente", 'String'>
-    readonly complemento: FieldRef<"paciente", 'String'>
-    readonly bairro: FieldRef<"paciente", 'String'>
-    readonly cidade: FieldRef<"paciente", 'String'>
-    readonly estado: FieldRef<"paciente", 'String'>
-    readonly cep: FieldRef<"paciente", 'String'>
-    readonly peso: FieldRef<"paciente", 'Decimal'>
-    readonly altura: FieldRef<"paciente", 'Decimal'>
-    readonly tipo_sanguineo: FieldRef<"paciente", 'String'>
     readonly alergias: FieldRef<"paciente", 'String'>
-    readonly medicamentos_uso: FieldRef<"paciente", 'String'>
-    readonly observacoes: FieldRef<"paciente", 'String'>
-    readonly nome_responsavel: FieldRef<"paciente", 'String'>
-    readonly telefone_responsavel: FieldRef<"paciente", 'String'>
+    readonly altura: FieldRef<"paciente", 'Decimal'>
+    readonly bairro: FieldRef<"paciente", 'String'>
+    readonly cep: FieldRef<"paciente", 'String'>
+    readonly cidade: FieldRef<"paciente", 'String'>
+    readonly complemento: FieldRef<"paciente", 'String'>
     readonly created_at: FieldRef<"paciente", 'DateTime'>
+    readonly endereco: FieldRef<"paciente", 'String'>
+    readonly estado: FieldRef<"paciente", 'String'>
+    readonly medicamentos_uso: FieldRef<"paciente", 'String'>
+    readonly nome_responsavel: FieldRef<"paciente", 'String'>
+    readonly numero: FieldRef<"paciente", 'String'>
+    readonly observacoes: FieldRef<"paciente", 'String'>
+    readonly peso: FieldRef<"paciente", 'Decimal'>
+    readonly rg: FieldRef<"paciente", 'String'>
+    readonly telefone_contato: FieldRef<"paciente", 'String'>
+    readonly telefone_responsavel: FieldRef<"paciente", 'String'>
+    readonly tipo_sanguineo: FieldRef<"paciente", 'String'>
     readonly updated_at: FieldRef<"paciente", 'DateTime'>
   }
     
@@ -5779,10 +5779,10 @@ export namespace Prisma {
     profissional_id: string | null
     unidade_id: string | null
     data: Date | null
-    hora: string | null
-    status: string | null
-    observacoes: string | null
     created_at: Date | null
+    hora: string | null
+    observacoes: string | null
+    status: string | null
     updated_at: Date | null
   }
 
@@ -5792,10 +5792,10 @@ export namespace Prisma {
     profissional_id: string | null
     unidade_id: string | null
     data: Date | null
-    hora: string | null
-    status: string | null
-    observacoes: string | null
     created_at: Date | null
+    hora: string | null
+    observacoes: string | null
+    status: string | null
     updated_at: Date | null
   }
 
@@ -5805,10 +5805,10 @@ export namespace Prisma {
     profissional_id: number
     unidade_id: number
     data: number
-    hora: number
-    status: number
-    observacoes: number
     created_at: number
+    hora: number
+    observacoes: number
+    status: number
     updated_at: number
     _all: number
   }
@@ -5820,10 +5820,10 @@ export namespace Prisma {
     profissional_id?: true
     unidade_id?: true
     data?: true
-    hora?: true
-    status?: true
-    observacoes?: true
     created_at?: true
+    hora?: true
+    observacoes?: true
+    status?: true
     updated_at?: true
   }
 
@@ -5833,10 +5833,10 @@ export namespace Prisma {
     profissional_id?: true
     unidade_id?: true
     data?: true
-    hora?: true
-    status?: true
-    observacoes?: true
     created_at?: true
+    hora?: true
+    observacoes?: true
+    status?: true
     updated_at?: true
   }
 
@@ -5846,10 +5846,10 @@ export namespace Prisma {
     profissional_id?: true
     unidade_id?: true
     data?: true
-    hora?: true
-    status?: true
-    observacoes?: true
     created_at?: true
+    hora?: true
+    observacoes?: true
+    status?: true
     updated_at?: true
     _all?: true
   }
@@ -5932,10 +5932,10 @@ export namespace Prisma {
     profissional_id: string | null
     unidade_id: string | null
     data: Date
-    hora: string | null
-    status: string
-    observacoes: string | null
     created_at: Date
+    hora: string | null
+    observacoes: string | null
+    status: string
     updated_at: Date
     _count: ConsultaCountAggregateOutputType | null
     _min: ConsultaMinAggregateOutputType | null
@@ -5962,10 +5962,10 @@ export namespace Prisma {
     profissional_id?: boolean
     unidade_id?: boolean
     data?: boolean
-    hora?: boolean
-    status?: boolean
-    observacoes?: boolean
     created_at?: boolean
+    hora?: boolean
+    observacoes?: boolean
+    status?: boolean
     updated_at?: boolean
     paciente?: boolean | consulta$pacienteArgs<ExtArgs>
     profissional_saude?: boolean | consulta$profissional_saudeArgs<ExtArgs>
@@ -5978,10 +5978,10 @@ export namespace Prisma {
     profissional_id?: boolean
     unidade_id?: boolean
     data?: boolean
-    hora?: boolean
-    status?: boolean
-    observacoes?: boolean
     created_at?: boolean
+    hora?: boolean
+    observacoes?: boolean
+    status?: boolean
     updated_at?: boolean
     paciente?: boolean | consulta$pacienteArgs<ExtArgs>
     profissional_saude?: boolean | consulta$profissional_saudeArgs<ExtArgs>
@@ -5994,10 +5994,10 @@ export namespace Prisma {
     profissional_id?: boolean
     unidade_id?: boolean
     data?: boolean
-    hora?: boolean
-    status?: boolean
-    observacoes?: boolean
     created_at?: boolean
+    hora?: boolean
+    observacoes?: boolean
+    status?: boolean
     updated_at?: boolean
     paciente?: boolean | consulta$pacienteArgs<ExtArgs>
     profissional_saude?: boolean | consulta$profissional_saudeArgs<ExtArgs>
@@ -6010,14 +6010,14 @@ export namespace Prisma {
     profissional_id?: boolean
     unidade_id?: boolean
     data?: boolean
-    hora?: boolean
-    status?: boolean
-    observacoes?: boolean
     created_at?: boolean
+    hora?: boolean
+    observacoes?: boolean
+    status?: boolean
     updated_at?: boolean
   }
 
-  export type consultaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "paciente_id" | "profissional_id" | "unidade_id" | "data" | "hora" | "status" | "observacoes" | "created_at" | "updated_at", ExtArgs["result"]["consulta"]>
+  export type consultaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "paciente_id" | "profissional_id" | "unidade_id" | "data" | "created_at" | "hora" | "observacoes" | "status" | "updated_at", ExtArgs["result"]["consulta"]>
   export type consultaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     paciente?: boolean | consulta$pacienteArgs<ExtArgs>
     profissional_saude?: boolean | consulta$profissional_saudeArgs<ExtArgs>
@@ -6047,10 +6047,10 @@ export namespace Prisma {
       profissional_id: string | null
       unidade_id: string | null
       data: Date
-      hora: string | null
-      status: string
-      observacoes: string | null
       created_at: Date
+      hora: string | null
+      observacoes: string | null
+      status: string
       updated_at: Date
     }, ExtArgs["result"]["consulta"]>
     composites: {}
@@ -6483,10 +6483,10 @@ export namespace Prisma {
     readonly profissional_id: FieldRef<"consulta", 'String'>
     readonly unidade_id: FieldRef<"consulta", 'String'>
     readonly data: FieldRef<"consulta", 'DateTime'>
-    readonly hora: FieldRef<"consulta", 'String'>
-    readonly status: FieldRef<"consulta", 'String'>
-    readonly observacoes: FieldRef<"consulta", 'String'>
     readonly created_at: FieldRef<"consulta", 'DateTime'>
+    readonly hora: FieldRef<"consulta", 'String'>
+    readonly observacoes: FieldRef<"consulta", 'String'>
+    readonly status: FieldRef<"consulta", 'String'>
     readonly updated_at: FieldRef<"consulta", 'DateTime'>
   }
     
@@ -7297,10 +7297,10 @@ export namespace Prisma {
     retorno?: boolean
     created_at?: boolean
     updated_at?: boolean
-    paciente?: boolean | pacienteDefaultArgs<ExtArgs>
-    profissional_saude?: boolean | profissional_saudeDefaultArgs<ExtArgs>
     prescricao?: boolean | prontuario$prescricaoArgs<ExtArgs>
     procedimento_realizado?: boolean | prontuario$procedimento_realizadoArgs<ExtArgs>
+    paciente?: boolean | pacienteDefaultArgs<ExtArgs>
+    profissional_saude?: boolean | profissional_saudeDefaultArgs<ExtArgs>
     _count?: boolean | ProntuarioCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["prontuario"]>
 
@@ -7385,10 +7385,10 @@ export namespace Prisma {
 
   export type prontuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "paciente_id" | "profissional_id" | "data_atendimento" | "queixa_principal" | "historia_doenca_atual" | "historia_patologica" | "historia_familiar" | "historia_social" | "exame_fisico" | "pressao_arterial" | "frequencia_cardiaca" | "temperatura" | "peso_atual" | "altura_atual" | "hipotese_diagnostica" | "diagnostico_definitivo" | "conduta" | "observacoes" | "retorno" | "created_at" | "updated_at", ExtArgs["result"]["prontuario"]>
   export type prontuarioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    paciente?: boolean | pacienteDefaultArgs<ExtArgs>
-    profissional_saude?: boolean | profissional_saudeDefaultArgs<ExtArgs>
     prescricao?: boolean | prontuario$prescricaoArgs<ExtArgs>
     procedimento_realizado?: boolean | prontuario$procedimento_realizadoArgs<ExtArgs>
+    paciente?: boolean | pacienteDefaultArgs<ExtArgs>
+    profissional_saude?: boolean | profissional_saudeDefaultArgs<ExtArgs>
     _count?: boolean | ProntuarioCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type prontuarioIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -7403,10 +7403,10 @@ export namespace Prisma {
   export type $prontuarioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "prontuario"
     objects: {
-      paciente: Prisma.$pacientePayload<ExtArgs>
-      profissional_saude: Prisma.$profissional_saudePayload<ExtArgs>
       prescricao: Prisma.$prescricaoPayload<ExtArgs>[]
       procedimento_realizado: Prisma.$procedimento_realizadoPayload<ExtArgs>[]
+      paciente: Prisma.$pacientePayload<ExtArgs>
+      profissional_saude: Prisma.$profissional_saudePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -7825,10 +7825,10 @@ export namespace Prisma {
    */
   export interface Prisma__prontuarioClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    paciente<T extends pacienteDefaultArgs<ExtArgs> = {}>(args?: Subset<T, pacienteDefaultArgs<ExtArgs>>): Prisma__pacienteClient<$Result.GetResult<Prisma.$pacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    profissional_saude<T extends profissional_saudeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saudeDefaultArgs<ExtArgs>>): Prisma__profissional_saudeClient<$Result.GetResult<Prisma.$profissional_saudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     prescricao<T extends prontuario$prescricaoArgs<ExtArgs> = {}>(args?: Subset<T, prontuario$prescricaoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$prescricaoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     procedimento_realizado<T extends prontuario$procedimento_realizadoArgs<ExtArgs> = {}>(args?: Subset<T, prontuario$procedimento_realizadoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$procedimento_realizadoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    paciente<T extends pacienteDefaultArgs<ExtArgs> = {}>(args?: Subset<T, pacienteDefaultArgs<ExtArgs>>): Prisma__pacienteClient<$Result.GetResult<Prisma.$pacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    profissional_saude<T extends profissional_saudeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saudeDefaultArgs<ExtArgs>>): Prisma__profissional_saudeClient<$Result.GetResult<Prisma.$profissional_saudePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10876,8 +10876,8 @@ export namespace Prisma {
     status?: boolean
     created_at?: boolean
     updated_at?: boolean
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     procedimento?: boolean | procedimentoDefaultArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["procedimento_realizado"]>
 
   export type procedimento_realizadoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -10890,8 +10890,8 @@ export namespace Prisma {
     status?: boolean
     created_at?: boolean
     updated_at?: boolean
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     procedimento?: boolean | procedimentoDefaultArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["procedimento_realizado"]>
 
   export type procedimento_realizadoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -10904,8 +10904,8 @@ export namespace Prisma {
     status?: boolean
     created_at?: boolean
     updated_at?: boolean
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     procedimento?: boolean | procedimentoDefaultArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["procedimento_realizado"]>
 
   export type procedimento_realizadoSelectScalar = {
@@ -10922,23 +10922,23 @@ export namespace Prisma {
 
   export type procedimento_realizadoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "prontuario_id" | "procedimento_id" | "data_realizacao" | "observacoes" | "valor" | "status" | "created_at" | "updated_at", ExtArgs["result"]["procedimento_realizado"]>
   export type procedimento_realizadoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     procedimento?: boolean | procedimentoDefaultArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }
   export type procedimento_realizadoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     procedimento?: boolean | procedimentoDefaultArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }
   export type procedimento_realizadoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     procedimento?: boolean | procedimentoDefaultArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }
 
   export type $procedimento_realizadoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "procedimento_realizado"
     objects: {
-      prontuario: Prisma.$prontuarioPayload<ExtArgs>
       procedimento: Prisma.$procedimentoPayload<ExtArgs>
+      prontuario: Prisma.$prontuarioPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -11344,8 +11344,8 @@ export namespace Prisma {
    */
   export interface Prisma__procedimento_realizadoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    prontuario<T extends prontuarioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, prontuarioDefaultArgs<ExtArgs>>): Prisma__prontuarioClient<$Result.GetResult<Prisma.$prontuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     procedimento<T extends procedimentoDefaultArgs<ExtArgs> = {}>(args?: Subset<T, procedimentoDefaultArgs<ExtArgs>>): Prisma__procedimentoClient<$Result.GetResult<Prisma.$procedimentoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    prontuario<T extends prontuarioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, prontuarioDefaultArgs<ExtArgs>>): Prisma__prontuarioClient<$Result.GetResult<Prisma.$prontuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -12945,112 +12945,112 @@ export namespace Prisma {
 
   export type PrescricaoMinAggregateOutputType = {
     id: string | null
-    prontuario_id: string | null
+    duracao: string | null
+    created_at: Date | null
+    data_fim: Date | null
+    data_inicio: Date | null
+    dosagem: string | null
+    frequencia: string | null
     medicamento_id: string | null
     medicamento_nome: string | null
-    dosagem: string | null
-    via_administracao: string | null
-    frequencia: string | null
-    duracao: string | null
-    quantidade: string | null
     observacoes: string | null
+    prontuario_id: string | null
+    quantidade: string | null
     status: string | null
-    data_inicio: Date | null
-    data_fim: Date | null
-    created_at: Date | null
     updated_at: Date | null
+    via_administracao: string | null
   }
 
   export type PrescricaoMaxAggregateOutputType = {
     id: string | null
-    prontuario_id: string | null
+    duracao: string | null
+    created_at: Date | null
+    data_fim: Date | null
+    data_inicio: Date | null
+    dosagem: string | null
+    frequencia: string | null
     medicamento_id: string | null
     medicamento_nome: string | null
-    dosagem: string | null
-    via_administracao: string | null
-    frequencia: string | null
-    duracao: string | null
-    quantidade: string | null
     observacoes: string | null
+    prontuario_id: string | null
+    quantidade: string | null
     status: string | null
-    data_inicio: Date | null
-    data_fim: Date | null
-    created_at: Date | null
     updated_at: Date | null
+    via_administracao: string | null
   }
 
   export type PrescricaoCountAggregateOutputType = {
     id: number
-    prontuario_id: number
+    duracao: number
+    created_at: number
+    data_fim: number
+    data_inicio: number
+    dosagem: number
+    frequencia: number
     medicamento_id: number
     medicamento_nome: number
-    dosagem: number
-    via_administracao: number
-    frequencia: number
-    duracao: number
-    quantidade: number
     observacoes: number
+    prontuario_id: number
+    quantidade: number
     status: number
-    data_inicio: number
-    data_fim: number
-    created_at: number
     updated_at: number
+    via_administracao: number
     _all: number
   }
 
 
   export type PrescricaoMinAggregateInputType = {
     id?: true
-    prontuario_id?: true
+    duracao?: true
+    created_at?: true
+    data_fim?: true
+    data_inicio?: true
+    dosagem?: true
+    frequencia?: true
     medicamento_id?: true
     medicamento_nome?: true
-    dosagem?: true
-    via_administracao?: true
-    frequencia?: true
-    duracao?: true
-    quantidade?: true
     observacoes?: true
+    prontuario_id?: true
+    quantidade?: true
     status?: true
-    data_inicio?: true
-    data_fim?: true
-    created_at?: true
     updated_at?: true
+    via_administracao?: true
   }
 
   export type PrescricaoMaxAggregateInputType = {
     id?: true
-    prontuario_id?: true
+    duracao?: true
+    created_at?: true
+    data_fim?: true
+    data_inicio?: true
+    dosagem?: true
+    frequencia?: true
     medicamento_id?: true
     medicamento_nome?: true
-    dosagem?: true
-    via_administracao?: true
-    frequencia?: true
-    duracao?: true
-    quantidade?: true
     observacoes?: true
+    prontuario_id?: true
+    quantidade?: true
     status?: true
-    data_inicio?: true
-    data_fim?: true
-    created_at?: true
     updated_at?: true
+    via_administracao?: true
   }
 
   export type PrescricaoCountAggregateInputType = {
     id?: true
-    prontuario_id?: true
+    duracao?: true
+    created_at?: true
+    data_fim?: true
+    data_inicio?: true
+    dosagem?: true
+    frequencia?: true
     medicamento_id?: true
     medicamento_nome?: true
-    dosagem?: true
-    via_administracao?: true
-    frequencia?: true
-    duracao?: true
-    quantidade?: true
     observacoes?: true
+    prontuario_id?: true
+    quantidade?: true
     status?: true
-    data_inicio?: true
-    data_fim?: true
-    created_at?: true
     updated_at?: true
+    via_administracao?: true
     _all?: true
   }
 
@@ -13128,20 +13128,20 @@ export namespace Prisma {
 
   export type PrescricaoGroupByOutputType = {
     id: string
-    prontuario_id: string
+    duracao: string | null
+    created_at: Date
+    data_fim: Date | null
+    data_inicio: Date
+    dosagem: string | null
+    frequencia: string | null
     medicamento_id: string | null
     medicamento_nome: string | null
-    dosagem: string | null
-    via_administracao: string | null
-    frequencia: string | null
-    duracao: string | null
-    quantidade: string | null
     observacoes: string | null
+    prontuario_id: string
+    quantidade: string | null
     status: string
-    data_inicio: Date
-    data_fim: Date | null
-    created_at: Date
     updated_at: Date
+    via_administracao: string | null
     _count: PrescricaoCountAggregateOutputType | null
     _min: PrescricaoMinAggregateOutputType | null
     _max: PrescricaoMaxAggregateOutputType | null
@@ -13163,118 +13163,118 @@ export namespace Prisma {
 
   export type prescricaoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    prontuario_id?: boolean
+    duracao?: boolean
+    created_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    dosagem?: boolean
+    frequencia?: boolean
     medicamento_id?: boolean
     medicamento_nome?: boolean
-    dosagem?: boolean
-    via_administracao?: boolean
-    frequencia?: boolean
-    duracao?: boolean
-    quantidade?: boolean
     observacoes?: boolean
+    prontuario_id?: boolean
+    quantidade?: boolean
     status?: boolean
-    data_inicio?: boolean
-    data_fim?: boolean
-    created_at?: boolean
     updated_at?: boolean
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
+    via_administracao?: boolean
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["prescricao"]>
 
   export type prescricaoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    prontuario_id?: boolean
+    duracao?: boolean
+    created_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    dosagem?: boolean
+    frequencia?: boolean
     medicamento_id?: boolean
     medicamento_nome?: boolean
-    dosagem?: boolean
-    via_administracao?: boolean
-    frequencia?: boolean
-    duracao?: boolean
-    quantidade?: boolean
     observacoes?: boolean
+    prontuario_id?: boolean
+    quantidade?: boolean
     status?: boolean
-    data_inicio?: boolean
-    data_fim?: boolean
-    created_at?: boolean
     updated_at?: boolean
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
+    via_administracao?: boolean
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["prescricao"]>
 
   export type prescricaoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    prontuario_id?: boolean
+    duracao?: boolean
+    created_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    dosagem?: boolean
+    frequencia?: boolean
     medicamento_id?: boolean
     medicamento_nome?: boolean
-    dosagem?: boolean
-    via_administracao?: boolean
-    frequencia?: boolean
-    duracao?: boolean
-    quantidade?: boolean
     observacoes?: boolean
+    prontuario_id?: boolean
+    quantidade?: boolean
     status?: boolean
-    data_inicio?: boolean
-    data_fim?: boolean
-    created_at?: boolean
     updated_at?: boolean
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
+    via_administracao?: boolean
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["prescricao"]>
 
   export type prescricaoSelectScalar = {
     id?: boolean
-    prontuario_id?: boolean
+    duracao?: boolean
+    created_at?: boolean
+    data_fim?: boolean
+    data_inicio?: boolean
+    dosagem?: boolean
+    frequencia?: boolean
     medicamento_id?: boolean
     medicamento_nome?: boolean
-    dosagem?: boolean
-    via_administracao?: boolean
-    frequencia?: boolean
-    duracao?: boolean
-    quantidade?: boolean
     observacoes?: boolean
+    prontuario_id?: boolean
+    quantidade?: boolean
     status?: boolean
-    data_inicio?: boolean
-    data_fim?: boolean
-    created_at?: boolean
     updated_at?: boolean
+    via_administracao?: boolean
   }
 
-  export type prescricaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "prontuario_id" | "medicamento_id" | "medicamento_nome" | "dosagem" | "via_administracao" | "frequencia" | "duracao" | "quantidade" | "observacoes" | "status" | "data_inicio" | "data_fim" | "created_at" | "updated_at", ExtArgs["result"]["prescricao"]>
+  export type prescricaoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "duracao" | "created_at" | "data_fim" | "data_inicio" | "dosagem" | "frequencia" | "medicamento_id" | "medicamento_nome" | "observacoes" | "prontuario_id" | "quantidade" | "status" | "updated_at" | "via_administracao", ExtArgs["result"]["prescricao"]>
   export type prescricaoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }
   export type prescricaoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }
   export type prescricaoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
     medicamento?: boolean | prescricao$medicamentoArgs<ExtArgs>
+    prontuario?: boolean | prontuarioDefaultArgs<ExtArgs>
   }
 
   export type $prescricaoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "prescricao"
     objects: {
-      prontuario: Prisma.$prontuarioPayload<ExtArgs>
       medicamento: Prisma.$medicamentoPayload<ExtArgs> | null
+      prontuario: Prisma.$prontuarioPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      prontuario_id: string
+      duracao: string | null
+      created_at: Date
+      data_fim: Date | null
+      data_inicio: Date
+      dosagem: string | null
+      frequencia: string | null
       medicamento_id: string | null
       medicamento_nome: string | null
-      dosagem: string | null
-      via_administracao: string | null
-      frequencia: string | null
-      duracao: string | null
-      quantidade: string | null
       observacoes: string | null
+      prontuario_id: string
+      quantidade: string | null
       status: string
-      data_inicio: Date
-      data_fim: Date | null
-      created_at: Date
       updated_at: Date
+      via_administracao: string | null
     }, ExtArgs["result"]["prescricao"]>
     composites: {}
   }
@@ -13669,8 +13669,8 @@ export namespace Prisma {
    */
   export interface Prisma__prescricaoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    prontuario<T extends prontuarioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, prontuarioDefaultArgs<ExtArgs>>): Prisma__prontuarioClient<$Result.GetResult<Prisma.$prontuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     medicamento<T extends prescricao$medicamentoArgs<ExtArgs> = {}>(args?: Subset<T, prescricao$medicamentoArgs<ExtArgs>>): Prisma__medicamentoClient<$Result.GetResult<Prisma.$medicamentoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    prontuario<T extends prontuarioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, prontuarioDefaultArgs<ExtArgs>>): Prisma__prontuarioClient<$Result.GetResult<Prisma.$prontuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -13701,20 +13701,20 @@ export namespace Prisma {
    */
   interface prescricaoFieldRefs {
     readonly id: FieldRef<"prescricao", 'String'>
-    readonly prontuario_id: FieldRef<"prescricao", 'String'>
+    readonly duracao: FieldRef<"prescricao", 'String'>
+    readonly created_at: FieldRef<"prescricao", 'DateTime'>
+    readonly data_fim: FieldRef<"prescricao", 'DateTime'>
+    readonly data_inicio: FieldRef<"prescricao", 'DateTime'>
+    readonly dosagem: FieldRef<"prescricao", 'String'>
+    readonly frequencia: FieldRef<"prescricao", 'String'>
     readonly medicamento_id: FieldRef<"prescricao", 'String'>
     readonly medicamento_nome: FieldRef<"prescricao", 'String'>
-    readonly dosagem: FieldRef<"prescricao", 'String'>
-    readonly via_administracao: FieldRef<"prescricao", 'String'>
-    readonly frequencia: FieldRef<"prescricao", 'String'>
-    readonly duracao: FieldRef<"prescricao", 'String'>
-    readonly quantidade: FieldRef<"prescricao", 'String'>
     readonly observacoes: FieldRef<"prescricao", 'String'>
+    readonly prontuario_id: FieldRef<"prescricao", 'String'>
+    readonly quantidade: FieldRef<"prescricao", 'String'>
     readonly status: FieldRef<"prescricao", 'String'>
-    readonly data_inicio: FieldRef<"prescricao", 'DateTime'>
-    readonly data_fim: FieldRef<"prescricao", 'DateTime'>
-    readonly created_at: FieldRef<"prescricao", 'DateTime'>
     readonly updated_at: FieldRef<"prescricao", 'DateTime'>
+    readonly via_administracao: FieldRef<"prescricao", 'String'>
   }
     
 
@@ -14161,12 +14161,12 @@ export namespace Prisma {
   export type Profissional_saudeMinAggregateOutputType = {
     id: string | null
     nome: string | null
-    documento_numero: string | null
-    tipo_documento_id: string | null
-    especialidade_id: string | null
     email: string | null
     senha: string | null
     data_nascimento: Date | null
+    documento_numero: string | null
+    especialidade_id: string | null
+    tipo_documento_id: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -14174,12 +14174,12 @@ export namespace Prisma {
   export type Profissional_saudeMaxAggregateOutputType = {
     id: string | null
     nome: string | null
-    documento_numero: string | null
-    tipo_documento_id: string | null
-    especialidade_id: string | null
     email: string | null
     senha: string | null
     data_nascimento: Date | null
+    documento_numero: string | null
+    especialidade_id: string | null
+    tipo_documento_id: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -14187,12 +14187,12 @@ export namespace Prisma {
   export type Profissional_saudeCountAggregateOutputType = {
     id: number
     nome: number
-    documento_numero: number
-    tipo_documento_id: number
-    especialidade_id: number
     email: number
     senha: number
     data_nascimento: number
+    documento_numero: number
+    especialidade_id: number
+    tipo_documento_id: number
     created_at: number
     updated_at: number
     _all: number
@@ -14202,12 +14202,12 @@ export namespace Prisma {
   export type Profissional_saudeMinAggregateInputType = {
     id?: true
     nome?: true
-    documento_numero?: true
-    tipo_documento_id?: true
-    especialidade_id?: true
     email?: true
     senha?: true
     data_nascimento?: true
+    documento_numero?: true
+    especialidade_id?: true
+    tipo_documento_id?: true
     created_at?: true
     updated_at?: true
   }
@@ -14215,12 +14215,12 @@ export namespace Prisma {
   export type Profissional_saudeMaxAggregateInputType = {
     id?: true
     nome?: true
-    documento_numero?: true
-    tipo_documento_id?: true
-    especialidade_id?: true
     email?: true
     senha?: true
     data_nascimento?: true
+    documento_numero?: true
+    especialidade_id?: true
+    tipo_documento_id?: true
     created_at?: true
     updated_at?: true
   }
@@ -14228,12 +14228,12 @@ export namespace Prisma {
   export type Profissional_saudeCountAggregateInputType = {
     id?: true
     nome?: true
-    documento_numero?: true
-    tipo_documento_id?: true
-    especialidade_id?: true
     email?: true
     senha?: true
     data_nascimento?: true
+    documento_numero?: true
+    especialidade_id?: true
+    tipo_documento_id?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -14314,12 +14314,12 @@ export namespace Prisma {
   export type Profissional_saudeGroupByOutputType = {
     id: string
     nome: string
-    documento_numero: string | null
-    tipo_documento_id: string | null
-    especialidade_id: string | null
     email: string | null
     senha: string
     data_nascimento: Date | null
+    documento_numero: string | null
+    especialidade_id: string | null
+    tipo_documento_id: string | null
     created_at: Date
     updated_at: Date
     _count: Profissional_saudeCountAggregateOutputType | null
@@ -14344,98 +14344,98 @@ export namespace Prisma {
   export type profissional_saudeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
-    documento_numero?: boolean
-    tipo_documento_id?: boolean
-    especialidade_id?: boolean
     email?: boolean
     senha?: boolean
     data_nascimento?: boolean
+    documento_numero?: boolean
+    especialidade_id?: boolean
+    tipo_documento_id?: boolean
     created_at?: boolean
     updated_at?: boolean
     consulta?: boolean | profissional_saude$consultaArgs<ExtArgs>
-    prontuario?: boolean | profissional_saude$prontuarioArgs<ExtArgs>
-    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
     especialidade?: boolean | profissional_saude$especialidadeArgs<ExtArgs>
+    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
+    prontuario?: boolean | profissional_saude$prontuarioArgs<ExtArgs>
     _count?: boolean | Profissional_saudeCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profissional_saude"]>
 
   export type profissional_saudeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
-    documento_numero?: boolean
-    tipo_documento_id?: boolean
-    especialidade_id?: boolean
     email?: boolean
     senha?: boolean
     data_nascimento?: boolean
+    documento_numero?: boolean
+    especialidade_id?: boolean
+    tipo_documento_id?: boolean
     created_at?: boolean
     updated_at?: boolean
-    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
     especialidade?: boolean | profissional_saude$especialidadeArgs<ExtArgs>
+    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
   }, ExtArgs["result"]["profissional_saude"]>
 
   export type profissional_saudeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
-    documento_numero?: boolean
-    tipo_documento_id?: boolean
-    especialidade_id?: boolean
     email?: boolean
     senha?: boolean
     data_nascimento?: boolean
+    documento_numero?: boolean
+    especialidade_id?: boolean
+    tipo_documento_id?: boolean
     created_at?: boolean
     updated_at?: boolean
-    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
     especialidade?: boolean | profissional_saude$especialidadeArgs<ExtArgs>
+    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
   }, ExtArgs["result"]["profissional_saude"]>
 
   export type profissional_saudeSelectScalar = {
     id?: boolean
     nome?: boolean
-    documento_numero?: boolean
-    tipo_documento_id?: boolean
-    especialidade_id?: boolean
     email?: boolean
     senha?: boolean
     data_nascimento?: boolean
+    documento_numero?: boolean
+    especialidade_id?: boolean
+    tipo_documento_id?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type profissional_saudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "documento_numero" | "tipo_documento_id" | "especialidade_id" | "email" | "senha" | "data_nascimento" | "created_at" | "updated_at", ExtArgs["result"]["profissional_saude"]>
+  export type profissional_saudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "data_nascimento" | "documento_numero" | "especialidade_id" | "tipo_documento_id" | "created_at" | "updated_at", ExtArgs["result"]["profissional_saude"]>
   export type profissional_saudeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     consulta?: boolean | profissional_saude$consultaArgs<ExtArgs>
-    prontuario?: boolean | profissional_saude$prontuarioArgs<ExtArgs>
-    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
     especialidade?: boolean | profissional_saude$especialidadeArgs<ExtArgs>
+    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
+    prontuario?: boolean | profissional_saude$prontuarioArgs<ExtArgs>
     _count?: boolean | Profissional_saudeCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type profissional_saudeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
     especialidade?: boolean | profissional_saude$especialidadeArgs<ExtArgs>
+    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
   }
   export type profissional_saudeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
     especialidade?: boolean | profissional_saude$especialidadeArgs<ExtArgs>
+    tipo_documento?: boolean | profissional_saude$tipo_documentoArgs<ExtArgs>
   }
 
   export type $profissional_saudePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "profissional_saude"
     objects: {
       consulta: Prisma.$consultaPayload<ExtArgs>[]
-      prontuario: Prisma.$prontuarioPayload<ExtArgs>[]
-      tipo_documento: Prisma.$tipo_documentoPayload<ExtArgs> | null
       especialidade: Prisma.$especialidadePayload<ExtArgs> | null
+      tipo_documento: Prisma.$tipo_documentoPayload<ExtArgs> | null
+      prontuario: Prisma.$prontuarioPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       nome: string
-      documento_numero: string | null
-      tipo_documento_id: string | null
-      especialidade_id: string | null
       email: string | null
       senha: string
       data_nascimento: Date | null
+      documento_numero: string | null
+      especialidade_id: string | null
+      tipo_documento_id: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["profissional_saude"]>
@@ -14833,9 +14833,9 @@ export namespace Prisma {
   export interface Prisma__profissional_saudeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     consulta<T extends profissional_saude$consultaArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saude$consultaArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    prontuario<T extends profissional_saude$prontuarioArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saude$prontuarioArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$prontuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    tipo_documento<T extends profissional_saude$tipo_documentoArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saude$tipo_documentoArgs<ExtArgs>>): Prisma__tipo_documentoClient<$Result.GetResult<Prisma.$tipo_documentoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     especialidade<T extends profissional_saude$especialidadeArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saude$especialidadeArgs<ExtArgs>>): Prisma__especialidadeClient<$Result.GetResult<Prisma.$especialidadePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    tipo_documento<T extends profissional_saude$tipo_documentoArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saude$tipo_documentoArgs<ExtArgs>>): Prisma__tipo_documentoClient<$Result.GetResult<Prisma.$tipo_documentoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    prontuario<T extends profissional_saude$prontuarioArgs<ExtArgs> = {}>(args?: Subset<T, profissional_saude$prontuarioArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$prontuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -14867,12 +14867,12 @@ export namespace Prisma {
   interface profissional_saudeFieldRefs {
     readonly id: FieldRef<"profissional_saude", 'String'>
     readonly nome: FieldRef<"profissional_saude", 'String'>
-    readonly documento_numero: FieldRef<"profissional_saude", 'String'>
-    readonly tipo_documento_id: FieldRef<"profissional_saude", 'String'>
-    readonly especialidade_id: FieldRef<"profissional_saude", 'String'>
     readonly email: FieldRef<"profissional_saude", 'String'>
     readonly senha: FieldRef<"profissional_saude", 'String'>
     readonly data_nascimento: FieldRef<"profissional_saude", 'DateTime'>
+    readonly documento_numero: FieldRef<"profissional_saude", 'String'>
+    readonly especialidade_id: FieldRef<"profissional_saude", 'String'>
+    readonly tipo_documento_id: FieldRef<"profissional_saude", 'String'>
     readonly created_at: FieldRef<"profissional_saude", 'DateTime'>
     readonly updated_at: FieldRef<"profissional_saude", 'DateTime'>
   }
@@ -15295,27 +15295,22 @@ export namespace Prisma {
   }
 
   /**
-   * profissional_saude.prontuario
+   * profissional_saude.especialidade
    */
-  export type profissional_saude$prontuarioArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type profissional_saude$especialidadeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the prontuario
+     * Select specific fields to fetch from the especialidade
      */
-    select?: prontuarioSelect<ExtArgs> | null
+    select?: especialidadeSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the prontuario
+     * Omit specific fields from the especialidade
      */
-    omit?: prontuarioOmit<ExtArgs> | null
+    omit?: especialidadeOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: prontuarioInclude<ExtArgs> | null
-    where?: prontuarioWhereInput
-    orderBy?: prontuarioOrderByWithRelationInput | prontuarioOrderByWithRelationInput[]
-    cursor?: prontuarioWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ProntuarioScalarFieldEnum | ProntuarioScalarFieldEnum[]
+    include?: especialidadeInclude<ExtArgs> | null
+    where?: especialidadeWhereInput
   }
 
   /**
@@ -15338,22 +15333,27 @@ export namespace Prisma {
   }
 
   /**
-   * profissional_saude.especialidade
+   * profissional_saude.prontuario
    */
-  export type profissional_saude$especialidadeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type profissional_saude$prontuarioArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the especialidade
+     * Select specific fields to fetch from the prontuario
      */
-    select?: especialidadeSelect<ExtArgs> | null
+    select?: prontuarioSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the especialidade
+     * Omit specific fields from the prontuario
      */
-    omit?: especialidadeOmit<ExtArgs> | null
+    omit?: prontuarioOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: especialidadeInclude<ExtArgs> | null
-    where?: especialidadeWhereInput
+    include?: prontuarioInclude<ExtArgs> | null
+    where?: prontuarioWhereInput
+    orderBy?: prontuarioOrderByWithRelationInput | prontuarioOrderByWithRelationInput[]
+    cursor?: prontuarioWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProntuarioScalarFieldEnum | ProntuarioScalarFieldEnum[]
   }
 
   /**
@@ -15390,9 +15390,9 @@ export namespace Prisma {
     titulo: string | null
     sintomas_padrao: string | null
     condutas_sugeridas: string | null
-    medicamentos_recomendados: string | null
     sazonalidade: string | null
     created_at: Date | null
+    medicamentos_recomendados: string | null
     updated_at: Date | null
   }
 
@@ -15401,9 +15401,9 @@ export namespace Prisma {
     titulo: string | null
     sintomas_padrao: string | null
     condutas_sugeridas: string | null
-    medicamentos_recomendados: string | null
     sazonalidade: string | null
     created_at: Date | null
+    medicamentos_recomendados: string | null
     updated_at: Date | null
   }
 
@@ -15412,9 +15412,9 @@ export namespace Prisma {
     titulo: number
     sintomas_padrao: number
     condutas_sugeridas: number
-    medicamentos_recomendados: number
     sazonalidade: number
     created_at: number
+    medicamentos_recomendados: number
     updated_at: number
     _all: number
   }
@@ -15425,9 +15425,9 @@ export namespace Prisma {
     titulo?: true
     sintomas_padrao?: true
     condutas_sugeridas?: true
-    medicamentos_recomendados?: true
     sazonalidade?: true
     created_at?: true
+    medicamentos_recomendados?: true
     updated_at?: true
   }
 
@@ -15436,9 +15436,9 @@ export namespace Prisma {
     titulo?: true
     sintomas_padrao?: true
     condutas_sugeridas?: true
-    medicamentos_recomendados?: true
     sazonalidade?: true
     created_at?: true
+    medicamentos_recomendados?: true
     updated_at?: true
   }
 
@@ -15447,9 +15447,9 @@ export namespace Prisma {
     titulo?: true
     sintomas_padrao?: true
     condutas_sugeridas?: true
-    medicamentos_recomendados?: true
     sazonalidade?: true
     created_at?: true
+    medicamentos_recomendados?: true
     updated_at?: true
     _all?: true
   }
@@ -15531,9 +15531,9 @@ export namespace Prisma {
     titulo: string
     sintomas_padrao: string | null
     condutas_sugeridas: string | null
-    medicamentos_recomendados: string | null
     sazonalidade: string | null
     created_at: Date
+    medicamentos_recomendados: string | null
     updated_at: Date
     _count: TemplateCountAggregateOutputType | null
     _min: TemplateMinAggregateOutputType | null
@@ -15559,9 +15559,9 @@ export namespace Prisma {
     titulo?: boolean
     sintomas_padrao?: boolean
     condutas_sugeridas?: boolean
-    medicamentos_recomendados?: boolean
     sazonalidade?: boolean
     created_at?: boolean
+    medicamentos_recomendados?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["template"]>
 
@@ -15570,9 +15570,9 @@ export namespace Prisma {
     titulo?: boolean
     sintomas_padrao?: boolean
     condutas_sugeridas?: boolean
-    medicamentos_recomendados?: boolean
     sazonalidade?: boolean
     created_at?: boolean
+    medicamentos_recomendados?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["template"]>
 
@@ -15581,9 +15581,9 @@ export namespace Prisma {
     titulo?: boolean
     sintomas_padrao?: boolean
     condutas_sugeridas?: boolean
-    medicamentos_recomendados?: boolean
     sazonalidade?: boolean
     created_at?: boolean
+    medicamentos_recomendados?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["template"]>
 
@@ -15592,13 +15592,13 @@ export namespace Prisma {
     titulo?: boolean
     sintomas_padrao?: boolean
     condutas_sugeridas?: boolean
-    medicamentos_recomendados?: boolean
     sazonalidade?: boolean
     created_at?: boolean
+    medicamentos_recomendados?: boolean
     updated_at?: boolean
   }
 
-  export type templateOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "titulo" | "sintomas_padrao" | "condutas_sugeridas" | "medicamentos_recomendados" | "sazonalidade" | "created_at" | "updated_at", ExtArgs["result"]["template"]>
+  export type templateOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "titulo" | "sintomas_padrao" | "condutas_sugeridas" | "sazonalidade" | "created_at" | "medicamentos_recomendados" | "updated_at", ExtArgs["result"]["template"]>
 
   export type $templatePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "template"
@@ -15608,9 +15608,9 @@ export namespace Prisma {
       titulo: string
       sintomas_padrao: string | null
       condutas_sugeridas: string | null
-      medicamentos_recomendados: string | null
       sazonalidade: string | null
       created_at: Date
+      medicamentos_recomendados: string | null
       updated_at: Date
     }, ExtArgs["result"]["template"]>
     composites: {}
@@ -16039,9 +16039,9 @@ export namespace Prisma {
     readonly titulo: FieldRef<"template", 'String'>
     readonly sintomas_padrao: FieldRef<"template", 'String'>
     readonly condutas_sugeridas: FieldRef<"template", 'String'>
-    readonly medicamentos_recomendados: FieldRef<"template", 'String'>
     readonly sazonalidade: FieldRef<"template", 'String'>
     readonly created_at: FieldRef<"template", 'DateTime'>
+    readonly medicamentos_recomendados: FieldRef<"template", 'String'>
     readonly updated_at: FieldRef<"template", 'DateTime'>
   }
     
@@ -16426,8 +16426,8 @@ export namespace Prisma {
     endereco: string | null
     cidade: string | null
     estado: string | null
-    telefone: string | null
     created_at: Date | null
+    telefone: string | null
     updated_at: Date | null
   }
 
@@ -16438,8 +16438,8 @@ export namespace Prisma {
     endereco: string | null
     cidade: string | null
     estado: string | null
-    telefone: string | null
     created_at: Date | null
+    telefone: string | null
     updated_at: Date | null
   }
 
@@ -16450,8 +16450,8 @@ export namespace Prisma {
     endereco: number
     cidade: number
     estado: number
-    telefone: number
     created_at: number
+    telefone: number
     updated_at: number
     _all: number
   }
@@ -16464,8 +16464,8 @@ export namespace Prisma {
     endereco?: true
     cidade?: true
     estado?: true
-    telefone?: true
     created_at?: true
+    telefone?: true
     updated_at?: true
   }
 
@@ -16476,8 +16476,8 @@ export namespace Prisma {
     endereco?: true
     cidade?: true
     estado?: true
-    telefone?: true
     created_at?: true
+    telefone?: true
     updated_at?: true
   }
 
@@ -16488,8 +16488,8 @@ export namespace Prisma {
     endereco?: true
     cidade?: true
     estado?: true
-    telefone?: true
     created_at?: true
+    telefone?: true
     updated_at?: true
     _all?: true
   }
@@ -16573,8 +16573,8 @@ export namespace Prisma {
     endereco: string | null
     cidade: string | null
     estado: string | null
-    telefone: string | null
     created_at: Date
+    telefone: string | null
     updated_at: Date
     _count: Unidade_saudeCountAggregateOutputType | null
     _min: Unidade_saudeMinAggregateOutputType | null
@@ -16602,8 +16602,8 @@ export namespace Prisma {
     endereco?: boolean
     cidade?: boolean
     estado?: boolean
-    telefone?: boolean
     created_at?: boolean
+    telefone?: boolean
     updated_at?: boolean
     consulta?: boolean | unidade_saude$consultaArgs<ExtArgs>
     _count?: boolean | Unidade_saudeCountOutputTypeDefaultArgs<ExtArgs>
@@ -16616,8 +16616,8 @@ export namespace Prisma {
     endereco?: boolean
     cidade?: boolean
     estado?: boolean
-    telefone?: boolean
     created_at?: boolean
+    telefone?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["unidade_saude"]>
 
@@ -16628,8 +16628,8 @@ export namespace Prisma {
     endereco?: boolean
     cidade?: boolean
     estado?: boolean
-    telefone?: boolean
     created_at?: boolean
+    telefone?: boolean
     updated_at?: boolean
   }, ExtArgs["result"]["unidade_saude"]>
 
@@ -16640,12 +16640,12 @@ export namespace Prisma {
     endereco?: boolean
     cidade?: boolean
     estado?: boolean
-    telefone?: boolean
     created_at?: boolean
+    telefone?: boolean
     updated_at?: boolean
   }
 
-  export type unidade_saudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "cnes" | "endereco" | "cidade" | "estado" | "telefone" | "created_at" | "updated_at", ExtArgs["result"]["unidade_saude"]>
+  export type unidade_saudeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "cnes" | "endereco" | "cidade" | "estado" | "created_at" | "telefone" | "updated_at", ExtArgs["result"]["unidade_saude"]>
   export type unidade_saudeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     consulta?: boolean | unidade_saude$consultaArgs<ExtArgs>
     _count?: boolean | Unidade_saudeCountOutputTypeDefaultArgs<ExtArgs>
@@ -16665,8 +16665,8 @@ export namespace Prisma {
       endereco: string | null
       cidade: string | null
       estado: string | null
-      telefone: string | null
       created_at: Date
+      telefone: string | null
       updated_at: Date
     }, ExtArgs["result"]["unidade_saude"]>
     composites: {}
@@ -17098,8 +17098,8 @@ export namespace Prisma {
     readonly endereco: FieldRef<"unidade_saude", 'String'>
     readonly cidade: FieldRef<"unidade_saude", 'String'>
     readonly estado: FieldRef<"unidade_saude", 'String'>
-    readonly telefone: FieldRef<"unidade_saude", 'String'>
     readonly created_at: FieldRef<"unidade_saude", 'DateTime'>
+    readonly telefone: FieldRef<"unidade_saude", 'String'>
     readonly updated_at: FieldRef<"unidade_saude", 'DateTime'>
   }
     
@@ -17569,26 +17569,26 @@ export namespace Prisma {
     data_nascimento: 'data_nascimento',
     sexo: 'sexo',
     cpf: 'cpf',
-    rg: 'rg',
     telefone: 'telefone',
-    telefone_contato: 'telefone_contato',
     email: 'email',
-    endereco: 'endereco',
-    numero: 'numero',
-    complemento: 'complemento',
-    bairro: 'bairro',
-    cidade: 'cidade',
-    estado: 'estado',
-    cep: 'cep',
-    peso: 'peso',
-    altura: 'altura',
-    tipo_sanguineo: 'tipo_sanguineo',
     alergias: 'alergias',
-    medicamentos_uso: 'medicamentos_uso',
-    observacoes: 'observacoes',
-    nome_responsavel: 'nome_responsavel',
-    telefone_responsavel: 'telefone_responsavel',
+    altura: 'altura',
+    bairro: 'bairro',
+    cep: 'cep',
+    cidade: 'cidade',
+    complemento: 'complemento',
     created_at: 'created_at',
+    endereco: 'endereco',
+    estado: 'estado',
+    medicamentos_uso: 'medicamentos_uso',
+    nome_responsavel: 'nome_responsavel',
+    numero: 'numero',
+    observacoes: 'observacoes',
+    peso: 'peso',
+    rg: 'rg',
+    telefone_contato: 'telefone_contato',
+    telefone_responsavel: 'telefone_responsavel',
+    tipo_sanguineo: 'tipo_sanguineo',
     updated_at: 'updated_at'
   };
 
@@ -17601,10 +17601,10 @@ export namespace Prisma {
     profissional_id: 'profissional_id',
     unidade_id: 'unidade_id',
     data: 'data',
-    hora: 'hora',
-    status: 'status',
-    observacoes: 'observacoes',
     created_at: 'created_at',
+    hora: 'hora',
+    observacoes: 'observacoes',
+    status: 'status',
     updated_at: 'updated_at'
   };
 
@@ -17700,20 +17700,20 @@ export namespace Prisma {
 
   export const PrescricaoScalarFieldEnum: {
     id: 'id',
-    prontuario_id: 'prontuario_id',
+    duracao: 'duracao',
+    created_at: 'created_at',
+    data_fim: 'data_fim',
+    data_inicio: 'data_inicio',
+    dosagem: 'dosagem',
+    frequencia: 'frequencia',
     medicamento_id: 'medicamento_id',
     medicamento_nome: 'medicamento_nome',
-    dosagem: 'dosagem',
-    via_administracao: 'via_administracao',
-    frequencia: 'frequencia',
-    duracao: 'duracao',
-    quantidade: 'quantidade',
     observacoes: 'observacoes',
+    prontuario_id: 'prontuario_id',
+    quantidade: 'quantidade',
     status: 'status',
-    data_inicio: 'data_inicio',
-    data_fim: 'data_fim',
-    created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    via_administracao: 'via_administracao'
   };
 
   export type PrescricaoScalarFieldEnum = (typeof PrescricaoScalarFieldEnum)[keyof typeof PrescricaoScalarFieldEnum]
@@ -17722,12 +17722,12 @@ export namespace Prisma {
   export const Profissional_saudeScalarFieldEnum: {
     id: 'id',
     nome: 'nome',
-    documento_numero: 'documento_numero',
-    tipo_documento_id: 'tipo_documento_id',
-    especialidade_id: 'especialidade_id',
     email: 'email',
     senha: 'senha',
     data_nascimento: 'data_nascimento',
+    documento_numero: 'documento_numero',
+    especialidade_id: 'especialidade_id',
+    tipo_documento_id: 'tipo_documento_id',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -17740,9 +17740,9 @@ export namespace Prisma {
     titulo: 'titulo',
     sintomas_padrao: 'sintomas_padrao',
     condutas_sugeridas: 'condutas_sugeridas',
-    medicamentos_recomendados: 'medicamentos_recomendados',
     sazonalidade: 'sazonalidade',
     created_at: 'created_at',
+    medicamentos_recomendados: 'medicamentos_recomendados',
     updated_at: 'updated_at'
   };
 
@@ -17756,8 +17756,8 @@ export namespace Prisma {
     endereco: 'endereco',
     cidade: 'cidade',
     estado: 'estado',
-    telefone: 'telefone',
     created_at: 'created_at',
+    telefone: 'telefone',
     updated_at: 'updated_at'
   };
 
@@ -17958,26 +17958,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeFilter<"paciente"> | Date | string
     sexo?: StringNullableFilter<"paciente"> | string | null
     cpf?: StringNullableFilter<"paciente"> | string | null
-    rg?: StringNullableFilter<"paciente"> | string | null
     telefone?: StringNullableFilter<"paciente"> | string | null
-    telefone_contato?: StringNullableFilter<"paciente"> | string | null
     email?: StringNullableFilter<"paciente"> | string | null
-    endereco?: StringNullableFilter<"paciente"> | string | null
-    numero?: StringNullableFilter<"paciente"> | string | null
-    complemento?: StringNullableFilter<"paciente"> | string | null
-    bairro?: StringNullableFilter<"paciente"> | string | null
-    cidade?: StringNullableFilter<"paciente"> | string | null
-    estado?: StringNullableFilter<"paciente"> | string | null
-    cep?: StringNullableFilter<"paciente"> | string | null
-    peso?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
-    altura?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: StringNullableFilter<"paciente"> | string | null
     alergias?: StringNullableFilter<"paciente"> | string | null
-    medicamentos_uso?: StringNullableFilter<"paciente"> | string | null
-    observacoes?: StringNullableFilter<"paciente"> | string | null
-    nome_responsavel?: StringNullableFilter<"paciente"> | string | null
-    telefone_responsavel?: StringNullableFilter<"paciente"> | string | null
+    altura?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
+    bairro?: StringNullableFilter<"paciente"> | string | null
+    cep?: StringNullableFilter<"paciente"> | string | null
+    cidade?: StringNullableFilter<"paciente"> | string | null
+    complemento?: StringNullableFilter<"paciente"> | string | null
     created_at?: DateTimeFilter<"paciente"> | Date | string
+    endereco?: StringNullableFilter<"paciente"> | string | null
+    estado?: StringNullableFilter<"paciente"> | string | null
+    medicamentos_uso?: StringNullableFilter<"paciente"> | string | null
+    nome_responsavel?: StringNullableFilter<"paciente"> | string | null
+    numero?: StringNullableFilter<"paciente"> | string | null
+    observacoes?: StringNullableFilter<"paciente"> | string | null
+    peso?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
+    rg?: StringNullableFilter<"paciente"> | string | null
+    telefone_contato?: StringNullableFilter<"paciente"> | string | null
+    telefone_responsavel?: StringNullableFilter<"paciente"> | string | null
+    tipo_sanguineo?: StringNullableFilter<"paciente"> | string | null
     updated_at?: DateTimeFilter<"paciente"> | Date | string
     consulta?: ConsultaListRelationFilter
     prontuario?: ProntuarioListRelationFilter
@@ -17989,26 +17989,26 @@ export namespace Prisma {
     data_nascimento?: SortOrder
     sexo?: SortOrderInput | SortOrder
     cpf?: SortOrderInput | SortOrder
-    rg?: SortOrderInput | SortOrder
     telefone?: SortOrderInput | SortOrder
-    telefone_contato?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
-    endereco?: SortOrderInput | SortOrder
-    numero?: SortOrderInput | SortOrder
-    complemento?: SortOrderInput | SortOrder
-    bairro?: SortOrderInput | SortOrder
-    cidade?: SortOrderInput | SortOrder
-    estado?: SortOrderInput | SortOrder
-    cep?: SortOrderInput | SortOrder
-    peso?: SortOrderInput | SortOrder
-    altura?: SortOrderInput | SortOrder
-    tipo_sanguineo?: SortOrderInput | SortOrder
     alergias?: SortOrderInput | SortOrder
-    medicamentos_uso?: SortOrderInput | SortOrder
-    observacoes?: SortOrderInput | SortOrder
-    nome_responsavel?: SortOrderInput | SortOrder
-    telefone_responsavel?: SortOrderInput | SortOrder
+    altura?: SortOrderInput | SortOrder
+    bairro?: SortOrderInput | SortOrder
+    cep?: SortOrderInput | SortOrder
+    cidade?: SortOrderInput | SortOrder
+    complemento?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    endereco?: SortOrderInput | SortOrder
+    estado?: SortOrderInput | SortOrder
+    medicamentos_uso?: SortOrderInput | SortOrder
+    nome_responsavel?: SortOrderInput | SortOrder
+    numero?: SortOrderInput | SortOrder
+    observacoes?: SortOrderInput | SortOrder
+    peso?: SortOrderInput | SortOrder
+    rg?: SortOrderInput | SortOrder
+    telefone_contato?: SortOrderInput | SortOrder
+    telefone_responsavel?: SortOrderInput | SortOrder
+    tipo_sanguineo?: SortOrderInput | SortOrder
     updated_at?: SortOrder
     consulta?: consultaOrderByRelationAggregateInput
     prontuario?: prontuarioOrderByRelationAggregateInput
@@ -18023,26 +18023,26 @@ export namespace Prisma {
     nome?: StringFilter<"paciente"> | string
     data_nascimento?: DateTimeFilter<"paciente"> | Date | string
     sexo?: StringNullableFilter<"paciente"> | string | null
-    rg?: StringNullableFilter<"paciente"> | string | null
     telefone?: StringNullableFilter<"paciente"> | string | null
-    telefone_contato?: StringNullableFilter<"paciente"> | string | null
     email?: StringNullableFilter<"paciente"> | string | null
-    endereco?: StringNullableFilter<"paciente"> | string | null
-    numero?: StringNullableFilter<"paciente"> | string | null
-    complemento?: StringNullableFilter<"paciente"> | string | null
-    bairro?: StringNullableFilter<"paciente"> | string | null
-    cidade?: StringNullableFilter<"paciente"> | string | null
-    estado?: StringNullableFilter<"paciente"> | string | null
-    cep?: StringNullableFilter<"paciente"> | string | null
-    peso?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
-    altura?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: StringNullableFilter<"paciente"> | string | null
     alergias?: StringNullableFilter<"paciente"> | string | null
-    medicamentos_uso?: StringNullableFilter<"paciente"> | string | null
-    observacoes?: StringNullableFilter<"paciente"> | string | null
-    nome_responsavel?: StringNullableFilter<"paciente"> | string | null
-    telefone_responsavel?: StringNullableFilter<"paciente"> | string | null
+    altura?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
+    bairro?: StringNullableFilter<"paciente"> | string | null
+    cep?: StringNullableFilter<"paciente"> | string | null
+    cidade?: StringNullableFilter<"paciente"> | string | null
+    complemento?: StringNullableFilter<"paciente"> | string | null
     created_at?: DateTimeFilter<"paciente"> | Date | string
+    endereco?: StringNullableFilter<"paciente"> | string | null
+    estado?: StringNullableFilter<"paciente"> | string | null
+    medicamentos_uso?: StringNullableFilter<"paciente"> | string | null
+    nome_responsavel?: StringNullableFilter<"paciente"> | string | null
+    numero?: StringNullableFilter<"paciente"> | string | null
+    observacoes?: StringNullableFilter<"paciente"> | string | null
+    peso?: DecimalNullableFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
+    rg?: StringNullableFilter<"paciente"> | string | null
+    telefone_contato?: StringNullableFilter<"paciente"> | string | null
+    telefone_responsavel?: StringNullableFilter<"paciente"> | string | null
+    tipo_sanguineo?: StringNullableFilter<"paciente"> | string | null
     updated_at?: DateTimeFilter<"paciente"> | Date | string
     consulta?: ConsultaListRelationFilter
     prontuario?: ProntuarioListRelationFilter
@@ -18054,26 +18054,26 @@ export namespace Prisma {
     data_nascimento?: SortOrder
     sexo?: SortOrderInput | SortOrder
     cpf?: SortOrderInput | SortOrder
-    rg?: SortOrderInput | SortOrder
     telefone?: SortOrderInput | SortOrder
-    telefone_contato?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
-    endereco?: SortOrderInput | SortOrder
-    numero?: SortOrderInput | SortOrder
-    complemento?: SortOrderInput | SortOrder
-    bairro?: SortOrderInput | SortOrder
-    cidade?: SortOrderInput | SortOrder
-    estado?: SortOrderInput | SortOrder
-    cep?: SortOrderInput | SortOrder
-    peso?: SortOrderInput | SortOrder
-    altura?: SortOrderInput | SortOrder
-    tipo_sanguineo?: SortOrderInput | SortOrder
     alergias?: SortOrderInput | SortOrder
-    medicamentos_uso?: SortOrderInput | SortOrder
-    observacoes?: SortOrderInput | SortOrder
-    nome_responsavel?: SortOrderInput | SortOrder
-    telefone_responsavel?: SortOrderInput | SortOrder
+    altura?: SortOrderInput | SortOrder
+    bairro?: SortOrderInput | SortOrder
+    cep?: SortOrderInput | SortOrder
+    cidade?: SortOrderInput | SortOrder
+    complemento?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    endereco?: SortOrderInput | SortOrder
+    estado?: SortOrderInput | SortOrder
+    medicamentos_uso?: SortOrderInput | SortOrder
+    nome_responsavel?: SortOrderInput | SortOrder
+    numero?: SortOrderInput | SortOrder
+    observacoes?: SortOrderInput | SortOrder
+    peso?: SortOrderInput | SortOrder
+    rg?: SortOrderInput | SortOrder
+    telefone_contato?: SortOrderInput | SortOrder
+    telefone_responsavel?: SortOrderInput | SortOrder
+    tipo_sanguineo?: SortOrderInput | SortOrder
     updated_at?: SortOrder
     _count?: pacienteCountOrderByAggregateInput
     _avg?: pacienteAvgOrderByAggregateInput
@@ -18091,26 +18091,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeWithAggregatesFilter<"paciente"> | Date | string
     sexo?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     cpf?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    rg?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     telefone?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    telefone_contato?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     email?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    endereco?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    numero?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    complemento?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    bairro?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    cidade?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    estado?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    cep?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    peso?: DecimalNullableWithAggregatesFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
-    altura?: DecimalNullableWithAggregatesFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     alergias?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    medicamentos_uso?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    observacoes?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    nome_responsavel?: StringNullableWithAggregatesFilter<"paciente"> | string | null
-    telefone_responsavel?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    altura?: DecimalNullableWithAggregatesFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
+    bairro?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    cep?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    cidade?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    complemento?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"paciente"> | Date | string
+    endereco?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    estado?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    medicamentos_uso?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    nome_responsavel?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    numero?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    observacoes?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    peso?: DecimalNullableWithAggregatesFilter<"paciente"> | Decimal | DecimalJsLike | number | string | null
+    rg?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    telefone_contato?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    telefone_responsavel?: StringNullableWithAggregatesFilter<"paciente"> | string | null
+    tipo_sanguineo?: StringNullableWithAggregatesFilter<"paciente"> | string | null
     updated_at?: DateTimeWithAggregatesFilter<"paciente"> | Date | string
   }
 
@@ -18123,10 +18123,10 @@ export namespace Prisma {
     profissional_id?: UuidNullableFilter<"consulta"> | string | null
     unidade_id?: UuidNullableFilter<"consulta"> | string | null
     data?: DateTimeFilter<"consulta"> | Date | string
-    hora?: StringNullableFilter<"consulta"> | string | null
-    status?: StringFilter<"consulta"> | string
-    observacoes?: StringNullableFilter<"consulta"> | string | null
     created_at?: DateTimeFilter<"consulta"> | Date | string
+    hora?: StringNullableFilter<"consulta"> | string | null
+    observacoes?: StringNullableFilter<"consulta"> | string | null
+    status?: StringFilter<"consulta"> | string
     updated_at?: DateTimeFilter<"consulta"> | Date | string
     paciente?: XOR<PacienteNullableScalarRelationFilter, pacienteWhereInput> | null
     profissional_saude?: XOR<Profissional_saudeNullableScalarRelationFilter, profissional_saudeWhereInput> | null
@@ -18139,10 +18139,10 @@ export namespace Prisma {
     profissional_id?: SortOrderInput | SortOrder
     unidade_id?: SortOrderInput | SortOrder
     data?: SortOrder
-    hora?: SortOrderInput | SortOrder
-    status?: SortOrder
-    observacoes?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    hora?: SortOrderInput | SortOrder
+    observacoes?: SortOrderInput | SortOrder
+    status?: SortOrder
     updated_at?: SortOrder
     paciente?: pacienteOrderByWithRelationInput
     profissional_saude?: profissional_saudeOrderByWithRelationInput
@@ -18158,10 +18158,10 @@ export namespace Prisma {
     profissional_id?: UuidNullableFilter<"consulta"> | string | null
     unidade_id?: UuidNullableFilter<"consulta"> | string | null
     data?: DateTimeFilter<"consulta"> | Date | string
-    hora?: StringNullableFilter<"consulta"> | string | null
-    status?: StringFilter<"consulta"> | string
-    observacoes?: StringNullableFilter<"consulta"> | string | null
     created_at?: DateTimeFilter<"consulta"> | Date | string
+    hora?: StringNullableFilter<"consulta"> | string | null
+    observacoes?: StringNullableFilter<"consulta"> | string | null
+    status?: StringFilter<"consulta"> | string
     updated_at?: DateTimeFilter<"consulta"> | Date | string
     paciente?: XOR<PacienteNullableScalarRelationFilter, pacienteWhereInput> | null
     profissional_saude?: XOR<Profissional_saudeNullableScalarRelationFilter, profissional_saudeWhereInput> | null
@@ -18174,10 +18174,10 @@ export namespace Prisma {
     profissional_id?: SortOrderInput | SortOrder
     unidade_id?: SortOrderInput | SortOrder
     data?: SortOrder
-    hora?: SortOrderInput | SortOrder
-    status?: SortOrder
-    observacoes?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    hora?: SortOrderInput | SortOrder
+    observacoes?: SortOrderInput | SortOrder
+    status?: SortOrder
     updated_at?: SortOrder
     _count?: consultaCountOrderByAggregateInput
     _max?: consultaMaxOrderByAggregateInput
@@ -18193,10 +18193,10 @@ export namespace Prisma {
     profissional_id?: UuidNullableWithAggregatesFilter<"consulta"> | string | null
     unidade_id?: UuidNullableWithAggregatesFilter<"consulta"> | string | null
     data?: DateTimeWithAggregatesFilter<"consulta"> | Date | string
-    hora?: StringNullableWithAggregatesFilter<"consulta"> | string | null
-    status?: StringWithAggregatesFilter<"consulta"> | string
-    observacoes?: StringNullableWithAggregatesFilter<"consulta"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"consulta"> | Date | string
+    hora?: StringNullableWithAggregatesFilter<"consulta"> | string | null
+    observacoes?: StringNullableWithAggregatesFilter<"consulta"> | string | null
+    status?: StringWithAggregatesFilter<"consulta"> | string
     updated_at?: DateTimeWithAggregatesFilter<"consulta"> | Date | string
   }
 
@@ -18226,10 +18226,10 @@ export namespace Prisma {
     retorno?: StringNullableFilter<"prontuario"> | string | null
     created_at?: DateTimeFilter<"prontuario"> | Date | string
     updated_at?: DateTimeFilter<"prontuario"> | Date | string
-    paciente?: XOR<PacienteScalarRelationFilter, pacienteWhereInput>
-    profissional_saude?: XOR<Profissional_saudeScalarRelationFilter, profissional_saudeWhereInput>
     prescricao?: PrescricaoListRelationFilter
     procedimento_realizado?: Procedimento_realizadoListRelationFilter
+    paciente?: XOR<PacienteScalarRelationFilter, pacienteWhereInput>
+    profissional_saude?: XOR<Profissional_saudeScalarRelationFilter, profissional_saudeWhereInput>
   }
 
   export type prontuarioOrderByWithRelationInput = {
@@ -18255,10 +18255,10 @@ export namespace Prisma {
     retorno?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
-    paciente?: pacienteOrderByWithRelationInput
-    profissional_saude?: profissional_saudeOrderByWithRelationInput
     prescricao?: prescricaoOrderByRelationAggregateInput
     procedimento_realizado?: procedimento_realizadoOrderByRelationAggregateInput
+    paciente?: pacienteOrderByWithRelationInput
+    profissional_saude?: profissional_saudeOrderByWithRelationInput
   }
 
   export type prontuarioWhereUniqueInput = Prisma.AtLeast<{
@@ -18287,10 +18287,10 @@ export namespace Prisma {
     retorno?: StringNullableFilter<"prontuario"> | string | null
     created_at?: DateTimeFilter<"prontuario"> | Date | string
     updated_at?: DateTimeFilter<"prontuario"> | Date | string
-    paciente?: XOR<PacienteScalarRelationFilter, pacienteWhereInput>
-    profissional_saude?: XOR<Profissional_saudeScalarRelationFilter, profissional_saudeWhereInput>
     prescricao?: PrescricaoListRelationFilter
     procedimento_realizado?: Procedimento_realizadoListRelationFilter
+    paciente?: XOR<PacienteScalarRelationFilter, pacienteWhereInput>
+    profissional_saude?: XOR<Profissional_saudeScalarRelationFilter, profissional_saudeWhereInput>
   }, "id">
 
   export type prontuarioOrderByWithAggregationInput = {
@@ -18511,8 +18511,8 @@ export namespace Prisma {
     status?: StringFilter<"procedimento_realizado"> | string
     created_at?: DateTimeFilter<"procedimento_realizado"> | Date | string
     updated_at?: DateTimeFilter<"procedimento_realizado"> | Date | string
-    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
     procedimento?: XOR<ProcedimentoScalarRelationFilter, procedimentoWhereInput>
+    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
   }
 
   export type procedimento_realizadoOrderByWithRelationInput = {
@@ -18525,8 +18525,8 @@ export namespace Prisma {
     status?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
-    prontuario?: prontuarioOrderByWithRelationInput
     procedimento?: procedimentoOrderByWithRelationInput
+    prontuario?: prontuarioOrderByWithRelationInput
   }
 
   export type procedimento_realizadoWhereUniqueInput = Prisma.AtLeast<{
@@ -18542,8 +18542,8 @@ export namespace Prisma {
     status?: StringFilter<"procedimento_realizado"> | string
     created_at?: DateTimeFilter<"procedimento_realizado"> | Date | string
     updated_at?: DateTimeFilter<"procedimento_realizado"> | Date | string
-    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
     procedimento?: XOR<ProcedimentoScalarRelationFilter, procedimentoWhereInput>
+    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
   }, "id">
 
   export type procedimento_realizadoOrderByWithAggregationInput = {
@@ -18663,42 +18663,42 @@ export namespace Prisma {
     OR?: prescricaoWhereInput[]
     NOT?: prescricaoWhereInput | prescricaoWhereInput[]
     id?: UuidFilter<"prescricao"> | string
-    prontuario_id?: UuidFilter<"prescricao"> | string
+    duracao?: StringNullableFilter<"prescricao"> | string | null
+    created_at?: DateTimeFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
+    dosagem?: StringNullableFilter<"prescricao"> | string | null
+    frequencia?: StringNullableFilter<"prescricao"> | string | null
     medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
     medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
-    dosagem?: StringNullableFilter<"prescricao"> | string | null
-    via_administracao?: StringNullableFilter<"prescricao"> | string | null
-    frequencia?: StringNullableFilter<"prescricao"> | string | null
-    duracao?: StringNullableFilter<"prescricao"> | string | null
-    quantidade?: StringNullableFilter<"prescricao"> | string | null
     observacoes?: StringNullableFilter<"prescricao"> | string | null
+    prontuario_id?: UuidFilter<"prescricao"> | string
+    quantidade?: StringNullableFilter<"prescricao"> | string | null
     status?: StringFilter<"prescricao"> | string
-    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
-    created_at?: DateTimeFilter<"prescricao"> | Date | string
     updated_at?: DateTimeFilter<"prescricao"> | Date | string
-    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
+    via_administracao?: StringNullableFilter<"prescricao"> | string | null
     medicamento?: XOR<MedicamentoNullableScalarRelationFilter, medicamentoWhereInput> | null
+    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
   }
 
   export type prescricaoOrderByWithRelationInput = {
     id?: SortOrder
-    prontuario_id?: SortOrder
+    duracao?: SortOrderInput | SortOrder
+    created_at?: SortOrder
+    data_fim?: SortOrderInput | SortOrder
+    data_inicio?: SortOrder
+    dosagem?: SortOrderInput | SortOrder
+    frequencia?: SortOrderInput | SortOrder
     medicamento_id?: SortOrderInput | SortOrder
     medicamento_nome?: SortOrderInput | SortOrder
-    dosagem?: SortOrderInput | SortOrder
-    via_administracao?: SortOrderInput | SortOrder
-    frequencia?: SortOrderInput | SortOrder
-    duracao?: SortOrderInput | SortOrder
-    quantidade?: SortOrderInput | SortOrder
     observacoes?: SortOrderInput | SortOrder
+    prontuario_id?: SortOrder
+    quantidade?: SortOrderInput | SortOrder
     status?: SortOrder
-    data_inicio?: SortOrder
-    data_fim?: SortOrderInput | SortOrder
-    created_at?: SortOrder
     updated_at?: SortOrder
-    prontuario?: prontuarioOrderByWithRelationInput
+    via_administracao?: SortOrderInput | SortOrder
     medicamento?: medicamentoOrderByWithRelationInput
+    prontuario?: prontuarioOrderByWithRelationInput
   }
 
   export type prescricaoWhereUniqueInput = Prisma.AtLeast<{
@@ -18706,40 +18706,40 @@ export namespace Prisma {
     AND?: prescricaoWhereInput | prescricaoWhereInput[]
     OR?: prescricaoWhereInput[]
     NOT?: prescricaoWhereInput | prescricaoWhereInput[]
-    prontuario_id?: UuidFilter<"prescricao"> | string
+    duracao?: StringNullableFilter<"prescricao"> | string | null
+    created_at?: DateTimeFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
+    dosagem?: StringNullableFilter<"prescricao"> | string | null
+    frequencia?: StringNullableFilter<"prescricao"> | string | null
     medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
     medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
-    dosagem?: StringNullableFilter<"prescricao"> | string | null
-    via_administracao?: StringNullableFilter<"prescricao"> | string | null
-    frequencia?: StringNullableFilter<"prescricao"> | string | null
-    duracao?: StringNullableFilter<"prescricao"> | string | null
-    quantidade?: StringNullableFilter<"prescricao"> | string | null
     observacoes?: StringNullableFilter<"prescricao"> | string | null
+    prontuario_id?: UuidFilter<"prescricao"> | string
+    quantidade?: StringNullableFilter<"prescricao"> | string | null
     status?: StringFilter<"prescricao"> | string
-    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
-    created_at?: DateTimeFilter<"prescricao"> | Date | string
     updated_at?: DateTimeFilter<"prescricao"> | Date | string
-    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
+    via_administracao?: StringNullableFilter<"prescricao"> | string | null
     medicamento?: XOR<MedicamentoNullableScalarRelationFilter, medicamentoWhereInput> | null
+    prontuario?: XOR<ProntuarioScalarRelationFilter, prontuarioWhereInput>
   }, "id">
 
   export type prescricaoOrderByWithAggregationInput = {
     id?: SortOrder
-    prontuario_id?: SortOrder
+    duracao?: SortOrderInput | SortOrder
+    created_at?: SortOrder
+    data_fim?: SortOrderInput | SortOrder
+    data_inicio?: SortOrder
+    dosagem?: SortOrderInput | SortOrder
+    frequencia?: SortOrderInput | SortOrder
     medicamento_id?: SortOrderInput | SortOrder
     medicamento_nome?: SortOrderInput | SortOrder
-    dosagem?: SortOrderInput | SortOrder
-    via_administracao?: SortOrderInput | SortOrder
-    frequencia?: SortOrderInput | SortOrder
-    duracao?: SortOrderInput | SortOrder
-    quantidade?: SortOrderInput | SortOrder
     observacoes?: SortOrderInput | SortOrder
+    prontuario_id?: SortOrder
+    quantidade?: SortOrderInput | SortOrder
     status?: SortOrder
-    data_inicio?: SortOrder
-    data_fim?: SortOrderInput | SortOrder
-    created_at?: SortOrder
     updated_at?: SortOrder
+    via_administracao?: SortOrderInput | SortOrder
     _count?: prescricaoCountOrderByAggregateInput
     _max?: prescricaoMaxOrderByAggregateInput
     _min?: prescricaoMinOrderByAggregateInput
@@ -18750,20 +18750,20 @@ export namespace Prisma {
     OR?: prescricaoScalarWhereWithAggregatesInput[]
     NOT?: prescricaoScalarWhereWithAggregatesInput | prescricaoScalarWhereWithAggregatesInput[]
     id?: UuidWithAggregatesFilter<"prescricao"> | string
-    prontuario_id?: UuidWithAggregatesFilter<"prescricao"> | string
+    duracao?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
+    created_at?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableWithAggregatesFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
+    dosagem?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
+    frequencia?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     medicamento_id?: UuidNullableWithAggregatesFilter<"prescricao"> | string | null
     medicamento_nome?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
-    dosagem?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
-    via_administracao?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
-    frequencia?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
-    duracao?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
-    quantidade?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     observacoes?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
+    prontuario_id?: UuidWithAggregatesFilter<"prescricao"> | string
+    quantidade?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
     status?: StringWithAggregatesFilter<"prescricao"> | string
-    data_inicio?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableWithAggregatesFilter<"prescricao"> | Date | string | null
-    created_at?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"prescricao"> | Date | string
+    via_administracao?: StringNullableWithAggregatesFilter<"prescricao"> | string | null
   }
 
   export type profissional_saudeWhereInput = {
@@ -18772,35 +18772,35 @@ export namespace Prisma {
     NOT?: profissional_saudeWhereInput | profissional_saudeWhereInput[]
     id?: UuidFilter<"profissional_saude"> | string
     nome?: StringFilter<"profissional_saude"> | string
-    documento_numero?: StringNullableFilter<"profissional_saude"> | string | null
-    tipo_documento_id?: UuidNullableFilter<"profissional_saude"> | string | null
-    especialidade_id?: UuidNullableFilter<"profissional_saude"> | string | null
     email?: StringNullableFilter<"profissional_saude"> | string | null
     senha?: StringFilter<"profissional_saude"> | string
     data_nascimento?: DateTimeNullableFilter<"profissional_saude"> | Date | string | null
+    documento_numero?: StringNullableFilter<"profissional_saude"> | string | null
+    especialidade_id?: UuidNullableFilter<"profissional_saude"> | string | null
+    tipo_documento_id?: UuidNullableFilter<"profissional_saude"> | string | null
     created_at?: DateTimeFilter<"profissional_saude"> | Date | string
     updated_at?: DateTimeFilter<"profissional_saude"> | Date | string
     consulta?: ConsultaListRelationFilter
-    prontuario?: ProntuarioListRelationFilter
-    tipo_documento?: XOR<Tipo_documentoNullableScalarRelationFilter, tipo_documentoWhereInput> | null
     especialidade?: XOR<EspecialidadeNullableScalarRelationFilter, especialidadeWhereInput> | null
+    tipo_documento?: XOR<Tipo_documentoNullableScalarRelationFilter, tipo_documentoWhereInput> | null
+    prontuario?: ProntuarioListRelationFilter
   }
 
   export type profissional_saudeOrderByWithRelationInput = {
     id?: SortOrder
     nome?: SortOrder
-    documento_numero?: SortOrderInput | SortOrder
-    tipo_documento_id?: SortOrderInput | SortOrder
-    especialidade_id?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
     senha?: SortOrder
     data_nascimento?: SortOrderInput | SortOrder
+    documento_numero?: SortOrderInput | SortOrder
+    especialidade_id?: SortOrderInput | SortOrder
+    tipo_documento_id?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     consulta?: consultaOrderByRelationAggregateInput
-    prontuario?: prontuarioOrderByRelationAggregateInput
-    tipo_documento?: tipo_documentoOrderByWithRelationInput
     especialidade?: especialidadeOrderByWithRelationInput
+    tipo_documento?: tipo_documentoOrderByWithRelationInput
+    prontuario?: prontuarioOrderByRelationAggregateInput
   }
 
   export type profissional_saudeWhereUniqueInput = Prisma.AtLeast<{
@@ -18810,28 +18810,28 @@ export namespace Prisma {
     OR?: profissional_saudeWhereInput[]
     NOT?: profissional_saudeWhereInput | profissional_saudeWhereInput[]
     nome?: StringFilter<"profissional_saude"> | string
-    documento_numero?: StringNullableFilter<"profissional_saude"> | string | null
-    tipo_documento_id?: UuidNullableFilter<"profissional_saude"> | string | null
-    especialidade_id?: UuidNullableFilter<"profissional_saude"> | string | null
     senha?: StringFilter<"profissional_saude"> | string
     data_nascimento?: DateTimeNullableFilter<"profissional_saude"> | Date | string | null
+    documento_numero?: StringNullableFilter<"profissional_saude"> | string | null
+    especialidade_id?: UuidNullableFilter<"profissional_saude"> | string | null
+    tipo_documento_id?: UuidNullableFilter<"profissional_saude"> | string | null
     created_at?: DateTimeFilter<"profissional_saude"> | Date | string
     updated_at?: DateTimeFilter<"profissional_saude"> | Date | string
     consulta?: ConsultaListRelationFilter
-    prontuario?: ProntuarioListRelationFilter
-    tipo_documento?: XOR<Tipo_documentoNullableScalarRelationFilter, tipo_documentoWhereInput> | null
     especialidade?: XOR<EspecialidadeNullableScalarRelationFilter, especialidadeWhereInput> | null
+    tipo_documento?: XOR<Tipo_documentoNullableScalarRelationFilter, tipo_documentoWhereInput> | null
+    prontuario?: ProntuarioListRelationFilter
   }, "id" | "email">
 
   export type profissional_saudeOrderByWithAggregationInput = {
     id?: SortOrder
     nome?: SortOrder
-    documento_numero?: SortOrderInput | SortOrder
-    tipo_documento_id?: SortOrderInput | SortOrder
-    especialidade_id?: SortOrderInput | SortOrder
     email?: SortOrderInput | SortOrder
     senha?: SortOrder
     data_nascimento?: SortOrderInput | SortOrder
+    documento_numero?: SortOrderInput | SortOrder
+    especialidade_id?: SortOrderInput | SortOrder
+    tipo_documento_id?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: profissional_saudeCountOrderByAggregateInput
@@ -18845,12 +18845,12 @@ export namespace Prisma {
     NOT?: profissional_saudeScalarWhereWithAggregatesInput | profissional_saudeScalarWhereWithAggregatesInput[]
     id?: UuidWithAggregatesFilter<"profissional_saude"> | string
     nome?: StringWithAggregatesFilter<"profissional_saude"> | string
-    documento_numero?: StringNullableWithAggregatesFilter<"profissional_saude"> | string | null
-    tipo_documento_id?: UuidNullableWithAggregatesFilter<"profissional_saude"> | string | null
-    especialidade_id?: UuidNullableWithAggregatesFilter<"profissional_saude"> | string | null
     email?: StringNullableWithAggregatesFilter<"profissional_saude"> | string | null
     senha?: StringWithAggregatesFilter<"profissional_saude"> | string
     data_nascimento?: DateTimeNullableWithAggregatesFilter<"profissional_saude"> | Date | string | null
+    documento_numero?: StringNullableWithAggregatesFilter<"profissional_saude"> | string | null
+    especialidade_id?: UuidNullableWithAggregatesFilter<"profissional_saude"> | string | null
+    tipo_documento_id?: UuidNullableWithAggregatesFilter<"profissional_saude"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"profissional_saude"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"profissional_saude"> | Date | string
   }
@@ -18863,9 +18863,9 @@ export namespace Prisma {
     titulo?: StringFilter<"template"> | string
     sintomas_padrao?: StringNullableFilter<"template"> | string | null
     condutas_sugeridas?: StringNullableFilter<"template"> | string | null
-    medicamentos_recomendados?: StringNullableFilter<"template"> | string | null
     sazonalidade?: StringNullableFilter<"template"> | string | null
     created_at?: DateTimeFilter<"template"> | Date | string
+    medicamentos_recomendados?: StringNullableFilter<"template"> | string | null
     updated_at?: DateTimeFilter<"template"> | Date | string
   }
 
@@ -18874,9 +18874,9 @@ export namespace Prisma {
     titulo?: SortOrder
     sintomas_padrao?: SortOrderInput | SortOrder
     condutas_sugeridas?: SortOrderInput | SortOrder
-    medicamentos_recomendados?: SortOrderInput | SortOrder
     sazonalidade?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    medicamentos_recomendados?: SortOrderInput | SortOrder
     updated_at?: SortOrder
   }
 
@@ -18888,9 +18888,9 @@ export namespace Prisma {
     titulo?: StringFilter<"template"> | string
     sintomas_padrao?: StringNullableFilter<"template"> | string | null
     condutas_sugeridas?: StringNullableFilter<"template"> | string | null
-    medicamentos_recomendados?: StringNullableFilter<"template"> | string | null
     sazonalidade?: StringNullableFilter<"template"> | string | null
     created_at?: DateTimeFilter<"template"> | Date | string
+    medicamentos_recomendados?: StringNullableFilter<"template"> | string | null
     updated_at?: DateTimeFilter<"template"> | Date | string
   }, "id">
 
@@ -18899,9 +18899,9 @@ export namespace Prisma {
     titulo?: SortOrder
     sintomas_padrao?: SortOrderInput | SortOrder
     condutas_sugeridas?: SortOrderInput | SortOrder
-    medicamentos_recomendados?: SortOrderInput | SortOrder
     sazonalidade?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    medicamentos_recomendados?: SortOrderInput | SortOrder
     updated_at?: SortOrder
     _count?: templateCountOrderByAggregateInput
     _max?: templateMaxOrderByAggregateInput
@@ -18916,9 +18916,9 @@ export namespace Prisma {
     titulo?: StringWithAggregatesFilter<"template"> | string
     sintomas_padrao?: StringNullableWithAggregatesFilter<"template"> | string | null
     condutas_sugeridas?: StringNullableWithAggregatesFilter<"template"> | string | null
-    medicamentos_recomendados?: StringNullableWithAggregatesFilter<"template"> | string | null
     sazonalidade?: StringNullableWithAggregatesFilter<"template"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"template"> | Date | string
+    medicamentos_recomendados?: StringNullableWithAggregatesFilter<"template"> | string | null
     updated_at?: DateTimeWithAggregatesFilter<"template"> | Date | string
   }
 
@@ -18932,8 +18932,8 @@ export namespace Prisma {
     endereco?: StringNullableFilter<"unidade_saude"> | string | null
     cidade?: StringNullableFilter<"unidade_saude"> | string | null
     estado?: StringNullableFilter<"unidade_saude"> | string | null
-    telefone?: StringNullableFilter<"unidade_saude"> | string | null
     created_at?: DateTimeFilter<"unidade_saude"> | Date | string
+    telefone?: StringNullableFilter<"unidade_saude"> | string | null
     updated_at?: DateTimeFilter<"unidade_saude"> | Date | string
     consulta?: ConsultaListRelationFilter
   }
@@ -18945,8 +18945,8 @@ export namespace Prisma {
     endereco?: SortOrderInput | SortOrder
     cidade?: SortOrderInput | SortOrder
     estado?: SortOrderInput | SortOrder
-    telefone?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    telefone?: SortOrderInput | SortOrder
     updated_at?: SortOrder
     consulta?: consultaOrderByRelationAggregateInput
   }
@@ -18961,8 +18961,8 @@ export namespace Prisma {
     endereco?: StringNullableFilter<"unidade_saude"> | string | null
     cidade?: StringNullableFilter<"unidade_saude"> | string | null
     estado?: StringNullableFilter<"unidade_saude"> | string | null
-    telefone?: StringNullableFilter<"unidade_saude"> | string | null
     created_at?: DateTimeFilter<"unidade_saude"> | Date | string
+    telefone?: StringNullableFilter<"unidade_saude"> | string | null
     updated_at?: DateTimeFilter<"unidade_saude"> | Date | string
     consulta?: ConsultaListRelationFilter
   }, "id" | "cnes">
@@ -18974,8 +18974,8 @@ export namespace Prisma {
     endereco?: SortOrderInput | SortOrder
     cidade?: SortOrderInput | SortOrder
     estado?: SortOrderInput | SortOrder
-    telefone?: SortOrderInput | SortOrder
     created_at?: SortOrder
+    telefone?: SortOrderInput | SortOrder
     updated_at?: SortOrder
     _count?: unidade_saudeCountOrderByAggregateInput
     _max?: unidade_saudeMaxOrderByAggregateInput
@@ -18992,8 +18992,8 @@ export namespace Prisma {
     endereco?: StringNullableWithAggregatesFilter<"unidade_saude"> | string | null
     cidade?: StringNullableWithAggregatesFilter<"unidade_saude"> | string | null
     estado?: StringNullableWithAggregatesFilter<"unidade_saude"> | string | null
-    telefone?: StringNullableWithAggregatesFilter<"unidade_saude"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"unidade_saude"> | Date | string
+    telefone?: StringNullableWithAggregatesFilter<"unidade_saude"> | string | null
     updated_at?: DateTimeWithAggregatesFilter<"unidade_saude"> | Date | string
   }
 
@@ -19095,26 +19095,26 @@ export namespace Prisma {
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
-    rg?: string | null
     telefone?: string | null
-    telefone_contato?: string | null
     email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
     alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
     created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
     updated_at?: Date | string
     consulta?: consultaCreateNestedManyWithoutPacienteInput
     prontuario?: prontuarioCreateNestedManyWithoutPacienteInput
@@ -19126,26 +19126,26 @@ export namespace Prisma {
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
-    rg?: string | null
     telefone?: string | null
-    telefone_contato?: string | null
     email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
     alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
     created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
     updated_at?: Date | string
     consulta?: consultaUncheckedCreateNestedManyWithoutPacienteInput
     prontuario?: prontuarioUncheckedCreateNestedManyWithoutPacienteInput
@@ -19157,26 +19157,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUpdateManyWithoutPacienteNestedInput
     prontuario?: prontuarioUpdateManyWithoutPacienteNestedInput
@@ -19188,26 +19188,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUncheckedUpdateManyWithoutPacienteNestedInput
     prontuario?: prontuarioUncheckedUpdateManyWithoutPacienteNestedInput
@@ -19219,26 +19219,26 @@ export namespace Prisma {
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
-    rg?: string | null
     telefone?: string | null
-    telefone_contato?: string | null
     email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
     alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
     created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
     updated_at?: Date | string
   }
 
@@ -19248,26 +19248,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -19277,36 +19277,36 @@ export namespace Prisma {
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type consultaCreateInput = {
     id?: string
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
     paciente?: pacienteCreateNestedOneWithoutConsultaInput
     profissional_saude?: profissional_saudeCreateNestedOneWithoutConsultaInput
@@ -19319,20 +19319,20 @@ export namespace Prisma {
     profissional_id?: string | null
     unidade_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
   export type consultaUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     paciente?: pacienteUpdateOneWithoutConsultaNestedInput
     profissional_saude?: profissional_saudeUpdateOneWithoutConsultaNestedInput
@@ -19345,10 +19345,10 @@ export namespace Prisma {
     profissional_id?: NullableStringFieldUpdateOperationsInput | string | null
     unidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -19358,20 +19358,20 @@ export namespace Prisma {
     profissional_id?: string | null
     unidade_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
   export type consultaUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -19381,10 +19381,10 @@ export namespace Prisma {
     profissional_id?: NullableStringFieldUpdateOperationsInput | string | null
     unidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -19409,10 +19409,10 @@ export namespace Prisma {
     retorno?: string | null
     created_at?: Date | string
     updated_at?: Date | string
-    paciente: pacienteCreateNestedOneWithoutProntuarioInput
-    profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
     prescricao?: prescricaoCreateNestedManyWithoutProntuarioInput
     procedimento_realizado?: procedimento_realizadoCreateNestedManyWithoutProntuarioInput
+    paciente: pacienteCreateNestedOneWithoutProntuarioInput
+    profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
   }
 
   export type prontuarioUncheckedCreateInput = {
@@ -19463,10 +19463,10 @@ export namespace Prisma {
     retorno?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
-    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
     prescricao?: prescricaoUpdateManyWithoutProntuarioNestedInput
     procedimento_realizado?: procedimento_realizadoUpdateManyWithoutProntuarioNestedInput
+    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
+    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
   }
 
   export type prontuarioUncheckedUpdateInput = {
@@ -19738,8 +19738,8 @@ export namespace Prisma {
     status?: string
     created_at?: Date | string
     updated_at?: Date | string
-    prontuario: prontuarioCreateNestedOneWithoutProcedimento_realizadoInput
     procedimento: procedimentoCreateNestedOneWithoutProcedimento_realizadoInput
+    prontuario: prontuarioCreateNestedOneWithoutProcedimento_realizadoInput
   }
 
   export type procedimento_realizadoUncheckedCreateInput = {
@@ -19762,8 +19762,8 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    prontuario?: prontuarioUpdateOneRequiredWithoutProcedimento_realizadoNestedInput
     procedimento?: procedimentoUpdateOneRequiredWithoutProcedimento_realizadoNestedInput
+    prontuario?: prontuarioUpdateOneRequiredWithoutProcedimento_realizadoNestedInput
   }
 
   export type procedimento_realizadoUncheckedUpdateInput = {
@@ -19909,152 +19909,152 @@ export namespace Prisma {
 
   export type prescricaoCreateInput = {
     id?: string
-    medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
     duracao?: string | null
-    quantidade?: string | null
-    observacoes?: string | null
-    status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
     created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
+    medicamento_nome?: string | null
+    observacoes?: string | null
+    quantidade?: string | null
+    status?: string
     updated_at?: Date | string
-    prontuario: prontuarioCreateNestedOneWithoutPrescricaoInput
+    via_administracao?: string | null
     medicamento?: medicamentoCreateNestedOneWithoutPrescricaoInput
+    prontuario: prontuarioCreateNestedOneWithoutPrescricaoInput
   }
 
   export type prescricaoUncheckedCreateInput = {
     id?: string
-    prontuario_id: string
+    duracao?: string | null
+    created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
     medicamento_id?: string | null
     medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
-    duracao?: string | null
-    quantidade?: string | null
     observacoes?: string | null
+    prontuario_id: string
+    quantidade?: string | null
     status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
-    created_at?: Date | string
     updated_at?: Date | string
+    via_administracao?: string | null
   }
 
   export type prescricaoUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    prontuario?: prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento?: medicamentoUpdateOneWithoutPrescricaoNestedInput
+    prontuario?: prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput
   }
 
   export type prescricaoUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    prontuario_id?: StringFieldUpdateOperationsInput | string
+    duracao?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    prontuario_id?: StringFieldUpdateOperationsInput | string
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type prescricaoCreateManyInput = {
     id?: string
-    prontuario_id: string
+    duracao?: string | null
+    created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
     medicamento_id?: string | null
     medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
-    duracao?: string | null
-    quantidade?: string | null
     observacoes?: string | null
+    prontuario_id: string
+    quantidade?: string | null
     status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
-    created_at?: Date | string
     updated_at?: Date | string
+    via_administracao?: string | null
   }
 
   export type prescricaoUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type prescricaoUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    prontuario_id?: StringFieldUpdateOperationsInput | string
+    duracao?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    prontuario_id?: StringFieldUpdateOperationsInput | string
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type profissional_saudeCreateInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     consulta?: consultaCreateNestedManyWithoutProfissional_saudeInput
-    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
-    tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
     especialidade?: especialidadeCreateNestedOneWithoutProfissional_saudeInput
+    tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
+    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
   }
 
   export type profissional_saudeUncheckedCreateInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    tipo_documento_id?: string | null
-    especialidade_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    especialidade_id?: string | null
+    tipo_documento_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     consulta?: consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput
@@ -20064,27 +20064,27 @@ export namespace Prisma {
   export type profissional_saudeUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUpdateManyWithoutProfissional_saudeNestedInput
-    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
-    tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
     especialidade?: especialidadeUpdateOneWithoutProfissional_saudeNestedInput
+    tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
+    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
   }
 
   export type profissional_saudeUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
-    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput
@@ -20094,12 +20094,12 @@ export namespace Prisma {
   export type profissional_saudeCreateManyInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    tipo_documento_id?: string | null
-    especialidade_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    especialidade_id?: string | null
+    tipo_documento_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -20107,10 +20107,10 @@ export namespace Prisma {
   export type profissional_saudeUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -20118,12 +20118,12 @@ export namespace Prisma {
   export type profissional_saudeUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
-    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -20133,9 +20133,9 @@ export namespace Prisma {
     titulo: string
     sintomas_padrao?: string | null
     condutas_sugeridas?: string | null
-    medicamentos_recomendados?: string | null
     sazonalidade?: string | null
     created_at?: Date | string
+    medicamentos_recomendados?: string | null
     updated_at?: Date | string
   }
 
@@ -20144,9 +20144,9 @@ export namespace Prisma {
     titulo: string
     sintomas_padrao?: string | null
     condutas_sugeridas?: string | null
-    medicamentos_recomendados?: string | null
     sazonalidade?: string | null
     created_at?: Date | string
+    medicamentos_recomendados?: string | null
     updated_at?: Date | string
   }
 
@@ -20155,9 +20155,9 @@ export namespace Prisma {
     titulo?: StringFieldUpdateOperationsInput | string
     sintomas_padrao?: NullableStringFieldUpdateOperationsInput | string | null
     condutas_sugeridas?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     sazonalidade?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -20166,9 +20166,9 @@ export namespace Prisma {
     titulo?: StringFieldUpdateOperationsInput | string
     sintomas_padrao?: NullableStringFieldUpdateOperationsInput | string | null
     condutas_sugeridas?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     sazonalidade?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -20177,9 +20177,9 @@ export namespace Prisma {
     titulo: string
     sintomas_padrao?: string | null
     condutas_sugeridas?: string | null
-    medicamentos_recomendados?: string | null
     sazonalidade?: string | null
     created_at?: Date | string
+    medicamentos_recomendados?: string | null
     updated_at?: Date | string
   }
 
@@ -20188,9 +20188,9 @@ export namespace Prisma {
     titulo?: StringFieldUpdateOperationsInput | string
     sintomas_padrao?: NullableStringFieldUpdateOperationsInput | string | null
     condutas_sugeridas?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     sazonalidade?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -20199,9 +20199,9 @@ export namespace Prisma {
     titulo?: StringFieldUpdateOperationsInput | string
     sintomas_padrao?: NullableStringFieldUpdateOperationsInput | string | null
     condutas_sugeridas?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     sazonalidade?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    medicamentos_recomendados?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -20212,8 +20212,8 @@ export namespace Prisma {
     endereco?: string | null
     cidade?: string | null
     estado?: string | null
-    telefone?: string | null
     created_at?: Date | string
+    telefone?: string | null
     updated_at?: Date | string
     consulta?: consultaCreateNestedManyWithoutUnidade_saudeInput
   }
@@ -20225,8 +20225,8 @@ export namespace Prisma {
     endereco?: string | null
     cidade?: string | null
     estado?: string | null
-    telefone?: string | null
     created_at?: Date | string
+    telefone?: string | null
     updated_at?: Date | string
     consulta?: consultaUncheckedCreateNestedManyWithoutUnidade_saudeInput
   }
@@ -20238,8 +20238,8 @@ export namespace Prisma {
     endereco?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: NullableStringFieldUpdateOperationsInput | string | null
     estado?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUpdateManyWithoutUnidade_saudeNestedInput
   }
@@ -20251,8 +20251,8 @@ export namespace Prisma {
     endereco?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: NullableStringFieldUpdateOperationsInput | string | null
     estado?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUncheckedUpdateManyWithoutUnidade_saudeNestedInput
   }
@@ -20264,8 +20264,8 @@ export namespace Prisma {
     endereco?: string | null
     cidade?: string | null
     estado?: string | null
-    telefone?: string | null
     created_at?: Date | string
+    telefone?: string | null
     updated_at?: Date | string
   }
 
@@ -20276,8 +20276,8 @@ export namespace Prisma {
     endereco?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: NullableStringFieldUpdateOperationsInput | string | null
     estado?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -20288,8 +20288,8 @@ export namespace Prisma {
     endereco?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: NullableStringFieldUpdateOperationsInput | string | null
     estado?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -20485,32 +20485,32 @@ export namespace Prisma {
     data_nascimento?: SortOrder
     sexo?: SortOrder
     cpf?: SortOrder
-    rg?: SortOrder
     telefone?: SortOrder
-    telefone_contato?: SortOrder
     email?: SortOrder
-    endereco?: SortOrder
-    numero?: SortOrder
-    complemento?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    estado?: SortOrder
-    cep?: SortOrder
-    peso?: SortOrder
-    altura?: SortOrder
-    tipo_sanguineo?: SortOrder
     alergias?: SortOrder
-    medicamentos_uso?: SortOrder
-    observacoes?: SortOrder
-    nome_responsavel?: SortOrder
-    telefone_responsavel?: SortOrder
+    altura?: SortOrder
+    bairro?: SortOrder
+    cep?: SortOrder
+    cidade?: SortOrder
+    complemento?: SortOrder
     created_at?: SortOrder
+    endereco?: SortOrder
+    estado?: SortOrder
+    medicamentos_uso?: SortOrder
+    nome_responsavel?: SortOrder
+    numero?: SortOrder
+    observacoes?: SortOrder
+    peso?: SortOrder
+    rg?: SortOrder
+    telefone_contato?: SortOrder
+    telefone_responsavel?: SortOrder
+    tipo_sanguineo?: SortOrder
     updated_at?: SortOrder
   }
 
   export type pacienteAvgOrderByAggregateInput = {
-    peso?: SortOrder
     altura?: SortOrder
+    peso?: SortOrder
   }
 
   export type pacienteMaxOrderByAggregateInput = {
@@ -20519,26 +20519,26 @@ export namespace Prisma {
     data_nascimento?: SortOrder
     sexo?: SortOrder
     cpf?: SortOrder
-    rg?: SortOrder
     telefone?: SortOrder
-    telefone_contato?: SortOrder
     email?: SortOrder
-    endereco?: SortOrder
-    numero?: SortOrder
-    complemento?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    estado?: SortOrder
-    cep?: SortOrder
-    peso?: SortOrder
-    altura?: SortOrder
-    tipo_sanguineo?: SortOrder
     alergias?: SortOrder
-    medicamentos_uso?: SortOrder
-    observacoes?: SortOrder
-    nome_responsavel?: SortOrder
-    telefone_responsavel?: SortOrder
+    altura?: SortOrder
+    bairro?: SortOrder
+    cep?: SortOrder
+    cidade?: SortOrder
+    complemento?: SortOrder
     created_at?: SortOrder
+    endereco?: SortOrder
+    estado?: SortOrder
+    medicamentos_uso?: SortOrder
+    nome_responsavel?: SortOrder
+    numero?: SortOrder
+    observacoes?: SortOrder
+    peso?: SortOrder
+    rg?: SortOrder
+    telefone_contato?: SortOrder
+    telefone_responsavel?: SortOrder
+    tipo_sanguineo?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20548,32 +20548,32 @@ export namespace Prisma {
     data_nascimento?: SortOrder
     sexo?: SortOrder
     cpf?: SortOrder
-    rg?: SortOrder
     telefone?: SortOrder
-    telefone_contato?: SortOrder
     email?: SortOrder
-    endereco?: SortOrder
-    numero?: SortOrder
-    complemento?: SortOrder
-    bairro?: SortOrder
-    cidade?: SortOrder
-    estado?: SortOrder
-    cep?: SortOrder
-    peso?: SortOrder
-    altura?: SortOrder
-    tipo_sanguineo?: SortOrder
     alergias?: SortOrder
-    medicamentos_uso?: SortOrder
-    observacoes?: SortOrder
-    nome_responsavel?: SortOrder
-    telefone_responsavel?: SortOrder
+    altura?: SortOrder
+    bairro?: SortOrder
+    cep?: SortOrder
+    cidade?: SortOrder
+    complemento?: SortOrder
     created_at?: SortOrder
+    endereco?: SortOrder
+    estado?: SortOrder
+    medicamentos_uso?: SortOrder
+    nome_responsavel?: SortOrder
+    numero?: SortOrder
+    observacoes?: SortOrder
+    peso?: SortOrder
+    rg?: SortOrder
+    telefone_contato?: SortOrder
+    telefone_responsavel?: SortOrder
+    tipo_sanguineo?: SortOrder
     updated_at?: SortOrder
   }
 
   export type pacienteSumOrderByAggregateInput = {
-    peso?: SortOrder
     altura?: SortOrder
+    peso?: SortOrder
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -20639,10 +20639,10 @@ export namespace Prisma {
     profissional_id?: SortOrder
     unidade_id?: SortOrder
     data?: SortOrder
-    hora?: SortOrder
-    status?: SortOrder
-    observacoes?: SortOrder
     created_at?: SortOrder
+    hora?: SortOrder
+    observacoes?: SortOrder
+    status?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20652,10 +20652,10 @@ export namespace Prisma {
     profissional_id?: SortOrder
     unidade_id?: SortOrder
     data?: SortOrder
-    hora?: SortOrder
-    status?: SortOrder
-    observacoes?: SortOrder
     created_at?: SortOrder
+    hora?: SortOrder
+    observacoes?: SortOrder
+    status?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20665,10 +20665,10 @@ export namespace Prisma {
     profissional_id?: SortOrder
     unidade_id?: SortOrder
     data?: SortOrder
-    hora?: SortOrder
-    status?: SortOrder
-    observacoes?: SortOrder
     created_at?: SortOrder
+    hora?: SortOrder
+    observacoes?: SortOrder
+    status?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -20687,16 +20687,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type PacienteScalarRelationFilter = {
-    is?: pacienteWhereInput
-    isNot?: pacienteWhereInput
-  }
-
-  export type Profissional_saudeScalarRelationFilter = {
-    is?: profissional_saudeWhereInput
-    isNot?: profissional_saudeWhereInput
-  }
-
   export type PrescricaoListRelationFilter = {
     every?: prescricaoWhereInput
     some?: prescricaoWhereInput
@@ -20707,6 +20697,16 @@ export namespace Prisma {
     every?: procedimento_realizadoWhereInput
     some?: procedimento_realizadoWhereInput
     none?: procedimento_realizadoWhereInput
+  }
+
+  export type PacienteScalarRelationFilter = {
+    is?: pacienteWhereInput
+    isNot?: pacienteWhereInput
+  }
+
+  export type Profissional_saudeScalarRelationFilter = {
+    is?: profissional_saudeWhereInput
+    isNot?: profissional_saudeWhereInput
   }
 
   export type prescricaoOrderByRelationAggregateInput = {
@@ -20912,14 +20912,14 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type ProntuarioScalarRelationFilter = {
-    is?: prontuarioWhereInput
-    isNot?: prontuarioWhereInput
-  }
-
   export type ProcedimentoScalarRelationFilter = {
     is?: procedimentoWhereInput
     isNot?: procedimentoWhereInput
+  }
+
+  export type ProntuarioScalarRelationFilter = {
+    is?: prontuarioWhereInput
+    isNot?: prontuarioWhereInput
   }
 
   export type procedimento_realizadoCountOrderByAggregateInput = {
@@ -21023,56 +21023,56 @@ export namespace Prisma {
 
   export type prescricaoCountOrderByAggregateInput = {
     id?: SortOrder
-    prontuario_id?: SortOrder
+    duracao?: SortOrder
+    created_at?: SortOrder
+    data_fim?: SortOrder
+    data_inicio?: SortOrder
+    dosagem?: SortOrder
+    frequencia?: SortOrder
     medicamento_id?: SortOrder
     medicamento_nome?: SortOrder
-    dosagem?: SortOrder
-    via_administracao?: SortOrder
-    frequencia?: SortOrder
-    duracao?: SortOrder
-    quantidade?: SortOrder
     observacoes?: SortOrder
+    prontuario_id?: SortOrder
+    quantidade?: SortOrder
     status?: SortOrder
-    data_inicio?: SortOrder
-    data_fim?: SortOrder
-    created_at?: SortOrder
     updated_at?: SortOrder
+    via_administracao?: SortOrder
   }
 
   export type prescricaoMaxOrderByAggregateInput = {
     id?: SortOrder
-    prontuario_id?: SortOrder
+    duracao?: SortOrder
+    created_at?: SortOrder
+    data_fim?: SortOrder
+    data_inicio?: SortOrder
+    dosagem?: SortOrder
+    frequencia?: SortOrder
     medicamento_id?: SortOrder
     medicamento_nome?: SortOrder
-    dosagem?: SortOrder
-    via_administracao?: SortOrder
-    frequencia?: SortOrder
-    duracao?: SortOrder
-    quantidade?: SortOrder
     observacoes?: SortOrder
+    prontuario_id?: SortOrder
+    quantidade?: SortOrder
     status?: SortOrder
-    data_inicio?: SortOrder
-    data_fim?: SortOrder
-    created_at?: SortOrder
     updated_at?: SortOrder
+    via_administracao?: SortOrder
   }
 
   export type prescricaoMinOrderByAggregateInput = {
     id?: SortOrder
-    prontuario_id?: SortOrder
+    duracao?: SortOrder
+    created_at?: SortOrder
+    data_fim?: SortOrder
+    data_inicio?: SortOrder
+    dosagem?: SortOrder
+    frequencia?: SortOrder
     medicamento_id?: SortOrder
     medicamento_nome?: SortOrder
-    dosagem?: SortOrder
-    via_administracao?: SortOrder
-    frequencia?: SortOrder
-    duracao?: SortOrder
-    quantidade?: SortOrder
     observacoes?: SortOrder
+    prontuario_id?: SortOrder
+    quantidade?: SortOrder
     status?: SortOrder
-    data_inicio?: SortOrder
-    data_fim?: SortOrder
-    created_at?: SortOrder
     updated_at?: SortOrder
+    via_administracao?: SortOrder
   }
 
   export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -21089,25 +21089,25 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type Tipo_documentoNullableScalarRelationFilter = {
-    is?: tipo_documentoWhereInput | null
-    isNot?: tipo_documentoWhereInput | null
-  }
-
   export type EspecialidadeNullableScalarRelationFilter = {
     is?: especialidadeWhereInput | null
     isNot?: especialidadeWhereInput | null
   }
 
+  export type Tipo_documentoNullableScalarRelationFilter = {
+    is?: tipo_documentoWhereInput | null
+    isNot?: tipo_documentoWhereInput | null
+  }
+
   export type profissional_saudeCountOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
-    documento_numero?: SortOrder
-    tipo_documento_id?: SortOrder
-    especialidade_id?: SortOrder
     email?: SortOrder
     senha?: SortOrder
     data_nascimento?: SortOrder
+    documento_numero?: SortOrder
+    especialidade_id?: SortOrder
+    tipo_documento_id?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -21115,12 +21115,12 @@ export namespace Prisma {
   export type profissional_saudeMaxOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
-    documento_numero?: SortOrder
-    tipo_documento_id?: SortOrder
-    especialidade_id?: SortOrder
     email?: SortOrder
     senha?: SortOrder
     data_nascimento?: SortOrder
+    documento_numero?: SortOrder
+    especialidade_id?: SortOrder
+    tipo_documento_id?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -21128,12 +21128,12 @@ export namespace Prisma {
   export type profissional_saudeMinOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
-    documento_numero?: SortOrder
-    tipo_documento_id?: SortOrder
-    especialidade_id?: SortOrder
     email?: SortOrder
     senha?: SortOrder
     data_nascimento?: SortOrder
+    documento_numero?: SortOrder
+    especialidade_id?: SortOrder
+    tipo_documento_id?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -21143,9 +21143,9 @@ export namespace Prisma {
     titulo?: SortOrder
     sintomas_padrao?: SortOrder
     condutas_sugeridas?: SortOrder
-    medicamentos_recomendados?: SortOrder
     sazonalidade?: SortOrder
     created_at?: SortOrder
+    medicamentos_recomendados?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -21154,9 +21154,9 @@ export namespace Prisma {
     titulo?: SortOrder
     sintomas_padrao?: SortOrder
     condutas_sugeridas?: SortOrder
-    medicamentos_recomendados?: SortOrder
     sazonalidade?: SortOrder
     created_at?: SortOrder
+    medicamentos_recomendados?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -21165,9 +21165,9 @@ export namespace Prisma {
     titulo?: SortOrder
     sintomas_padrao?: SortOrder
     condutas_sugeridas?: SortOrder
-    medicamentos_recomendados?: SortOrder
     sazonalidade?: SortOrder
     created_at?: SortOrder
+    medicamentos_recomendados?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -21178,8 +21178,8 @@ export namespace Prisma {
     endereco?: SortOrder
     cidade?: SortOrder
     estado?: SortOrder
-    telefone?: SortOrder
     created_at?: SortOrder
+    telefone?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -21190,8 +21190,8 @@ export namespace Prisma {
     endereco?: SortOrder
     cidade?: SortOrder
     estado?: SortOrder
-    telefone?: SortOrder
     created_at?: SortOrder
+    telefone?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -21202,8 +21202,8 @@ export namespace Prisma {
     endereco?: SortOrder
     cidade?: SortOrder
     estado?: SortOrder
-    telefone?: SortOrder
     created_at?: SortOrder
+    telefone?: SortOrder
     updated_at?: SortOrder
   }
 
@@ -21443,18 +21443,6 @@ export namespace Prisma {
     update?: XOR<XOR<unidade_saudeUpdateToOneWithWhereWithoutConsultaInput, unidade_saudeUpdateWithoutConsultaInput>, unidade_saudeUncheckedUpdateWithoutConsultaInput>
   }
 
-  export type pacienteCreateNestedOneWithoutProntuarioInput = {
-    create?: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
-    connectOrCreate?: pacienteCreateOrConnectWithoutProntuarioInput
-    connect?: pacienteWhereUniqueInput
-  }
-
-  export type profissional_saudeCreateNestedOneWithoutProntuarioInput = {
-    create?: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
-    connectOrCreate?: profissional_saudeCreateOrConnectWithoutProntuarioInput
-    connect?: profissional_saudeWhereUniqueInput
-  }
-
   export type prescricaoCreateNestedManyWithoutProntuarioInput = {
     create?: XOR<prescricaoCreateWithoutProntuarioInput, prescricaoUncheckedCreateWithoutProntuarioInput> | prescricaoCreateWithoutProntuarioInput[] | prescricaoUncheckedCreateWithoutProntuarioInput[]
     connectOrCreate?: prescricaoCreateOrConnectWithoutProntuarioInput | prescricaoCreateOrConnectWithoutProntuarioInput[]
@@ -21469,6 +21457,18 @@ export namespace Prisma {
     connect?: procedimento_realizadoWhereUniqueInput | procedimento_realizadoWhereUniqueInput[]
   }
 
+  export type pacienteCreateNestedOneWithoutProntuarioInput = {
+    create?: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
+    connectOrCreate?: pacienteCreateOrConnectWithoutProntuarioInput
+    connect?: pacienteWhereUniqueInput
+  }
+
+  export type profissional_saudeCreateNestedOneWithoutProntuarioInput = {
+    create?: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
+    connectOrCreate?: profissional_saudeCreateOrConnectWithoutProntuarioInput
+    connect?: profissional_saudeWhereUniqueInput
+  }
+
   export type prescricaoUncheckedCreateNestedManyWithoutProntuarioInput = {
     create?: XOR<prescricaoCreateWithoutProntuarioInput, prescricaoUncheckedCreateWithoutProntuarioInput> | prescricaoCreateWithoutProntuarioInput[] | prescricaoUncheckedCreateWithoutProntuarioInput[]
     connectOrCreate?: prescricaoCreateOrConnectWithoutProntuarioInput | prescricaoCreateOrConnectWithoutProntuarioInput[]
@@ -21481,22 +21481,6 @@ export namespace Prisma {
     connectOrCreate?: procedimento_realizadoCreateOrConnectWithoutProntuarioInput | procedimento_realizadoCreateOrConnectWithoutProntuarioInput[]
     createMany?: procedimento_realizadoCreateManyProntuarioInputEnvelope
     connect?: procedimento_realizadoWhereUniqueInput | procedimento_realizadoWhereUniqueInput[]
-  }
-
-  export type pacienteUpdateOneRequiredWithoutProntuarioNestedInput = {
-    create?: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
-    connectOrCreate?: pacienteCreateOrConnectWithoutProntuarioInput
-    upsert?: pacienteUpsertWithoutProntuarioInput
-    connect?: pacienteWhereUniqueInput
-    update?: XOR<XOR<pacienteUpdateToOneWithWhereWithoutProntuarioInput, pacienteUpdateWithoutProntuarioInput>, pacienteUncheckedUpdateWithoutProntuarioInput>
-  }
-
-  export type profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput = {
-    create?: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
-    connectOrCreate?: profissional_saudeCreateOrConnectWithoutProntuarioInput
-    upsert?: profissional_saudeUpsertWithoutProntuarioInput
-    connect?: profissional_saudeWhereUniqueInput
-    update?: XOR<XOR<profissional_saudeUpdateToOneWithWhereWithoutProntuarioInput, profissional_saudeUpdateWithoutProntuarioInput>, profissional_saudeUncheckedUpdateWithoutProntuarioInput>
   }
 
   export type prescricaoUpdateManyWithoutProntuarioNestedInput = {
@@ -21525,6 +21509,22 @@ export namespace Prisma {
     update?: procedimento_realizadoUpdateWithWhereUniqueWithoutProntuarioInput | procedimento_realizadoUpdateWithWhereUniqueWithoutProntuarioInput[]
     updateMany?: procedimento_realizadoUpdateManyWithWhereWithoutProntuarioInput | procedimento_realizadoUpdateManyWithWhereWithoutProntuarioInput[]
     deleteMany?: procedimento_realizadoScalarWhereInput | procedimento_realizadoScalarWhereInput[]
+  }
+
+  export type pacienteUpdateOneRequiredWithoutProntuarioNestedInput = {
+    create?: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
+    connectOrCreate?: pacienteCreateOrConnectWithoutProntuarioInput
+    upsert?: pacienteUpsertWithoutProntuarioInput
+    connect?: pacienteWhereUniqueInput
+    update?: XOR<XOR<pacienteUpdateToOneWithWhereWithoutProntuarioInput, pacienteUpdateWithoutProntuarioInput>, pacienteUncheckedUpdateWithoutProntuarioInput>
+  }
+
+  export type profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput = {
+    create?: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
+    connectOrCreate?: profissional_saudeCreateOrConnectWithoutProntuarioInput
+    upsert?: profissional_saudeUpsertWithoutProntuarioInput
+    connect?: profissional_saudeWhereUniqueInput
+    update?: XOR<XOR<profissional_saudeUpdateToOneWithWhereWithoutProntuarioInput, profissional_saudeUpdateWithoutProntuarioInput>, profissional_saudeUncheckedUpdateWithoutProntuarioInput>
   }
 
   export type prescricaoUncheckedUpdateManyWithoutProntuarioNestedInput = {
@@ -21657,24 +21657,16 @@ export namespace Prisma {
     deleteMany?: procedimento_realizadoScalarWhereInput | procedimento_realizadoScalarWhereInput[]
   }
 
-  export type prontuarioCreateNestedOneWithoutProcedimento_realizadoInput = {
-    create?: XOR<prontuarioCreateWithoutProcedimento_realizadoInput, prontuarioUncheckedCreateWithoutProcedimento_realizadoInput>
-    connectOrCreate?: prontuarioCreateOrConnectWithoutProcedimento_realizadoInput
-    connect?: prontuarioWhereUniqueInput
-  }
-
   export type procedimentoCreateNestedOneWithoutProcedimento_realizadoInput = {
     create?: XOR<procedimentoCreateWithoutProcedimento_realizadoInput, procedimentoUncheckedCreateWithoutProcedimento_realizadoInput>
     connectOrCreate?: procedimentoCreateOrConnectWithoutProcedimento_realizadoInput
     connect?: procedimentoWhereUniqueInput
   }
 
-  export type prontuarioUpdateOneRequiredWithoutProcedimento_realizadoNestedInput = {
+  export type prontuarioCreateNestedOneWithoutProcedimento_realizadoInput = {
     create?: XOR<prontuarioCreateWithoutProcedimento_realizadoInput, prontuarioUncheckedCreateWithoutProcedimento_realizadoInput>
     connectOrCreate?: prontuarioCreateOrConnectWithoutProcedimento_realizadoInput
-    upsert?: prontuarioUpsertWithoutProcedimento_realizadoInput
     connect?: prontuarioWhereUniqueInput
-    update?: XOR<XOR<prontuarioUpdateToOneWithWhereWithoutProcedimento_realizadoInput, prontuarioUpdateWithoutProcedimento_realizadoInput>, prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput>
   }
 
   export type procedimentoUpdateOneRequiredWithoutProcedimento_realizadoNestedInput = {
@@ -21683,6 +21675,14 @@ export namespace Prisma {
     upsert?: procedimentoUpsertWithoutProcedimento_realizadoInput
     connect?: procedimentoWhereUniqueInput
     update?: XOR<XOR<procedimentoUpdateToOneWithWhereWithoutProcedimento_realizadoInput, procedimentoUpdateWithoutProcedimento_realizadoInput>, procedimentoUncheckedUpdateWithoutProcedimento_realizadoInput>
+  }
+
+  export type prontuarioUpdateOneRequiredWithoutProcedimento_realizadoNestedInput = {
+    create?: XOR<prontuarioCreateWithoutProcedimento_realizadoInput, prontuarioUncheckedCreateWithoutProcedimento_realizadoInput>
+    connectOrCreate?: prontuarioCreateOrConnectWithoutProcedimento_realizadoInput
+    upsert?: prontuarioUpsertWithoutProcedimento_realizadoInput
+    connect?: prontuarioWhereUniqueInput
+    update?: XOR<XOR<prontuarioUpdateToOneWithWhereWithoutProcedimento_realizadoInput, prontuarioUpdateWithoutProcedimento_realizadoInput>, prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput>
   }
 
   export type prescricaoCreateNestedManyWithoutMedicamentoInput = {
@@ -21727,28 +21727,20 @@ export namespace Prisma {
     deleteMany?: prescricaoScalarWhereInput | prescricaoScalarWhereInput[]
   }
 
-  export type prontuarioCreateNestedOneWithoutPrescricaoInput = {
-    create?: XOR<prontuarioCreateWithoutPrescricaoInput, prontuarioUncheckedCreateWithoutPrescricaoInput>
-    connectOrCreate?: prontuarioCreateOrConnectWithoutPrescricaoInput
-    connect?: prontuarioWhereUniqueInput
-  }
-
   export type medicamentoCreateNestedOneWithoutPrescricaoInput = {
     create?: XOR<medicamentoCreateWithoutPrescricaoInput, medicamentoUncheckedCreateWithoutPrescricaoInput>
     connectOrCreate?: medicamentoCreateOrConnectWithoutPrescricaoInput
     connect?: medicamentoWhereUniqueInput
   }
 
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
-  export type prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput = {
+  export type prontuarioCreateNestedOneWithoutPrescricaoInput = {
     create?: XOR<prontuarioCreateWithoutPrescricaoInput, prontuarioUncheckedCreateWithoutPrescricaoInput>
     connectOrCreate?: prontuarioCreateOrConnectWithoutPrescricaoInput
-    upsert?: prontuarioUpsertWithoutPrescricaoInput
     connect?: prontuarioWhereUniqueInput
-    update?: XOR<XOR<prontuarioUpdateToOneWithWhereWithoutPrescricaoInput, prontuarioUpdateWithoutPrescricaoInput>, prontuarioUncheckedUpdateWithoutPrescricaoInput>
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type medicamentoUpdateOneWithoutPrescricaoNestedInput = {
@@ -21761,6 +21753,14 @@ export namespace Prisma {
     update?: XOR<XOR<medicamentoUpdateToOneWithWhereWithoutPrescricaoInput, medicamentoUpdateWithoutPrescricaoInput>, medicamentoUncheckedUpdateWithoutPrescricaoInput>
   }
 
+  export type prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput = {
+    create?: XOR<prontuarioCreateWithoutPrescricaoInput, prontuarioUncheckedCreateWithoutPrescricaoInput>
+    connectOrCreate?: prontuarioCreateOrConnectWithoutPrescricaoInput
+    upsert?: prontuarioUpsertWithoutPrescricaoInput
+    connect?: prontuarioWhereUniqueInput
+    update?: XOR<XOR<prontuarioUpdateToOneWithWhereWithoutPrescricaoInput, prontuarioUpdateWithoutPrescricaoInput>, prontuarioUncheckedUpdateWithoutPrescricaoInput>
+  }
+
   export type consultaCreateNestedManyWithoutProfissional_saudeInput = {
     create?: XOR<consultaCreateWithoutProfissional_saudeInput, consultaUncheckedCreateWithoutProfissional_saudeInput> | consultaCreateWithoutProfissional_saudeInput[] | consultaUncheckedCreateWithoutProfissional_saudeInput[]
     connectOrCreate?: consultaCreateOrConnectWithoutProfissional_saudeInput | consultaCreateOrConnectWithoutProfissional_saudeInput[]
@@ -21768,11 +21768,10 @@ export namespace Prisma {
     connect?: consultaWhereUniqueInput | consultaWhereUniqueInput[]
   }
 
-  export type prontuarioCreateNestedManyWithoutProfissional_saudeInput = {
-    create?: XOR<prontuarioCreateWithoutProfissional_saudeInput, prontuarioUncheckedCreateWithoutProfissional_saudeInput> | prontuarioCreateWithoutProfissional_saudeInput[] | prontuarioUncheckedCreateWithoutProfissional_saudeInput[]
-    connectOrCreate?: prontuarioCreateOrConnectWithoutProfissional_saudeInput | prontuarioCreateOrConnectWithoutProfissional_saudeInput[]
-    createMany?: prontuarioCreateManyProfissional_saudeInputEnvelope
-    connect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
+  export type especialidadeCreateNestedOneWithoutProfissional_saudeInput = {
+    create?: XOR<especialidadeCreateWithoutProfissional_saudeInput, especialidadeUncheckedCreateWithoutProfissional_saudeInput>
+    connectOrCreate?: especialidadeCreateOrConnectWithoutProfissional_saudeInput
+    connect?: especialidadeWhereUniqueInput
   }
 
   export type tipo_documentoCreateNestedOneWithoutProfissional_saudeInput = {
@@ -21781,10 +21780,11 @@ export namespace Prisma {
     connect?: tipo_documentoWhereUniqueInput
   }
 
-  export type especialidadeCreateNestedOneWithoutProfissional_saudeInput = {
-    create?: XOR<especialidadeCreateWithoutProfissional_saudeInput, especialidadeUncheckedCreateWithoutProfissional_saudeInput>
-    connectOrCreate?: especialidadeCreateOrConnectWithoutProfissional_saudeInput
-    connect?: especialidadeWhereUniqueInput
+  export type prontuarioCreateNestedManyWithoutProfissional_saudeInput = {
+    create?: XOR<prontuarioCreateWithoutProfissional_saudeInput, prontuarioUncheckedCreateWithoutProfissional_saudeInput> | prontuarioCreateWithoutProfissional_saudeInput[] | prontuarioUncheckedCreateWithoutProfissional_saudeInput[]
+    connectOrCreate?: prontuarioCreateOrConnectWithoutProfissional_saudeInput | prontuarioCreateOrConnectWithoutProfissional_saudeInput[]
+    createMany?: prontuarioCreateManyProfissional_saudeInputEnvelope
+    connect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
   }
 
   export type consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput = {
@@ -21815,18 +21815,14 @@ export namespace Prisma {
     deleteMany?: consultaScalarWhereInput | consultaScalarWhereInput[]
   }
 
-  export type prontuarioUpdateManyWithoutProfissional_saudeNestedInput = {
-    create?: XOR<prontuarioCreateWithoutProfissional_saudeInput, prontuarioUncheckedCreateWithoutProfissional_saudeInput> | prontuarioCreateWithoutProfissional_saudeInput[] | prontuarioUncheckedCreateWithoutProfissional_saudeInput[]
-    connectOrCreate?: prontuarioCreateOrConnectWithoutProfissional_saudeInput | prontuarioCreateOrConnectWithoutProfissional_saudeInput[]
-    upsert?: prontuarioUpsertWithWhereUniqueWithoutProfissional_saudeInput | prontuarioUpsertWithWhereUniqueWithoutProfissional_saudeInput[]
-    createMany?: prontuarioCreateManyProfissional_saudeInputEnvelope
-    set?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
-    disconnect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
-    delete?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
-    connect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
-    update?: prontuarioUpdateWithWhereUniqueWithoutProfissional_saudeInput | prontuarioUpdateWithWhereUniqueWithoutProfissional_saudeInput[]
-    updateMany?: prontuarioUpdateManyWithWhereWithoutProfissional_saudeInput | prontuarioUpdateManyWithWhereWithoutProfissional_saudeInput[]
-    deleteMany?: prontuarioScalarWhereInput | prontuarioScalarWhereInput[]
+  export type especialidadeUpdateOneWithoutProfissional_saudeNestedInput = {
+    create?: XOR<especialidadeCreateWithoutProfissional_saudeInput, especialidadeUncheckedCreateWithoutProfissional_saudeInput>
+    connectOrCreate?: especialidadeCreateOrConnectWithoutProfissional_saudeInput
+    upsert?: especialidadeUpsertWithoutProfissional_saudeInput
+    disconnect?: especialidadeWhereInput | boolean
+    delete?: especialidadeWhereInput | boolean
+    connect?: especialidadeWhereUniqueInput
+    update?: XOR<XOR<especialidadeUpdateToOneWithWhereWithoutProfissional_saudeInput, especialidadeUpdateWithoutProfissional_saudeInput>, especialidadeUncheckedUpdateWithoutProfissional_saudeInput>
   }
 
   export type tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput = {
@@ -21839,14 +21835,18 @@ export namespace Prisma {
     update?: XOR<XOR<tipo_documentoUpdateToOneWithWhereWithoutProfissional_saudeInput, tipo_documentoUpdateWithoutProfissional_saudeInput>, tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput>
   }
 
-  export type especialidadeUpdateOneWithoutProfissional_saudeNestedInput = {
-    create?: XOR<especialidadeCreateWithoutProfissional_saudeInput, especialidadeUncheckedCreateWithoutProfissional_saudeInput>
-    connectOrCreate?: especialidadeCreateOrConnectWithoutProfissional_saudeInput
-    upsert?: especialidadeUpsertWithoutProfissional_saudeInput
-    disconnect?: especialidadeWhereInput | boolean
-    delete?: especialidadeWhereInput | boolean
-    connect?: especialidadeWhereUniqueInput
-    update?: XOR<XOR<especialidadeUpdateToOneWithWhereWithoutProfissional_saudeInput, especialidadeUpdateWithoutProfissional_saudeInput>, especialidadeUncheckedUpdateWithoutProfissional_saudeInput>
+  export type prontuarioUpdateManyWithoutProfissional_saudeNestedInput = {
+    create?: XOR<prontuarioCreateWithoutProfissional_saudeInput, prontuarioUncheckedCreateWithoutProfissional_saudeInput> | prontuarioCreateWithoutProfissional_saudeInput[] | prontuarioUncheckedCreateWithoutProfissional_saudeInput[]
+    connectOrCreate?: prontuarioCreateOrConnectWithoutProfissional_saudeInput | prontuarioCreateOrConnectWithoutProfissional_saudeInput[]
+    upsert?: prontuarioUpsertWithWhereUniqueWithoutProfissional_saudeInput | prontuarioUpsertWithWhereUniqueWithoutProfissional_saudeInput[]
+    createMany?: prontuarioCreateManyProfissional_saudeInputEnvelope
+    set?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
+    disconnect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
+    delete?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
+    connect?: prontuarioWhereUniqueInput | prontuarioWhereUniqueInput[]
+    update?: prontuarioUpdateWithWhereUniqueWithoutProfissional_saudeInput | prontuarioUpdateWithWhereUniqueWithoutProfissional_saudeInput[]
+    updateMany?: prontuarioUpdateManyWithWhereWithoutProfissional_saudeInput | prontuarioUpdateManyWithWhereWithoutProfissional_saudeInput[]
+    deleteMany?: prontuarioScalarWhereInput | prontuarioScalarWhereInput[]
   }
 
   export type consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput = {
@@ -22146,25 +22146,25 @@ export namespace Prisma {
   export type profissional_saudeCreateWithoutTipo_documentoInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     consulta?: consultaCreateNestedManyWithoutProfissional_saudeInput
-    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
     especialidade?: especialidadeCreateNestedOneWithoutProfissional_saudeInput
+    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
   }
 
   export type profissional_saudeUncheckedCreateWithoutTipo_documentoInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    especialidade_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    especialidade_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     consulta?: consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput
@@ -22203,12 +22203,12 @@ export namespace Prisma {
     NOT?: profissional_saudeScalarWhereInput | profissional_saudeScalarWhereInput[]
     id?: UuidFilter<"profissional_saude"> | string
     nome?: StringFilter<"profissional_saude"> | string
-    documento_numero?: StringNullableFilter<"profissional_saude"> | string | null
-    tipo_documento_id?: UuidNullableFilter<"profissional_saude"> | string | null
-    especialidade_id?: UuidNullableFilter<"profissional_saude"> | string | null
     email?: StringNullableFilter<"profissional_saude"> | string | null
     senha?: StringFilter<"profissional_saude"> | string
     data_nascimento?: DateTimeNullableFilter<"profissional_saude"> | Date | string | null
+    documento_numero?: StringNullableFilter<"profissional_saude"> | string | null
+    especialidade_id?: UuidNullableFilter<"profissional_saude"> | string | null
+    tipo_documento_id?: UuidNullableFilter<"profissional_saude"> | string | null
     created_at?: DateTimeFilter<"profissional_saude"> | Date | string
     updated_at?: DateTimeFilter<"profissional_saude"> | Date | string
   }
@@ -22216,25 +22216,25 @@ export namespace Prisma {
   export type profissional_saudeCreateWithoutEspecialidadeInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     consulta?: consultaCreateNestedManyWithoutProfissional_saudeInput
-    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
     tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
+    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
   }
 
   export type profissional_saudeUncheckedCreateWithoutEspecialidadeInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    tipo_documento_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    tipo_documento_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     consulta?: consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput
@@ -22270,10 +22270,10 @@ export namespace Prisma {
   export type consultaCreateWithoutPacienteInput = {
     id?: string
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
     profissional_saude?: profissional_saudeCreateNestedOneWithoutConsultaInput
     unidade_saude?: unidade_saudeCreateNestedOneWithoutConsultaInput
@@ -22284,10 +22284,10 @@ export namespace Prisma {
     profissional_id?: string | null
     unidade_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
@@ -22322,9 +22322,9 @@ export namespace Prisma {
     retorno?: string | null
     created_at?: Date | string
     updated_at?: Date | string
-    profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
     prescricao?: prescricaoCreateNestedManyWithoutProntuarioInput
     procedimento_realizado?: procedimento_realizadoCreateNestedManyWithoutProntuarioInput
+    profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
   }
 
   export type prontuarioUncheckedCreateWithoutPacienteInput = {
@@ -22388,10 +22388,10 @@ export namespace Prisma {
     profissional_id?: UuidNullableFilter<"consulta"> | string | null
     unidade_id?: UuidNullableFilter<"consulta"> | string | null
     data?: DateTimeFilter<"consulta"> | Date | string
-    hora?: StringNullableFilter<"consulta"> | string | null
-    status?: StringFilter<"consulta"> | string
-    observacoes?: StringNullableFilter<"consulta"> | string | null
     created_at?: DateTimeFilter<"consulta"> | Date | string
+    hora?: StringNullableFilter<"consulta"> | string | null
+    observacoes?: StringNullableFilter<"consulta"> | string | null
+    status?: StringFilter<"consulta"> | string
     updated_at?: DateTimeFilter<"consulta"> | Date | string
   }
 
@@ -22445,26 +22445,26 @@ export namespace Prisma {
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
-    rg?: string | null
     telefone?: string | null
-    telefone_contato?: string | null
     email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
     alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
     created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
     updated_at?: Date | string
     prontuario?: prontuarioCreateNestedManyWithoutPacienteInput
   }
@@ -22475,26 +22475,26 @@ export namespace Prisma {
     data_nascimento: Date | string
     sexo?: string | null
     cpf?: string | null
-    rg?: string | null
     telefone?: string | null
-    telefone_contato?: string | null
     email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
     alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
     created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
     updated_at?: Date | string
     prontuario?: prontuarioUncheckedCreateNestedManyWithoutPacienteInput
   }
@@ -22507,26 +22507,26 @@ export namespace Prisma {
   export type profissional_saudeCreateWithoutConsultaInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
     created_at?: Date | string
     updated_at?: Date | string
-    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
-    tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
     especialidade?: especialidadeCreateNestedOneWithoutProfissional_saudeInput
+    tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
+    prontuario?: prontuarioCreateNestedManyWithoutProfissional_saudeInput
   }
 
   export type profissional_saudeUncheckedCreateWithoutConsultaInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    tipo_documento_id?: string | null
-    especialidade_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    especialidade_id?: string | null
+    tipo_documento_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     prontuario?: prontuarioUncheckedCreateNestedManyWithoutProfissional_saudeInput
@@ -22544,8 +22544,8 @@ export namespace Prisma {
     endereco?: string | null
     cidade?: string | null
     estado?: string | null
-    telefone?: string | null
     created_at?: Date | string
+    telefone?: string | null
     updated_at?: Date | string
   }
 
@@ -22556,8 +22556,8 @@ export namespace Prisma {
     endereco?: string | null
     cidade?: string | null
     estado?: string | null
-    telefone?: string | null
     created_at?: Date | string
+    telefone?: string | null
     updated_at?: Date | string
   }
 
@@ -22583,26 +22583,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     prontuario?: prontuarioUpdateManyWithoutPacienteNestedInput
   }
@@ -22613,26 +22613,26 @@ export namespace Prisma {
     data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
     sexo?: NullableStringFieldUpdateOperationsInput | string | null
     cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     prontuario?: prontuarioUncheckedUpdateManyWithoutPacienteNestedInput
   }
@@ -22651,26 +22651,26 @@ export namespace Prisma {
   export type profissional_saudeUpdateWithoutConsultaInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
-    tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
     especialidade?: especialidadeUpdateOneWithoutProfissional_saudeNestedInput
+    tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
+    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
   }
 
   export type profissional_saudeUncheckedUpdateWithoutConsultaInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
-    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     prontuario?: prontuarioUncheckedUpdateManyWithoutProfissional_saudeNestedInput
@@ -22694,8 +22694,8 @@ export namespace Prisma {
     endereco?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: NullableStringFieldUpdateOperationsInput | string | null
     estado?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -22706,141 +22706,43 @@ export namespace Prisma {
     endereco?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: NullableStringFieldUpdateOperationsInput | string | null
     estado?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type pacienteCreateWithoutProntuarioInput = {
-    id?: string
-    nome: string
-    data_nascimento: Date | string
-    sexo?: string | null
-    cpf?: string | null
-    rg?: string | null
-    telefone?: string | null
-    telefone_contato?: string | null
-    email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
-    alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
-    created_at?: Date | string
-    updated_at?: Date | string
-    consulta?: consultaCreateNestedManyWithoutPacienteInput
-  }
-
-  export type pacienteUncheckedCreateWithoutProntuarioInput = {
-    id?: string
-    nome: string
-    data_nascimento: Date | string
-    sexo?: string | null
-    cpf?: string | null
-    rg?: string | null
-    telefone?: string | null
-    telefone_contato?: string | null
-    email?: string | null
-    endereco?: string | null
-    numero?: string | null
-    complemento?: string | null
-    bairro?: string | null
-    cidade?: string | null
-    estado?: string | null
-    cep?: string | null
-    peso?: Decimal | DecimalJsLike | number | string | null
-    altura?: Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: string | null
-    alergias?: string | null
-    medicamentos_uso?: string | null
-    observacoes?: string | null
-    nome_responsavel?: string | null
-    telefone_responsavel?: string | null
-    created_at?: Date | string
-    updated_at?: Date | string
-    consulta?: consultaUncheckedCreateNestedManyWithoutPacienteInput
-  }
-
-  export type pacienteCreateOrConnectWithoutProntuarioInput = {
-    where: pacienteWhereUniqueInput
-    create: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
-  }
-
-  export type profissional_saudeCreateWithoutProntuarioInput = {
-    id?: string
-    nome: string
-    documento_numero?: string | null
-    email?: string | null
-    senha: string
-    data_nascimento?: Date | string | null
-    created_at?: Date | string
-    updated_at?: Date | string
-    consulta?: consultaCreateNestedManyWithoutProfissional_saudeInput
-    tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
-    especialidade?: especialidadeCreateNestedOneWithoutProfissional_saudeInput
-  }
-
-  export type profissional_saudeUncheckedCreateWithoutProntuarioInput = {
-    id?: string
-    nome: string
-    documento_numero?: string | null
-    tipo_documento_id?: string | null
-    especialidade_id?: string | null
-    email?: string | null
-    senha: string
-    data_nascimento?: Date | string | null
-    created_at?: Date | string
-    updated_at?: Date | string
-    consulta?: consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput
-  }
-
-  export type profissional_saudeCreateOrConnectWithoutProntuarioInput = {
-    where: profissional_saudeWhereUniqueInput
-    create: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
   }
 
   export type prescricaoCreateWithoutProntuarioInput = {
     id?: string
-    medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
     duracao?: string | null
-    quantidade?: string | null
-    observacoes?: string | null
-    status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
     created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
+    medicamento_nome?: string | null
+    observacoes?: string | null
+    quantidade?: string | null
+    status?: string
     updated_at?: Date | string
+    via_administracao?: string | null
     medicamento?: medicamentoCreateNestedOneWithoutPrescricaoInput
   }
 
   export type prescricaoUncheckedCreateWithoutProntuarioInput = {
     id?: string
+    duracao?: string | null
+    created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
     medicamento_id?: string | null
     medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
-    duracao?: string | null
-    quantidade?: string | null
     observacoes?: string | null
+    quantidade?: string | null
     status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
-    created_at?: Date | string
     updated_at?: Date | string
+    via_administracao?: string | null
   }
 
   export type prescricaoCreateOrConnectWithoutProntuarioInput = {
@@ -22885,114 +22787,102 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type pacienteUpsertWithoutProntuarioInput = {
-    update: XOR<pacienteUpdateWithoutProntuarioInput, pacienteUncheckedUpdateWithoutProntuarioInput>
+  export type pacienteCreateWithoutProntuarioInput = {
+    id?: string
+    nome: string
+    data_nascimento: Date | string
+    sexo?: string | null
+    cpf?: string | null
+    telefone?: string | null
+    email?: string | null
+    alergias?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
+    created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
+    updated_at?: Date | string
+    consulta?: consultaCreateNestedManyWithoutPacienteInput
+  }
+
+  export type pacienteUncheckedCreateWithoutProntuarioInput = {
+    id?: string
+    nome: string
+    data_nascimento: Date | string
+    sexo?: string | null
+    cpf?: string | null
+    telefone?: string | null
+    email?: string | null
+    alergias?: string | null
+    altura?: Decimal | DecimalJsLike | number | string | null
+    bairro?: string | null
+    cep?: string | null
+    cidade?: string | null
+    complemento?: string | null
+    created_at?: Date | string
+    endereco?: string | null
+    estado?: string | null
+    medicamentos_uso?: string | null
+    nome_responsavel?: string | null
+    numero?: string | null
+    observacoes?: string | null
+    peso?: Decimal | DecimalJsLike | number | string | null
+    rg?: string | null
+    telefone_contato?: string | null
+    telefone_responsavel?: string | null
+    tipo_sanguineo?: string | null
+    updated_at?: Date | string
+    consulta?: consultaUncheckedCreateNestedManyWithoutPacienteInput
+  }
+
+  export type pacienteCreateOrConnectWithoutProntuarioInput = {
+    where: pacienteWhereUniqueInput
     create: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
-    where?: pacienteWhereInput
   }
 
-  export type pacienteUpdateToOneWithWhereWithoutProntuarioInput = {
-    where?: pacienteWhereInput
-    data: XOR<pacienteUpdateWithoutProntuarioInput, pacienteUncheckedUpdateWithoutProntuarioInput>
+  export type profissional_saudeCreateWithoutProntuarioInput = {
+    id?: string
+    nome: string
+    email?: string | null
+    senha: string
+    data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    consulta?: consultaCreateNestedManyWithoutProfissional_saudeInput
+    especialidade?: especialidadeCreateNestedOneWithoutProfissional_saudeInput
+    tipo_documento?: tipo_documentoCreateNestedOneWithoutProfissional_saudeInput
   }
 
-  export type pacienteUpdateWithoutProntuarioInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    nome?: StringFieldUpdateOperationsInput | string
-    data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
-    sexo?: NullableStringFieldUpdateOperationsInput | string | null
-    cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
-    alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    consulta?: consultaUpdateManyWithoutPacienteNestedInput
+  export type profissional_saudeUncheckedCreateWithoutProntuarioInput = {
+    id?: string
+    nome: string
+    email?: string | null
+    senha: string
+    data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    especialidade_id?: string | null
+    tipo_documento_id?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    consulta?: consultaUncheckedCreateNestedManyWithoutProfissional_saudeInput
   }
 
-  export type pacienteUncheckedUpdateWithoutProntuarioInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    nome?: StringFieldUpdateOperationsInput | string
-    data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
-    sexo?: NullableStringFieldUpdateOperationsInput | string | null
-    cpf?: NullableStringFieldUpdateOperationsInput | string | null
-    rg?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    endereco?: NullableStringFieldUpdateOperationsInput | string | null
-    numero?: NullableStringFieldUpdateOperationsInput | string | null
-    complemento?: NullableStringFieldUpdateOperationsInput | string | null
-    bairro?: NullableStringFieldUpdateOperationsInput | string | null
-    cidade?: NullableStringFieldUpdateOperationsInput | string | null
-    estado?: NullableStringFieldUpdateOperationsInput | string | null
-    cep?: NullableStringFieldUpdateOperationsInput | string | null
-    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
-    alergias?: NullableStringFieldUpdateOperationsInput | string | null
-    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    consulta?: consultaUncheckedUpdateManyWithoutPacienteNestedInput
-  }
-
-  export type profissional_saudeUpsertWithoutProntuarioInput = {
-    update: XOR<profissional_saudeUpdateWithoutProntuarioInput, profissional_saudeUncheckedUpdateWithoutProntuarioInput>
+  export type profissional_saudeCreateOrConnectWithoutProntuarioInput = {
+    where: profissional_saudeWhereUniqueInput
     create: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
-    where?: profissional_saudeWhereInput
-  }
-
-  export type profissional_saudeUpdateToOneWithWhereWithoutProntuarioInput = {
-    where?: profissional_saudeWhereInput
-    data: XOR<profissional_saudeUpdateWithoutProntuarioInput, profissional_saudeUncheckedUpdateWithoutProntuarioInput>
-  }
-
-  export type profissional_saudeUpdateWithoutProntuarioInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    senha?: StringFieldUpdateOperationsInput | string
-    data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    consulta?: consultaUpdateManyWithoutProfissional_saudeNestedInput
-    tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
-    especialidade?: especialidadeUpdateOneWithoutProfissional_saudeNestedInput
-  }
-
-  export type profissional_saudeUncheckedUpdateWithoutProntuarioInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
-    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
-    email?: NullableStringFieldUpdateOperationsInput | string | null
-    senha?: StringFieldUpdateOperationsInput | string
-    data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    consulta?: consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput
   }
 
   export type prescricaoUpsertWithWhereUniqueWithoutProntuarioInput = {
@@ -23016,20 +22906,20 @@ export namespace Prisma {
     OR?: prescricaoScalarWhereInput[]
     NOT?: prescricaoScalarWhereInput | prescricaoScalarWhereInput[]
     id?: UuidFilter<"prescricao"> | string
-    prontuario_id?: UuidFilter<"prescricao"> | string
+    duracao?: StringNullableFilter<"prescricao"> | string | null
+    created_at?: DateTimeFilter<"prescricao"> | Date | string
+    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
+    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
+    dosagem?: StringNullableFilter<"prescricao"> | string | null
+    frequencia?: StringNullableFilter<"prescricao"> | string | null
     medicamento_id?: UuidNullableFilter<"prescricao"> | string | null
     medicamento_nome?: StringNullableFilter<"prescricao"> | string | null
-    dosagem?: StringNullableFilter<"prescricao"> | string | null
-    via_administracao?: StringNullableFilter<"prescricao"> | string | null
-    frequencia?: StringNullableFilter<"prescricao"> | string | null
-    duracao?: StringNullableFilter<"prescricao"> | string | null
-    quantidade?: StringNullableFilter<"prescricao"> | string | null
     observacoes?: StringNullableFilter<"prescricao"> | string | null
+    prontuario_id?: UuidFilter<"prescricao"> | string
+    quantidade?: StringNullableFilter<"prescricao"> | string | null
     status?: StringFilter<"prescricao"> | string
-    data_inicio?: DateTimeFilter<"prescricao"> | Date | string
-    data_fim?: DateTimeNullableFilter<"prescricao"> | Date | string | null
-    created_at?: DateTimeFilter<"prescricao"> | Date | string
     updated_at?: DateTimeFilter<"prescricao"> | Date | string
+    via_administracao?: StringNullableFilter<"prescricao"> | string | null
   }
 
   export type procedimento_realizadoUpsertWithWhereUniqueWithoutProntuarioInput = {
@@ -23061,6 +22951,116 @@ export namespace Prisma {
     status?: StringFilter<"procedimento_realizado"> | string
     created_at?: DateTimeFilter<"procedimento_realizado"> | Date | string
     updated_at?: DateTimeFilter<"procedimento_realizado"> | Date | string
+  }
+
+  export type pacienteUpsertWithoutProntuarioInput = {
+    update: XOR<pacienteUpdateWithoutProntuarioInput, pacienteUncheckedUpdateWithoutProntuarioInput>
+    create: XOR<pacienteCreateWithoutProntuarioInput, pacienteUncheckedCreateWithoutProntuarioInput>
+    where?: pacienteWhereInput
+  }
+
+  export type pacienteUpdateToOneWithWhereWithoutProntuarioInput = {
+    where?: pacienteWhereInput
+    data: XOR<pacienteUpdateWithoutProntuarioInput, pacienteUncheckedUpdateWithoutProntuarioInput>
+  }
+
+  export type pacienteUpdateWithoutProntuarioInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    sexo?: NullableStringFieldUpdateOperationsInput | string | null
+    cpf?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    consulta?: consultaUpdateManyWithoutPacienteNestedInput
+  }
+
+  export type pacienteUncheckedUpdateWithoutProntuarioInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    data_nascimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    sexo?: NullableStringFieldUpdateOperationsInput | string | null
+    cpf?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    alergias?: NullableStringFieldUpdateOperationsInput | string | null
+    altura?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    bairro?: NullableStringFieldUpdateOperationsInput | string | null
+    cep?: NullableStringFieldUpdateOperationsInput | string | null
+    cidade?: NullableStringFieldUpdateOperationsInput | string | null
+    complemento?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    endereco?: NullableStringFieldUpdateOperationsInput | string | null
+    estado?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamentos_uso?: NullableStringFieldUpdateOperationsInput | string | null
+    nome_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    numero?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    peso?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    rg?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_contato?: NullableStringFieldUpdateOperationsInput | string | null
+    telefone_responsavel?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_sanguineo?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    consulta?: consultaUncheckedUpdateManyWithoutPacienteNestedInput
+  }
+
+  export type profissional_saudeUpsertWithoutProntuarioInput = {
+    update: XOR<profissional_saudeUpdateWithoutProntuarioInput, profissional_saudeUncheckedUpdateWithoutProntuarioInput>
+    create: XOR<profissional_saudeCreateWithoutProntuarioInput, profissional_saudeUncheckedCreateWithoutProntuarioInput>
+    where?: profissional_saudeWhereInput
+  }
+
+  export type profissional_saudeUpdateToOneWithWhereWithoutProntuarioInput = {
+    where?: profissional_saudeWhereInput
+    data: XOR<profissional_saudeUpdateWithoutProntuarioInput, profissional_saudeUncheckedUpdateWithoutProntuarioInput>
+  }
+
+  export type profissional_saudeUpdateWithoutProntuarioInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
+    data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    consulta?: consultaUpdateManyWithoutProfissional_saudeNestedInput
+    especialidade?: especialidadeUpdateOneWithoutProfissional_saudeNestedInput
+    tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
+  }
+
+  export type profissional_saudeUncheckedUpdateWithoutProntuarioInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    email?: NullableStringFieldUpdateOperationsInput | string | null
+    senha?: StringFieldUpdateOperationsInput | string
+    data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    consulta?: consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput
   }
 
   export type procedimentoCreateWithoutTipo_procedimentoInput = {
@@ -23232,6 +23232,35 @@ export namespace Prisma {
     data: XOR<procedimento_realizadoUpdateManyMutationInput, procedimento_realizadoUncheckedUpdateManyWithoutProcedimentoInput>
   }
 
+  export type procedimentoCreateWithoutProcedimento_realizadoInput = {
+    id?: string
+    nome: string
+    codigo?: string | null
+    descricao?: string | null
+    valor_padrao?: Decimal | DecimalJsLike | number | string | null
+    ativo?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+    tipo_procedimento: tipo_procedimentoCreateNestedOneWithoutProcedimentoInput
+  }
+
+  export type procedimentoUncheckedCreateWithoutProcedimento_realizadoInput = {
+    id?: string
+    tipo_procedimento_id: string
+    nome: string
+    codigo?: string | null
+    descricao?: string | null
+    valor_padrao?: Decimal | DecimalJsLike | number | string | null
+    ativo?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+  }
+
+  export type procedimentoCreateOrConnectWithoutProcedimento_realizadoInput = {
+    where: procedimentoWhereUniqueInput
+    create: XOR<procedimentoCreateWithoutProcedimento_realizadoInput, procedimentoUncheckedCreateWithoutProcedimento_realizadoInput>
+  }
+
   export type prontuarioCreateWithoutProcedimento_realizadoInput = {
     id?: string
     data_atendimento?: Date | string
@@ -23253,9 +23282,9 @@ export namespace Prisma {
     retorno?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    prescricao?: prescricaoCreateNestedManyWithoutProntuarioInput
     paciente: pacienteCreateNestedOneWithoutProntuarioInput
     profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
-    prescricao?: prescricaoCreateNestedManyWithoutProntuarioInput
   }
 
   export type prontuarioUncheckedCreateWithoutProcedimento_realizadoInput = {
@@ -23287,98 +23316,6 @@ export namespace Prisma {
   export type prontuarioCreateOrConnectWithoutProcedimento_realizadoInput = {
     where: prontuarioWhereUniqueInput
     create: XOR<prontuarioCreateWithoutProcedimento_realizadoInput, prontuarioUncheckedCreateWithoutProcedimento_realizadoInput>
-  }
-
-  export type procedimentoCreateWithoutProcedimento_realizadoInput = {
-    id?: string
-    nome: string
-    codigo?: string | null
-    descricao?: string | null
-    valor_padrao?: Decimal | DecimalJsLike | number | string | null
-    ativo?: boolean
-    created_at?: Date | string
-    updated_at?: Date | string
-    tipo_procedimento: tipo_procedimentoCreateNestedOneWithoutProcedimentoInput
-  }
-
-  export type procedimentoUncheckedCreateWithoutProcedimento_realizadoInput = {
-    id?: string
-    tipo_procedimento_id: string
-    nome: string
-    codigo?: string | null
-    descricao?: string | null
-    valor_padrao?: Decimal | DecimalJsLike | number | string | null
-    ativo?: boolean
-    created_at?: Date | string
-    updated_at?: Date | string
-  }
-
-  export type procedimentoCreateOrConnectWithoutProcedimento_realizadoInput = {
-    where: procedimentoWhereUniqueInput
-    create: XOR<procedimentoCreateWithoutProcedimento_realizadoInput, procedimentoUncheckedCreateWithoutProcedimento_realizadoInput>
-  }
-
-  export type prontuarioUpsertWithoutProcedimento_realizadoInput = {
-    update: XOR<prontuarioUpdateWithoutProcedimento_realizadoInput, prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput>
-    create: XOR<prontuarioCreateWithoutProcedimento_realizadoInput, prontuarioUncheckedCreateWithoutProcedimento_realizadoInput>
-    where?: prontuarioWhereInput
-  }
-
-  export type prontuarioUpdateToOneWithWhereWithoutProcedimento_realizadoInput = {
-    where?: prontuarioWhereInput
-    data: XOR<prontuarioUpdateWithoutProcedimento_realizadoInput, prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput>
-  }
-
-  export type prontuarioUpdateWithoutProcedimento_realizadoInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
-    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
-    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
-    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
-    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
-    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
-    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
-    conduta?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    retorno?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
-    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
-    prescricao?: prescricaoUpdateManyWithoutProntuarioNestedInput
-  }
-
-  export type prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    paciente_id?: StringFieldUpdateOperationsInput | string
-    profissional_id?: StringFieldUpdateOperationsInput | string
-    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
-    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
-    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
-    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
-    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
-    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
-    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
-    conduta?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    retorno?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    prescricao?: prescricaoUncheckedUpdateManyWithoutProntuarioNestedInput
   }
 
   export type procedimentoUpsertWithoutProcedimento_realizadoInput = {
@@ -23416,38 +23353,101 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type prontuarioUpsertWithoutProcedimento_realizadoInput = {
+    update: XOR<prontuarioUpdateWithoutProcedimento_realizadoInput, prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput>
+    create: XOR<prontuarioCreateWithoutProcedimento_realizadoInput, prontuarioUncheckedCreateWithoutProcedimento_realizadoInput>
+    where?: prontuarioWhereInput
+  }
+
+  export type prontuarioUpdateToOneWithWhereWithoutProcedimento_realizadoInput = {
+    where?: prontuarioWhereInput
+    data: XOR<prontuarioUpdateWithoutProcedimento_realizadoInput, prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput>
+  }
+
+  export type prontuarioUpdateWithoutProcedimento_realizadoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
+    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
+    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
+    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
+    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
+    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
+    conduta?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    retorno?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    prescricao?: prescricaoUpdateManyWithoutProntuarioNestedInput
+    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
+    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
+  }
+
+  export type prontuarioUncheckedUpdateWithoutProcedimento_realizadoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    paciente_id?: StringFieldUpdateOperationsInput | string
+    profissional_id?: StringFieldUpdateOperationsInput | string
+    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
+    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
+    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
+    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
+    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
+    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
+    conduta?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    retorno?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    prescricao?: prescricaoUncheckedUpdateManyWithoutProntuarioNestedInput
+  }
+
   export type prescricaoCreateWithoutMedicamentoInput = {
     id?: string
-    medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
     duracao?: string | null
-    quantidade?: string | null
-    observacoes?: string | null
-    status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
     created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
+    medicamento_nome?: string | null
+    observacoes?: string | null
+    quantidade?: string | null
+    status?: string
     updated_at?: Date | string
+    via_administracao?: string | null
     prontuario: prontuarioCreateNestedOneWithoutPrescricaoInput
   }
 
   export type prescricaoUncheckedCreateWithoutMedicamentoInput = {
     id?: string
-    prontuario_id: string
-    medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
     duracao?: string | null
-    quantidade?: string | null
-    observacoes?: string | null
-    status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
     created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
+    medicamento_nome?: string | null
+    observacoes?: string | null
+    prontuario_id: string
+    quantidade?: string | null
+    status?: string
     updated_at?: Date | string
+    via_administracao?: string | null
   }
 
   export type prescricaoCreateOrConnectWithoutMedicamentoInput = {
@@ -23474,63 +23474,6 @@ export namespace Prisma {
   export type prescricaoUpdateManyWithWhereWithoutMedicamentoInput = {
     where: prescricaoScalarWhereInput
     data: XOR<prescricaoUpdateManyMutationInput, prescricaoUncheckedUpdateManyWithoutMedicamentoInput>
-  }
-
-  export type prontuarioCreateWithoutPrescricaoInput = {
-    id?: string
-    data_atendimento?: Date | string
-    queixa_principal?: string | null
-    historia_doenca_atual?: string | null
-    historia_patologica?: string | null
-    historia_familiar?: string | null
-    historia_social?: string | null
-    exame_fisico?: string | null
-    pressao_arterial?: string | null
-    frequencia_cardiaca?: string | null
-    temperatura?: string | null
-    peso_atual?: Decimal | DecimalJsLike | number | string | null
-    altura_atual?: Decimal | DecimalJsLike | number | string | null
-    hipotese_diagnostica?: string | null
-    diagnostico_definitivo?: string | null
-    conduta?: string | null
-    observacoes?: string | null
-    retorno?: string | null
-    created_at?: Date | string
-    updated_at?: Date | string
-    paciente: pacienteCreateNestedOneWithoutProntuarioInput
-    profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
-    procedimento_realizado?: procedimento_realizadoCreateNestedManyWithoutProntuarioInput
-  }
-
-  export type prontuarioUncheckedCreateWithoutPrescricaoInput = {
-    id?: string
-    paciente_id: string
-    profissional_id: string
-    data_atendimento?: Date | string
-    queixa_principal?: string | null
-    historia_doenca_atual?: string | null
-    historia_patologica?: string | null
-    historia_familiar?: string | null
-    historia_social?: string | null
-    exame_fisico?: string | null
-    pressao_arterial?: string | null
-    frequencia_cardiaca?: string | null
-    temperatura?: string | null
-    peso_atual?: Decimal | DecimalJsLike | number | string | null
-    altura_atual?: Decimal | DecimalJsLike | number | string | null
-    hipotese_diagnostica?: string | null
-    diagnostico_definitivo?: string | null
-    conduta?: string | null
-    observacoes?: string | null
-    retorno?: string | null
-    created_at?: Date | string
-    updated_at?: Date | string
-    procedimento_realizado?: procedimento_realizadoUncheckedCreateNestedManyWithoutProntuarioInput
-  }
-
-  export type prontuarioCreateOrConnectWithoutPrescricaoInput = {
-    where: prontuarioWhereUniqueInput
-    create: XOR<prontuarioCreateWithoutPrescricaoInput, prontuarioUncheckedCreateWithoutPrescricaoInput>
   }
 
   export type medicamentoCreateWithoutPrescricaoInput = {
@@ -23564,67 +23507,61 @@ export namespace Prisma {
     create: XOR<medicamentoCreateWithoutPrescricaoInput, medicamentoUncheckedCreateWithoutPrescricaoInput>
   }
 
-  export type prontuarioUpsertWithoutPrescricaoInput = {
-    update: XOR<prontuarioUpdateWithoutPrescricaoInput, prontuarioUncheckedUpdateWithoutPrescricaoInput>
+  export type prontuarioCreateWithoutPrescricaoInput = {
+    id?: string
+    data_atendimento?: Date | string
+    queixa_principal?: string | null
+    historia_doenca_atual?: string | null
+    historia_patologica?: string | null
+    historia_familiar?: string | null
+    historia_social?: string | null
+    exame_fisico?: string | null
+    pressao_arterial?: string | null
+    frequencia_cardiaca?: string | null
+    temperatura?: string | null
+    peso_atual?: Decimal | DecimalJsLike | number | string | null
+    altura_atual?: Decimal | DecimalJsLike | number | string | null
+    hipotese_diagnostica?: string | null
+    diagnostico_definitivo?: string | null
+    conduta?: string | null
+    observacoes?: string | null
+    retorno?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    procedimento_realizado?: procedimento_realizadoCreateNestedManyWithoutProntuarioInput
+    paciente: pacienteCreateNestedOneWithoutProntuarioInput
+    profissional_saude: profissional_saudeCreateNestedOneWithoutProntuarioInput
+  }
+
+  export type prontuarioUncheckedCreateWithoutPrescricaoInput = {
+    id?: string
+    paciente_id: string
+    profissional_id: string
+    data_atendimento?: Date | string
+    queixa_principal?: string | null
+    historia_doenca_atual?: string | null
+    historia_patologica?: string | null
+    historia_familiar?: string | null
+    historia_social?: string | null
+    exame_fisico?: string | null
+    pressao_arterial?: string | null
+    frequencia_cardiaca?: string | null
+    temperatura?: string | null
+    peso_atual?: Decimal | DecimalJsLike | number | string | null
+    altura_atual?: Decimal | DecimalJsLike | number | string | null
+    hipotese_diagnostica?: string | null
+    diagnostico_definitivo?: string | null
+    conduta?: string | null
+    observacoes?: string | null
+    retorno?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    procedimento_realizado?: procedimento_realizadoUncheckedCreateNestedManyWithoutProntuarioInput
+  }
+
+  export type prontuarioCreateOrConnectWithoutPrescricaoInput = {
+    where: prontuarioWhereUniqueInput
     create: XOR<prontuarioCreateWithoutPrescricaoInput, prontuarioUncheckedCreateWithoutPrescricaoInput>
-    where?: prontuarioWhereInput
-  }
-
-  export type prontuarioUpdateToOneWithWhereWithoutPrescricaoInput = {
-    where?: prontuarioWhereInput
-    data: XOR<prontuarioUpdateWithoutPrescricaoInput, prontuarioUncheckedUpdateWithoutPrescricaoInput>
-  }
-
-  export type prontuarioUpdateWithoutPrescricaoInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
-    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
-    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
-    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
-    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
-    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
-    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
-    conduta?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    retorno?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
-    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
-    procedimento_realizado?: procedimento_realizadoUpdateManyWithoutProntuarioNestedInput
-  }
-
-  export type prontuarioUncheckedUpdateWithoutPrescricaoInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    paciente_id?: StringFieldUpdateOperationsInput | string
-    profissional_id?: StringFieldUpdateOperationsInput | string
-    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
-    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
-    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
-    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
-    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
-    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
-    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
-    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
-    conduta?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    retorno?: NullableStringFieldUpdateOperationsInput | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    procedimento_realizado?: procedimento_realizadoUncheckedUpdateManyWithoutProntuarioNestedInput
   }
 
   export type medicamentoUpsertWithoutPrescricaoInput = {
@@ -23664,13 +23601,76 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type prontuarioUpsertWithoutPrescricaoInput = {
+    update: XOR<prontuarioUpdateWithoutPrescricaoInput, prontuarioUncheckedUpdateWithoutPrescricaoInput>
+    create: XOR<prontuarioCreateWithoutPrescricaoInput, prontuarioUncheckedCreateWithoutPrescricaoInput>
+    where?: prontuarioWhereInput
+  }
+
+  export type prontuarioUpdateToOneWithWhereWithoutPrescricaoInput = {
+    where?: prontuarioWhereInput
+    data: XOR<prontuarioUpdateWithoutPrescricaoInput, prontuarioUncheckedUpdateWithoutPrescricaoInput>
+  }
+
+  export type prontuarioUpdateWithoutPrescricaoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
+    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
+    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
+    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
+    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
+    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
+    conduta?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    retorno?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    procedimento_realizado?: procedimento_realizadoUpdateManyWithoutProntuarioNestedInput
+    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
+    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
+  }
+
+  export type prontuarioUncheckedUpdateWithoutPrescricaoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    paciente_id?: StringFieldUpdateOperationsInput | string
+    profissional_id?: StringFieldUpdateOperationsInput | string
+    data_atendimento?: DateTimeFieldUpdateOperationsInput | Date | string
+    queixa_principal?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_doenca_atual?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_patologica?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_familiar?: NullableStringFieldUpdateOperationsInput | string | null
+    historia_social?: NullableStringFieldUpdateOperationsInput | string | null
+    exame_fisico?: NullableStringFieldUpdateOperationsInput | string | null
+    pressao_arterial?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia_cardiaca?: NullableStringFieldUpdateOperationsInput | string | null
+    temperatura?: NullableStringFieldUpdateOperationsInput | string | null
+    peso_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    altura_atual?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    hipotese_diagnostica?: NullableStringFieldUpdateOperationsInput | string | null
+    diagnostico_definitivo?: NullableStringFieldUpdateOperationsInput | string | null
+    conduta?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    retorno?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    procedimento_realizado?: procedimento_realizadoUncheckedUpdateManyWithoutProntuarioNestedInput
+  }
+
   export type consultaCreateWithoutProfissional_saudeInput = {
     id?: string
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
     paciente?: pacienteCreateNestedOneWithoutConsultaInput
     unidade_saude?: unidade_saudeCreateNestedOneWithoutConsultaInput
@@ -23681,10 +23681,10 @@ export namespace Prisma {
     paciente_id?: string | null
     unidade_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
@@ -23696,6 +23696,40 @@ export namespace Prisma {
   export type consultaCreateManyProfissional_saudeInputEnvelope = {
     data: consultaCreateManyProfissional_saudeInput | consultaCreateManyProfissional_saudeInput[]
     skipDuplicates?: boolean
+  }
+
+  export type especialidadeCreateWithoutProfissional_saudeInput = {
+    id?: string
+    nome: string
+    descricao?: string | null
+  }
+
+  export type especialidadeUncheckedCreateWithoutProfissional_saudeInput = {
+    id?: string
+    nome: string
+    descricao?: string | null
+  }
+
+  export type especialidadeCreateOrConnectWithoutProfissional_saudeInput = {
+    where: especialidadeWhereUniqueInput
+    create: XOR<especialidadeCreateWithoutProfissional_saudeInput, especialidadeUncheckedCreateWithoutProfissional_saudeInput>
+  }
+
+  export type tipo_documentoCreateWithoutProfissional_saudeInput = {
+    id?: string
+    nome: string
+    descricao?: string | null
+  }
+
+  export type tipo_documentoUncheckedCreateWithoutProfissional_saudeInput = {
+    id?: string
+    nome: string
+    descricao?: string | null
+  }
+
+  export type tipo_documentoCreateOrConnectWithoutProfissional_saudeInput = {
+    where: tipo_documentoWhereUniqueInput
+    create: XOR<tipo_documentoCreateWithoutProfissional_saudeInput, tipo_documentoUncheckedCreateWithoutProfissional_saudeInput>
   }
 
   export type prontuarioCreateWithoutProfissional_saudeInput = {
@@ -23719,9 +23753,9 @@ export namespace Prisma {
     retorno?: string | null
     created_at?: Date | string
     updated_at?: Date | string
-    paciente: pacienteCreateNestedOneWithoutProntuarioInput
     prescricao?: prescricaoCreateNestedManyWithoutProntuarioInput
     procedimento_realizado?: procedimento_realizadoCreateNestedManyWithoutProntuarioInput
+    paciente: pacienteCreateNestedOneWithoutProntuarioInput
   }
 
   export type prontuarioUncheckedCreateWithoutProfissional_saudeInput = {
@@ -23760,40 +23794,6 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type tipo_documentoCreateWithoutProfissional_saudeInput = {
-    id?: string
-    nome: string
-    descricao?: string | null
-  }
-
-  export type tipo_documentoUncheckedCreateWithoutProfissional_saudeInput = {
-    id?: string
-    nome: string
-    descricao?: string | null
-  }
-
-  export type tipo_documentoCreateOrConnectWithoutProfissional_saudeInput = {
-    where: tipo_documentoWhereUniqueInput
-    create: XOR<tipo_documentoCreateWithoutProfissional_saudeInput, tipo_documentoUncheckedCreateWithoutProfissional_saudeInput>
-  }
-
-  export type especialidadeCreateWithoutProfissional_saudeInput = {
-    id?: string
-    nome: string
-    descricao?: string | null
-  }
-
-  export type especialidadeUncheckedCreateWithoutProfissional_saudeInput = {
-    id?: string
-    nome: string
-    descricao?: string | null
-  }
-
-  export type especialidadeCreateOrConnectWithoutProfissional_saudeInput = {
-    where: especialidadeWhereUniqueInput
-    create: XOR<especialidadeCreateWithoutProfissional_saudeInput, especialidadeUncheckedCreateWithoutProfissional_saudeInput>
-  }
-
   export type consultaUpsertWithWhereUniqueWithoutProfissional_saudeInput = {
     where: consultaWhereUniqueInput
     update: XOR<consultaUpdateWithoutProfissional_saudeInput, consultaUncheckedUpdateWithoutProfissional_saudeInput>
@@ -23808,45 +23808,6 @@ export namespace Prisma {
   export type consultaUpdateManyWithWhereWithoutProfissional_saudeInput = {
     where: consultaScalarWhereInput
     data: XOR<consultaUpdateManyMutationInput, consultaUncheckedUpdateManyWithoutProfissional_saudeInput>
-  }
-
-  export type prontuarioUpsertWithWhereUniqueWithoutProfissional_saudeInput = {
-    where: prontuarioWhereUniqueInput
-    update: XOR<prontuarioUpdateWithoutProfissional_saudeInput, prontuarioUncheckedUpdateWithoutProfissional_saudeInput>
-    create: XOR<prontuarioCreateWithoutProfissional_saudeInput, prontuarioUncheckedCreateWithoutProfissional_saudeInput>
-  }
-
-  export type prontuarioUpdateWithWhereUniqueWithoutProfissional_saudeInput = {
-    where: prontuarioWhereUniqueInput
-    data: XOR<prontuarioUpdateWithoutProfissional_saudeInput, prontuarioUncheckedUpdateWithoutProfissional_saudeInput>
-  }
-
-  export type prontuarioUpdateManyWithWhereWithoutProfissional_saudeInput = {
-    where: prontuarioScalarWhereInput
-    data: XOR<prontuarioUpdateManyMutationInput, prontuarioUncheckedUpdateManyWithoutProfissional_saudeInput>
-  }
-
-  export type tipo_documentoUpsertWithoutProfissional_saudeInput = {
-    update: XOR<tipo_documentoUpdateWithoutProfissional_saudeInput, tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput>
-    create: XOR<tipo_documentoCreateWithoutProfissional_saudeInput, tipo_documentoUncheckedCreateWithoutProfissional_saudeInput>
-    where?: tipo_documentoWhereInput
-  }
-
-  export type tipo_documentoUpdateToOneWithWhereWithoutProfissional_saudeInput = {
-    where?: tipo_documentoWhereInput
-    data: XOR<tipo_documentoUpdateWithoutProfissional_saudeInput, tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput>
-  }
-
-  export type tipo_documentoUpdateWithoutProfissional_saudeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    nome?: StringFieldUpdateOperationsInput | string
-    descricao?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    nome?: StringFieldUpdateOperationsInput | string
-    descricao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type especialidadeUpsertWithoutProfissional_saudeInput = {
@@ -23872,13 +23833,52 @@ export namespace Prisma {
     descricao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
+  export type tipo_documentoUpsertWithoutProfissional_saudeInput = {
+    update: XOR<tipo_documentoUpdateWithoutProfissional_saudeInput, tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput>
+    create: XOR<tipo_documentoCreateWithoutProfissional_saudeInput, tipo_documentoUncheckedCreateWithoutProfissional_saudeInput>
+    where?: tipo_documentoWhereInput
+  }
+
+  export type tipo_documentoUpdateToOneWithWhereWithoutProfissional_saudeInput = {
+    where?: tipo_documentoWhereInput
+    data: XOR<tipo_documentoUpdateWithoutProfissional_saudeInput, tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput>
+  }
+
+  export type tipo_documentoUpdateWithoutProfissional_saudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    descricao?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tipo_documentoUncheckedUpdateWithoutProfissional_saudeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
+    descricao?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type prontuarioUpsertWithWhereUniqueWithoutProfissional_saudeInput = {
+    where: prontuarioWhereUniqueInput
+    update: XOR<prontuarioUpdateWithoutProfissional_saudeInput, prontuarioUncheckedUpdateWithoutProfissional_saudeInput>
+    create: XOR<prontuarioCreateWithoutProfissional_saudeInput, prontuarioUncheckedCreateWithoutProfissional_saudeInput>
+  }
+
+  export type prontuarioUpdateWithWhereUniqueWithoutProfissional_saudeInput = {
+    where: prontuarioWhereUniqueInput
+    data: XOR<prontuarioUpdateWithoutProfissional_saudeInput, prontuarioUncheckedUpdateWithoutProfissional_saudeInput>
+  }
+
+  export type prontuarioUpdateManyWithWhereWithoutProfissional_saudeInput = {
+    where: prontuarioScalarWhereInput
+    data: XOR<prontuarioUpdateManyMutationInput, prontuarioUncheckedUpdateManyWithoutProfissional_saudeInput>
+  }
+
   export type consultaCreateWithoutUnidade_saudeInput = {
     id?: string
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
     paciente?: pacienteCreateNestedOneWithoutConsultaInput
     profissional_saude?: profissional_saudeCreateNestedOneWithoutConsultaInput
@@ -23889,10 +23889,10 @@ export namespace Prisma {
     paciente_id?: string | null
     profissional_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
@@ -23925,11 +23925,11 @@ export namespace Prisma {
   export type profissional_saudeCreateManyTipo_documentoInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    especialidade_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    especialidade_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -23937,25 +23937,25 @@ export namespace Prisma {
   export type profissional_saudeUpdateWithoutTipo_documentoInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUpdateManyWithoutProfissional_saudeNestedInput
-    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
     especialidade?: especialidadeUpdateOneWithoutProfissional_saudeNestedInput
+    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
   }
 
   export type profissional_saudeUncheckedUpdateWithoutTipo_documentoInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput
@@ -23965,11 +23965,11 @@ export namespace Prisma {
   export type profissional_saudeUncheckedUpdateManyWithoutTipo_documentoInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    especialidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -23977,11 +23977,11 @@ export namespace Prisma {
   export type profissional_saudeCreateManyEspecialidadeInput = {
     id?: string
     nome: string
-    documento_numero?: string | null
-    tipo_documento_id?: string | null
     email?: string | null
     senha: string
     data_nascimento?: Date | string | null
+    documento_numero?: string | null
+    tipo_documento_id?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -23989,25 +23989,25 @@ export namespace Prisma {
   export type profissional_saudeUpdateWithoutEspecialidadeInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUpdateManyWithoutProfissional_saudeNestedInput
-    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
     tipo_documento?: tipo_documentoUpdateOneWithoutProfissional_saudeNestedInput
+    prontuario?: prontuarioUpdateManyWithoutProfissional_saudeNestedInput
   }
 
   export type profissional_saudeUncheckedUpdateWithoutEspecialidadeInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     consulta?: consultaUncheckedUpdateManyWithoutProfissional_saudeNestedInput
@@ -24017,11 +24017,11 @@ export namespace Prisma {
   export type profissional_saudeUncheckedUpdateManyWithoutEspecialidadeInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
-    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
-    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     email?: NullableStringFieldUpdateOperationsInput | string | null
     senha?: StringFieldUpdateOperationsInput | string
     data_nascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    documento_numero?: NullableStringFieldUpdateOperationsInput | string | null
+    tipo_documento_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -24031,10 +24031,10 @@ export namespace Prisma {
     profissional_id?: string | null
     unidade_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
@@ -24065,10 +24065,10 @@ export namespace Prisma {
   export type consultaUpdateWithoutPacienteInput = {
     id?: StringFieldUpdateOperationsInput | string
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     profissional_saude?: profissional_saudeUpdateOneWithoutConsultaNestedInput
     unidade_saude?: unidade_saudeUpdateOneWithoutConsultaNestedInput
@@ -24079,10 +24079,10 @@ export namespace Prisma {
     profissional_id?: NullableStringFieldUpdateOperationsInput | string | null
     unidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24091,10 +24091,10 @@ export namespace Prisma {
     profissional_id?: NullableStringFieldUpdateOperationsInput | string | null
     unidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24119,9 +24119,9 @@ export namespace Prisma {
     retorno?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
     prescricao?: prescricaoUpdateManyWithoutProntuarioNestedInput
     procedimento_realizado?: procedimento_realizadoUpdateManyWithoutProntuarioNestedInput
+    profissional_saude?: profissional_saudeUpdateOneRequiredWithoutProntuarioNestedInput
   }
 
   export type prontuarioUncheckedUpdateWithoutPacienteInput = {
@@ -24176,19 +24176,19 @@ export namespace Prisma {
 
   export type prescricaoCreateManyProntuarioInput = {
     id?: string
+    duracao?: string | null
+    created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
     medicamento_id?: string | null
     medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
-    duracao?: string | null
-    quantidade?: string | null
     observacoes?: string | null
+    quantidade?: string | null
     status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
-    created_at?: Date | string
     updated_at?: Date | string
+    via_administracao?: string | null
   }
 
   export type procedimento_realizadoCreateManyProntuarioInput = {
@@ -24204,53 +24204,53 @@ export namespace Prisma {
 
   export type prescricaoUpdateWithoutProntuarioInput = {
     id?: StringFieldUpdateOperationsInput | string
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento?: medicamentoUpdateOneWithoutPrescricaoNestedInput
   }
 
   export type prescricaoUncheckedUpdateWithoutProntuarioInput = {
     id?: StringFieldUpdateOperationsInput | string
+    duracao?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type prescricaoUncheckedUpdateManyWithoutProntuarioInput = {
     id?: StringFieldUpdateOperationsInput | string
+    duracao?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_id?: NullableStringFieldUpdateOperationsInput | string | null
     medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
-    duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
     status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type procedimento_realizadoUpdateWithoutProntuarioInput = {
@@ -24378,70 +24378,70 @@ export namespace Prisma {
 
   export type prescricaoCreateManyMedicamentoInput = {
     id?: string
-    prontuario_id: string
-    medicamento_nome?: string | null
-    dosagem?: string | null
-    via_administracao?: string | null
-    frequencia?: string | null
     duracao?: string | null
-    quantidade?: string | null
-    observacoes?: string | null
-    status?: string
-    data_inicio?: Date | string
-    data_fim?: Date | string | null
     created_at?: Date | string
+    data_fim?: Date | string | null
+    data_inicio?: Date | string
+    dosagem?: string | null
+    frequencia?: string | null
+    medicamento_nome?: string | null
+    observacoes?: string | null
+    prontuario_id: string
+    quantidade?: string | null
+    status?: string
     updated_at?: Date | string
+    via_administracao?: string | null
   }
 
   export type prescricaoUpdateWithoutMedicamentoInput = {
     id?: StringFieldUpdateOperationsInput | string
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
     prontuario?: prontuarioUpdateOneRequiredWithoutPrescricaoNestedInput
   }
 
   export type prescricaoUncheckedUpdateWithoutMedicamentoInput = {
     id?: StringFieldUpdateOperationsInput | string
-    prontuario_id?: StringFieldUpdateOperationsInput | string
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    prontuario_id?: StringFieldUpdateOperationsInput | string
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type prescricaoUncheckedUpdateManyWithoutMedicamentoInput = {
     id?: StringFieldUpdateOperationsInput | string
-    prontuario_id?: StringFieldUpdateOperationsInput | string
-    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
-    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
-    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
-    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
     duracao?: NullableStringFieldUpdateOperationsInput | string | null
-    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
-    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    data_fim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    data_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    dosagem?: NullableStringFieldUpdateOperationsInput | string | null
+    frequencia?: NullableStringFieldUpdateOperationsInput | string | null
+    medicamento_nome?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    prontuario_id?: StringFieldUpdateOperationsInput | string
+    quantidade?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    via_administracao?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type consultaCreateManyProfissional_saudeInput = {
@@ -24449,10 +24449,10 @@ export namespace Prisma {
     paciente_id?: string | null
     unidade_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
@@ -24483,10 +24483,10 @@ export namespace Prisma {
   export type consultaUpdateWithoutProfissional_saudeInput = {
     id?: StringFieldUpdateOperationsInput | string
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     paciente?: pacienteUpdateOneWithoutConsultaNestedInput
     unidade_saude?: unidade_saudeUpdateOneWithoutConsultaNestedInput
@@ -24497,10 +24497,10 @@ export namespace Prisma {
     paciente_id?: NullableStringFieldUpdateOperationsInput | string | null
     unidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24509,10 +24509,10 @@ export namespace Prisma {
     paciente_id?: NullableStringFieldUpdateOperationsInput | string | null
     unidade_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24537,9 +24537,9 @@ export namespace Prisma {
     retorno?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
     prescricao?: prescricaoUpdateManyWithoutProntuarioNestedInput
     procedimento_realizado?: procedimento_realizadoUpdateManyWithoutProntuarioNestedInput
+    paciente?: pacienteUpdateOneRequiredWithoutProntuarioNestedInput
   }
 
   export type prontuarioUncheckedUpdateWithoutProfissional_saudeInput = {
@@ -24597,20 +24597,20 @@ export namespace Prisma {
     paciente_id?: string | null
     profissional_id?: string | null
     data?: Date | string
-    hora?: string | null
-    status?: string
-    observacoes?: string | null
     created_at?: Date | string
+    hora?: string | null
+    observacoes?: string | null
+    status?: string
     updated_at?: Date | string
   }
 
   export type consultaUpdateWithoutUnidade_saudeInput = {
     id?: StringFieldUpdateOperationsInput | string
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     paciente?: pacienteUpdateOneWithoutConsultaNestedInput
     profissional_saude?: profissional_saudeUpdateOneWithoutConsultaNestedInput
@@ -24621,10 +24621,10 @@ export namespace Prisma {
     paciente_id?: NullableStringFieldUpdateOperationsInput | string | null
     profissional_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24633,10 +24633,10 @@ export namespace Prisma {
     paciente_id?: NullableStringFieldUpdateOperationsInput | string | null
     profissional_id?: NullableStringFieldUpdateOperationsInput | string | null
     data?: DateTimeFieldUpdateOperationsInput | Date | string
-    hora?: NullableStringFieldUpdateOperationsInput | string | null
-    status?: StringFieldUpdateOperationsInput | string
-    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    hora?: NullableStringFieldUpdateOperationsInput | string | null
+    observacoes?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: StringFieldUpdateOperationsInput | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
