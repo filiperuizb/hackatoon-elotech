@@ -426,10 +426,7 @@ export default function Medicamentos() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              onClick={() => {
-                resetForm()
-                setIsModalOpen(true)
-              }}
+              onClick={() => router.push("/medicamentos/novo")}
               className="code-bold flex items-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-4 py-2 rounded-lg transition-colors shadow-sm"
             >
               <Plus size={18} className="mr-2" />
@@ -564,10 +561,7 @@ export default function Medicamentos() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  resetForm()
-                  setIsModalOpen(true)
-                }}
+                onClick={() => router.push("/medicamentos/novo")}
                 className="code-bold inline-flex items-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-6 py-3 rounded-lg transition-colors"
               >
                 <Plus size={20} className="mr-2" />
