@@ -4,7 +4,7 @@ import type React from "react"
 import { ClipboardList, FileText, Pill } from "lucide-react"
 
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import Header from "@/components/header"
 import { Save, ArrowLeft, AlertCircle, CheckCircle, User, Stethoscope, Plus, X, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -114,13 +114,16 @@ export default function NovoProntuario() {
   const [prescricoes, setPrescricoes] = useState<PrescricaoItem[]>([])
   const [showMedicamentoSearch, setShowMedicamentoSearch] = useState(false)
   const [medicamentoSearch, setMedicamentoSearch] = useState("")
-
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const [currentStep, setCurrentStep] = useState(1)
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const prontuarioId = searchParams.get('id')
+  const [isEditMode, setIsEditMode] = useState(!!prontuarioId)
+  const pageTitle = isEditMode ? "Editar Prontuário" : "Novo Prontuário"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -144,6 +147,60 @@ export default function NovoProntuario() {
         if (consultasRes.ok) {
           const consultasData = await consultasRes.json()
           setConsultas(consultasData)
+        }
+
+        // If in edit mode, fetch the existing prontuario data
+        if (prontuarioId) {
+          const prontuarioRes = await fetch(`/api/prontuarios/${prontuarioId}`)
+          if (prontuarioRes.ok) {
+            const prontuarioData = await prontuarioRes.json()
+              // Extract prescriptions if they exist
+            const existingPrescricoes = prontuarioData.prescricao?.map((p: any) => ({
+              medicamento_id: p.medicamento_id || "",
+              medicamento_nome: p.medicamento || "",
+              dosagem: p.dosagem || "",
+              via_administracao: p.via_administracao || "Oral",
+              frequencia: p.frequencia || "",
+              duracao: p.duracao || "",
+              quantidade: p.quantidade || "",
+              observacoes: p.observacoes || "",
+            })) || []
+
+            if (existingPrescricoes.length > 0) {
+              setPrescricoes(existingPrescricoes)
+            }
+            
+            // Format the date_atendimento to be compatible with the form
+            const formattedDate = prontuarioData.data_atendimento 
+              ? new Date(prontuarioData.data_atendimento).toISOString().slice(0, 16)
+              : new Date().toISOString().slice(0, 16)
+              
+            // Map the fetched data to our form state
+            setProntuario({
+              paciente_id: prontuarioData.paciente_id || "",
+              profissional_id: prontuarioData.profissional_id || "",
+              consulta_id: prontuarioData.consulta_id || "",
+              data_atendimento: formattedDate,
+              queixa_principal: prontuarioData.queixa_principal || "",
+              historia_doenca_atual: prontuarioData.historia_doenca_atual || "",
+              historia_patologica: prontuarioData.historia_patologica || "",
+              historia_familiar: prontuarioData.historia_familiar || "",
+              historia_social: prontuarioData.historia_social || "",
+              exame_fisico: prontuarioData.exame_fisico || "",
+              pressao_arterial: prontuarioData.pressao_arterial || "",
+              frequencia_cardiaca: prontuarioData.frequencia_cardiaca || "",
+              temperatura: prontuarioData.temperatura || "",
+              peso_atual: prontuarioData.peso_atual?.toString() || "",
+              altura_atual: prontuarioData.altura_atual?.toString() || "",
+              hipotese_diagnostica: prontuarioData.hipotese_diagnostica || "",
+              diagnostico_definitivo: prontuarioData.diagnostico_definitivo || "",
+              conduta: prontuarioData.conduta || "",
+              observacoes: prontuarioData.observacoes || "",
+              retorno: prontuarioData.retorno || "",
+            })
+          } else {
+            setError("Não foi possível carregar os dados do prontuário")
+          }
         }
       } catch (error) {
         console.error("Erro:", error)
@@ -226,7 +283,6 @@ export default function NovoProntuario() {
       [name]: value,
     }))
   }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSaving(true)
@@ -245,8 +301,15 @@ export default function NovoProntuario() {
         prescricoes,
       }
 
-      const res = await fetch("/api/prontuarios", {
-        method: "POST",
+      // Determine if we're updating or creating based on the presence of prontuarioId
+      const url = isEditMode 
+        ? `/api/prontuarios/${prontuarioId}` 
+        : "/api/prontuarios"
+      
+      const method = isEditMode ? "PUT" : "POST"
+      
+      const res = await fetch(url, {
+        method: method,
         headers: {
           "Content-Type": "application/json",
         },
@@ -255,16 +318,24 @@ export default function NovoProntuario() {
 
       if (!res.ok) {
         const errorData = await res.json()
-        throw new Error(errorData.error || "Falha ao criar prontuário")
+        throw new Error(errorData.error || `Falha ao ${isEditMode ? 'atualizar' : 'criar'} prontuário`)
       }
 
-      setSuccess("Prontuário criado com sucesso!")
+      const successMessage = isEditMode 
+        ? "Prontuário atualizado com sucesso!" 
+        : "Prontuário criado com sucesso!"
+      
+      setSuccess(successMessage)
+      
       setTimeout(() => {
         router.push("/prontuarios")
       }, 1500)
     } catch (error) {
       console.error("Erro ao salvar:", error)
-      setError(error instanceof Error ? error.message : "Ocorreu um erro ao criar o prontuário")
+      const errorMessage = isEditMode 
+        ? "Ocorreu um erro ao atualizar o prontuário" 
+        : "Ocorreu um erro ao criar o prontuário"
+      setError(error instanceof Error ? error.message : errorMessage)
     } finally {
       setSaving(false)
     }

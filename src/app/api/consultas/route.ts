@@ -2,14 +2,37 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from '@/lib/utils/prisma';
 
 export async function POST(request: NextRequest) {
-    const data = await request.json();
-
     try {
-        const consulta = await prisma.consulta.create({ data });
+        const data = await request.json();
+        
+        // Extract only the fields that are in the database model
+        const { 
+            data: dataConsulta, 
+            hora, 
+            status, 
+            observacoes, 
+            paciente_id, 
+            profissional_id, 
+            unidade_id 
+        } = data;
+        
+        // Create a data object with only valid fields
+        // Properly handle the date to ensure ISO-8601 format
+        const createData = {
+            data: new Date(dataConsulta), // Convert string to Date object for proper ISO-8601 formatting
+            hora,
+            status,
+            observacoes,
+            paciente_id,
+            profissional_id,
+            unidade_id
+        };
+        
+        const consulta = await prisma.consulta.create({ data: createData });
+        
         return NextResponse.json(consulta, {status: 201});
-
     } catch (error) {
-        console.error("Erro ao listar as consultas", error);
+        console.error("Erro ao criar consulta", error);
         return NextResponse.json({ error: `Erro interno | ${error}`}, { status: 500 });
     }
 }

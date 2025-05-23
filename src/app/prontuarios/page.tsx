@@ -681,7 +681,7 @@ export default function Prontuarios() {
                           </motion.button>
                           <motion.button
                             whileHover={{ scale: 1.2 }}
-                            onClick={() => router.push(`/prontuarios/${prontuario.id}/editar`)}
+                            onClick={() => router.push(`/prontuarios/${prontuario.id}`)}
                             className="p-1 text-blue-600 hover:text-blue-800 transition-colors"
                             aria-label="Editar"
                           >
@@ -768,7 +768,7 @@ export default function Prontuarios() {
                       </motion.button>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
-                        onClick={() => router.push(`/prontuarios/${prontuario.id}/editar`)}
+                        onClick={() => router.push(`/prontuarios/${prontuario.id}`)}
                         className="p-2 text-blue-600 hover:text-blue-800 transition-colors"
                         aria-label="Editar"
                       >

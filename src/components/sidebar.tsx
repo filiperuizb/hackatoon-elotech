@@ -17,6 +17,7 @@ import {
   ClipboardList,
   LayoutDashboard,
   Building2,
+  Search,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -108,15 +109,16 @@ export default function Sidebar() {
 
     return (
       <div className="flex flex-col h-full bg-white">
-        <div className="p-4 flex items-center justify-center">
+        <div className="p-4 flex items-center justify-center border-b border-gray-100">
           <Image src="/logo.png" alt="SPA Logo" width={120} height={40} className="object-contain" />
         </div>
 
-        <div className="px-4 pb-4">
+        <div className="px-4 py-3 border-b border-gray-100">
           <div className="relative">
+            <Search size={14} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              className="pl-3 pr-4 py-2 w-full bg-gray-50 border-0 rounded-lg text-sm focus:ring-2 focus:ring-[#4d9d74] focus:bg-white transition-all"
+              className="pl-9 pr-4 py-2 w-full bg-gray-50 border-0 rounded-lg text-sm focus:ring-2 focus:ring-[#4d9d74] focus:bg-white transition-all"
               placeholder="Buscar..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -124,7 +126,7 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <nav className="flex-1 overflow-y-auto px-4">
+        <nav className="flex-1 overflow-y-auto px-4 py-2">
           {filteredMenu.length === 0 ? (
             <div className="text-center py-6 text-gray-500 text-sm">Nenhum resultado encontrado</div>
           ) : (
@@ -186,7 +188,7 @@ export default function Sidebar() {
           )}
         </nav>
 
-        <div className="p-4 mt-auto">
+        <div className="p-4 mt-auto border-t border-gray-100">
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

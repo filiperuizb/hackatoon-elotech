@@ -14,9 +14,15 @@ interface Consulta {
   hora: string
   status: string
   paciente_id: string
-  profissional_saude_id: string
-  unidade_saude_id: string
+  profissional_id: string
+  unidade_id: string
   observacoes: string
+  paciente_nome?: string
+  profissional_nome?: string
+  profissional_especialidade?: string
+  unidade_nome?: string
+  created_at?: string
+  updated_at?: string
 }
 
 interface Paciente {
@@ -27,7 +33,11 @@ interface Paciente {
 interface ProfissionalSaude {
   id: string
   nome: string
-  especialidade: string
+  especialidade?: {
+    id: string
+    nome: string
+    descricao?: string
+  }
 }
 
 interface UnidadeSaude {
@@ -35,15 +45,14 @@ interface UnidadeSaude {
   nome: string
 }
 
-export default function EditarConsulta() {
-  const [consulta, setConsulta] = useState<Consulta>({
+export default function EditarConsulta() {  const [consulta, setConsulta] = useState<Consulta>({
     id: "",
     data: "",
     hora: "",
     status: "",
     paciente_id: "",
-    profissional_saude_id: "",
-    unidade_saude_id: "",
+    profissional_id: "",
+    unidade_id: "",
     observacoes: "",
   })
   const [pacientes, setPacientes] = useState<Paciente[]>([])
@@ -59,10 +68,18 @@ export default function EditarConsulta() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const consultaRes = await fetch(`/api/consultas/${id}`)
+      try {        const consultaRes = await fetch(`/api/consultas/${id}`)
         if (!consultaRes.ok) throw new Error("Falha ao buscar dados da consulta")
         const consultaData = await consultaRes.json()
+        
+        // Format the date for HTML date input (YYYY-MM-DD format)
+        if (consultaData.data) {
+          const date = new Date(consultaData.data)
+          if (date instanceof Date && !isNaN(date.getTime())) {
+            consultaData.data = date.toISOString().split('T')[0]
+          }
+        }
+        
         setConsulta(consultaData)
 
         const pacientesRes = await fetch("/api/pacientes")
@@ -99,7 +116,6 @@ export default function EditarConsulta() {
       [name]: value,
     }))
   }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSaving(true)
@@ -107,12 +123,33 @@ export default function EditarConsulta() {
     setSuccess("")
 
     try {
+      const { 
+        id: consultaId,
+        data, 
+        hora, 
+        status, 
+        observacoes, 
+        paciente_id, 
+        profissional_id, 
+        unidade_id 
+      } = consulta;
+
+      const updateData = {
+        data, 
+        hora,
+        status,
+        observacoes,
+        paciente_id,
+        profissional_id,
+        unidade_id
+      };
+
       const res = await fetch(`/api/consultas/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(consulta),
+        body: JSON.stringify(updateData),
       })
 
       if (!res.ok) throw new Error("Falha ao atualizar consulta")
@@ -207,53 +244,57 @@ export default function EditarConsulta() {
                   required
                 >
                   <option value="">Selecione um paciente</option>
-                  {pacientes.map((paciente) => (
-                    <option key={paciente.id} value={paciente.id}>
-                      {paciente.nome}
-                    </option>
-                  ))}
+                  {pacientes &&
+                    pacientes.length > 0 &&
+                    pacientes.map((paciente) => (
+                      <option key={paciente.id} value={paciente.id}>
+                        {paciente.nome || "Nome não disponível"}
+                      </option>
+                    ))}
                 </select>
               </div>
 
-              <div>
-                <label htmlFor="profissional_saude_id" className="block text-sm font-medium text-gray-700 mb-1">
+              <div>                <label htmlFor="profissional_id" className="block text-sm font-medium text-gray-700 mb-1">
                   Profissional de Saúde
                 </label>
                 <select
-                  id="profissional_saude_id"
-                  name="profissional_saude_id"
-                  value={consulta.profissional_saude_id}
+                  id="profissional_id"
+                  name="profissional_id"
+                  value={consulta.profissional_id}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
                   required
                 >
                   <option value="">Selecione um profissional</option>
-                  {profissionais.map((profissional) => (
-                    <option key={profissional.id} value={profissional.id}>
-                      {profissional.nome} - {profissional.especialidade}
-                    </option>
-                  ))}
+                  {profissionais &&
+                    profissionais.length > 0 &&
+                    profissionais.map((profissional) => (
+                      <option key={profissional.id} value={profissional.id}>                        {profissional.nome || "Nome não disponível"} -{" "}
+                        {profissional.especialidade?.nome || "Especialidade não informada"}
+                      </option>
+                    ))}
                 </select>
               </div>
 
-              <div>
-                <label htmlFor="unidade_saude_id" className="block text-sm font-medium text-gray-700 mb-1">
+              <div>                <label htmlFor="unidade_id" className="block text-sm font-medium text-gray-700 mb-1">
                   Unidade de Saúde
                 </label>
                 <select
-                  id="unidade_saude_id"
-                  name="unidade_saude_id"
-                  value={consulta.unidade_saude_id}
+                  id="unidade_id"
+                  name="unidade_id"
+                  value={consulta.unidade_id}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74]"
                   required
                 >
                   <option value="">Selecione uma unidade</option>
-                  {unidades.map((unidade) => (
-                    <option key={unidade.id} value={unidade.id}>
-                      {unidade.nome}
-                    </option>
-                  ))}
+                  {unidades &&
+                    unidades.length > 0 &&
+                    unidades.map((unidade) => (
+                      <option key={unidade.id} value={unidade.id}>
+                        {unidade.nome || "Nome não disponível"}
+                      </option>
+                    ))}
                 </select>
               </div>
 
@@ -345,7 +386,7 @@ export default function EditarConsulta() {
               <button
                 type="submit"
                 disabled={saving}
-                className="code-bold flex items-center justify-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center justify-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-6 py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Save size={18} className="mr-2" />
                 {saving ? "Salvando..." : "Salvar alterações"}

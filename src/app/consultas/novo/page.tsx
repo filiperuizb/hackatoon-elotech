@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import Header from '../../../components/header'
+import Header from "@/components/header"
 import { Save, ArrowLeft, AlertCircle, CheckCircle } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -41,8 +41,8 @@ export default function NovaConsulta() {  const [consulta, setConsulta] = useSta
     hora: "",
     status: "Agendada",
     paciente_id: "",
-    profissional_id: "", 
-    unidade_id: "",      
+    profissional_id: "", // Updated field name to match schema
+    unidade_id: "",      // Updated field name to match schema
     observacoes: "",
   })
   const [pacientes, setPacientes] = useState<Paciente[]>([])
@@ -99,7 +99,7 @@ export default function NovaConsulta() {  const [consulta, setConsulta] = useSta
     setSuccess("")
 
     try {
-
+      // Extract only the fields needed for creation
       const { 
         data, 
         hora, 
@@ -110,8 +110,9 @@ export default function NovaConsulta() {  const [consulta, setConsulta] = useSta
         unidade_id 
       } = consulta;
 
+      // Create data object with only valid fields
       const createData = {
-        data,     
+        data,      // Will be properly formatted in the API
         hora,
         status,
         observacoes,
