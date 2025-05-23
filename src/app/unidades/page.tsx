@@ -318,7 +318,7 @@ export default function Unidades() {
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => router.push("/unidades/nova")}
+            onClick={() => router.push("/unidades/novo")}
             className="code-bold flex items-center bg-[#4d9d74] hover:bg-[#3a8a64] text-white px-4 py-2 rounded-lg transition-colors btn-animated"
           >
             <Plus size={18} className="mr-2" />
