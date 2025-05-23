@@ -12,10 +12,11 @@ interface TipoProcedimento {
   nome: string
 }
 
-interface ProcedimentoParams {
+type ProcedimentoParams = {
   params: {
     id: string
   }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }
 
 export default function EditarProcedimentoPage({ params }: ProcedimentoParams) {
