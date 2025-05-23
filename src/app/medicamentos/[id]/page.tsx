@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useParams } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
@@ -12,9 +12,10 @@ interface TipoProcedimento {
   nome: string
 }
 
-export default function EditarProcedimentoPage({ params }: { params: { id: string } }) {
+export default function EditarProcedimentoPage() {
   const router = useRouter()
-  const { id } = params
+  const params = useParams()
+  const id = params.id as string
 
   const [tiposProcedimento, setTiposProcedimento] = useState<TipoProcedimento[]>([])
   const [formData, setFormData] = useState({
