@@ -132,33 +132,136 @@ exports.Prisma.EspecialidadeScalarFieldEnum = {
   descricao: 'descricao'
 };
 
-exports.Prisma.ConsultaScalarFieldEnum = {
-  id: 'id',
-  paciente_id: 'paciente_id',
-  profissional_id: 'profissional_id',
-  unidade_id: 'unidade_id',
-  data: 'data',
-  sintomas: 'sintomas',
-  diagnostico: 'diagnostico',
-  conduta: 'conduta'
-};
-
 exports.Prisma.PacienteScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
   data_nascimento: 'data_nascimento',
   sexo: 'sexo',
   cpf: 'cpf',
+  rg: 'rg',
   telefone: 'telefone',
-  email: 'email'
+  telefone_contato: 'telefone_contato',
+  email: 'email',
+  endereco: 'endereco',
+  numero: 'numero',
+  complemento: 'complemento',
+  bairro: 'bairro',
+  cidade: 'cidade',
+  estado: 'estado',
+  cep: 'cep',
+  peso: 'peso',
+  altura: 'altura',
+  tipo_sanguineo: 'tipo_sanguineo',
+  alergias: 'alergias',
+  medicamentos_uso: 'medicamentos_uso',
+  observacoes: 'observacoes',
+  nome_responsavel: 'nome_responsavel',
+  telefone_responsavel: 'telefone_responsavel',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.ConsultaScalarFieldEnum = {
+  id: 'id',
+  paciente_id: 'paciente_id',
+  profissional_id: 'profissional_id',
+  unidade_id: 'unidade_id',
+  data: 'data',
+  hora: 'hora',
+  status: 'status',
+  observacoes: 'observacoes',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.ProntuarioScalarFieldEnum = {
+  id: 'id',
+  paciente_id: 'paciente_id',
+  profissional_id: 'profissional_id',
+  data_atendimento: 'data_atendimento',
+  queixa_principal: 'queixa_principal',
+  historia_doenca_atual: 'historia_doenca_atual',
+  historia_patologica: 'historia_patologica',
+  historia_familiar: 'historia_familiar',
+  historia_social: 'historia_social',
+  exame_fisico: 'exame_fisico',
+  pressao_arterial: 'pressao_arterial',
+  frequencia_cardiaca: 'frequencia_cardiaca',
+  temperatura: 'temperatura',
+  peso_atual: 'peso_atual',
+  altura_atual: 'altura_atual',
+  hipotese_diagnostica: 'hipotese_diagnostica',
+  diagnostico_definitivo: 'diagnostico_definitivo',
+  conduta: 'conduta',
+  observacoes: 'observacoes',
+  retorno: 'retorno',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.Tipo_procedimentoScalarFieldEnum = {
+  id: 'id',
+  nome: 'nome',
+  categoria: 'categoria',
+  descricao: 'descricao',
+  valor: 'valor',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.ProcedimentoScalarFieldEnum = {
+  id: 'id',
+  tipo_procedimento_id: 'tipo_procedimento_id',
+  nome: 'nome',
+  codigo: 'codigo',
+  descricao: 'descricao',
+  valor_padrao: 'valor_padrao',
+  ativo: 'ativo',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.Procedimento_realizadoScalarFieldEnum = {
+  id: 'id',
+  prontuario_id: 'prontuario_id',
+  procedimento_id: 'procedimento_id',
+  data_realizacao: 'data_realizacao',
+  observacoes: 'observacoes',
+  valor: 'valor',
+  status: 'status',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.MedicamentoScalarFieldEnum = {
+  id: 'id',
+  nome: 'nome',
+  principio_ativo: 'principio_ativo',
+  concentracao: 'concentracao',
+  forma_farmaceutica: 'forma_farmaceutica',
+  fabricante: 'fabricante',
+  codigo_barras: 'codigo_barras',
+  ativo: 'ativo',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.PrescricaoScalarFieldEnum = {
   id: 'id',
-  consulta_id: 'consulta_id',
-  medicamento: 'medicamento',
-  posologia: 'posologia',
-  duracao: 'duracao'
+  prontuario_id: 'prontuario_id',
+  medicamento_id: 'medicamento_id',
+  medicamento_nome: 'medicamento_nome',
+  dosagem: 'dosagem',
+  via_administracao: 'via_administracao',
+  frequencia: 'frequencia',
+  duracao: 'duracao',
+  quantidade: 'quantidade',
+  observacoes: 'observacoes',
+  status: 'status',
+  data_inicio: 'data_inicio',
+  data_fim: 'data_fim',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.Profissional_saudeScalarFieldEnum = {
@@ -169,7 +272,9 @@ exports.Prisma.Profissional_saudeScalarFieldEnum = {
   especialidade_id: 'especialidade_id',
   email: 'email',
   senha: 'senha',
-  data_nascimento: 'data_nascimento'
+  data_nascimento: 'data_nascimento',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.TemplateScalarFieldEnum = {
@@ -177,7 +282,10 @@ exports.Prisma.TemplateScalarFieldEnum = {
   titulo: 'titulo',
   sintomas_padrao: 'sintomas_padrao',
   condutas_sugeridas: 'condutas_sugeridas',
-  sazonalidade: 'sazonalidade'
+  medicamentos_recomendados: 'medicamentos_recomendados',
+  sazonalidade: 'sazonalidade',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.Unidade_saudeScalarFieldEnum = {
@@ -186,7 +294,10 @@ exports.Prisma.Unidade_saudeScalarFieldEnum = {
   cnes: 'cnes',
   endereco: 'endereco',
   cidade: 'cidade',
-  estado: 'estado'
+  estado: 'estado',
+  telefone: 'telefone',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.SortOrder = {
@@ -208,8 +319,13 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   tipo_documento: 'tipo_documento',
   especialidade: 'especialidade',
-  consulta: 'consulta',
   paciente: 'paciente',
+  consulta: 'consulta',
+  prontuario: 'prontuario',
+  tipo_procedimento: 'tipo_procedimento',
+  procedimento: 'procedimento',
+  procedimento_realizado: 'procedimento_realizado',
+  medicamento: 'medicamento',
   prescricao: 'prescricao',
   profissional_saude: 'profissional_saude',
   template: 'template',

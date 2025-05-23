@@ -12,7 +12,6 @@ export async function GET(request: NextRequest) {
                 paciente: true,
                 profissional_saude: true,
                 unidade_saude: true,
-                prescricao: true,
             },
         });
 

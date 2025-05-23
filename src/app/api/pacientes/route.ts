@@ -1,15 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
-import prisma from '@/lib/utils/prisma';
+import prisma from "@/lib/utils/prisma";
 
-export async function POST(request: NextRequest) {
-    const data = await request.json();
-    try {
-        const paciente = await prisma.paciente.create({data});
-        return NextResponse.json(paciente, {status: 201});
-    } catch (error) {
-        console.error("Error: ", error);
-        return NextResponse.json({ error: "Não foi possível criar o paciente." }, { status: 500 });
+export async function POST(req: NextRequest) {
+  try {
+    const data = await req.json();
+    
+    if (data.data_nascimento) {
+      if (data.data_nascimento.length === 10) { 
+        data.data_nascimento = new Date(`${data.data_nascimento}T00:00:00Z`).toISOString();
+      } else {
+
+        data.data_nascimento = new Date(data.data_nascimento).toISOString();
+      }
     }
+    
+    const paciente = await prisma.paciente.create({
+      data
+    });
+    
+    return NextResponse.json(paciente, { status: 201 });
+  } catch (error) {
+    console.error("Erro ao criar paciente:", error);
+    return NextResponse.json(
+      { error: "Falha ao cadastrar paciente" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function GET(request: NextRequest) {

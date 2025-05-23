@@ -3,25 +3,40 @@ import jwt from "jsonwebtoken";
 
 const SECRET = process.env.JWT_SECRET || "segredo-mvp";
 
+const PUBLIC_ROUTES = [
+  "/api/login",
+  "/api/profissionais",
+  "/api/documentotipo",
+  "/api/especialidades",
+];
+
 export function middleware(request: NextRequest) {
-    const isLoginRoute = request.nextUrl.pathname.startsWith("/api/login");
-    const authHeader = request.headers.get("authorization");
-    const token = authHeader?.replace("Bearer ", "");
+  const path = request.nextUrl.pathname;
 
-    if (isLoginRoute) return NextResponse.next();
+  if (
+    PUBLIC_ROUTES.some((route) => path.startsWith(route)) ||
+    request.method === "OPTIONS"
+  ) {
+    return NextResponse.next();
+  }
 
-    if (!token) {
-        return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
-    }
+  const authHeader = request.headers.get("authorization");
+  const token = authHeader?.replace("Bearer ", "");
 
-    try {
-        jwt.verify(token, SECRET);
-        return NextResponse.next();
-    } catch {
-        return NextResponse.json({ error: "Token inválido ou expirado" }, { status: 401 });
-    }
+  if (!token) {
+    return NextResponse.json({ error: "Não autenticado" }, { status: 401 });
+  }
+
+  try {
+    jwt.verify(token, SECRET);
+    return NextResponse.next();
+  } catch {
+    return NextResponse.json({ error: "Token inválido ou expirado" }, {
+      status: 401,
+    });
+  }
 }
 
 export const config = {
-    matcher: ["/api/:path*"],
+  matcher: ["/api/:path*"],
 };

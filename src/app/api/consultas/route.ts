@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
 
         if (pacienteId) filters.paciente_id = pacienteId;
         if (profissionalId) filters.profissional_saude_id = profissionalId;
-        if (unidadeId) filters.unidade_saude_id = unidadeId;
+        if (unidadeId) filters.unidade_id = unidadeId; 
         if (data) filters.data = data; 
 
         const consultas = await prisma.consulta.findMany({
@@ -36,7 +36,6 @@ export async function GET(request: NextRequest) {
                 paciente: true,
                 profissional_saude: true,
                 unidade_saude: true,
-                prescricao: true,
             },
         });
         return NextResponse.json(consultas, { status: 200 });

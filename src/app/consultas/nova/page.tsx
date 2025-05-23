@@ -26,7 +26,9 @@ interface Paciente {
 interface ProfissionalSaude {
   id: string
   nome: string
-  especialidade: string
+  especialidade: {
+    nome: string
+  } | null
 }
 
 interface UnidadeSaude {
@@ -209,7 +211,7 @@ export default function NovaConsulta() {
                   <option value="">Selecione um profissional</option>
                   {profissionais.map((profissional) => (
                     <option key={profissional.id} value={profissional.id}>
-                      {profissional.nome} - {profissional.especialidade}
+                      {profissional.nome} - {profissional.especialidade?.nome || "Não informado"}
                     </option>
                   ))}
                 </select>
