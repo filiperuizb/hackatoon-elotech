@@ -48,13 +48,11 @@ export default function EditarPrescricao() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch prescricao
         const prescricaoRes = await fetch(`/api/prescricoes/${id}`)
         if (!prescricaoRes.ok) throw new Error("Falha ao buscar dados da prescrição")
         const prescricaoData = await prescricaoRes.json()
         setPrescricao(prescricaoData)
 
-        // Fetch consultas
         const consultasRes = await fetch("/api/consultas")
         if (!consultasRes.ok) throw new Error("Falha ao buscar consultas")
         const consultasData = await consultasRes.json()

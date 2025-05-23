@@ -88,7 +88,6 @@ export default function Prescricoes() {
 
       setPrescricoes(prescricoes.filter((p) => p.id !== id))
 
-      // Mostrar notificação de sucesso
       alert("Prescrição excluída com sucesso")
     } catch (error) {
       console.error("Erro ao excluir:", error)
@@ -127,7 +126,6 @@ export default function Prescricoes() {
     if (!confirm(`Tem certeza que deseja excluir ${selectedItems.length} prescrições?`)) return
 
     try {
-      // Implementar exclusão em massa na API
       for (const id of selectedItems) {
         await fetch(`/api/prescricoes/${id}`, {
           method: "DELETE",
@@ -211,10 +209,8 @@ export default function Prescricoes() {
     }
   }
 
-  // Aplicar filtros e ordenação
   let filteredPrescricoes = [...prescricoes]
 
-  // Filtro de busca
   if (searchTerm) {
     filteredPrescricoes = filteredPrescricoes.filter(
       (prescricao) =>
@@ -223,24 +219,20 @@ export default function Prescricoes() {
     )
   }
 
-  // Filtro de data
   if (dateFilter) {
     filteredPrescricoes = filteredPrescricoes.filter((prescricao) => prescricao.consulta?.data?.startsWith(dateFilter))
   }
 
-  // Filtro de status
   if (statusFilter !== "all") {
     filteredPrescricoes = filteredPrescricoes.filter(
       (prescricao) => prescricao.status?.toLowerCase() === statusFilter.toLowerCase(),
     )
   }
 
-  // Ordenação
   filteredPrescricoes.sort((a, b) => {
     let aValue: any = a[sortField as keyof Prescricao]
     let bValue: any = b[sortField as keyof Prescricao]
 
-    // Tratamento especial para campos aninhados
     if (sortField === "paciente") {
       aValue = a.consulta?.paciente?.nome || ""
       bValue = b.consulta?.paciente?.nome || ""
@@ -254,7 +246,6 @@ export default function Prescricoes() {
     return 0
   })
 
-  // Estatísticas rápidas
   const totalPrescricoes = prescricoes.length
   const prescricoesAtivas = prescricoes.filter((p) => p.status?.toLowerCase() === "ativa").length
   const prescricoesFinalizadas = prescricoes.filter((p) => p.status?.toLowerCase() === "finalizada").length
@@ -264,7 +255,6 @@ export default function Prescricoes() {
       <Header title="Prescrições" />
 
       <main className="p-6">
-        {/* Estatísticas rápidas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <motion.div
             whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
@@ -397,7 +387,6 @@ export default function Prescricoes() {
           </div>
         </div>
 
-        {/* Filtros avançados */}
         <AnimatePresence>
           {showFilters && (
             <motion.div
@@ -792,7 +781,6 @@ export default function Prescricoes() {
           )}
         </motion.div>
 
-        {/* Paginação */}
         {filteredPrescricoes.length > 0 && (
           <div className="mt-6 flex justify-between items-center">
             <div className="text-sm text-gray-500">

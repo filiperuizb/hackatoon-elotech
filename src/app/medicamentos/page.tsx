@@ -128,7 +128,6 @@ export default function Medicamentos() {
       setIsModalOpen(false)
       resetForm()
 
-      // Recarregar a lista
       const res = await fetch("/api/medicamentos")
       if (res.ok) {
         const data = await res.json()
@@ -170,7 +169,6 @@ export default function Medicamentos() {
       setSuccessMessage("Medicamento excluído com sucesso")
       setTimeout(() => setSuccessMessage(""), 3000)
 
-      // Recarregar a lista
       const res = await fetch("/api/medicamentos")
       if (res.ok) {
         const data = await res.json()
@@ -214,7 +212,6 @@ export default function Medicamentos() {
     if (!confirm(`Tem certeza que deseja excluir ${selectedItems.length} medicamentos?`)) return
 
     try {
-      // Implementar exclusão em massa na API
       for (const id of selectedItems) {
         await fetch(`/api/medicamentos/${id}`, {
           method: "DELETE",
@@ -262,10 +259,8 @@ export default function Medicamentos() {
     document.body.removeChild(link)
   }
 
-  // Aplicar filtros e ordenação
   let filteredMedicamentos = [...medicamentos]
 
-  // Filtro de busca
   if (searchTerm) {
     filteredMedicamentos = filteredMedicamentos.filter(
       (medicamento) =>
@@ -274,17 +269,14 @@ export default function Medicamentos() {
     )
   }
 
-  // Filtro de forma farmacêutica
   if (formaFilter) {
     filteredMedicamentos = filteredMedicamentos.filter((medicamento) => medicamento.forma_farmaceutica === formaFilter)
   }
 
-  // Filtro de ativo
   if (ativoFilter !== "all") {
     filteredMedicamentos = filteredMedicamentos.filter((medicamento) => medicamento.ativo === (ativoFilter === "true"))
   }
 
-  // Ordenação
   filteredMedicamentos.sort((a, b) => {
     const aValue: any = a[sortField as keyof Medicamento]
     const bValue: any = b[sortField as keyof Medicamento]
@@ -294,10 +286,8 @@ export default function Medicamentos() {
     return 0
   })
 
-  // Obter formas farmacêuticas únicas para o filtro
   const formasFarmaceuticas = Array.from(new Set(medicamentos.map((m) => m.forma_farmaceutica))).sort()
 
-  // Estatísticas rápidas
   const totalMedicamentos = medicamentos.length
   const medicamentosAtivos = medicamentos.filter((m) => m.ativo).length
   const medicamentosInativos = medicamentos.filter((m) => !m.ativo).length
@@ -307,7 +297,6 @@ export default function Medicamentos() {
       <Header title="Medicamentos" />
 
       <main className="p-6">
-        {/* Estatísticas rápidas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <motion.div
             whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
@@ -349,7 +338,6 @@ export default function Medicamentos() {
           </motion.div>
         </div>
 
-        {/* Mensagens de sucesso e erro */}
         <AnimatePresence>
           {successMessage && (
             <motion.div
@@ -458,7 +446,6 @@ export default function Medicamentos() {
           </div>
         </div>
 
-        {/* Filtros avançados */}
         <AnimatePresence>
           {showFilters && (
             <motion.div
@@ -844,7 +831,6 @@ export default function Medicamentos() {
           )}
         </motion.div>
 
-        {/* Paginação */}
         {filteredMedicamentos.length > 0 && (
           <div className="mt-6 flex justify-between items-center">
             <div className="text-sm text-gray-500">
@@ -863,7 +849,6 @@ export default function Medicamentos() {
         )}
       </main>
 
-      {/* Modal */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div

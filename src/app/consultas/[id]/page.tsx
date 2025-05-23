@@ -60,25 +60,21 @@ export default function EditarConsulta() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch consulta
         const consultaRes = await fetch(`/api/consultas/${id}`)
         if (!consultaRes.ok) throw new Error("Falha ao buscar dados da consulta")
         const consultaData = await consultaRes.json()
         setConsulta(consultaData)
 
-        // Fetch pacientes
         const pacientesRes = await fetch("/api/pacientes")
         if (!pacientesRes.ok) throw new Error("Falha ao buscar pacientes")
         const pacientesData = await pacientesRes.json()
         setPacientes(pacientesData)
 
-        // Fetch profissionais
         const profissionaisRes = await fetch("/api/profissionais")
         if (!profissionaisRes.ok) throw new Error("Falha ao buscar profissionais")
         const profissionaisData = await profissionaisRes.json()
         setProfissionais(profissionaisData)
 
-        // Fetch unidades
         const unidadesRes = await fetch("/api/unidades")
         if (!unidadesRes.ok) throw new Error("Falha ao buscar unidades")
         const unidadesData = await unidadesRes.json()

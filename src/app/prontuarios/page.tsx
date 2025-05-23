@@ -116,7 +116,6 @@ export default function Prontuarios() {
     if (!confirm(`Tem certeza que deseja excluir ${selectedItems.length} prontuários?`)) return
 
     try {
-      // Implementar exclusão em massa na API
       for (const id of selectedItems) {
         await fetch(`/api/prontuarios/${id}`, {
           method: "DELETE",
@@ -201,15 +200,12 @@ export default function Prontuarios() {
     }
   }
 
-  // Obter especialidades únicas para o filtro
   const especialidades = Array.from(
     new Set(prontuarios.map((p) => p.profissional_saude?.especialidade?.nome).filter(Boolean)),
   ).sort()
 
-  // Aplicar filtros e ordenação
   let filteredProntuarios = [...prontuarios]
 
-  // Filtro de busca
   if (searchTerm) {
     filteredProntuarios = filteredProntuarios.filter(
       (prontuario) =>
@@ -221,31 +217,26 @@ export default function Prontuarios() {
     )
   }
 
-  // Filtro de data
   if (filterDate) {
     filteredProntuarios = filteredProntuarios.filter((prontuario) => prontuario.data_atendimento.startsWith(filterDate))
   }
 
-  // Filtro de status
   if (statusFilter !== "all") {
     filteredProntuarios = filteredProntuarios.filter(
       (prontuario) => prontuario.status?.toLowerCase() === statusFilter.toLowerCase(),
     )
   }
 
-  // Filtro de especialidade
   if (especialidadeFilter) {
     filteredProntuarios = filteredProntuarios.filter(
       (prontuario) => prontuario.profissional_saude?.especialidade?.nome === especialidadeFilter,
     )
   }
 
-  // Ordenação
   filteredProntuarios.sort((a, b) => {
     let aValue: any = a[sortField as keyof Prontuario]
     let bValue: any = b[sortField as keyof Prontuario]
 
-    // Tratamento especial para campos aninhados
     if (sortField === "paciente") {
       aValue = a.paciente?.nome || ""
       bValue = b.paciente?.nome || ""
@@ -262,7 +253,6 @@ export default function Prontuarios() {
     return 0
   })
 
-  // Estatísticas rápidas
   const totalProntuarios = prontuarios.length
   const prontuariosFinalizados = prontuarios.filter((p) => p.status?.toLowerCase() === "finalizado").length
   const prontuariosEmAndamento = prontuarios.filter((p) => p.status?.toLowerCase() === "em andamento").length
@@ -272,7 +262,6 @@ export default function Prontuarios() {
       <Header title="Prontuários" />
 
       <main className="p-6">
-        {/* Estatísticas rápidas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <motion.div
             whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
@@ -405,7 +394,6 @@ export default function Prontuarios() {
           </div>
         </div>
 
-        {/* Filtros avançados */}
         <AnimatePresence>
           {showFilters && (
             <motion.div
@@ -802,7 +790,6 @@ export default function Prontuarios() {
           )}
         </motion.div>
 
-        {/* Paginação */}
         {filteredProntuarios.length > 0 && (
           <div className="mt-6 flex justify-between items-center">
             <div className="text-sm text-gray-500">

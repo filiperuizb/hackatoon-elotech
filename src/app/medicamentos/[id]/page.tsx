@@ -36,7 +36,6 @@ export default function EditarProcedimentoPage({ params }: ProcedimentoParams) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Buscar tipos de procedimento
         const tiposResponse = await fetch("/api/tipos-procedimento")
 
         if (!tiposResponse.ok) {
@@ -46,7 +45,6 @@ export default function EditarProcedimentoPage({ params }: ProcedimentoParams) {
         const tiposData = await tiposResponse.json()
         setTiposProcedimento(tiposData)
 
-        // Buscar dados do procedimento
         const procedimentoResponse = await fetch(`/api/procedimentos/${id}`)
 
         if (!procedimentoResponse.ok) {
@@ -90,7 +88,6 @@ export default function EditarProcedimentoPage({ params }: ProcedimentoParams) {
         return
       }
 
-      // Converter valor para número se não estiver vazio
       const valorNumerico = formData.valor ? Number.parseFloat(formData.valor) : null
 
       const response = await fetch(`/api/procedimentos/${id}`, {
@@ -237,4 +234,3 @@ export default function EditarProcedimentoPage({ params }: ProcedimentoParams) {
     </div>
   )
 }
-// Compare this snippet from src/app/medicamentos/%5Bid%5D/page.tsx:

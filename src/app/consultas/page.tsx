@@ -203,7 +203,6 @@ export default function Consultas() {
     show: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
   }
 
-  // Estatísticas para o dashboard
   const totalConsultas = consultas.length
   const consultasAgendadas = consultas.filter((c) => c.status?.toLowerCase() === "agendada").length
   const consultasConcluidas = consultas.filter((c) => c.status?.toLowerCase() === "concluída").length
@@ -213,7 +212,6 @@ export default function Consultas() {
       <Header title="Consultas" />
 
       <main className="p-6">
-        {/* Dashboard Stats */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

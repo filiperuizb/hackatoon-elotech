@@ -331,7 +331,7 @@ export default function LandingPage() {
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              &copy; {new Date().getFullYear()} SPA Health Tech. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} Garotos de Programa.
             </p>
           </div>
         </div>

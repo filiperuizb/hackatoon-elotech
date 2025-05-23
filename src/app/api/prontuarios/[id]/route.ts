@@ -1,10 +1,13 @@
 import { type NextRequest, NextResponse } from "next/server"
 import prisma from "@/lib/utils/prisma"
+import { getIdFromRequest } from '@/lib/utils/getId'
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest) {
   try {
+    const id = getIdFromRequest(req);
+    
     const prontuario = await prisma.prontuario.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         paciente: {
           select: {
@@ -42,8 +45,9 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest) {
   try {
+    const id = getIdFromRequest(req);
     const data = await req.json()
 
     const cleanData = {
@@ -66,7 +70,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     }
 
     const prontuario = await prisma.prontuario.update({
-      where: { id: params.id },
+      where: { id },
       data: cleanData,
       include: {
         paciente: {
@@ -97,10 +101,11 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest) {
   try {
+    const id = getIdFromRequest(req);
     await prisma.prontuario.delete({
-      where: { id: params.id },
+      where: { id },
     })
 
     return NextResponse.json({ message: "Prontuário excluído com sucesso" })

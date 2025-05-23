@@ -218,7 +218,6 @@ export default function Pacientes() {
       </div>
 
       <main className="p-6 pt-0">
-        {/* Dashboard Stats */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
