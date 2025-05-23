@@ -43,7 +43,6 @@ interface Prontuario {
   consulta?: {
     id: string
     data: string
-    status: string
   }
   prescricao: Array<{
     id: string

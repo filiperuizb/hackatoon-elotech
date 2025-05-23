@@ -44,11 +44,10 @@ interface Prontuario {
     especialidade: {
       nome: string
     }
-  }
+  };
   consulta?: {
     id: string
     data: string
-    status: string
   }
 }
 

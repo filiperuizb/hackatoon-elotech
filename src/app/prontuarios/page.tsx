@@ -48,9 +48,7 @@ interface Prontuario {
   consulta?: {
     id: string
     data: string
-    status: string
   }
-  status?: string
 }
 
 export default function Prontuarios() {
@@ -58,9 +56,8 @@ export default function Prontuarios() {
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState("")
   const [filterDate, setFilterDate] = useState("")
-  const [statusFilter, setStatusFilter] = useState("all")
   const [especialidadeFilter, setEspecialidadeFilter] = useState("")
-  const [showFilters, setShowFilters] = useState(false)
+  const [showFilters, setShowFilters] = useState(false )
   const [sortField, setSortField] = useState<string>("data_atendimento")
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
   const [selectedItems, setSelectedItems] = useState<string[]>([])
@@ -173,32 +170,7 @@ export default function Prontuarios() {
     const date = new Date(dateString)
     return date.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
   }
-
-  const getStatusColor = (status?: string) => {
-    switch (status?.toLowerCase()) {
-      case "finalizado":
-        return "text-green-600 bg-green-50 border-green-200"
-      case "em andamento":
-        return "text-blue-600 bg-blue-50 border-blue-200"
-      case "cancelado":
-        return "text-red-600 bg-red-50 border-red-200"
-      default:
-        return "text-yellow-600 bg-yellow-50 border-yellow-200"
-    }
-  }
-
-  const getStatusIcon = (status?: string) => {
-    switch (status?.toLowerCase()) {
-      case "finalizado":
-        return <CheckCircle size={14} className="mr-1" />
-      case "em andamento":
-        return <Clock size={14} className="mr-1" />
-      case "cancelado":
-        return <XCircle size={14} className="mr-1" />
-      default:
-        return <AlertCircle size={14} className="mr-1" />
-    }
-  }
+  // Funções de formatação de status removidas
 
   const especialidades = Array.from(
     new Set(prontuarios.map((p) => p.profissional_saude?.especialidade?.nome).filter(Boolean)),
@@ -220,12 +192,7 @@ export default function Prontuarios() {
   if (filterDate) {
     filteredProntuarios = filteredProntuarios.filter((prontuario) => prontuario.data_atendimento.startsWith(filterDate))
   }
-
-  if (statusFilter !== "all") {
-    filteredProntuarios = filteredProntuarios.filter(
-      (prontuario) => prontuario.status?.toLowerCase() === statusFilter.toLowerCase(),
-    )
-  }
+  // Filtro de status removido
 
   if (especialidadeFilter) {
     filteredProntuarios = filteredProntuarios.filter(
@@ -252,10 +219,8 @@ export default function Prontuarios() {
     if (aValue > bValue) return sortDirection === "asc" ? 1 : -1
     return 0
   })
-
   const totalProntuarios = prontuarios.length
-  const prontuariosFinalizados = prontuarios.filter((p) => p.status?.toLowerCase() === "finalizado").length
-  const prontuariosEmAndamento = prontuarios.filter((p) => p.status?.toLowerCase() === "em andamento").length
+  // Contadores de status removidos
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -274,33 +239,7 @@ export default function Prontuarios() {
               <h3 className="text-sm font-medium text-gray-500">Total de Prontuários</h3>
               <p className="text-2xl font-bold text-gray-900">{totalProntuarios}</p>
             </div>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-            className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm flex items-center"
-          >
-            <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
-              <CheckCircle size={24} className="text-green-600" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-500">Finalizados</h3>
-              <p className="text-2xl font-bold text-gray-900">{prontuariosFinalizados}</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-            className="bg-white rounded-xl p-4 border border-gray-200 shadow-sm flex items-center"
-          >
-            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-              <Clock size={24} className="text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-500">Em Andamento</h3>
-              <p className="text-2xl font-bold text-gray-900">{prontuariosEmAndamento}</p>
-            </div>
-          </motion.div>
+          </motion.div>          {/* Cards de status removidos */}
         </div>
 
         <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -404,55 +343,7 @@ export default function Prontuarios() {
             >
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                 <h3 className="font-medium text-gray-700 mb-4">Filtros avançados</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
-                    <div className="flex flex-wrap gap-2">
-                      <button
-                        onClick={() => setStatusFilter("all")}
-                        className={`px-4 py-2 rounded-lg border ${
-                          statusFilter === "all"
-                            ? "bg-[#4d9d74] text-white border-[#4d9d74]"
-                            : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
-                        }`}
-                      >
-                        Todos
-                      </button>
-                      <button
-                        onClick={() => setStatusFilter("finalizado")}
-                        className={`px-4 py-2 rounded-lg border ${
-                          statusFilter === "finalizado"
-                            ? "bg-green-600 text-white border-green-600"
-                            : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
-                        }`}
-                      >
-                        <CheckCircle size={14} className="inline mr-1" />
-                        Finalizado
-                      </button>
-                      <button
-                        onClick={() => setStatusFilter("em andamento")}
-                        className={`px-4 py-2 rounded-lg border ${
-                          statusFilter === "em andamento"
-                            ? "bg-blue-600 text-white border-blue-600"
-                            : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
-                        }`}
-                      >
-                        <Clock size={14} className="inline mr-1" />
-                        Em andamento
-                      </button>
-                      <button
-                        onClick={() => setStatusFilter("cancelado")}
-                        className={`px-4 py-2 rounded-lg border ${
-                          statusFilter === "cancelado"
-                            ? "bg-red-600 text-white border-red-600"
-                            : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
-                        }`}
-                      >
-                        <XCircle size={14} className="inline mr-1" />
-                        Cancelado
-                      </button>
-                    </div>
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">                  {/* Filtros de status removidos */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Especialidade</label>
                     <select
@@ -495,9 +386,8 @@ export default function Prontuarios() {
               >
                 <FileText size={32} className="text-gray-400" />
               </motion.div>
-              <h3 className="code-bold text-xl mb-2">Nenhum prontuário encontrado</h3>
-              <p className="text-gray-700 mb-6 max-w-md mx-auto">
-                {searchTerm || filterDate || statusFilter !== "all" || especialidadeFilter
+              <h3 className="code-bold text-xl mb-2">Nenhum prontuário encontrado</h3>              <p className="text-gray-700 mb-6 max-w-md mx-auto">
+                {searchTerm || filterDate || especialidadeFilter
                   ? "Nenhum resultado para sua busca. Tente outros filtros."
                   : "Você ainda não criou nenhum prontuário."}
               </p>
@@ -607,9 +497,7 @@ export default function Prontuarios() {
                             )}
                           </span>
                         )}
-                      </div>
-                    </th>
-                    <th className="px-4 py-3 text-xs code-bold text-black uppercase tracking-wider">Status</th>
+                      </div>                    </th>
                     <th className="px-4 py-3 text-xs code-bold text-black uppercase tracking-wider">Ações</th>
                   </tr>
                 </thead>
@@ -653,20 +541,9 @@ export default function Prontuarios() {
                         <div className="text-gray-900 max-w-xs truncate">
                           {prontuario.queixa_principal || "Não informado"}
                         </div>
-                      </td>
-                      <td className="px-4 py-4">
+                      </td>                      <td className="px-4 py-4">
                         <div className="text-gray-900 max-w-xs truncate">
                           {prontuario.diagnostico_definitivo || "Não informado"}
-                        </div>
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap">
-                        <div
-                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(
-                            prontuario.status,
-                          )}`}
-                        >
-                          {getStatusIcon(prontuario.status)}
-                          {prontuario.status || "Pendente"}
                         </div>
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap">
@@ -719,15 +596,7 @@ export default function Prontuarios() {
                         <div className="font-medium text-gray-900">{prontuario.paciente?.nome}</div>
                         <div className="text-sm text-gray-500">{prontuario.paciente?.cpf}</div>
                       </div>
-                    </div>
-                    <div
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(
-                        prontuario.status,
-                      )}`}
-                    >
-                      {getStatusIcon(prontuario.status)}
-                      {prontuario.status || "Pendente"}
-                    </div>
+                    </div>                    {/* Status removido */}
                   </div>
                   <div className="p-4">
                     <div className="mb-3">
