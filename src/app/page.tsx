@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { motion, useAnimation } from "framer-motion"
+import Image from "next/image"
 import {
   ArrowRight,
   Users,
@@ -136,10 +137,9 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-[#4d9d74] rounded-lg">
-                <Stethoscope className="h-6 w-6 text-white" />
+              <div className="p-2  rounded-lg">
               </div>
-              <span className="text-2xl font-bold text-gray-800">SPA</span>
+              <Image src="/logo.png" alt="SPA Logo" width={150} height={40} />
             </div>
           </div>
 
