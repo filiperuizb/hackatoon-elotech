@@ -35,18 +35,16 @@ export default function LandingPage() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      // Show/hide scroll to top button
       if (currentScrollY > 100) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
       }
 
-      // Show/hide navbar based on scroll direction
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsNavbarVisible(false) // Hide when scrolling down
+        setIsNavbarVisible(false) 
       } else {
-        setIsNavbarVisible(true) // Show when scrolling up
+        setIsNavbarVisible(true) 
       }
 
       setLastScrollY(currentScrollY)
@@ -118,7 +116,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
+   
       <header
         className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-transform duration-300 ${
           isNavbarVisible ? "translate-y-0" : "-translate-y-full"
@@ -129,7 +127,6 @@ export default function LandingPage() {
             <Image src="/logo.png" alt="SPA Logo" width={140} height={70} className="object-contain" priority />
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("features")}
@@ -157,7 +154,6 @@ export default function LandingPage() {
             </button>
           </nav>
 
-          {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/login" className="code-bold text-[#4d9d74] hover:text-[#3a8a64] transition-colors">
               Login
@@ -170,7 +166,6 @@ export default function LandingPage() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-gray-700 hover:text-[#4d9d74] transition-colors"
@@ -179,7 +174,6 @@ export default function LandingPage() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -231,7 +225,6 @@ export default function LandingPage() {
         )}
       </header>
 
-      {/* Hero Section */}
       <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#4d9d74]/20 to-transparent"></div>
         <div className="container mx-auto max-w-7xl relative z-10">
@@ -294,7 +287,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
@@ -422,7 +414,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
@@ -465,7 +456,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Technology Section */}
+
       <section id="technology" className="py-20">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
@@ -530,7 +521,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-16">
@@ -581,7 +571,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -655,7 +644,6 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* Scroll to Top Button */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 1 : 0 }}

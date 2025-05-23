@@ -145,7 +145,6 @@ export default function Footer() {
 
       <WaveEffect />
 
-      {/* Bolhas flutuantes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {bubbles.map((bubble) => (
           <FloatingBubble
@@ -159,7 +158,6 @@ export default function Footer() {
         ))}
       </div>
 
-      {/* Partículas */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {particles.map((particle) => (
           <Particle
@@ -173,7 +171,6 @@ export default function Footer() {
         ))}
       </div>
 
-      {/* Efeito de brilho central */}
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-[#4d9d74]/10 filter blur-3xl"
         animate={{

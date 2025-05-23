@@ -29,12 +29,6 @@ export default function NovoMedicamentoPage() {
     try {
       setLoading(true)
 
-      if (!formData.nome || !formData.principio_ativo || !formData.concentracao || !formData.forma_farmaceutica) {
-        alert("Nome, princípio ativo, concentração e forma farmacêutica são obrigatórios")
-        setLoading(false)
-        return
-      }
-
       const response = await fetch("/api/medicamentos", {
         method: "POST",
         headers: {

@@ -189,15 +189,41 @@ export default function Sidebar() {
         </nav>
 
         <div className="p-4 mt-auto border-t border-gray-100">
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={handleLogout}
-            className="code-bold flex items-center justify-center w-full px-4 py-2.5 text-red-600 hover:bg-red-50 rounded-lg transition-all"
-          >
-            <LogOut size={16} className="mr-2" />
-            <span>Sair do Sistema</span>
-          </motion.button>
+          <div className="relative">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="flex items-center w-full space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#4d9d74] to-[#3a8a64] flex items-center justify-center text-white">
+                <User size={18} />
+              </div>
+              <div className="flex-1 text-left">
+                <p className="text-sm font-medium text-gray-700 truncate">{userName}</p>
+                <p className="text-xs text-gray-500">{}</p>
+              </div>
+              <ChevronDown size={14} className="text-gray-500" />
+            </button>
+
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 5, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 5, scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute bottom-full mb-2 left-0 right-0 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-100"
+                >
+                  <button
+                    onClick={handleLogout}
+                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center"
+                  >
+                    <LogOut size={14} className="mr-2" />
+                    Sair do sistema
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     )
@@ -219,41 +245,6 @@ export default function Sidebar() {
         </div>
 
         <div className="flex-1"></div>
-
-        <div className="flex items-center">
-          <div className="relative">
-            <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="flex items-center space-x-2 text-gray-700 hover:text-[#4d9d74] transition-colors p-2 rounded-md hover:bg-gray-100"
-            >
-              <div className="w-8 h-8 rounded-full bg-[#4d9d74] flex items-center justify-center text-white">
-                <User size={16} />
-              </div>
-              <span className="hidden sm:inline-block code-bold text-sm">{userName}</span>
-              <ChevronDown size={14} />
-            </button>
-
-            <AnimatePresence>
-              {dropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 5, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 5, scale: 0.95 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border-0 shadow-xl"
-                >
-                  <button
-                    onClick={handleLogout}
-                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center"
-                  >
-                    <LogOut size={14} className="mr-2" />
-                    Sair do sistema
-                  </button>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
       </div>
 
       <AnimatePresence>
