@@ -7,10 +7,17 @@ export async function GET(request: NextRequest) {
         
         const filters: Record<string, unknown> = {};
         const nome = searchParams.get("nome");
+        const tipoId = searchParams.get("tipo_id");
         
         if (nome) filters.nome = { contains: nome, mode: "insensitive" };
+        if (tipoId) filters.tipo_id = tipoId;
         
-        const unidades = await prisma.unidade_saude.findMany({ where: filters });
+        const unidades = await prisma.unidade_saude.findMany({ 
+          where: filters,
+          include: {
+            tipo: true
+          }
+        });
         return NextResponse.json(unidades, { status: 200 });
     } catch (error) {
         console.error("Erro ao listar as unidades de saúde:", error);
@@ -23,7 +30,10 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
     
     const unidade = await prisma.unidade_saude.create({
-      data
+      data,
+      include: {
+        tipo: true
+      }
     });
     
     return NextResponse.json(unidade, { status: 201 });

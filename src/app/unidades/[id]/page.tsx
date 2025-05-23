@@ -5,23 +5,34 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { useRouter, useParams } from "next/navigation"
 import Header from "@/components/header"
-import { Save, ArrowLeft, AlertCircle, CheckCircle, Building2, MapPin, Clock } from "lucide-react"
+import { Save, ArrowLeft, AlertCircle, CheckCircle, Building2, MapPin, Clock, Mail, Phone, Hash } from "lucide-react"
 import { motion } from "framer-motion"
+
+interface TipoUnidade {
+  id: string
+  codigo: string
+  nome: string
+  descricao?: string
+}
 
 interface Unidade {
   id: string
   nome: string
-  endereco: string
-  telefone: string
-  email: string
-  tipo: string
+  endereco?: string
+  telefone?: string
+  email?: string
+  tipo_id?: string
+  tipo?: TipoUnidade
   cnes?: string
   horario_funcionamento?: string
   observacoes?: string
+  cidade?: string
+  estado?: string
 }
 
 export default function EditarUnidade() {
   const [unidade, setUnidade] = useState<Unidade | null>(null)
+  const [tiposUnidade, setTiposUnidade] = useState<TipoUnidade[]>([])
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
@@ -31,12 +42,20 @@ export default function EditarUnidade() {
   const id = params.id as string
 
   useEffect(() => {
-    const fetchUnidade = async () => {
+    const fetchData = async () => {
       try {
-        const res = await fetch(`/api/unidades/${id}`)
-        if (!res.ok) throw new Error("Falha ao buscar unidade")
-        const data = await res.json()
-        setUnidade(data)
+        const tiposRes = await fetch("/api/tipo-unidades")
+        if (tiposRes.ok) {
+          const tiposData = await tiposRes.json()
+          setTiposUnidade(tiposData)
+        } else {
+          console.error("Erro ao buscar tipos de unidade")
+        }
+
+        const unidadeRes = await fetch(`/api/unidades/${id}`)
+        if (!unidadeRes.ok) throw new Error("Falha ao buscar unidade")
+        const unidadeData = await unidadeRes.json()
+        setUnidade(unidadeData)
       } catch (error) {
         console.error("Erro:", error)
         setError("Não foi possível carregar os dados da unidade")
@@ -46,7 +65,7 @@ export default function EditarUnidade() {
     }
 
     if (id) {
-      fetchUnidade()
+      fetchData()
     }
   }, [id])
 
@@ -68,7 +87,7 @@ export default function EditarUnidade() {
     setError("")
     setSuccess("")
 
-    if (!unidade.nome || !unidade.endereco || !unidade.telefone || !unidade.email || !unidade.tipo) {
+    if (!unidade.nome || !unidade.tipo_id) {
       setError("Preencha todos os campos obrigatórios")
       setSaving(false)
       return
@@ -100,9 +119,39 @@ export default function EditarUnidade() {
     }
   }
 
+  const estados = [
+    { sigla: "AC", nome: "Acre" },
+    { sigla: "AL", nome: "Alagoas" },
+    { sigla: "AP", nome: "Amapá" },
+    { sigla: "AM", nome: "Amazonas" },
+    { sigla: "BA", nome: "Bahia" },
+    { sigla: "CE", nome: "Ceará" },
+    { sigla: "DF", nome: "Distrito Federal" },
+    { sigla: "ES", nome: "Espírito Santo" },
+    { sigla: "GO", nome: "Goiás" },
+    { sigla: "MA", nome: "Maranhão" },
+    { sigla: "MT", nome: "Mato Grosso" },
+    { sigla: "MS", nome: "Mato Grosso do Sul" },
+    { sigla: "MG", nome: "Minas Gerais" },
+    { sigla: "PA", nome: "Pará" },
+    { sigla: "PB", nome: "Paraíba" },
+    { sigla: "PR", nome: "Paraná" },
+    { sigla: "PE", nome: "Pernambuco" },
+    { sigla: "PI", nome: "Piauí" },
+    { sigla: "RJ", nome: "Rio de Janeiro" },
+    { sigla: "RN", nome: "Rio Grande do Norte" },
+    { sigla: "RS", nome: "Rio Grande do Sul" },
+    { sigla: "RO", nome: "Rondônia" },
+    { sigla: "RR", nome: "Roraima" },
+    { sigla: "SC", nome: "Santa Catarina" },
+    { sigla: "SP", nome: "São Paulo" },
+    { sigla: "SE", nome: "Sergipe" },
+    { sigla: "TO", nome: "Tocantins" },
+  ]
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
         <Header title="Carregando..." />
         <div className="p-6">
           <div className="bg-white rounded-xl shadow-sm p-6">
@@ -119,7 +168,7 @@ export default function EditarUnidade() {
 
   if (error && !unidade) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
         <Header title="Erro" />
         <div className="p-6">
           <div className="bg-white rounded-xl shadow-sm p-6 text-center">
@@ -139,7 +188,7 @@ export default function EditarUnidade() {
   if (!unidade) return null
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <Header title="Editar Unidade de Saúde" />
 
       <main className="p-6">
@@ -189,24 +238,23 @@ export default function EditarUnidade() {
                     </div>
 
                     <div>
-                      <label htmlFor="tipo" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="tipo_id" className="block text-sm font-medium text-gray-700 mb-1">
                         Tipo de Unidade *
                       </label>
                       <select
-                        id="tipo"
-                        name="tipo"
-                        value={unidade.tipo}
+                        id="tipo_id"
+                        name="tipo_id"
+                        value={unidade.tipo_id || ""}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
                         required
                       >
-                        <option value="UBS">Unidade Básica de Saúde (UBS)</option>
-                        <option value="ESF">Estratégia Saúde da Família (ESF)</option>
-                        <option value="UPA">Unidade de Pronto Atendimento (UPA)</option>
-                        <option value="CAPS">Centro de Atenção Psicossocial (CAPS)</option>
-                        <option value="HOSPITAL">Hospital</option>
-                        <option value="POLICLINICA">Policlínica</option>
-                        <option value="OUTRO">Outro</option>
+                        <option value="">Selecione um tipo</option>
+                        {tiposUnidade.map((tipo) => (
+                          <option key={tipo.id} value={tipo.id}>
+                            {tipo.nome}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
@@ -214,14 +262,20 @@ export default function EditarUnidade() {
                       <label htmlFor="cnes" className="block text-sm font-medium text-gray-700 mb-1">
                         CNES (Cadastro Nacional de Estabelecimentos de Saúde)
                       </label>
-                      <input
-                        type="text"
-                        id="cnes"
-                        name="cnes"
-                        value={unidade.cnes || ""}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                      />
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <Hash size={16} className="text-gray-400" />
+                        </div>
+                        <input
+                          type="text"
+                          id="cnes"
+                          name="cnes"
+                          value={unidade.cnes || ""}
+                          onChange={handleChange}
+                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                          placeholder="0000000"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -237,47 +291,97 @@ export default function EditarUnidade() {
                   <div className="space-y-4">
                     <div>
                       <label htmlFor="endereco" className="block text-sm font-medium text-gray-700 mb-1">
-                        Endereço Completo *
+                        Endereço
                       </label>
-                      <input
-                        type="text"
-                        id="endereco"
-                        name="endereco"
-                        value={unidade.endereco}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        required
-                      />
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <MapPin size={16} className="text-gray-400" />
+                        </div>
+                        <input
+                          type="text"
+                          id="endereco"
+                          name="endereco"
+                          value={unidade.endereco || ""}
+                          onChange={handleChange}
+                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                          placeholder="Rua, número, bairro"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="cidade" className="block text-sm font-medium text-gray-700 mb-1">
+                          Cidade
+                        </label>
+                        <input
+                          type="text"
+                          id="cidade"
+                          name="cidade"
+                          value={unidade.cidade || ""}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="estado" className="block text-sm font-medium text-gray-700 mb-1">
+                          Estado
+                        </label>
+                        <select
+                          id="estado"
+                          name="estado"
+                          value={unidade.estado || ""}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                        >
+                          <option value="">Selecione</option>
+                          {estados.map((estado) => (
+                            <option key={estado.sigla} value={estado.sigla}>
+                              {estado.sigla} - {estado.nome}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
 
                     <div>
                       <label htmlFor="telefone" className="block text-sm font-medium text-gray-700 mb-1">
-                        Telefone *
+                        Telefone
                       </label>
-                      <input
-                        type="tel"
-                        id="telefone"
-                        name="telefone"
-                        value={unidade.telefone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        required
-                      />
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <Phone size={16} className="text-gray-400" />
+                        </div>
+                        <input
+                          type="tel"
+                          id="telefone"
+                          name="telefone"
+                          value={unidade.telefone || ""}
+                          onChange={handleChange}
+                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                          placeholder="(00) 0000-0000"
+                        />
+                      </div>
                     </div>
 
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email *
+                        Email
                       </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={unidade.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        required
-                      />
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <Mail size={16} className="text-gray-400" />
+                        </div>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={unidade.email || ""}
+                          onChange={handleChange}
+                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                          placeholder="exemplo@email.com"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -295,15 +399,20 @@ export default function EditarUnidade() {
                       <label htmlFor="horario_funcionamento" className="block text-sm font-medium text-gray-700 mb-1">
                         Horário de Funcionamento
                       </label>
-                      <input
-                        type="text"
-                        id="horario_funcionamento"
-                        name="horario_funcionamento"
-                        value={unidade.horario_funcionamento || ""}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
-                        placeholder="Ex: Segunda a Sexta, 8h às 18h"
-                      />
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <Clock size={16} className="text-gray-400" />
+                        </div>
+                        <input
+                          type="text"
+                          id="horario_funcionamento"
+                          name="horario_funcionamento"
+                          value={unidade.horario_funcionamento || ""}
+                          onChange={handleChange}
+                          className="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4d9d74] focus:border-[#4d9d74] input-animated"
+                          placeholder="Ex: Segunda a Sexta, 8h às 18h"
+                        />
+                      </div>
                     </div>
 
                     <div>

@@ -289,6 +289,15 @@ exports.Prisma.TemplateScalarFieldEnum = {
   updated_at: 'updated_at'
 };
 
+exports.Prisma.Tipo_unidadeScalarFieldEnum = {
+  id: 'id',
+  codigo: 'codigo',
+  nome: 'nome',
+  descricao: 'descricao',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
 exports.Prisma.Unidade_saudeScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
@@ -298,6 +307,10 @@ exports.Prisma.Unidade_saudeScalarFieldEnum = {
   estado: 'estado',
   created_at: 'created_at',
   telefone: 'telefone',
+  email: 'email',
+  horario_funcionamento: 'horario_funcionamento',
+  observacoes: 'observacoes',
+  tipo_id: 'tipo_id',
   updated_at: 'updated_at'
 };
 
@@ -330,6 +343,7 @@ exports.Prisma.ModelName = {
   prescricao: 'prescricao',
   profissional_saude: 'profissional_saude',
   template: 'template',
+  tipo_unidade: 'tipo_unidade',
   unidade_saude: 'unidade_saude'
 };
 

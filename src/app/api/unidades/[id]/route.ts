@@ -8,6 +8,9 @@ export async function GET(request: NextRequest) {
 
     const unidade = await prisma.unidade_saude.findUnique({
       where: { id },
+      include: { 
+        tipo: true 
+      }
     })
 
     if (!unidade) {
@@ -29,6 +32,9 @@ export async function PUT(request: NextRequest) {
     const unidade = await prisma.unidade_saude.update({
       where: { id },
       data,
+      include: {
+        tipo: true
+      }
     })
 
     return NextResponse.json(unidade, { status: 200 })

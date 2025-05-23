@@ -53,6 +53,24 @@ async function main() {
     })
   }
 
+  const tiposUnidade = [
+    { codigo: 'UBS', nome: 'Unidade Básica de Saúde', descricao: 'Porta de entrada do SUS' },
+    { codigo: 'ESF', nome: 'Estratégia Saúde da Família', descricao: 'Modelo de atenção primária' },
+    { codigo: 'UPA', nome: 'Unidade de Pronto Atendimento', descricao: 'Atendimento de urgência e emergência' },
+    { codigo: 'CAPS', nome: 'Centro de Atenção Psicossocial', descricao: 'Cuidado em saúde mental' },
+    { codigo: 'HOSPITAL', nome: 'Hospital', descricao: 'Unidade de atendimento de alta complexidade' },
+    { codigo: 'POLICLINICA', nome: 'Policlínica', descricao: 'Atendimento especializado' },
+    { codigo: 'OUTRO', nome: 'Outro', descricao: 'Outros tipos de unidade de saúde' },
+  ]
+
+  for (const tipo of tiposUnidade) {
+    await prisma.tipo_unidade.upsert({
+      where: { codigo: tipo.codigo },
+      update: {},
+      create: tipo,
+    })
+  }
+
   console.log('Seed concluído com sucesso!')
 }
 

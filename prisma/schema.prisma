@@ -25,7 +25,7 @@ model especialidade {
 model paciente {
   id                   String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   nome                 String
-  idade                Int
+  idade                Int?
   data_nascimento      DateTime     @db.Date
   sexo                 String?      @db.Char(1)
   cpf                  String?      @unique @db.VarChar(14)
@@ -200,15 +200,30 @@ model template {
   updated_at                DateTime @updatedAt
 }
 
+model tipo_unidade {
+  id            String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  codigo        String          @unique
+  nome          String
+  descricao     String?
+  created_at    DateTime        @default(now())
+  updated_at    DateTime        @updatedAt
+  unidade_saude unidade_saude[]
+}
+
 model unidade_saude {
-  id         String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  nome       String
-  cnes       String?    @unique @db.VarChar(20)
-  endereco   String?
-  cidade     String?
-  estado     String?    @db.Char(2)
-  created_at DateTime   @default(now())
-  telefone   String?    @db.VarChar(20)
-  updated_at DateTime   @updatedAt
-  consulta   consulta[]
+  id                    String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  nome                  String
+  cnes                  String?      @unique @db.VarChar(20)
+  endereco              String?
+  cidade                String?
+  estado                String?      @db.Char(2)
+  created_at            DateTime     @default(now())
+  telefone              String?      @db.VarChar(20)
+  email                 String?      
+  horario_funcionamento String?
+  observacoes           String?
+  tipo_id               String?      @db.Uuid   // Nova coluna para o relacionamento
+  tipo                  tipo_unidade? @relation(fields: [tipo_id], references: [id])
+  updated_at            DateTime     @updatedAt
+  consulta              consulta[]
 }
