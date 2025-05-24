@@ -1,62 +1,44 @@
-# 🗺️ Roadmap do MVP – SPA
+# 🩺 SPA – Sistema de Prontuário Ágil
 
-## ✅ Fase 1 – Planejamento e Estruturação
+Nossa equipe ficou entre o **TOP 5** do **Hackathon by @elotech**! 🚀
 
-**Tecnologias principais:**
+Foi uma experiência incrível, desde o levantamento de requisitos — onde fomos até profissionais reais da saúde para entender suas dores — até o desenvolvimento de um MVP funcional.
 
-- Next.js (Fullstack – API + Frontend)
-- PostgreSQL (Neon Free)
-- Prisma ORM
+O **SPA (Sistema de Prontuário Ágil)** foi criado para **agilizar os processos de consultas e preenchimento de prontuário**, otimizando o tempo do profissional de saúde e proporcionando uma melhor experiência tanto para quem atende quanto para quem é atendido.
 
-- Subir o commit com o prisma configurado
-- Documentar roadmap e divisão de tarefas no README.md
+O MVP está online, com **frontend, backend e banco de dados real funcionando!**  
+✅ Todos podem se cadastrar como profissional da saúde para testar.
 
 ---
 
-## 🧱 Fase 2 – Banco de Dados e ORM
+## 🔗 Acesse aqui:
 
-- Modelar entidades principais:
-  - Paciente
-  - ProfissionalSaude
-  - Consulta
-  - Template
-  - Prescricao
-  - UnidadeSaude
-- Criar arquivo `schema.prisma` com os modelos
-- Rodar `npx prisma migrate dev` para gerar o banco no Neon
-- Preencher o banco com dados fake (Seed opcional)
+- 🌐 **Link do projeto:** [https://hackatoon-elotech.vercel.app](https://hackatoon-elotech.vercel.app)  
+- 📂 **Repositório:** [https://github.com/filiperuizb/spa-prontuario-agil](https://github.com/filiperuizb/spa-prontuario-agil)  
 
 ---
 
-## 🛠️ Fase 3 – Backend
+## 📊 Sobre os dados:
 
-- Criar API REST em `/api` com Next.js:
-  - `POST /pacientes`
-  - `GET /pacientes/:id`
-  - `POST /consultas`
-  - `GET /consultas/:pacienteId`
-  - `GET /templates?sintoma=...`
-- Conectar API ao banco via Prisma
-- Tratar erros e retornos padronizados (status, JSON)
+- 🔸 **Dado real:** As **18 unidades de saúde** inseridas foram coletadas diretamente do **portal da Prefeitura de Maringá**.  
+⚠️ Observação: **não são todas as unidades da cidade**, apenas 18 foram adicionadas para demonstração.
+
+- 🔸 **Dados fictícios:** Pacientes, consultas e demais registros foram criados apenas para apresentação do MVP.
 
 ---
 
-## 🎨 Fase 4 – Frontend
+## 🛠️ Tecnologias utilizadas:
 
-- Login do profissional (mockado com localStorage)
-- Tela de busca/cadastro de paciente
-- Tela de nova consulta com:
-  - Formulário inteligente (templates adaptativos)
-  - Campos essenciais
-  - Reconhecimento de voz (Web Speech API)
-- Tela de histórico por paciente
-- Tela de dashboard simples com gráficos (produtividade, sintomas)
+- **Next.js** (React + Node Fullstack)  
+- **Tailwind CSS**  
+- **PostgreSQL** (via Neon Free)  
+- **Prisma ORM** (utilizado no backend para comunicação com o banco de dados)  
+- **Hospedagem na Vercel**
 
 ---
 
-## 🚀 Fase 5 – Funcionalidades Inteligentes
+## 🙌 Agradecimento especial:
 
-- Sugestões automáticas de conduta (baseadas em sintomas)
-- Templates sazonais (gripe, dengue)
-- Reconhecimento de voz (dictation e transcrição)
-- Offline first com sincronização simulada (localStorage ou IndexedDB)
+Obrigado ao meu time **@meutime** por toda a dedicação, esforço e aprendizado durante o desenvolvimento desse projeto!
+
+---
