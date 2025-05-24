@@ -5,7 +5,6 @@ const SECRET = process.env.JWT_SECRET || "segredo-mvp";
 
 const PUBLIC_ROUTES = [
   "/api/login",
-  "/api/profissionais",
   "/api/documentotipo",
   "/api/especialidades",
 ];

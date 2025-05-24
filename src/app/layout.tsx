@@ -1,23 +1,20 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-  title: "SPA",
-  description: "Sistema de Prontuário Ágil",
-}
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <title>SPA - Sistema de Prontuário Ágil</title>
+        <meta name="description" content="Sistema de Prontuário Ágil para profissionais de saúde" />
+      </head>
+      <body>
+        {children}
+      </body>
     </html>
   )
 }

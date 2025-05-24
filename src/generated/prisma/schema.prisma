@@ -222,7 +222,7 @@ model unidade_saude {
   email                 String?
   horario_funcionamento String?
   observacoes           String?
-  tipo_id               String?       @db.Uuid 
+  tipo_id               String?       @db.Uuid // Nova coluna para o relacionamento
   tipo                  tipo_unidade? @relation(fields: [tipo_id], references: [id])
   updated_at            DateTime      @updatedAt
   consulta              consulta[]

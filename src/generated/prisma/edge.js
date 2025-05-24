@@ -329,7 +329,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Filipe\\filipe_pessoal\\hackatoon-elotech\\src\\generated\\prisma",
+      "value": "E:\\Latech\\spa-prontuario-agil\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -343,12 +343,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Filipe\\filipe_pessoal\\hackatoon-elotech\\prisma\\schema.prisma",
+    "sourceFilePath": "E:\\Latech\\spa-prontuario-agil\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../../prisma",
   "clientVersion": "6.8.2",
@@ -357,6 +356,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
