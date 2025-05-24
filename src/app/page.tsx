@@ -318,9 +318,9 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 code-bold">
                 Funcionalidades do MVP
-                <span className="block text-[#4d9d74]">Desenvolvidas e Testadas</span>
+                <span className="block text-[#4d9d74] code-bold">Desenvolvidas e Testadas</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Baseado em feedback real de profissionais de saúde, nosso MVP já resolve os principais problemas do dia
@@ -356,7 +356,7 @@ export default function LandingPage() {
             className="bg-gradient-to-r from-[#4d9d74] to-[#3a8a64] rounded-3xl p-8 md:p-12 text-white"
           >
             <div className="text-center">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">MVP Funcional</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4 code-bold">MVP Funcional</h3>
               <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
                 Sistema completo e funcional, pronto para uso em unidades de saúde.
               </p>
@@ -413,7 +413,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Sobre o SPA</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 code-bold">Sobre o SPA</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 O Sistema de Prontuário Ágil (SPA) foi desenvolvido para atender às necessidades reais dos profissionais
                 de saúde, oferecendo uma solução completa e intuitiva para a gestão de pacientes e consultas médicas.
@@ -460,7 +460,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Feedback dos Profissionais</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 code-bold">Feedback dos Profissionais</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Depoimentos reais que inspiraram o desenvolvimento do SPA.
               </p>
@@ -507,7 +507,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tecnologias Utilizadas</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 code-bold">Tecnologias Utilizadas</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Stack moderno e confiável para garantir performance e escalabilidade.
               </p>
@@ -577,9 +577,9 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 code-bold">
                 Teste o SPA
-                <span className="block text-[#4d9d74]">Sistema já funcional</span>
+                <span className="block text-[#4d9d74] code-bold">Sistema já funcional</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Nosso MVP está pronto para uso. Crie sua conta e experimente todas as funcionalidades desenvolvidas.
