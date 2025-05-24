@@ -1,6 +1,6 @@
 # 🩺 SPA – Sistema de Prontuário Ágil
 
-Nossa equipe ficou entre o **TOP 5** do **Hackathon by @elotech**! 🚀
+Nossa equipe ficou entre o **TOP 5** do **Hackathon by [elotech](https://www.elotech.com.br)**! 🚀
 
 Foi uma experiência incrível, desde o levantamento de requisitos — onde fomos até profissionais reais da saúde para entender suas dores — até o desenvolvimento de um MVP funcional.
 
@@ -39,6 +39,12 @@ O MVP está online, com **frontend, backend e banco de dados real funcionando!**
 
 ## 🙌 Agradecimento especial:
 
-Obrigado ao meu time **@meutime** por toda a dedicação, esforço e aprendizado durante o desenvolvimento desse projeto!
+Obrigado ao meu time 
+Leonardo Bezerra da Silva
+Lucas Lima
+Carlos Eduardo Carfi
+Gabriel Nascimento
+Alexandre Lozano de Souza
+por toda a dedicação, esforço e aprendizado durante o desenvolvimento desse projeto!
 
 ---
