@@ -688,8 +688,8 @@ export default function LandingPage() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400">
+          <div className="border-t border-gray-800 pt-8 flex justify-center items-center">
+            <p className="text-gray-400 text-center">
               &copy; {new Date().getFullYear()} Garotos de Programa
             </p>
           </div>
