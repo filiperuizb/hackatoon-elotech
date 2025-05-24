@@ -684,7 +684,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`h-5 w-5 ${i < 4 ? "text-amber-400 fill-current" : "text-gray-300"}`} />
+                    <Star key={i} className={`h-5 w-5 ${i < 2 ? "text-amber-400 fill-current" : "text-gray-300"}`} />
                   ))}
                 </div>
                 <p className="text-gray-700 italic leading-relaxed">"{testimonial.content}"</p>
