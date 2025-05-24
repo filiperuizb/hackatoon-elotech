@@ -262,9 +262,9 @@ export default function LandingPage() {
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
-                <span className="text-gray-900">Saúde Pública</span>
+                <span className="text-gray-900 code-bold">Saúde Pública</span>
                 <br />
-                <span className="text-[#4d9d74]">Eficiente e Inovadora</span>
+                <span className="text-[#4d9d74] code-bold ">Eficiente e Inovadora</span>
               </h1>
 
               <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
