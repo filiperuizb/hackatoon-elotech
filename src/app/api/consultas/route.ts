@@ -5,7 +5,6 @@ export async function POST(request: NextRequest) {
     try {
         const data = await request.json();
         
-        // Extract only the fields that are in the database model
         const { 
             data: dataConsulta, 
             hora, 
@@ -15,11 +14,8 @@ export async function POST(request: NextRequest) {
             profissional_id, 
             unidade_id 
         } = data;
-        
-        // Create a data object with only valid fields
-        // Properly handle the date to ensure ISO-8601 format
         const createData = {
-            data: new Date(dataConsulta), // Convert string to Date object for proper ISO-8601 formatting
+            data: new Date(dataConsulta), 
             hora,
             status,
             observacoes,
