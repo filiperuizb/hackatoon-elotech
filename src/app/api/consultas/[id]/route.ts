@@ -56,7 +56,6 @@ export async function PUT(request: NextRequest) {
         const id = getIdFromRequest(request);
         const data = await request.json();
         
-        // Extract only the fields that are in the database model
         const { 
             data: dataConsulta, 
             hora, 
@@ -66,10 +65,8 @@ export async function PUT(request: NextRequest) {
             profissional_id, 
             unidade_id 
         } = data;
-          // Create an update object with only valid fields
-        // Ensure that the data field is properly converted to a Date object
         const updateData = {
-            data: new Date(dataConsulta), // Convert string date to Date object
+            data: new Date(dataConsulta), 
             hora,
             status,
             observacoes,
